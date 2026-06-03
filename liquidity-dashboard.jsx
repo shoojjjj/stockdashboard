@@ -1,6 +1,6 @@
-import { useState, useEffect, useRef } from "react";
-import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, Legend } from "recharts";
-
+// 기존 import 구문 대신 브라우저용 변수 지정
+const { useState, useEffect, useRef } = React;
+const { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, Legend } = Recharts;
 // ══════════════════════════════════════════════════════════════
 //  구조 설명:
 //  - 하드코딩 fallback: 항상 차트 표시 보장
@@ -564,4 +564,5 @@ export default function Dashboard() {
   );
 }
 // 이 대시보드 화면을 index.html의 'root'라는 자리에 그려라! 라는 뜻입니다.
+// 대시보드를 화면에 진짜로 그려라!
 ReactDOM.createRoot(document.getElementById('root')).render(<Dashboard />);
