@@ -563,3 +563,5 @@ export default function Dashboard() {
     </div>
   );
 }
+// 이 대시보드 화면을 index.html의 'root'라는 자리에 그려라! 라는 뜻입니다.
+ReactDOM.createRoot(document.getElementById('root')).render(<Dashboard />);
