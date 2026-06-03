@@ -23,14 +23,16 @@
 
     <script type="text/text/babel">
       const initDashboard = () => {
-        if (!window.React || !window.Recharts) {
-          setTimeout(initDashboard, 50);
+        // 글로벌 변수 로드 체크
+        if (!window.React || !window.Recharts || !window.ReactDOM) {
+          setTimeout(initDashboard, 100);
           return;
         }
 
         const { useState, useEffect } = React;
         const { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } = Recharts;
 
+        // 2026년 기준 기준 스냅샷 데이터 베이스
         const FALLBACK_DATA = {
           lastUpdated: "2026-06-03 (시스템 캐시)",
           source: "fallback",
@@ -259,10 +261,19 @@
           );
         }
 
-        ReactDOM.createRoot(document.getElementById('root')).render(<Dashboard />);
+        // DOM 마운트 상태 최종 확인 후 주입
+        const container = document.getElementById('root');
+        if (container) {
+          ReactDOM.createRoot(container).render(<Dashboard />);
+        }
       };
 
-      initDashboard();
+      // 브라우저 리소스와 라이브러리가 완전히 바인딩된 후 함수를 트리거합니다.
+      if (document.readyState === "complete") {
+        initDashboard();
+      } else {
+        window.addEventListener("load", initDashboard);
+      }
     </script>
 
 </body>
