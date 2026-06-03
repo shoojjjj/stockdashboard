@@ -21,18 +21,16 @@
 
     <div id="root"></div>
 
-    <script type="text/text/babel">
+    <script type="text/babel">
       const initDashboard = () => {
-        // 글로벌 변수 로드 체크
         if (!window.React || !window.Recharts || !window.ReactDOM) {
-          setTimeout(initDashboard, 100);
+          setTimeout(initDashboard, 50);
           return;
         }
 
         const { useState, useEffect } = React;
         const { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } = Recharts;
 
-        // 2026년 기준 기준 스냅샷 데이터 베이스
         const FALLBACK_DATA = {
           lastUpdated: "2026-06-03 (시스템 캐시)",
           source: "fallback",
@@ -104,32 +102,6 @@
           const [D, setD] = useState(FALLBACK_DATA);
           const [loading, setLoading] = useState(false);
           const [viewPeriod, setViewPeriod] = useState("all"); 
-
-          const fetchLiveAPI = async () => {
-            if (loading) return;
-            setLoading(true);
-            try {
-              setTimeout(() => {
-                const todayStr = new Date().toISOString().split('T')[0];
-                const mockD = JSON.parse(JSON.stringify(D));
-                mockD.lastUpdated = `${todayStr} (실시간 API 연결됨)`;
-                
-                TICKERS.forEach(t => {
-                  if(mockD.badges[t.sym]) {
-                    mockD.badges[t.sym].price += (Math.random() - 0.5) * 10;
-                  }
-                });
-                setD(mockD);
-                setLoading(false);
-              }, 500);
-            } catch (e) {
-              setLoading(false);
-            }
-          };
-
-          useEffect(() => {
-            fetchLiveAPI();
-          }, []);
 
           const filterByPeriod = (arr) => {
             if (!arr || !arr.length) return [];
@@ -261,20 +233,17 @@
           );
         }
 
-        // DOM 마운트 상태 최종 확인 후 주입
         const container = document.getElementById('root');
         if (container) {
           ReactDOM.createRoot(container).render(<Dashboard />);
         }
       };
 
-      // 브라우저 리소스와 라이브러리가 완전히 바인딩된 후 함수를 트리거합니다.
       if (document.readyState === "complete") {
         initDashboard();
       } else {
         window.addEventListener("load", initDashboard);
       }
     </script>
-
 </body>
 </html>
