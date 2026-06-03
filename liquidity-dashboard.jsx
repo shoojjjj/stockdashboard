@@ -11,49 +11,49 @@ const mockData = [
   { date: '2024-05', netLiquidity: 6420, sp500: 5300, ndx: 18800, kospi: 2680, wti: 77 },
 ];
 
-// 3. 메인 대시보드 컴포넌트 (export 구문 제거)
+// 3. 메인 대시보드 컴포넌트
 function Dashboard() {
   const [data, setData] = useState(mockData);
 
   return (
-    <div class="p-6 max-w-7xl mx-auto space-y-6">
+    <div className="p-6 max-w-7xl mx-auto space-y-6">
       {/* 상단 헤더 */}
-      <div class="flex justify-between items-center border-b border-gray-800 pb-4">
+      <div className="flex justify-between items-center border-b border-gray-800 pb-4">
         <div>
-          <h1 class="text-3xl font-black tracking-tight text-blue-400">Macro Liquidity Dashboard</h1>
-          <p class="text-sm text-gray-400 mt-1">미국 순유동성 지표 및 글로벌 자산 실시간 모니터링</p>
+          <h1 className="text-3xl font-black tracking-tight text-blue-400">Macro Liquidity Dashboard</h1>
+          <p className="text-sm text-gray-400 mt-1">미국 순유동성 지표 및 글로벌 자산 실시간 모니터링</p>
         </div>
-        <div class="text-right">
-          <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-green-500/10 text-green-400 border border-green-500/20">
+        <div className="text-right">
+          <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-green-500/10 text-green-400 border border-green-500/20">
             ● 시스템 정상 작동중
           </span>
         </div>
       </div>
 
       {/* 요약 카드 섹션 */}
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-        <div class="bg-[#0b1520] p-4 rounded-xl border border-gray-800">
-          <p class="text-xs text-gray-400 font-bold">미국 순유동성 (Net Liquidity)</p>
-          <p class="text-2xl font-black mt-1 text-blue-400">$ 6.42 T</p>
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+        <div className="bg-[#0b1520] p-4 rounded-xl border border-gray-800">
+          <p className="text-xs text-gray-400 font-bold">미국 순유동성 (Net Liquidity)</p>
+          <p className="text-2xl font-black mt-1 text-blue-400">$ 6.42 T</p>
         </div>
-        <div class="bg-[#0b1520] p-4 rounded-xl border border-gray-800">
-          <p class="text-xs text-gray-400 font-bold">S&P 500</p>
-          <p class="text-2xl font-black mt-1 text-white">5,300.25</p>
+        <div className="bg-[#0b1520] p-4 rounded-xl border border-gray-800">
+          <p className="text-xs text-gray-400 font-bold">S&P 500</p>
+          <p className="text-2xl font-black mt-1 text-white">5,300.25</p>
         </div>
-        <div class="bg-[#0b1520] p-4 rounded-xl border border-gray-800">
-          <p class="text-xs text-gray-400 font-bold">NASDAQ 100</p>
-          <p class="text-2xl font-black mt-1 text-white">18,800.50</p>
+        <div className="bg-[#0b1520] p-4 rounded-xl border border-gray-800">
+          <p className="text-xs text-gray-400 font-bold">NASDAQ 100</p>
+          <p className="text-2xl font-black mt-1 text-white">18,800.50</p>
         </div>
-        <div class="bg-[#0b1520] p-4 rounded-xl border border-gray-800">
-          <p class="text-xs text-gray-400 font-bold">KOSPI</p>
-          <p class="text-2xl font-black mt-1 text-orange-400">2,680.10</p>
+        <div className="bg-[#0b1520] p-4 rounded-xl border border-gray-800">
+          <p className="text-xs text-gray-400 font-bold">KOSPI</p>
+          <p className="text-2xl font-black mt-1 text-orange-400">2,680.10</p>
         </div>
       </div>
 
       {/* 메인 차트 */}
-      <div class="bg-[#0b1520] p-6 rounded-2xl border border-gray-800">
-        <h3 class="text-lg font-bold mb-4 text-gray-200">순유동성 vs 주요 지수 트렌드</h3>
-        <div class="h-[400px] w-full">
+      <div className="bg-[#0b1520] p-6 rounded-2xl border border-gray-800">
+        <h3 className="text-lg font-bold mb-4 text-gray-200">순유동성 vs 주요 지수 트렌드</h3>
+        <div className="h-[400px] w-full">
           <ResponsiveContainer width="100%" height="100%">
             <LineChart data={data} margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
               <XAxis dataKey="date" stroke="#4b5563" tick={{ fill: '#9ca3af', fontSize: 12 }} />
@@ -74,5 +74,5 @@ function Dashboard() {
   );
 }
 
-// 4. 화면에 진짜로 렌더링(출력)하는 명령어
+// 4. 화면에 렌더링
 ReactDOM.createRoot(document.getElementById('root')).render(<Dashboard />);
