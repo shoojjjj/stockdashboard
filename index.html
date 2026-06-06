@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>미국 유동성 + 글로벌 지수 대시보드</title>
-    
     <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
     <script src="https://unpkg.com/recharts@2.12.7/umd/Recharts.js"></script>
@@ -22,23 +21,13 @@
         <div class="flex items-center justify-center min-h-screen">
             <div class="text-center p-6 bg-[#0b1523] border border-slate-800 rounded-2xl max-w-sm mx-4 shadow-xl">
                 <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-emerald-400 mx-auto mb-4"></div>
-                <p class="text-sm font-bold text-white">매크로 대시보드 시스템 초기화 중...</p>
-                <p class="text-xs text-slate-400 mt-1 leading-relaxed">외부 확장 프로그램 간섭을 우회하여 데이터를 바인딩하고 있습니다. 잠시만 기다려주세요.</p>
+                <p class="text-sm font-bold text-white">대시보드 시스템 초기화 중...</p>
             </div>
         </div>
     </div>
 
     <script type="text/babel">
-      // 타사 인젝션 스크립트 에러가 React 실행을 막지 못하도록 글로벌 에러 핸들러 배치
-      window.addEventListener('error', function(e) {
-        if (e.message && (e.message.includes('override') || e.message.includes('Animate') || e.message.includes('TronLink'))) {
-          e.stopImmediatePropagation();
-          return true;
-        }
-      }, true);
-
       const initDashboard = () => {
-        // 전역 객체 안전성 이중 검사
         if (!window.React || !window.Recharts || !window.ReactDOM) {
           setTimeout(initDashboard, 50);
           return;
@@ -48,9 +37,8 @@
           const { useState } = React;
           const { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid } = Recharts;
 
-          // 초기 스냅샷 데이터 셋팅
           const INITIAL_STATE = {
-            lastUpdated: "2026. 6. 6. (네트워크 지연 - 캐시 데이터 작동 중)",
+            lastUpdated: "2026. 06. 06 (네트워크 지연 - 캐시 데이터 작동 중)",
             vix: { price: 14.20, pct: -1.25 },
             wti: { price: 82.50, pct: 1.84 },
             fx: { price: 1375.50, pct: 0.32 },
@@ -69,65 +57,4 @@
               "NVDA": { name: "엔비디아", price: 124.50, pct: -6.20, market: "US" },
               "TSLA": { name: "테슬라", price: 172.10, pct: -6.56, market: "US" },
               "005930": { name: "삼성전자", price: 74200, pct: 1.45, market: "KR" },
-              "000660": { name: "SK하이닉스", price: 188300, pct: 2.81, market: "KR" }
-            }
-          };
-
-          function Dashboard() {
-            const [data, setData] = useState(INITIAL_STATE);
-            const [isLoading, setIsLoading] = useState(false);
-
-            const handleUpdateAllData = async () => {
-              setIsLoading(true);
-              try {
-                const fallbackApiUrl = `https://api.allorigins.win/get?url=${encodeURIComponent('https://query1.finance.yahoo.com/v7/finance/quote?symbols=NVDA,TSLA,005930.KS,000660.KS,NQ=F,ES=F,^KS11,^VIX,CL=F,USDKRW=X')}`;
-                const res = await fetch(fallbackApiUrl);
-                const wrapperJson = await res.json();
-                const parsedData = JSON.parse(wrapperJson.contents);
-                
-                if (parsedData.quoteResponse && parsedData.quoteResponse.result) {
-                  const liveItems = parsedData.quoteResponse.result;
-                  const nextStocks = { ...data.stocks };
-                  let liveVix = { ...data.vix };
-                  let liveWti = { ...data.wti };
-                  let liveFx = { ...data.fx };
-
-                  liveItems.forEach(item => {
-                    const sym = item.symbol;
-                    if (sym === "^VIX") {
-                      liveVix.price = item.regularMarketPrice || liveVix.price;
-                      liveVix.pct = item.regularMarketChangePercent || liveVix.pct;
-                    } else if (sym === "CL=F") {
-                      liveWti.price = item.regularMarketPrice || liveWti.price;
-                      liveWti.pct = item.regularMarketChangePercent || liveWti.pct;
-                    } else if (sym === "USDKRW=X") {
-                      liveFx.price = item.regularMarketPrice || liveFx.price;
-                      liveFx.pct = item.regularMarketChangePercent || liveFx.pct;
-                    } else if (sym === "NQ=F") {
-                      nextStocks["NASDAQ"].price = item.regularMarketPrice || nextStocks["NASDAQ"].price;
-                      nextStocks["NASDAQ"].pct = item.regularMarketChangePercent || nextStocks["NASDAQ"].pct;
-                    } else if (sym === "ES=F") {
-                      nextStocks["SP500"].price = item.regularMarketPrice || nextStocks["SP500"].price;
-                      nextStocks["SP500"].pct = item.regularMarketChangePercent || nextStocks["SP500"].pct;
-                    } else if (sym === "^KS11") {
-                      nextStocks["KOSPI"].price = item.regularMarketPrice || nextStocks["KOSPI"].price;
-                      nextStocks["KOSPI"].pct = item.regularMarketChangePercent || nextStocks["KOSPI"].pct;
-                    } else {
-                      const cleanTicker = sym.split(".")[0];
-                      if (nextStocks[cleanTicker]) {
-                        nextStocks[cleanTicker].price = item.regularMarketPrice || nextStocks[cleanTicker].price;
-                        nextStocks[cleanTicker].pct = item.regularMarketChangePercent || nextStocks[cleanTicker].pct;
-                      }
-                    }
-                  });
-
-                  const timeNow = new Date();
-                  const formattedTime = `${timeNow.getFullYear()}. ${timeNow.getMonth()+1}. ${timeNow.getDate()} ${timeNow.getHours()}:${String(timeNow.getMinutes()).padStart(2,'0')}`;
-
-                  setData(prev => ({
-                    ...prev,
-                    lastUpdated: `${formattedTime} (실시간 마켓 데이터 동기화 완료)`,
-                    stocks: nextStocks,
-                    vix: liveVix,
-                    wti: liveWti,
-                    fx: live
+              "000660": { name: "SK
