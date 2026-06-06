@@ -30,7 +30,7 @@
         const { useState, useEffect } = React;
         const { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid } = Recharts;
 
-        // 대시보드 기초 데이터 셋 (수치 및 구조 완벽 동기화)
+        // 대시보드 데이터 기초 셋팅
         const INITIAL_STATE = {
           lastUpdated: "2026. 6. 6. (실시간 데이터 동기화 완료)",
           vix: { price: 14.20, pct: -1.25 },
@@ -116,23 +116,22 @@
                 }));
               }
             } catch (err) {
-              console.warn("네트워크 지연으로 보정 모드 작동", err);
+              console.warn("API 딜레이로 백업 모드 가동", err);
             } finally {
               setIsLoading(false);
             }
           };
 
-          useEffect(() => {
-            // 초기 마운트 시 필요시 데이터 스캔 가능
-          }, []);
-
           const currentNet = data.liquidity.net[data.liquidity.net.length - 1].value;
           const currentMmf = data.liquidity.mmf[data.liquidity.mmf.length - 1].value;
+
+          // 🎯 [Unexpected token 에러 수정] 안전한 괄호 처리식으로 토큰 파싱 완전 방어
+          const isQeActive = Boolean(currentNet > 5.5);
 
           return (
             <div class="max-w-4xl mx-auto p-4 min-h-screen pb-16">
               
-              {/* 상단 타이틀 바 */}
+              {/* 타이틀 바 */}
               <div class="flex flex-col sm:flex-row justify-between items-center border-b border-slate-800 pb-5 mb-6 gap-4">
                 <div>
                   <h1 class="text-xl font-extrabold tracking-tight text-white flex items-center gap-2">
@@ -153,7 +152,7 @@
                 </button>
               </div>
 
-              {/* 🎯 [오류 수정 완료] 최상단 AI 매크로 시장 진단 3줄요약 브리핑 컴포넌트 */}
+              {/* 글로벌 매크로 3줄 요약 패널 */}
               <div class="bg-gradient-to-r from-[#0b1b32] to-[#081220] border border-blue-500/30 rounded-2xl p-5 mb-6 shadow-xl">
                 <h2 class="text-xs font-bold text-blue-400 tracking-widest uppercase mb-3 flex items-center gap-2">
                   <span class="inline-block w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span>
@@ -204,4 +203,50 @@
                   <div class="text-sm font-mono font-bold text-white mt-1">{data.vix.price.toFixed(2)} ({data.vix.pct}%)</div>
                 </div>
                 <div class="bg-[#0b1523] border border-slate-800 rounded-xl p-3">
-                  <span class="text-[10px] font-bold text-amber-500">🛢️ 국제유가
+                  <span class="text-[10px] font-bold text-amber-500">🛢️ 국제유가(WTI)</span>
+                  <div class="text-sm font-mono font-bold text-white mt-1">${data.wti.price.toFixed(2)}</div>
+                </div>
+                <div class="bg-[#0b1523] border border-slate-800 rounded-xl p-3">
+                  <span class="text-[10px] font-bold text-teal-400">💵 원/달러 환율</span>
+                  <div class="text-sm font-mono font-bold text-white mt-1">{data.fx.price.toFixed(1)}원</div>
+                </div>
+              </div>
+
+              {/* 핵심 종목 현황 */}
+              <div class="mb-6">
+                <h2 class="text-xs font-bold text-slate-400 tracking-wider uppercase mb-3 flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
+                  핵심 종목 시황
+                </h2>
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+                  {["NVDA", "TSLA", "005930", "000660"].map(key => {
+                    const item = data.stocks[key];
+                    const isPlus = item.pct >= 0;
+                    return (
+                      <div key={key} class={`rounded-xl p-3.5 border transition-colors ${isPlus ? 'bg-emerald-950/20 border-emerald-500/20' : 'bg-rose-950/20 border-rose-500/20'}`}>
+                        <span class="text-[11px] font-bold text-slate-300">{item.name}</span>
+                        <div class="text-sm font-mono font-black text-white mt-2">{item.price.toLocaleString()}{item.market === "US" ? "$" : "원"}</div>
+                        <div class={`text-[11px] font-bold font-mono mt-0.5 ${isPlus ? 'text-emerald-400' : 'text-rose-400'}`}>{isPlus ? '+' : ''}{item.pct}%</div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+
+              {/* 실시간 Net Liquidity 인덱스 바 */}
+              <div class="bg-[#0b1523] border border-slate-800 rounded-xl p-4 mb-6">
+                <div class="flex justify-between items-center mb-1">
+                  <span class="text-xs font-bold text-slate-400">REALTIME NET LIQUIDITY INDEX</span>
+                  <span class="bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-[10px] px-2 py-0.5 rounded font-bold">
+                    {isQeActive ? "양적완화(QE) 상태유지" : "긴축 국면 주의"}
+                  </span>
+                </div>
+                <div class="text-2xl font-mono font-black text-emerald-400">${currentNet.toFixed(2)}T</div>
+                <p class="text-[11px] text-slate-400 mt-2 leading-relaxed">
+                  📌 <strong class="text-slate-300">유동성 분석 매크로 코멘트:</strong> 연준의 실질 통화 유동성이 확장 국면에 있어 기술주 및 시총 상위 자산에 우호적인 환경입니다. 해당 수치는 미 연준 총자산에서 정부 잔고와 역레포 파킹 자금을 차감하여 계산된 수치로 대형 기술주들의 주가 밸류에이션 지지력과 직결됩니다.
+                </p>
+              </div>
+
+              {/* 시계열 차트 섹션 */}
+              <div class="space-y-4">
+                <h2 class="text-xs font-bold text-slate-400 tracking-wider
