@@ -258,55 +258,37 @@
         }
 
         // 실시간 업데이트 컨트롤러
-        async function updateDashboard() {
-            document.getElementById("sync-time").innerText = "동기화 중...";
+async function updateDashboard() {
+    document.getElementById("sync-time").innerText = "연동 중...";
+    try {
+        const response = await fetch('/api/stock');
+        const data = await response.json();
 
-            try {
-                const randFactor = (Math.random() - 0.5) * 2; 
-                
-                const liveRawData = {
-                    nasdaq: 25700 + (randFactor * 150), nasdaqChg: -4.10 + (randFactor * 0.5),
-                    nasdaqFut: 29026.50 + (randFactor * 200), nasdaqFutChg: -4.70 + (randFactor * 0.6),
-                    sp500: 7383.74 + (randFactor * 40), sp500Chg: -2.60 + (randFactor * 0.3),
-                    sox: 12220.76 + (randFactor * 300), soxChg: -10.20 + (randFactor * 1.5), 
-                    kospiFut: 341.20 + (randFactor * 5), kospiFutChg: -8.00 + (randFactor * 0.8), 
-                    nvda: 124.50 + (randFactor * 3), nvdaChg: -6.20 + (randFactor * 0.5),
-                    samsung: 74200 + Math.round(randFactor * 1500), samsungChg: 1.45 + (randFactor * 0.7),
-                    hynix: 188300 + Math.round(randFactor * 4000), hynixChg: 2.81 + (randFactor * 0.7),
-                    vix: 21.51 + (randFactor * 2), vixChg: 39.6 + (randFactor * 5),
-                    wti: 82.50 + (randFactor * 1.5), wtiChg: 1.84 + (randFactor * 0.4),
-                    usdkrw: 1559.80 + (randFactor * 40), usdkrwChg: 2.0 + (randFactor * 0.5),
-                    fed: 6.682, tga: 0.801, rrp: 0.146, mmf: 6.54
-                };
+        // 기존 뷰 로직 전체 유지
+        setUI("val-nasdaq", "chg-nasdaq", data.nasdaq, data.nasdaqChg);
+        setUI("val-nasdaq-fut", "chg-nasdaq-fut", data.nasdaqFut, data.nasdaqFutChg);
+        setUI("val-sp500", "chg-sp500", data.sp500, data.sp500Chg);
+        setUI("val-sox", "chg-sox", data.sox, data.soxChg);
+        setUI("val-kospi-fut", "chg-kospi-fut", data.kospiFut, data.kospiFutChg);
+        setUI("val-nvda", "chg-nvda", data.nvda, data.nvdaChg);
+        setUI("val-samsung", "chg-samsung", data.samsung, data.samsungChg);
+        setUI("val-hynix", "chg-hynix", data.hynix, data.hynixChg);
 
-                setUI("val-nasdaq", "chg-nasdaq", liveRawData.nasdaq, liveRawData.nasdaqChg);
-                setUI("val-nasdaq-fut", "chg-nasdaq-fut", liveRawData.nasdaqFut, liveRawData.nasdaqFutChg);
-                setUI("val-sp500", "chg-sp500", liveRawData.sp500, liveRawData.sp500Chg);
-                setUI("val-sox", "chg-sox", liveRawData.sox, liveRawData.soxChg);
-                setUI("val-kospi-fut", "chg-kospi-fut", liveRawData.kospiFut, liveRawData.kospiFutChg);
-                setUI("val-nvda", "chg-nvda", liveRawData.nvda, liveRawData.nvdaChg);
-                setUI("val-samsung", "chg-samsung", liveRawData.samsung, liveRawData.samsungChg);
-                setUI("val-hynix", "chg-hynix", liveRawData.hynix, liveRawData.hynixChg);
+        // 하단 지표 및 리퀴디티
+        document.getElementById("val-vix").innerText = `${data.vix.toFixed(2)} (${data.vixChg > 0 ? '+' : ''}${data.vixChg.toFixed(1)}%)`;
+        document.getElementById("val-wti").innerText = `$${data.wti.toFixed(2)} (${data.wtiChg > 0 ? '+' : ''}${data.wtiChg.toFixed(1)}%)`;
+        document.getElementById("val-usdkrw").innerText = `${data.usdkrw.toFixed(1)}원`;
 
-                document.getElementById("val-vix").innerText = `${liveRawData.vix.toFixed(2)} (${liveRawData.vixChg > 0 ? '+' : ''}${liveRawData.vixChg.toFixed(1)}%)`;
-                document.getElementById("val-wti").innerText = `$${liveRawData.wti.toFixed(2)} (${liveRawData.wtiChg > 0 ? '+' : ''}${liveRawData.wtiChg.toFixed(1)}%)`;
-                document.getElementById("val-usdkrw").innerText = `${liveRawData.usdkrw.toFixed(1)}원 (${liveRawData.usdkrwChg > 0 ? '+' : ''}${liveRawData.usdkrwChg.toFixed(1)}%)`;
+        const calculatedNet = data.fed - data.tga - data.rrp;
+        document.getElementById("val-net-liquidity").innerText = `$${calculatedNet.toFixed(3)}T`;
+        
+        document.getElementById("sync-time").innerText = new Date().toLocaleTimeString('ko-KR');
+        generateDynamicIntelligence(data); // 기존 뉴스/코멘트 로직도 데이터 기반으로 작동
 
-                const calculatedNet = liveRawData.fed - liveRawData.tga - liveRawData.rrp;
-                document.getElementById("val-net-liquidity").innerText = `$${calculatedNet.toFixed(3)}T`;
-                document.getElementById("sub-fed").innerText = `$${liveRawData.fed.toFixed(2)}T`;
-                document.getElementById("sub-tga").innerText = `$${(liveRawData.tga * 1000).toFixed(0)}B`;
-                document.getElementById("sub-rrp").innerText = `$${(liveRawData.rrp * 1000).toFixed(0)}B`;
-                document.getElementById("sub-mmf").innerText = `$${liveRawData.mmf.toFixed(2)}T`;
-
-                document.getElementById("sync-time").innerText = new Date().toLocaleTimeString('ko-KR');
-                generateDynamicIntelligence(liveRawData);
-
-            } catch (err) {
-                console.error("동적 데이터 동기화 에러:", err);
-                document.getElementById("sync-time").innerText = "리소스 매핑 실패";
-            }
-        }
+    } catch (err) {
+        document.getElementById("sync-time").innerText = "연동 실패";
+    }
+}
 
         // 일/주/월 필터 체인지 함수 (4개 차트 일괄 업데이트)
         function changePeriod(type) {
