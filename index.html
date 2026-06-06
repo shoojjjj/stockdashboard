@@ -18,145 +18,116 @@
 </head>
 <body class="text-slate-200 antialiased">
 
-    <div id="root"></div>
+    <div id="root">
+        <div class="flex items-center justify-center min-h-screen">
+            <div class="text-center p-6 bg-[#0b1523] border border-slate-800 rounded-2xl max-w-sm mx-4 shadow-xl">
+                <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-emerald-400 mx-auto mb-4"></div>
+                <p class="text-sm font-bold text-white">매크로 대시보드 시스템 초기화 중...</p>
+                <p class="text-xs text-slate-400 mt-1 leading-relaxed">외부 확장 프로그램 간섭을 우회하여 데이터를 바인딩하고 있습니다. 잠시만 기다려주세요.</p>
+            </div>
+        </div>
+    </div>
 
     <script type="text/babel">
+      // 타사 인젝션 스크립트 에러가 React 실행을 막지 못하도록 글로벌 에러 핸들러 배치
+      window.addEventListener('error', function(e) {
+        if (e.message && (e.message.includes('override') || e.message.includes('Animate') || e.message.includes('TronLink'))) {
+          e.stopImmediatePropagation();
+          return true;
+        }
+      }, true);
+
       const initDashboard = () => {
+        // 전역 객체 안전성 이중 검사
         if (!window.React || !window.Recharts || !window.ReactDOM) {
-          setTimeout(initDashboard, 30);
+          setTimeout(initDashboard, 50);
           return;
         }
 
-        const { useState } = React;
-        const { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid } = Recharts;
+        try {
+          const { useState } = React;
+          const { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid } = Recharts;
 
-        // 초기 기초 데이터 정의
-        const INITIAL_STATE = {
-          lastUpdated: "2026. 6. 6. (기본 데이터 로드 완료)",
-          vix: { price: 14.20, pct: -1.25 },
-          wti: { price: 82.50, pct: 1.84 },
-          fx: { price: 1375.50, pct: 0.32 },
-          liquidity: {
-            fed:  [{date:"05/06",value:6.72},{date:"05/13",value:6.71},{date:"05/20",value:6.70},{date:"05/27",value:6.69},{date:"06/03",value:6.68}],
-            tga:  [{date:"05/06",value:812},{date:"05/13",value:807},{date:"05/20",value:790},{date:"05/27",value:775},{date:"06/03",value:760}],
-            rrp:  [{date:"05/06",value:0.25},{date:"05/13",value:0.21},{date:"05/20",value:0.18},{date:"05/27",value:0.16},{date:"06/03",value:0.15}],
-            mmf:  [{date:"05/06",value:6.42},{date:"05/13",value:6.45},{date:"05/20",value:6.48},{date:"05/27",value:6.51},{date:"06/03",value:6.54}],
-            net:  [{date:"05/06",value:5.658},{date:"05/13",value:5.692},{date:"05/20",value:5.730},{date:"05/27",value:5.755},{date:"06/03",value:5.770}]
-          },
-          stocks: {
-            "NASDAQ": { name: "나스닥100 선물", price: 22050.68, pct: 0.16, market: "INDEX" },
-            "KOSPI_NIGHT": { name: "KOSPI200 야간선물", price: 342.99, pct: 0.45, market: "INDEX" },
-            "SP500": { name: "S&P 500 주간종가", price: 7162.81, pct: 0.20, market: "INDEX" },
-            "KOSPI": { name: "KOSPI 본장종가", price: 2584.23, pct: -0.57, market: "INDEX" },
-            "NVDA": { name: "엔비디아", price: 124.50, pct: -6.20, market: "US" },
-            "TSLA": { name: "테슬라", price: 172.10, pct: -6.56, market: "US" },
-            "005930": { name: "삼성전자", price: 74200, pct: 1.45, market: "KR" },
-            "000660": { name: "SK하이닉스", price: 188300, pct: 2.81, market: "KR" }
-          }
-        };
-
-        function Dashboard() {
-          const [data, setData] = useState(INITIAL_STATE);
-          const [isLoading, setIsLoading] = useState(false);
-
-          const handleUpdateAllData = async () => {
-            setIsLoading(true);
-            try {
-              const fallbackApiUrl = `https://api.allorigins.win/get?url=${encodeURIComponent('https://query1.finance.yahoo.com/v7/finance/quote?symbols=NVDA,TSLA,005930.KS,000660.KS,NQ=F,ES=F,^KS11,^VIX,CL=F,USDKRW=X')}`;
-              const res = await fetch(fallbackApiUrl);
-              const wrapperJson = await res.json();
-              const parsedData = JSON.parse(wrapperJson.contents);
-              
-              if (parsedData.quoteResponse && parsedData.quoteResponse.result) {
-                const liveItems = parsedData.quoteResponse.result;
-                const nextStocks = { ...data.stocks };
-                let liveVix = { ...data.vix };
-                let liveWti = { ...data.wti };
-                let liveFx = { ...data.fx };
-
-                liveItems.forEach(item => {
-                  const sym = item.symbol;
-                  if (sym === "^VIX") {
-                    liveVix.price = item.regularMarketPrice;
-                    liveVix.pct = item.regularMarketChangePercent;
-                  } else if (sym === "CL=F") {
-                    liveWti.price = item.regularMarketPrice;
-                    liveWti.pct = item.regularMarketChangePercent;
-                  } else if (sym === "USDKRW=X") {
-                    liveFx.price = item.regularMarketPrice;
-                    liveFx.pct = item.regularMarketChangePercent;
-                  } else if (sym === "NQ=F") {
-                    nextStocks["NASDAQ"].price = item.regularMarketPrice;
-                    nextStocks["NASDAQ"].pct = item.regularMarketChangePercent;
-                  } else if (sym === "ES=F") {
-                    nextStocks["SP500"].price = item.regularMarketPrice;
-                    nextStocks["SP500"].pct = item.regularMarketChangePercent;
-                  } else if (sym === "^KS11") {
-                    nextStocks["KOSPI"].price = item.regularMarketPrice;
-                    nextStocks["KOSPI"].pct = item.regularMarketChangePercent;
-                  } else {
-                    const cleanTicker = sym.split(".")[0];
-                    if (nextStocks[cleanTicker]) {
-                      nextStocks[cleanTicker].price = item.regularMarketPrice;
-                      nextStocks[cleanTicker].pct = item.regularMarketChangePercent;
-                    }
-                  }
-                });
-
-                const timeNow = new Date();
-                const formattedTime = `${timeNow.getFullYear()}. ${timeNow.getMonth()+1}. ${timeNow.getDate()} ${timeNow.getHours()}:${String(timeNow.getMinutes()).padStart(2,'0')}`;
-
-                setData(prev => ({
-                  ...prev,
-                  lastUpdated: `${formattedTime} (실시간 API 동기화 완료)`,
-                  stocks: nextStocks,
-                  vix: liveVix,
-                  wti: liveWti,
-                  fx: liveFx
-                }));
-              }
-            } catch (err) {
-              console.warn("API 호출 지연으로 스냅샷 데이터 유지", err);
-            } finally {
-              setIsLoading(false);
+          // 초기 스냅샷 데이터 셋팅
+          const INITIAL_STATE = {
+            lastUpdated: "2026. 6. 6. (네트워크 지연 - 캐시 데이터 작동 중)",
+            vix: { price: 14.20, pct: -1.25 },
+            wti: { price: 82.50, pct: 1.84 },
+            fx: { price: 1375.50, pct: 0.32 },
+            liquidity: {
+              fed:  [{date:"05/06",value:6.72},{date:"05/13",value:6.71},{date:"05/20",value:6.70},{date:"05/27",value:6.69},{date:"06/03",value:6.68}],
+              tga:  [{date:"05/06",value:812},{date:"05/13",value:807},{date:"05/20",value:790},{date:"05/27",value:775},{date:"06/03",value:760}],
+              rrp:  [{date:"05/06",value:0.25},{date:"05/13",value:0.21},{date:"05/20",value:0.18},{date:"05/27",value:0.16},{date:"06/03",value:0.15}],
+              mmf:  [{date:"05/06",value:6.42},{date:"05/13",value:6.45},{date:"05/20",value:6.48},{date:"05/27",value:6.51},{date:"06/03",value:6.54}],
+              net:  [{date:"05/06",value:5.658},{date:"05/13",value:5.692},{date:"05/20",value:5.730},{date:"05/27",value:5.755},{date:"06/03",value:5.770}]
+            },
+            stocks: {
+              "NASDAQ": { name: "나스닥100 선물", price: 22050.68, pct: 0.16, market: "INDEX" },
+              "KOSPI_NIGHT": { name: "KOSPI200 야간선물", price: 342.99, pct: 0.45, market: "INDEX" },
+              "SP500": { name: "S&P 500 주간종가", price: 7162.81, pct: 0.20, market: "INDEX" },
+              "KOSPI": { name: "KOSPI 본장종가", price: 2584.23, pct: -0.57, market: "INDEX" },
+              "NVDA": { name: "엔비디아", price: 124.50, pct: -6.20, market: "US" },
+              "TSLA": { name: "테슬라", price: 172.10, pct: -6.56, market: "US" },
+              "005930": { name: "삼성전자", price: 74200, pct: 1.45, market: "KR" },
+              "000660": { name: "SK하이닉스", price: 188300, pct: 2.81, market: "KR" }
             }
           };
 
-          const currentNet = data.liquidity.net[data.liquidity.net.length - 1].value;
-          const currentMmf = data.liquidity.mmf[data.liquidity.mmf.length - 1].value;
+          function Dashboard() {
+            const [data, setData] = useState(INITIAL_STATE);
+            const [isLoading, setIsLoading] = useState(false);
 
-          // 🎯 [핵심 버그 수정]: Babel 컴파일러가 오인하는 부등호(>) 대신 Math.max 함수를 사용하여 안전하게 비교 연산 수행
-          const isQeActive = Boolean(Math.max(currentNet, 5.5) === currentNet);
-
-          return (
-            <div class="max-w-4xl mx-auto p-4 min-h-screen pb-16">
-              
-              {/* 상단 타이틀 */}
-              <div class="flex flex-col sm:flex-row justify-between items-center border-b border-slate-800 pb-5 mb-6 gap-4">
-                <div>
-                  <h1 class="text-xl font-extrabold tracking-tight text-white flex items-center gap-2">
-                    🔥 <span>Macro & Stock Dashboard</span>
-                  </h1>
-                  <p class="text-xs text-slate-400 mt-1">조회 기준: <span class="text-emerald-400 font-mono font-bold">{data.lastUpdated}</span></p>
-                </div>
+            const handleUpdateAllData = async () => {
+              setIsLoading(true);
+              try {
+                const fallbackApiUrl = `https://api.allorigins.win/get?url=${encodeURIComponent('https://query1.finance.yahoo.com/v7/finance/quote?symbols=NVDA,TSLA,005930.KS,000660.KS,NQ=F,ES=F,^KS11,^VIX,CL=F,USDKRW=X')}`;
+                const res = await fetch(fallbackApiUrl);
+                const wrapperJson = await res.json();
+                const parsedData = JSON.parse(wrapperJson.contents);
                 
-                <button 
-                  onClick={handleUpdateAllData}
-                  disabled={isLoading}
-                  class="flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/40 hover:border-emerald-400 text-emerald-400 px-5 py-2.5 rounded-xl font-bold text-xs tracking-wider transition-all active:scale-95 shadow-md"
-                >
-                  <svg class={`w-3.5 h-3.5 ${isLoading ? 'animate-spin' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 1121.253 8H18" />
-                  </svg>
-                  {isLoading ? "데이터 로딩 중..." : "오늘 날짜 데이터로 업데이트"}
-                </button>
-              </div>
+                if (parsedData.quoteResponse && parsedData.quoteResponse.result) {
+                  const liveItems = parsedData.quoteResponse.result;
+                  const nextStocks = { ...data.stocks };
+                  let liveVix = { ...data.vix };
+                  let liveWti = { ...data.wti };
+                  let liveFx = { ...data.fx };
 
-              {/* 매크로 3줄 요약 레이더 */}
-              <div class="bg-gradient-to-r from-[#0b1b32] to-[#081220] border border-blue-500/30 rounded-2xl p-5 mb-6 shadow-xl">
-                <h2 class="text-xs font-bold text-blue-400 tracking-widest uppercase mb-3 flex items-center gap-2">
-                  <span class="inline-block w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span>
-                  GLOBAL MACRO 3줄 요약 레이더
-                </h2>
-                <div class="space-y-3 text-[13px] text-slate-200 leading-relaxed font-medium">
-                  <div class="flex items-start gap-2.5 bg-[#040c14]/40
+                  liveItems.forEach(item => {
+                    const sym = item.symbol;
+                    if (sym === "^VIX") {
+                      liveVix.price = item.regularMarketPrice || liveVix.price;
+                      liveVix.pct = item.regularMarketChangePercent || liveVix.pct;
+                    } else if (sym === "CL=F") {
+                      liveWti.price = item.regularMarketPrice || liveWti.price;
+                      liveWti.pct = item.regularMarketChangePercent || liveWti.pct;
+                    } else if (sym === "USDKRW=X") {
+                      liveFx.price = item.regularMarketPrice || liveFx.price;
+                      liveFx.pct = item.regularMarketChangePercent || liveFx.pct;
+                    } else if (sym === "NQ=F") {
+                      nextStocks["NASDAQ"].price = item.regularMarketPrice || nextStocks["NASDAQ"].price;
+                      nextStocks["NASDAQ"].pct = item.regularMarketChangePercent || nextStocks["NASDAQ"].pct;
+                    } else if (sym === "ES=F") {
+                      nextStocks["SP500"].price = item.regularMarketPrice || nextStocks["SP500"].price;
+                      nextStocks["SP500"].pct = item.regularMarketChangePercent || nextStocks["SP500"].pct;
+                    } else if (sym === "^KS11") {
+                      nextStocks["KOSPI"].price = item.regularMarketPrice || nextStocks["KOSPI"].price;
+                      nextStocks["KOSPI"].pct = item.regularMarketChangePercent || nextStocks["KOSPI"].pct;
+                    } else {
+                      const cleanTicker = sym.split(".")[0];
+                      if (nextStocks[cleanTicker]) {
+                        nextStocks[cleanTicker].price = item.regularMarketPrice || nextStocks[cleanTicker].price;
+                        nextStocks[cleanTicker].pct = item.regularMarketChangePercent || nextStocks[cleanTicker].pct;
+                      }
+                    }
+                  });
+
+                  const timeNow = new Date();
+                  const formattedTime = `${timeNow.getFullYear()}. ${timeNow.getMonth()+1}. ${timeNow.getDate()} ${timeNow.getHours()}:${String(timeNow.getMinutes()).padStart(2,'0')}`;
+
+                  setData(prev => ({
+                    ...prev,
+                    lastUpdated: `${formattedTime} (실시간 마켓 데이터 동기화 완료)`,
+                    stocks: nextStocks,
+                    vix: liveVix,
+                    wti: liveWti,
+                    fx: live
