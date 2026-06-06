@@ -13,57 +13,51 @@
 </head>
 <body class="text-slate-200 antialiased">
     <div class="max-w-4xl mx-auto p-4 min-h-screen pb-16">
-        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center border-b border-slate-800 pb-5 mb-6 gap-4">
+        <div class="flex flex-col sm:flex-row justify-between items-start border-b border-slate-800 pb-5 mb-6 gap-4">
             <div>
-                <h1 class="text-xl font-black tracking-tight text-white flex items-center gap-2">📊 <span>Macro & Stock Live Dashboard</span></h1>
-                <p class="text-xs text-slate-400 mt-1">최종 데이터 동기화: <span id="sync-time" class="text-emerald-400 font-mono font-bold">대기 중...</span></p>
+                <h1 class="text-xl font-black text-white">📊 Macro & Stock Live Dashboard</h1>
+                <p class="text-xs text-slate-400 mt-1">최종 데이터: <span id="sync-time" class="text-emerald-400 font-mono font-bold">대기 중...</span></p>
             </div>
-            <button onclick="updateDashboard()" class="w-full sm:w-auto bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold px-5 py-3 rounded-xl transition-all flex items-center justify-center gap-2 cursor-pointer">
-                실시간 데이터 연동 업데이트
-            </button>
+            <button onclick="updateDashboard()" class="bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold px-5 py-3 rounded-xl cursor-pointer">실시간 데이터 동기화</button>
         </div>
 
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
-            <div class="bg-[#0b1523] border border-slate-800 rounded-xl p-3.5">
-                <span class="text-[11px] font-bold text-slate-400">삼성전자</span>
-                <div id="val-samsung" class="text-base font-mono font-bold text-white mt-1.5">--</div>
-                <span id="chg-samsung" class="text-[11px] font-mono mt-1">--</span>
-            </div>
-            <div class="bg-[#0b1523] border border-slate-800 rounded-xl p-3.5">
-                <span class="text-[11px] font-bold text-slate-400">SK하이닉스</span>
-                <div id="val-hynix" class="text-base font-mono font-bold text-white mt-1.5">--</div>
-                <span id="chg-hynix" class="text-[11px] font-mono mt-1">--</span>
-            </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6" id="ticker-grid">
+            <div class="bg-[#0b1523] border border-slate-800 rounded-xl p-3.5"><span class="text-[11px] font-bold text-slate-400">나스닥 종합</span><div id="val-nasdaq" class="text-base font-bold text-white">--</div><span id="chg-nasdaq" class="text-[11px]">--</span></div>
+            <div class="bg-[#0b1523] border border-slate-800 rounded-xl p-3.5"><span class="text-[11px] font-bold text-slate-400">삼성전자</span><div id="val-samsung" class="text-base font-bold text-white">--</div><span id="chg-samsung" class="text-[11px]">--</span></div>
+            <div class="bg-[#0b1523] border border-slate-800 rounded-xl p-3.5"><span class="text-[11px] font-bold text-slate-400">SK하이닉스</span><div id="val-hynix" class="text-base font-bold text-white">--</div><span id="chg-hynix" class="text-[11px]">--</span></div>
+            <div class="bg-[#0b1523] border border-slate-800 rounded-xl p-3.5"><span class="text-[11px] font-bold text-slate-400">엔비디아</span><div id="val-nvda" class="text-base font-bold text-white">--</div><span id="chg-nvda" class="text-[11px]">--</span></div>
         </div>
-        
+
+        <div id="risk-radar-box" class="bg-[#0b1b32] border border-blue-500/20 rounded-2xl p-5 mb-6">
+            <h2 class="text-xs font-bold text-blue-400 mb-3">실시간 매크로 분석</h2>
+            <div id="dynamic-commentary" class="space-y-2 text-[13px]"></div>
+            <div id="dynamic-news-links" class="mt-5 pt-4 border-t border-slate-800"></div>
         </div>
+    </div>
 
     <script>
-        // UI 업데이트 함수
-        function setUI(valId, chgId, currentVal, changePercent) {
-            document.getElementById(valId).innerText = currentVal.toLocaleString();
-            const targetEl = document.getElementById(chgId);
-            targetEl.innerText = `${changePercent >= 0 ? '▲ +' : '▼ '}${Math.abs(changePercent).toFixed(2)}%`;
-            targetEl.className = `text-[11px] font-mono mt-1 font-bold ${changePercent >= 0 ? 'text-emerald-400' : 'text-rose-500'}`;
-        }
-
-        // 핵심 수정: API 호출 함수
         async function updateDashboard() {
-            document.getElementById("sync-time").innerText = "연동 중...";
+            document.getElementById("sync-time").innerText = "불러오는 중...";
             try {
-                // 1. 서버리스 함수(api/stock.js) 호출
+                // api/stock.js에서 전체 데이터를 한 번에 받아옴
                 const response = await fetch('/api/stock');
                 const data = await response.json();
 
-                // 2. 서버에서 받은 데이터로 UI 갱신 (하드코딩 삭제)
-                setUI("val-samsung", "chg-samsung", data.samsung, data.samsungChg || 0);
-                setUI("val-hynix", "chg-hynix", data.hynix, data.hynixChg || 0);
+                // UI 매핑 함수 (예시)
+                updateUI("val-nasdaq", "chg-nasdaq", data.nasdaq, data.nasdaqChg);
+                updateUI("val-samsung", "chg-samsung", data.samsung, data.samsungChg);
+                updateUI("val-hynix", "chg-hynix", data.hynix, data.hynixChg);
+                updateUI("val-nvda", "chg-nvda", data.nvda, data.nvdaChg);
 
                 document.getElementById("sync-time").innerText = new Date().toLocaleTimeString('ko-KR');
             } catch (err) {
-                console.error("데이터 연동 실패:", err);
                 document.getElementById("sync-time").innerText = "연동 실패";
             }
+        }
+
+        function updateUI(valId, chgId, val, chg) {
+            document.getElementById(valId).innerText = val.toLocaleString();
+            document.getElementById(chgId).innerText = `${chg > 0 ? '▲' : '▼'} ${Math.abs(chg)}%`;
         }
 
         document.addEventListener("DOMContentLoaded", updateDashboard);
