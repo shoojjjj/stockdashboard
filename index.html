@@ -27,12 +27,12 @@
           return;
         }
 
-        const { useState, useEffect } = React;
+        const { useState } = React;
         const { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid } = Recharts;
 
-        // 대시보드 데이터 기초 셋팅
+        // 초기 기초 데이터 정의
         const INITIAL_STATE = {
-          lastUpdated: "2026. 6. 6. (실시간 데이터 동기화 완료)",
+          lastUpdated: "2026. 6. 6. (기본 데이터 로드 완료)",
           vix: { price: 14.20, pct: -1.25 },
           wti: { price: 82.50, pct: 1.84 },
           fx: { price: 1375.50, pct: 0.32 },
@@ -116,7 +116,7 @@
                 }));
               }
             } catch (err) {
-              console.warn("API 딜레이로 백업 모드 가동", err);
+              console.warn("API 호출 지연으로 스냅샷 데이터 유지", err);
             } finally {
               setIsLoading(false);
             }
@@ -125,13 +125,14 @@
           const currentNet = data.liquidity.net[data.liquidity.net.length - 1].value;
           const currentMmf = data.liquidity.mmf[data.liquidity.mmf.length - 1].value;
 
-          // 🎯 [Unexpected token 에러 수정] 안전한 괄호 처리식으로 토큰 파싱 완전 방어
-          const isQeActive = Boolean(currentNet > 5.5);
+          // 🎯 [핵심 버그 수정]: Babel 컴파일러 오류 방지를 위해 부등호(>) 대신 안전한 내장 함수 활용
+          // 5.5T 기준을 잡기 위해 대소비교를 Math.max로 안전하게 우회 처리했습니다.
+          const isQeActive = Boolean(Math.max(currentNet, 5.5) === currentNet);
 
           return (
             <div class="max-w-4xl mx-auto p-4 min-h-screen pb-16">
               
-              {/* 타이틀 바 */}
+              {/* 상단 타이틀 */}
               <div class="flex flex-col sm:flex-row justify-between items-center border-b border-slate-800 pb-5 mb-6 gap-4">
                 <div>
                   <h1 class="text-xl font-extrabold tracking-tight text-white flex items-center gap-2">
@@ -152,7 +153,7 @@
                 </button>
               </div>
 
-              {/* 글로벌 매크로 3줄 요약 패널 */}
+              {/* 매크로 3줄 요약 레이더 */}
               <div class="bg-gradient-to-r from-[#0b1b32] to-[#081220] border border-blue-500/30 rounded-2xl p-5 mb-6 shadow-xl">
                 <h2 class="text-xs font-bold text-blue-400 tracking-widest uppercase mb-3 flex items-center gap-2">
                   <span class="inline-block w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span>
@@ -162,19 +163,19 @@
                   <div class="flex items-start gap-2.5 bg-[#040c14]/40 p-2.5 rounded-lg border border-slate-800/60">
                     <span class="text-base mt-0.5">💥</span>
                     <p>
-                      <strong class="text-amber-400">지정학적 리스크 충격:</strong> 이란-미국 간 지정학적 전쟁 위기 고조로 인해 <strong class="text-white">국제유가(${data.wti.price.toFixed(2)})</strong>와 <strong class="text-white">원/달러 환율({data.fx.price.toLocaleString()}원)</strong>이 동반 상승하며 자산 시장 전반의 투자 심리를 강하게 압박하고 있습니다.
+                      <strong class="text-amber-400">지정학적 리스크 충격:</strong> 중동 내 지정학적 갈등의 여파로 <strong class="text-white">국제유가(${data.wti.price.toFixed(2)})</strong>와 <strong class="text-white">원/달러 환율({data.fx.price.toLocaleString()}원)</strong>이 높은 수준을 보이며 글로벌 자산 시장 전반의 변동성을 키우고 있습니다.
                     </p>
                   </div>
                   <div class="flex items-start gap-2.5 bg-[#040c14]/40 p-2.5 rounded-lg border border-slate-800/60">
                     <span class="text-base mt-0.5">⚠️</span>
                     <p>
-                      <strong class="text-rose-400">성장주 멀티플 훼손:</strong> 실질 자금 공급선(Net Liquidity) 상단이 긴축 여파로 제한된 상태에서 리스크가 겹치자, 그간 벨류에이션 부담이 컸던 <strong class="text-white">엔비디아({data.stocks["NVDA"].pct}%)</strong>와 <strong class="text-white">테슬라({data.stocks["TSLA"].pct}%)</strong> 등 미장 핵심 주도주 위주로 차익실현 매물이 강하게 출회되었습니다.
+                      <strong class="text-rose-400">성장주 멀티플 변동:</strong> 실질 유동성(Net Liquidity) 공급 상단이 제한적인 횡보 국면을 보이는 와중에 매크로 불확실성이 겹치자, 밸류에이션 부담이 있던 <strong class="text-white">엔비디아({data.stocks["NVDA"].pct}%)</strong>와 <strong class="text-white">테슬라({data.stocks["TSLA"].pct}%)</strong> 등 주요 성장주 위주로 매물이 심화되었습니다.
                     </p>
                   </div>
                   <div class="flex items-start gap-2.5 bg-[#040c14]/40 p-2.5 rounded-lg border border-slate-800/60">
                     <span class="text-base mt-0.5">🔋</span>
                     <p>
-                      <strong class="text-emerald-400">대기 자금 수급 대기:</strong> 시중 유휴 자금인 <strong class="text-white">MMF 잔액이 ${currentMmf.toFixed(2)}T</strong>로 최고조에 달해 있습니다. 중동 불안이 진정되고 환율이 안정될 경우, 이 거대한 대기성 자금이 국장 반도체(<strong class="text-emerald-400">삼성전자, 하이닉스</strong>) 및 미장 테크주로 재유입되며 강력한 반등 에너지를 만들어낼 준비가 되어 있습니다.
+                      <strong class="text-emerald-400">매수 대기 자금 상존:</strong> 시중의 유휴 투자 자금 성격인 <strong class="text-white">MMF 잔액이 ${currentMmf.toFixed(2)}T</strong> 규모로 역대 최고 수준을 유지하고 있어, 거시경제 리스크 완화 시 반도체 대형주(<strong class="text-emerald-400">삼성전자, SK하이닉스</strong>) 및 기술주로 유입될 에너지가 충분합니다.
                     </p>
                   </div>
                 </div>
@@ -196,7 +197,7 @@
                 })}
               </div>
 
-              {/* 매크로 위험 보드 */}
+              {/* 위험 지표 보드 */}
               <div class="grid grid-cols-3 gap-3 mb-6">
                 <div class="bg-[#0b1523] border border-slate-800 rounded-xl p-3">
                   <span class="text-[10px] font-bold text-orange-400">⚠️ CBOE VIX</span>
@@ -212,7 +213,7 @@
                 </div>
               </div>
 
-              {/* 핵심 종목 현황 */}
+              {/* 핵심 종목 보드 */}
               <div class="mb-6">
                 <h2 class="text-xs font-bold text-slate-400 tracking-wider uppercase mb-3 flex items-center gap-1.5">
                   <span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
@@ -221,7 +222,7 @@
                 <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
                   {["NVDA", "TSLA", "005930", "000660"].map(key => {
                     const item = data.stocks[key];
-                    const isPlus = item.pct >= 0;
+                    const isPlus = Boolean(item.pct >= 0);
                     return (
                       <div key={key} class={`rounded-xl p-3.5 border transition-colors ${isPlus ? 'bg-emerald-950/20 border-emerald-500/20' : 'bg-rose-950/20 border-rose-500/20'}`}>
                         <span class="text-[11px] font-bold text-slate-300">{item.name}</span>
@@ -233,7 +234,7 @@
                 </div>
               </div>
 
-              {/* 실시간 Net Liquidity 인덱스 바 */}
+              {/* 유동성 상태 인덱스 */}
               <div class="bg-[#0b1523] border border-slate-800 rounded-xl p-4 mb-6">
                 <div class="flex justify-between items-center mb-1">
                   <span class="text-xs font-bold text-slate-400">REALTIME NET LIQUIDITY INDEX</span>
@@ -243,10 +244,77 @@
                 </div>
                 <div class="text-2xl font-mono font-black text-emerald-400">${currentNet.toFixed(2)}T</div>
                 <p class="text-[11px] text-slate-400 mt-2 leading-relaxed">
-                  📌 <strong class="text-slate-300">유동성 분석 매크로 코멘트:</strong> 연준의 실질 통화 유동성이 확장 국면에 있어 기술주 및 시총 상위 자산에 우호적인 환경입니다. 해당 수치는 미 연준 총자산에서 정부 잔고와 역레포 파킹 자금을 차감하여 계산된 수치로 대형 기술주들의 주가 밸류에이션 지지력과 직결됩니다.
+                  📌 <strong class="text-slate-300">유동성 분석 매크로 코멘트:</strong> 연준의 실질 유동성이 대형 기술주들의 주가 지지선 역할을 구축하고 있습니다. 본 지표는 연준 총자산에서 정부당국 재정 잔고(TGA)와 역레포(RRP) 흡수금을 차감하여 산출한 실제 유통 자금 총량입니다.
                 </p>
               </div>
 
-              {/* 시계열 차트 섹션 */}
+              {/* 시계열 챠트 차트 리포트 */}
               <div class="space-y-4">
-                <h2 class="text-xs font-bold text-slate-400 tracking-wider
+                <h2 class="text-xs font-bold text-slate-400 tracking-wider uppercase mb-1">유동성 자금 지표 추이 리포트</h2>
+                
+                {[
+                  {
+                    title: "실질 순 유동성 총량 (Net Liquidity) ($T)",
+                    curValue: `$${currentNet.toFixed(3)}T`,
+                    data: data.liquidity.net,
+                    color: "#00e87a",
+                    domain: [5.4, 6.0],
+                    definition: "시중에서 유통되는 실질 총 통화량 지표입니다.",
+                    qeEffect: "성장주 및 테크 기업들의 글로벌 밸류에이션 하방 지지대 역할을 수행합니다.",
+                    qtEffect: "수치 둔화 시 유동성 경색 우려로 위험 자산 시장이 위축될 수 있습니다."
+                  },
+                  {
+                    title: "미국 MMF 총잔액 변동 추이 (Money Market Funds) ($T)",
+                    curValue: `$${currentMmf.toFixed(2)}T`,
+                    data: data.liquidity.mmf,
+                    color: "#ffc830",
+                    domain: [6.2, 6.7],
+                    definition: "투자 대기 성격으로 단기 금융 상품에 파킹된 자금 규모입니다.",
+                    qeEffect: "위험자산 선호 심리가 살아나 증시로 유입될 때 강력한 랠리의 기반이 됩니다.",
+                    qtEffect: "안전 자산 선호가 장기화되거나 고금리 유지 시 자금이 묶여 수급이 둔화됩니다."
+                  }
+                ].map((item) => (
+                  <div key={item.title} class="bg-[#0b1523] border border-slate-800 rounded-xl p-5 shadow-sm">
+                    <div class="flex justify-between items-start mb-3">
+                      <h3 class="text-xs font-bold text-white flex items-center gap-2">
+                        <span class="w-1.5 h-3 rounded-full" style={{ backgroundColor: item.color }}></span>
+                        {item.title}
+                      </h3>
+                      <div class="text-sm font-mono font-black" style={{ color: item.color }}>{item.curValue}</div>
+                    </div>
+
+                    <div class="bg-[#040c14]/70 border border-slate-800/60 rounded-lg p-3 text-[11px] text-slate-300 leading-relaxed mb-4 space-y-1">
+                      <div>💡 <span class="text-slate-400 font-semibold">지표 개념:</span> {item.definition}</div>
+                      <div class="flex flex-col sm:flex-row gap-2 mt-2 pt-2 border-t border-slate-800/40 text-[10px]">
+                        <div class="text-emerald-400 flex-1">📈 <span class="text-slate-300">확장 효과:</span> {item.qeEffect}</div>
+                        <div class="text-rose-400 flex-1">📉 <span class="text-slate-300">긴축 효과:</span> {item.qtEffect}</div>
+                      </div>
+                    </div>
+
+                    <div class="w-100% h-[120px]">
+                      <ResponsiveContainer width="100%" height="100%">
+                        <LineChart data={item.data} margin={{ top: 5, right: 10, left: -25, bottom: 0 }}>
+                          <CartesianGrid strokeDasharray="3 3" stroke="#14243b" vertical={false} />
+                          <XAxis dataKey="date" tick={{ fill: "#627d98", fontSize: 9 }} tickLine={false} axisLine={false} />
+                          <YAxis domain={item.domain} tick={{ fill: "#627d98", fontSize: 9 }} tickLine={false} axisLine={false} />
+                          <Tooltip contentStyle={{ backgroundColor: "#122035", borderColor: "#1e314d", borderRadius: 8, fontSize: 10 }} />
+                          <Line type="monotone" dataKey="value" stroke={item.color} strokeWidth={2.5} dot={{ r: 3, fill: item.color }} isAnimationActive={false} />
+                        </LineChart>
+                      </ResponsiveContainer>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+            </div>
+          );
+        }
+
+        ReactDOM.createRoot(document.getElementById('root')).render(<Dashboard />);
+      };
+
+      if (document.readyState === "complete") { initDashboard(); }
+      else { window.addEventListener("load", initDashboard); }
+    </script>
+</body>
+</html>
