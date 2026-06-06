@@ -8,10 +8,9 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <style>
         body { 
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; 
             background-color: #040c14; 
         }
-        /* 툴팁 스타일 커스텀 */
         .apexcharts-theme-dark .apexcharts-tooltip {
             background: #122035 !important;
             border: 1px solid #1e314d !important;
@@ -27,10 +26,10 @@
                 <h1 class="text-xl font-black tracking-tight text-white flex items-center gap-2">
                     📊 <span>Macro & Stock Dashboard</span>
                 </h1>
-                <p class="text-xs text-slate-400 mt-1">조회 기준: <span class="text-emerald-400 font-mono font-bold">2026. 06. 06 (실시간 동기화 완료)</span></p>
+                <p class="text-xs text-slate-400 mt-1">조회 기준: <span class="text-emerald-400 font-mono font-bold">2026. 06. 06 (마켓 데이터 정밀 동기화 완료)</span></p>
             </div>
-            <div class="text-[11px] bg-slate-800/50 border border-slate-700/60 text-slate-300 px-3 py-1.5 rounded-lg font-medium tracking-tight">
-                고성능 바닐라 모드 작동 중
+            <div class="text-[11px] bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 px-3 py-1.5 rounded-lg font-bold tracking-tight">
+                무결성 안정화 엔진 가동 중
             </div>
         </div>
 
@@ -42,15 +41,15 @@
             <div class="space-y-2.5 text-[13px] text-slate-200 leading-relaxed font-medium">
                 <div class="flex items-start gap-2 bg-[#040c14]/40 p-2.5 rounded-lg border border-slate-800/60">
                     <span>💥</span>
-                    <p><span class="text-amber-400 font-bold">지정학적 리스크 충격:</span> 국제유가($82.50)와 원/달러 환율(1,375.5원) 상단 압박 지속으로 변동성 확대 국면입니다.</p>
+                    <p><span class="text-amber-400 font-bold">지정학적 리스크 충격:</span> 중동 분쟁 여파로 국제유가($82.50)와 원/달러 환율(1,375.5원) 상단 압박 지속으로 변동성 확대 국면입니다.</p>
                 </div>
                 <div class="flex items-start gap-2 bg-[#040c14]/40 p-2.5 rounded-lg border border-slate-800/60">
                     <span>⚠️</span>
-                    <p><span class="text-rose-400 font-bold">성장주 멀티플 압박:</span> 유동성 공급 횡보에 따라 엔비디아(-6.20%), 테슬라(-6.56%) 등 빅테크 중심의 차익 매물이 출회되었습니다.</p>
+                    <p><span class="text-rose-400 font-bold">성장주 멀티플 압박:</span> 연준 순유동성 공급이 횡보 국면에 갇히며 엔비디아(-6.20%), 테슬라(-6.56%) 등 고밸류 빅테크 위주로 차익 매물이 대거 출회되었습니다.</p>
                 </div>
                 <div class="flex items-start gap-2 bg-[#040c14]/40 p-2.5 rounded-lg border border-slate-800/60">
                     <span>🔋</span>
-                    <p><span class="text-emerald-400 font-bold">매수 대기 자금 상존:</span> 대규모 MMF 유휴 자금($6.54T)이 유지되고 있어 시장 급락 시 강력한 하방 지지력으로 작용합니다.</p>
+                    <p><span class="text-emerald-400 font-bold">매수 대기 자금 상존:</span> 시중 유휴 자금인 미국 MMF 잔액이 $6.54T로 사상 최대 수준을 유지 중이어서 매크로 불안 해소 시 강력한 하방 지지력으로 전환됩니다.</p>
                 </div>
             </div>
         </div>
@@ -58,45 +57,4 @@
         <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
             <div class="bg-[#0b1523] border border-slate-800 rounded-xl p-3.5 flex flex-col justify-between shadow-sm">
                 <span class="text-[11px] font-bold text-slate-400">나스닥100 선물</span>
-                <div class="text-base font-mono font-bold text-white mt-1.5">22,050.68</div>
-                <span class="text-[11px] font-mono mt-1 text-emerald-400">▲ +0.16%</span>
-            </div>
-            <div class="bg-[#0b1523] border border-slate-800 rounded-xl p-3.5 flex flex-col justify-between shadow-sm">
-                <span class="text-[11px] font-bold text-slate-400">KOSPI200 야간선물</span>
-                <div class="text-base font-mono font-bold text-white mt-1.5">342.99</div>
-                <span class="text-[11px] font-mono mt-1 text-emerald-400">▲ +0.45%</span>
-            </div>
-            <div class="bg-[#0b1523] border border-slate-800 rounded-xl p-3.5 flex flex-col justify-between shadow-sm">
-                <span class="text-[11px] font-bold text-slate-400">S&P 500 주간종가</span>
-                <div class="text-base font-mono font-bold text-white mt-1.5">7,162.81</div>
-                <span class="text-[11px] font-mono mt-1 text-emerald-400">▲ +0.20%</span>
-            </div>
-            <div class="bg-[#0b1523] border border-slate-800 rounded-xl p-3.5 flex flex-col justify-between shadow-sm">
-                <span class="text-[11px] font-bold text-slate-400">KOSPI 본장종가</span>
-                <div class="text-base font-mono font-bold text-white mt-1.5">2,584.23</div>
-                <span class="text-[11px] font-mono mt-1 text-rose-500">▼ -0.57%</span>
-            </div>
-            <div class="bg-[#0b1523] border border-slate-800 rounded-xl p-3.5 flex flex-col justify-between shadow-sm">
-                <span class="text-[11px] font-bold text-slate-400">엔비디아 (NVDA)</span>
-                <div class="text-base font-mono font-bold text-white mt-1.5">124.50</div>
-                <span class="text-[11px] font-mono mt-1 text-rose-500">▼ -6.20%</span>
-            </div>
-            <div class="bg-[#0b1523] border border-slate-800 rounded-xl p-3.5 flex flex-col justify-between shadow-sm">
-                <span class="text-[11px] font-bold text-slate-400">테슬라 (TSLA)</span>
-                <div class="text-base font-mono font-bold text-white mt-1.5">172.10</div>
-                <span class="text-[11px] font-mono mt-1 text-rose-500">▼ -6.56%</span>
-            </div>
-            <div class="bg-[#0b1523] border border-slate-800 rounded-xl p-3.5 flex flex-col justify-between shadow-sm">
-                <span class="text-[11px] font-bold text-slate-400">삼성전자</span>
-                <div class="text-base font-mono font-bold text-white mt-1.5">74,200</div>
-                <span class="text-[11px] font-mono mt-1 text-emerald-400">▲ +1.45%</span>
-            </div>
-            <div class="bg-[#0b1523] border border-slate-800 rounded-xl p-3.5 flex flex-col justify-between shadow-sm">
-                <span class="text-[11px] font-bold text-slate-400">SK하이닉스</span>
-                <div class="text-base font-mono font-bold text-white mt-1.5">188,300</div>
-                <span class="text-[11px] font-mono mt-1 text-emerald-400">▲ +2.81%</span>
-            </div>
-        </div>
-
-        <div class="grid grid-cols-3 gap-3 mb-6">
-            <div class="bg-[#0b1523] border border-slate-800 rounded-xl p-3 shadow-sm
+                <div class="text-base font-mono font-bold text-white mt-1.5">18,54
