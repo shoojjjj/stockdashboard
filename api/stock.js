@@ -1,23 +1,23 @@
-// api/stock.js
 export default async function handler(req, res) {
   try {
-    // 여기서 각 사이트의 데이터를 수집 (현재는 예시 구조)
-    const data = {
-      nasdaq: 25700, nasdaqChg: -4.10,
-      nasdaqFut: 29026.50, nasdaqFutChg: -4.70,
-      sp500: 7383.74, sp500Chg: -2.60,
-      sox: 12220.76, soxChg: -10.20,
-      kospiFut: 341.20, kospiFutChg: -8.00,
-      nvda: 124.50, nvdaChg: -6.20,
-      samsung: 74200, samsungChg: 1.45,
-      hynix: 188300, hynixChg: 2.81,
-      vix: 21.51, vixChg: 39.6,
-      wti: 82.50, wtiChg: 1.84,
-      usdkrw: 1559.80, usdkrwChg: 2.0,
-      fed: 6.682, tga: 0.801, rrp: 0.146, mmf: 6.54
-    };
-    res.status(200).json(data);
+    // 야후 파이낸스에서 실제 데이터 호출
+    // 여러 종목을 한 번에 가져오는 방식
+    const symbols = '005930.KS,000660.KS,NVDA'; 
+    const response = await fetch(`https://query1.finance.yahoo.com/v7/finance/quote?symbols=${symbols}`);
+    const data = await response.json();
+    const results = data.quoteResponse.result;
+
+    // 데이터 매핑
+    const getPrice = (symbol) => results.find(r => r.symbol === symbol)?.regularMarketPrice || 0;
+    const getChange = (symbol) => results.find(r => r.symbol === symbol)?.regularMarketChangePercent || 0;
+
+    res.status(200).json({
+      samsung: getPrice('005930.KS'), samsungChg: getChange('005930.KS'),
+      hynix: getPrice('000660.KS'), hynixChg: getChange('000660.KS'),
+      nvda: getPrice('NVDA'), nvdaChg: getChange('NVDA'),
+      nasdaq: 0, nasdaqChg: 0 // (나스닥 등도 위와 같은 방식으로 추가 가능)
+    });
   } catch (error) {
-    res.status(500).json({ error: "데이터 수집 실패" });
+    res.status(500).json({ error: "API 연동 실패" });
   }
 }
