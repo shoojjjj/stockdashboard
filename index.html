@@ -258,33 +258,23 @@
         }
 
         // 실시간 업데이트 컨트롤러
+// index.html 내부의 기존 updateDashboard()를 아래 코드로 교체하세요
 async function updateDashboard() {
-    document.getElementById("sync-time").innerText = "연동 중...";
+    document.getElementById("sync-time").innerText = "동기화 중...";
     try {
         const response = await fetch('/api/stock');
         const data = await response.json();
 
-        // 기존 뷰 로직 전체 유지
-        setUI("val-nasdaq", "chg-nasdaq", data.nasdaq, data.nasdaqChg);
-        setUI("val-nasdaq-fut", "chg-nasdaq-fut", data.nasdaqFut, data.nasdaqFutChg);
-        setUI("val-sp500", "chg-sp500", data.sp500, data.sp500Chg);
-        setUI("val-sox", "chg-sox", data.sox, data.soxChg);
-        setUI("val-kospi-fut", "chg-kospi-fut", data.kospiFut, data.kospiFutChg);
-        setUI("val-nvda", "chg-nvda", data.nvda, data.nvdaChg);
-        setUI("val-samsung", "chg-samsung", data.samsung, data.samsungChg);
-        setUI("val-hynix", "chg-hynix", data.hynix, data.hynixChg);
-
-        // 하단 지표 및 리퀴디티
-        document.getElementById("val-vix").innerText = `${data.vix.toFixed(2)} (${data.vixChg > 0 ? '+' : ''}${data.vixChg.toFixed(1)}%)`;
-        document.getElementById("val-wti").innerText = `$${data.wti.toFixed(2)} (${data.wtiChg > 0 ? '+' : ''}${data.wtiChg.toFixed(1)}%)`;
-        document.getElementById("val-usdkrw").innerText = `${data.usdkrw.toFixed(1)}원`;
-
-        const calculatedNet = data.fed - data.tga - data.rrp;
-        document.getElementById("val-net-liquidity").innerText = `$${calculatedNet.toFixed(3)}T`;
+        // UI에 데이터 적용
+        document.getElementById("val-samsung").innerText = data.samsung.toLocaleString();
+        document.getElementById("chg-samsung").innerText = `${data.samsungChg.toFixed(2)}%`;
+        
+        document.getElementById("val-hynix").innerText = data.hynix.toLocaleString();
+        document.getElementById("chg-hynix").innerText = `${data.hynixChg.toFixed(2)}%`;
+        
+        document.getElementById("val-nvda").innerText = data.nvda.toFixed(2);
         
         document.getElementById("sync-time").innerText = new Date().toLocaleTimeString('ko-KR');
-        generateDynamicIntelligence(data); // 기존 뉴스/코멘트 로직도 데이터 기반으로 작동
-
     } catch (err) {
         document.getElementById("sync-time").innerText = "연동 실패";
     }
