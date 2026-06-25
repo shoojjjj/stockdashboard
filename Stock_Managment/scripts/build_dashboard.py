@@ -244,6 +244,12 @@ def build_today_summary(latest_signal: dict | None) -> dict:
 
 
 def main() -> None:
+    archive_ok = SIGNAL_DIR.exists() or BRIEFING_DIR.exists()
+    if not archive_ok and OUTPUT.exists():
+        print(f"Archive not on this machine — keeping existing {OUTPUT}")
+        print(f"  (signals in file: check locally)")
+        return
+
     signal_files = sorted(SIGNAL_DIR.glob("신호판_*.md")) if SIGNAL_DIR.exists() else []
     signals = [parse_signal_board(p) for p in signal_files]
     latest = signals[-1] if signals else None
