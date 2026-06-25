@@ -1,0 +1,487 @@
+{
+  "generatedAt": "2026-06-25T12:38:49.252355+00:00",
+  "archivePath": "C:\\Users\\JEON\\Desktop\\아카이브",
+  "today": {
+    "headline": "소수몽키 AI 인프라 신호 강함(S3 3건). NVDA/AVGO/DRAM/MU/MSFT 1차 충원 방향 유지. ARM은 급등으로 2차 조건부.",
+    "bullets": [
+      "소수몽키 AI 인프라 신호 강함(S3 3건). NVDA/AVGO/DRAM/MU/MSFT 1차 충원 방향 유지. ARM은 급등으로 2차 조건부."
+    ],
+    "action": "조건부 실행 검토 — 추격 매수 금지, 눌림/재지지 조건 확인 후 진행"
+  },
+  "currentPan": {
+    "ready": true,
+    "content": "# 현재판\n\n> 사용자가 먼저 보는 합산 현재판\n> 갱신: 2026-06-01\n\n## 오늘 한 줄\n\n소수몽키 AI 인프라 신호 강함(S3 3건). NVDA/AVGO/DRAM/MU/MSFT 1차 충원 방향 유지. ARM은 급등으로 2차 조건부.\n\n## 권장 행동\n\n**조건부 실행 검토** — 추격 매수 금지, 눌림/재지지 조건 확인 후 진행\n\n## 에이전트 상태\n\n| 에이전트 | 상태 | 최신 입력 |\n|----------|------|-----------|\n| 소수몽키 | ✅ | 신호판 2026-06-01 |\n| 자산제곱 | ✅ | 이번주 실행판 |\n| 포트폴리오 | ✅ | 실제 보유현황 |\n| 토론 중재 | ✅ | 오늘 매매 회의 |\n\n## 바로 볼 문서\n\n- [실제 보유현황](포트폴리오_브리핑/00_현황/실제_보유현황.md)\n- [이번주 실행판](자산제곱_브리핑/00_운용판단/이번주_실행판.md)\n- [오늘 매매 회의](토론_브리핑/00_오늘매매/오늘_매매_회의.md)\n- [소수몽키 신호판](../0_주식_에이전트/소수몽키_에이전트/03_신호_태그화/신호판/신호판_2026-06-01.md)\n"
+  },
+  "sosumonkeyReport": {
+    "ready": true,
+    "content": "# 소수몽키 일일보고 2026-06-01\n\n> 기준 원천: 신호판 2026-06-01\n> 핵심: AI 인프라 주도장 확산, ARM 부상, 메모리 강세, SW 반격 시작\n\n## 오늘 핵심 3줄\n\n1. GTC 이후 AI 인프라가 메모리·ARM·서버·데이터센터로 확산 중 (SM-S3)\n2. ARM이 엔비디아 PC칩 수혜주로 부상 — 단, 급등으로 추격 금지 (SM-S3)\n3. SW(IGV) 200일선 복귀 — MSFT 반격 신호 (SM-S2)\n\n## 반복 테마\n\n- AI 인프라 순환: 메모리 → ARM/CPU → 서버 → DC → SW\n- 데이터센터 중소형 NBIS/CRWV 강세 지속\n\n## 포트폴리오 시사점\n\n1차 충원 NVDA/AVGO/DRAM/MU/MSFT 정합. ARM은 2차 조건부. PLTR 추가 보류.\n\n## 다음 확인\n\n- IGV 200일선 유지 여부\n- ARM 눌림 구간 형성 여부\n- NVDA 2차 지지 확인\n"
+  },
+  "latestSignalDate": "2026-06-01",
+  "signals": [
+    {
+      "date": "2026-05-30",
+      "file": "신호판_2026-05-30.md",
+      "meta": {
+        "기준 원천": "`소수몽키/Telegram Desktop/ChatExport_2026-05-30`",
+        "사용 산출물": "원천 인덱스 전체, 최근 3일 인덱스, OCR 샘플 12장",
+        "판독 범위": "2026-05-28 ~ 2026-05-30"
+      },
+      "summary": [
+        {
+          "grade": "SM-S3",
+          "signal": "AI 인프라가 서버, 메모리, CPU, 맞춤형 반도체, 데이터센터로 확산",
+          "tags": "종목, ETF, 섹터, 실적",
+          "evidence": "`message3364`, `message3366`, `message3370`, `message3403`, `message3406`, `message3412`, `message3415`, `message3434`"
+        },
+        {
+          "grade": "SM-S2",
+          "signal": "소외주 SW의 반등 시도",
+          "tags": "종목, 섹터, 실적",
+          "evidence": "`message3392`, `message3394`, `message3417`, `message3424`, `message3428`"
+        },
+        {
+          "grade": "SM-S2",
+          "signal": "드론, 우주, 방산은 정책 기대와 고변동 리스크가 함께 존재",
+          "tags": "ETF, 섹터, 정책, 리스크",
+          "evidence": "`message3284`, `message3288`, `message3291`, `message3292`, `message3335`, `message3387`, `message3390`, `message3425`, `message3436`"
+        },
+        {
+          "grade": "SM-S2",
+          "signal": "트럼프식 미국 전략자산 테마가 델, IBM, 드론, 로빈후드로 번짐",
+          "tags": "정책, 이벤트, 종목",
+          "evidence": "`message3275`, `message3284`, `message3381`, `message3383`, `message3419`, `message3420`"
+        },
+        {
+          "grade": "SM-S2",
+          "signal": "반도체 독주가 국가/ETF 단위로 확장",
+          "tags": "ETF, 섹터, 매크로",
+          "evidence": "`message3335`, `message3436`, `message3444`, OCR `photo_1778@30-05-2026_15-21-57.jpg`"
+        },
+        {
+          "grade": "SM-S1",
+          "signal": "소비 둔화와 부양 명분",
+          "tags": "매크로, 이벤트, 리스크",
+          "evidence": "`message3439`"
+        }
+      ],
+      "details": [],
+      "rebalancing": [],
+      "gradeDistribution": []
+    },
+    {
+      "date": "2026-05-31",
+      "file": "신호판_2026-05-31.md",
+      "meta": {
+        "기준 원천": "Telegram API `소수의견(26년 2분기)`",
+        "사용 산출물": "API 원천 인덱스, API 최근 3일 인덱스, OCR 샘플 11장",
+        "판독 범위": "2026-05-29 ~ 2026-05-31"
+      },
+      "summary": [
+        {
+          "grade": "SM-S3",
+          "signal": "AI 인프라 주도장이 메모리, CPU, 서버, 온디바이스 AI로 확장 지속",
+          "tags": "종목, ETF, 섹터, 이벤트",
+          "evidence": "`message3364`, `message3370`, `message3406`, `message3434`, `message3453`, `message3476`, `message3477`, `message3507`, `message3508`"
+        },
+        {
+          "grade": "SM-S2",
+          "signal": "소외주 SW 반격 가능성은 다음 주 MSFT/NVDA 행사에 연결",
+          "tags": "종목, 섹터, 이벤트",
+          "evidence": "`message3417`, `message3424`, `message3473`, `message3507`"
+        },
+        {
+          "grade": "SM-S2",
+          "signal": "트럼프 전략자산 테마가 IBM 양자와 드론으로 재점화",
+          "tags": "정책, 종목, ETF",
+          "evidence": "`message3381`, `message3419`, `message3502`, `message3504`, OCR `message3501`, OCR `message3503`"
+        },
+        {
+          "grade": "SM-S2",
+          "signal": "드론/우주/방산은 ETF 중심 관찰이 유지되나 이벤트 변동성이 큼",
+          "tags": "ETF, 섹터, 리스크",
+          "evidence": "`message3387`, `message3390`, `message3425`, `message3436`, `message3504`"
+        },
+        {
+          "grade": "SM-S2",
+          "signal": "6월 중순 이후 조정 재료가 별도 리스크 축으로 등장",
+          "tags": "매크로, 이벤트, 리스크",
+          "evidence": "`message3492`, `message3496`, `message3497`"
+        },
+        {
+          "grade": "SM-S1",
+          "signal": "소비 둔화와 정책 부양 명분은 배경 신호로 유지",
+          "tags": "매크로, 정책",
+          "evidence": "`message3439`"
+        }
+      ],
+      "details": [],
+      "rebalancing": [],
+      "gradeDistribution": []
+    },
+    {
+      "date": "2026-06-01",
+      "file": "신호판_2026-06-01.md",
+      "meta": {
+        "기준 원천": "Telegram API `소수의견(26년 2분기)`",
+        "사용 산출물": "API 원천 인덱스, OCR 샘플 16장",
+        "판독 범위": "2026-06-01"
+      },
+      "summary": [
+        {
+          "grade": "SM-S3",
+          "signal": "GTC 이후 AI 인프라 주도장이 더 넓어짐. 메모리, ARM, 서버, 데이터센터, 맞춤형 반도체가 동시 신고가/강세",
+          "tags": "종목, ETF, 섹터, 이벤트",
+          "evidence": "`message3530`, `message3535`, `message3541`, `message3551`, `message3558`, `message3559`, `message3560`, `message3575`, `message3577`, `message3582`, OCR `message3550`, OCR `message3581`"
+        },
+        {
+          "grade": "SM-S3",
+          "signal": "ARM이 엔비디아 신형 PC/노트북 칩의 직접 수혜주로 부상",
+          "tags": "종목, 이벤트",
+          "evidence": "`message3530`, `message3535`, `message3541`, `message3577`, OCR `message3543`"
+        },
+        {
+          "grade": "SM-S2",
+          "signal": "MSFT가 엔비디아 PC/AI 에이전트 흐름의 동반 수혜로 재부각",
+          "tags": "종목, 섹터, 이벤트",
+          "evidence": "`message3537`, `message3538`, `message3547`, `message3555`, `message3569`, `message3575`, OCR `message3546`"
+        },
+        {
+          "grade": "SM-S2",
+          "signal": "소외주 SW 반격이 IGV 200일선 복귀와 PLTR/MSFT/ORCL/NOW 강세로 확인",
+          "tags": "ETF, 종목, 기술적 흐름",
+          "evidence": "`message3555`, `message3569`, `message3571`, `message3573`, `message3575`, OCR `message3555`, OCR `message3568`, OCR `message3572`"
+        },
+        {
+          "grade": "SM-S2",
+          "signal": "데이터센터 중소형 `NBIS/CRWV` 강세 지속",
+          "tags": "종목, 섹터",
+          "evidence": "`message3558`, `message3580`, OCR `message3557`, OCR `message3578`"
+        },
+        {
+          "grade": "SM-S2",
+          "signal": "IBM 양자 제조/트럼프 테마가 신고가 돌파로 재점화",
+          "tags": "정책, 종목",
+          "evidence": "`message3549`, `message3565`, `message3571`, `message3575`, OCR `message3564`"
+        },
+        {
+          "grade": "SM-S1",
+          "signal": "한국·대만 반도체 주도국 ETF 신고가와 소프트뱅크 시총 1위는 글로벌 AI 자금 이동의 배경 신호",
+          "tags": "국가 ETF, 매크로, 섹터",
+          "evidence": "`message3533`, `message3554`, `message3562`, `message3563`, OCR `message3552`"
+        }
+      ],
+      "details": [],
+      "rebalancing": [
+        {
+          "target": "NVDA",
+          "impact": "1차 증액 방향 유지. 추가는 2차 조건 확인"
+        },
+        {
+          "target": "AVGO",
+          "impact": "맞춤형/네트워크칩 신고가 축으로 목표 4% 유지"
+        },
+        {
+          "target": "DRAM ETF/`MU",
+          "impact": "1층 메모리 비중 보강 정합. 급등 추격보다 눌림 재지지"
+        },
+        {
+          "target": "ARM",
+          "impact": "신호 강도 상향. 단, 당일 급등으로 2차 조건부 진입"
+        },
+        {
+          "target": "MSFT",
+          "impact": "3층 클라우드/AI PC 수혜로 1차 신규 정합"
+        },
+        {
+          "target": "PLTR",
+          "impact": "반격 신호는 확인. 이미 신규 진입했으므로 추가 보류"
+        },
+        {
+          "target": "CRWV/NBIS",
+          "impact": "데이터센터 강세 확인. 고위험 1% 옵션축 이상 확대 금지"
+        },
+        {
+          "target": "SLV/GDX/원자재 옵션",
+          "impact": "오늘 소수몽키 신호와 직접 관련 낮음. 정리 후보 유지"
+        }
+      ],
+      "gradeDistribution": []
+    }
+  ],
+  "telegramStats": [
+    {
+      "﻿date": "2026-05-16",
+      "messages": "11",
+      "text_messages": "7",
+      "photo_messages": "4",
+      "photo_links": "4",
+      "file_messages": "0",
+      "file_links": "0"
+    },
+    {
+      "﻿date": "2026-05-17",
+      "messages": "26",
+      "text_messages": "12",
+      "photo_messages": "14",
+      "photo_links": "14",
+      "file_messages": "0",
+      "file_links": "0"
+    },
+    {
+      "﻿date": "2026-05-18",
+      "messages": "27",
+      "text_messages": "16",
+      "photo_messages": "13",
+      "photo_links": "13",
+      "file_messages": "0",
+      "file_links": "0"
+    },
+    {
+      "﻿date": "2026-05-19",
+      "messages": "45",
+      "text_messages": "19",
+      "photo_messages": "28",
+      "photo_links": "28",
+      "file_messages": "0",
+      "file_links": "0"
+    },
+    {
+      "﻿date": "2026-05-20",
+      "messages": "51",
+      "text_messages": "22",
+      "photo_messages": "29",
+      "photo_links": "29",
+      "file_messages": "0",
+      "file_links": "0"
+    },
+    {
+      "﻿date": "2026-05-21",
+      "messages": "83",
+      "text_messages": "39",
+      "photo_messages": "46",
+      "photo_links": "46",
+      "file_messages": "1",
+      "file_links": "1"
+    },
+    {
+      "﻿date": "2026-05-22",
+      "messages": "94",
+      "text_messages": "47",
+      "photo_messages": "51",
+      "photo_links": "51",
+      "file_messages": "0",
+      "file_links": "0"
+    },
+    {
+      "﻿date": "2026-05-23",
+      "messages": "78",
+      "text_messages": "36",
+      "photo_messages": "41",
+      "photo_links": "41",
+      "file_messages": "1",
+      "file_links": "1"
+    },
+    {
+      "﻿date": "2026-05-24",
+      "messages": "12",
+      "text_messages": "5",
+      "photo_messages": "7",
+      "photo_links": "7",
+      "file_messages": "0",
+      "file_links": "0"
+    },
+    {
+      "﻿date": "2026-05-25",
+      "messages": "6",
+      "text_messages": "4",
+      "photo_messages": "2",
+      "photo_links": "2",
+      "file_messages": "0",
+      "file_links": "0"
+    },
+    {
+      "﻿date": "2026-05-26",
+      "messages": "35",
+      "text_messages": "17",
+      "photo_messages": "19",
+      "photo_links": "19",
+      "file_messages": "0",
+      "file_links": "0"
+    },
+    {
+      "﻿date": "2026-05-27",
+      "messages": "83",
+      "text_messages": "42",
+      "photo_messages": "44",
+      "photo_links": "44",
+      "file_messages": "0",
+      "file_links": "0"
+    },
+    {
+      "﻿date": "2026-05-28",
+      "messages": "88",
+      "text_messages": "42",
+      "photo_messages": "47",
+      "photo_links": "47",
+      "file_messages": "0",
+      "file_links": "0"
+    },
+    {
+      "﻿date": "2026-05-29",
+      "messages": "83",
+      "text_messages": "42",
+      "photo_messages": "43",
+      "photo_links": "43",
+      "file_messages": "0",
+      "file_links": "0"
+    },
+    {
+      "﻿date": "2026-05-30",
+      "messages": "92",
+      "text_messages": "46",
+      "photo_messages": "47",
+      "photo_links": "47",
+      "file_messages": "1",
+      "file_links": "1"
+    },
+    {
+      "﻿date": "2026-05-31",
+      "messages": "28",
+      "text_messages": "15",
+      "photo_messages": "14",
+      "photo_links": "14",
+      "file_messages": "0",
+      "file_links": "0"
+    },
+    {
+      "﻿date": "2026-06-01",
+      "messages": "54",
+      "text_messages": "27",
+      "photo_messages": "28",
+      "photo_links": "28",
+      "file_messages": "0",
+      "file_links": "0"
+    },
+    {
+      "﻿date": "2026-06-02",
+      "messages": "67",
+      "text_messages": "37",
+      "photo_messages": "33",
+      "photo_links": "33",
+      "file_messages": "0",
+      "file_links": "0"
+    },
+    {
+      "﻿date": "2026-06-03",
+      "messages": "37",
+      "text_messages": "18",
+      "photo_messages": "19",
+      "photo_links": "19",
+      "file_messages": "0",
+      "file_links": "0"
+    }
+  ],
+  "columns": [
+    {
+      "name": "기술적 분석 프로젝트",
+      "count": 2,
+      "samples": [
+        "기술적 분석 1강. 기술적 분석의 오해와 한계",
+        "기술적 분석 2강. 분석의 4대 축 가격, 시간, 구조, 유동성"
+      ]
+    },
+    {
+      "name": "시나리오",
+      "count": 86,
+      "samples": [
+        "10월 조정 시나리오 현실화!",
+        "2025.08.01 나스닥 차트 분석",
+        "2025년 하반기 대비 실전 포트폴리오! 트럼프의 강력한 주식 부양책과 진짜 투자 기회",
+        "2025년, 나는 시장이 쉽게 느껴졌다.",
+        "2027년 중국 대만 침공 시나리오와 투자 전략"
+      ]
+    },
+    {
+      "name": "시장 리포트",
+      "count": 12,
+      "samples": [
+        "10월 주요 금융 기관 리포트",
+        "11월 주요 금융 기관 리포트",
+        "1월 주요 금융 기관 리포트",
+        "2026년 대비 주요 금융 기관 리포트",
+        "7월 주요 금융 기관 리포트"
+      ]
+    },
+    {
+      "name": "자산네제곱 프로젝트",
+      "count": 7,
+      "samples": [
+        "당신에게 제 뇌를 드립니다",
+        "자산네제곱 1단계! 물고기 잡는 방법을 배웠다고 !끝이 아니다!",
+        "자산네제곱 2단계! 정보는 축적이 아니라 연결이다",
+        "자산네제곱 3단계! 대부분은 !지금 어떤가!를 보지만, 우리는 !어디로 가는가!를 본다",
+        "자산네제곱 4단계! 틀려도 이기는 저점 매수 설계도"
+      ]
+    },
+    {
+      "name": "투자 전략",
+      "count": 103,
+      "samples": [
+        "0 to 1! 페이팔 마피아, 피터 틸의 !9단계 투자 체크리스트!",
+        "2025년 8월 글로벌 자산 시장 !현황 파악!",
+        "2025년 글로벌 대격변... 올드머니 vs 뉴머니, 미중전쟁, 관세폭탄까지 총정리",
+        "2025년 암호화폐 시장의 불편한 진실",
+        "2025년 우주 경쟁의 진실 !50년만의 기회!"
+      ]
+    }
+  ],
+  "portfolio": {
+    "ready": true,
+    "content": "# 실제 보유현황\n\n> 기준일: 2026-06-01\n> 출처: 사용자 계좌 스냅샷 (아래 숫자를 실제 계좌에 맞게 수정하세요)\n\n## 계좌 요약\n\n| 항목 | 값 |\n|------|-----|\n| 총 평가금 | _(입력)_ |\n| 현금/예수금 | _(입력)_ |\n| 투자 비중 | _(입력)_ |\n\n## 보유 종목\n\n| 티커 | 수량 | 평가금 | 손익률 | 계좌 역할 | 비고 |\n|------|------|--------|--------|-----------|------|\n| MU | 1 | _(입력)_ | _(입력)_ | 장기/코어 | 메모리 축 — 신호 정합 |\n| DRAM ETF | _(입력)_ | _(입력)_ | _(입력)_ | 장기/코어 | 1층 메모리 |\n| PLTR | _(입력)_ | _(입력)_ | _(입력)_ | 스윙/전술 | 앞당겨 진입 — 추가 보류 |\n| CRWV | _(입력)_ | _(입력)_ | _(입력)_ | 옵션/고위험 | 손실 보유 — 물타기 금지 |\n| _(추가)_ | | | | | |\n\n## 현금·여력\n\n- 조건부 정찰병 여력: _(있음/부족)_\n- 동일 테마 중복 노출: _(확인 필요)_\n\n## 수익 보호·정리 플래그\n\n| 티커 | 플래그 | 사유 |\n|------|--------|------|\n| SLV/GDX | 정리 후보 | 소수몽키 신호와 직접 관련 낮음 |\n| _(추가)_ | | |\n\n## 점검 메모\n\n- 보유 이유가 아직 유효한가?\n- 급등 추격 여력이 있는가?\n- 수익 보호가 먼저인 종목이 있는가?\n",
+    "placeholder": "1_브리핑/포트폴리오_브리핑/00_현황/실제_보유현황.md 를 만들면 여기에 표시됩니다."
+  },
+  "asset": {
+    "ready": true,
+    "content": "# 이번주 실행판\n\n> 기준일: 2026-06-01\n> 출처: 자산제곱 에이전트 + 소수몽키 신호판 2026-06-01\n\n## 이번 주 매수 후보\n\n| 티커 | 게이트 | 조건 | 무효화 |\n|------|--------|------|--------|\n| NVDA | G2 | 2차 눌림/재지지 확인 후 | AI 인프라 주도장 붕괴 |\n| AVGO | G2 | 목표 4% 유지, 분할 | 맞춤형 칩 수요 둔화 |\n| MU / DRAM ETF | G2 | 첫 눌림/재지지 | 메모리 사이클 급락 |\n| MSFT | G2 | 1차 신규 — SW 반격 확인 | IGV 200일선 이탈 |\n\n## 조건부 대기\n\n| 티커 | 사유 | 진입 조건 |\n|------|------|-----------|\n| ARM | 당일 급등 | 눌림/재지지 후 2차 |\n| NBIS / CRWV | 고위험 옵션 | 1% 이내, 추격 금지 |\n\n## 홀딩·관망\n\n- PLTR: 추가 매수 보류 (이미 진입)\n- IBM: 관찰만 — 정책 테마\n\n## 매도·감축·정리 검토\n\n- SLV / GDX / 원자재 옵션: 소수몽키 신호 약함 — 정리 후보 유지\n\n## 이번 주 하지 말 것\n\n- 급등 추격 매수 (ARM, DRAM ETF 당일)\n- 포트폴리오 여력 없이 신규 진입\n- PLTR 추가 매수\n\n## 핵심 원칙\n\nAI 인프라 주도장은 확장 중이나, 진입은 **눌림/재지지** 우선. 언급만으로 매수하지 않는다.\n",
+    "placeholder": "1_브리핑/자산제곱_브리핑/00_운용판단/이번주_실행판.md 를 만들면 여기에 표시됩니다."
+  },
+  "meeting": {
+    "ready": true,
+    "content": "# 오늘 매매 회의\n\n> 기준시각: 2026-06-01\n> 입력 최신성: 신호판 2026-06-01 ✅ / 실행판 2026-06-01 ✅ / 보유현황 2026-06-01 ✅\n\n## 오늘 바로 할 것\n\n- _(없음 — 조건부 대기 우세)_\n- 보유 MU / DRAM ETF: 방향 유지, 추가는 눌림 시\n\n## 오늘 하지 말 것\n\n- ARM / DRAM ETF 급등 추격\n- PLTR 추가 매수\n- CRWV / NBIS 비중 확대\n\n## 조건부 대기\n\n| 후보 | 자산제곱 | 소수몽키 | 포트폴리오 | 중재 결론 |\n|------|----------|----------|------------|-----------|\n| NVDA | G2 충원 | SM-S3 | 여력 확인 필요 | 눌림 시 1차 |\n| AVGO | G2 유지 | SM-S3 | — | 눌림 시 분할 |\n| MSFT | G2 신규 | SM-S2 | — | 눌림 시 1차 |\n| ARM | 조건부 | SM-S3 | 급등 주의 | 2차 대기 |\n| MU/DRAM | G2 | SM-S3 | 이미 보유 | 눌림 시 추가 |\n\n## 보유·수익 보호\n\n- PLTR: 홀딩, 추가 금지\n- CRWV: 홀딩, 물타기 금지\n\n## 정리·감축 검토\n\n- SLV / GDX: 정리 후보 유지 (신호 약함)\n\n## 핵심 합의\n\nAI 인프라 1차 충원 방향(NVDA/AVGO/MU/MSFT)은 자산제곱·소수몽키 일치. 타이밍은 전원 **눌림/재지지** 합의.\n\n## 핵심 불합의\n\n- ARM: 소수몽키 S3 강함 vs 가격 과열 → 2차 대기로 조정\n\n## 사용자 확인 필요\n\n1. 실제 계좌 현금 여력 확인 후 NVDA/MSFT 1차 진입 여부 결정\n2. SLV/GDX 정리 실행 여부\n3. 보유현황 숫자를 실제 계좌에 맞게 업데이트\n",
+    "placeholder": "토론 중재 에이전트 브리핑이 생성되면 여기에 표시됩니다. Cursor에서 '오늘 매매할 것은?'을 실행하세요."
+  },
+  "rebalance": {
+    "ready": true,
+    "content": "# 목표 및 리밸런싱 현재판\n\n> 기준일: 2026-06-01\n> 출처: 자산제곱 목표 포트폴리오 + 소수몽키 신호판 2026-06-01 반영\n\n## 1차 충원 방향 (신호 정합)\n\n| 티커 | 목표 비중 | 현재 | 1차 액션 | 게이트 |\n|------|-----------|------|----------|--------|\n| NVDA | _(입력)_ | _(입력)_ | 증액 방향 유지, 2차 조건 확인 | 조건부 |\n| AVGO | 4% | _(입력)_ | 맞춤형/네트워크칩 — 유지 | G2 |\n| DRAM ETF / MU | _(입력)_ | 보유 중 | 눌림/재지지 시 추가 | 조건부 |\n| MSFT | _(입력)_ | _(입력)_ | 3층 클라우드/AI PC — 1차 신규 정합 | G2 |\n| ARM | 3% | _(입력)_ | 급등 — 2차 조건부 진입 | 조건부 대기 |\n\n## 옵션·관찰 축\n\n| 티커 | 목표 | 메모 |\n|------|------|------|\n| NBIS | 1% 옵션 | 데이터센터 강세 — 추격 금지 |\n| CRWV | 1% 옵션 | 고위험 — 확대 금지 |\n| IBM | 관찰 | 정책 테마 — 신규 추격 금지 |\n\n## 보류·추가 금지\n\n- PLTR: 반격 신호 확인했으나 이미 진입 — 추가 매수 보류\n- ARM 당일 급등 구간: 1차 진입보다 눌림 우선\n\n## 리밸런싱 실행 계획\n\n1. 수익 보호/정리 후보(SLV/GDX) 먼저 검토\n2. 1차 충원은 눌림/재지지 조건에서만\n3. 동일 AI 인프라 테마 과밀 여부 확인 후 진행\n"
+  },
+  "agents": [
+    {
+      "id": "sosumonkey",
+      "name": "소수몽키",
+      "emoji": "🐵",
+      "role": "시장 신호·모멘텀",
+      "status": "active"
+    },
+    {
+      "id": "asset",
+      "name": "자산제곱",
+      "emoji": "🧠",
+      "role": "원칙·매수 게이트",
+      "status": "active"
+    },
+    {
+      "id": "portfolio",
+      "name": "포트폴리오",
+      "emoji": "💼",
+      "role": "보유·노출 여력",
+      "status": "active"
+    },
+    {
+      "id": "moderator",
+      "name": "토론 중재",
+      "emoji": "⚖️",
+      "role": "최종 행동 정리",
+      "status": "active"
+    }
+  ]
+}

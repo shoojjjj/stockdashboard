@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>📦 아카이브 폴더 탐험 리포트</title>
+  <style>
+    :root {
+      --bg: #fff9f0;
+      --card: #ffffff;
+      --primary: #ff6b35;
+      --secondary: #4ecdc4;
+      --accent: #ffe66d;
+      --text: #2d3436;
+      --muted: #636e72;
+      --border: #ffe0c2;
+      --shadow: 0 4px 20px rgba(255,107,53,0.12);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      padding: 24px 16px 60px;
+    }
+    .container { max-width: 960px; margin: 0 auto; }
+    header {
+      text-align: center;
+      padding: 40px 24px;
+      background: linear-gradient(135deg, #ff6b35, #f7b731);
+      border-radius: 24px;
+      color: white;
+      margin-bottom: 32px;
+      box-shadow: var(--shadow);
+    }
+    header h1 { font-size: 2rem; margin-bottom: 8px; }
+    header p { opacity: 0.95; font-size: 1.05rem; }
+    .badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.25);
+      padding: 4px 14px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      margin-top: 12px;
+    }
+    section {
+      background: var(--card);
+      border-radius: 20px;
+      padding: 28px;
+      margin-bottom: 24px;
+      border: 2px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+    h2 {
+      font-size: 1.35rem;
+      color: var(--primary);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    h3 {
+      font-size: 1.1rem;
+      color: #e17055;
+      margin: 20px 0 10px;
+    }
+    .intro-box {
+      background: linear-gradient(135deg, #fff3e0, #e8f8f5);
+      border-radius: 16px;
+      padding: 20px 24px;
+      font-size: 1.05rem;
+      border-left: 5px solid var(--secondary);
+    }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 16px;
+      margin: 20px 0;
+    }
+    .stat-card {
+      background: #fff8f0;
+      border-radius: 16px;
+      padding: 20px;
+      text-align: center;
+      border: 2px dashed var(--border);
+    }
+    .stat-card .num {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--primary);
+    }
+    .stat-card .label { font-size: 0.9rem; color: var(--muted); margin-top: 4px; }
+    .tree {
+      font-family: 'Consolas', monospace;
+      background: #2d3436;
+      color: #dfe6e9;
+      padding: 20px 24px;
+      border-radius: 14px;
+      font-size: 0.88rem;
+      overflow-x: auto;
+      line-height: 1.9;
+    }
+    .tree .folder { color: #ffeaa7; font-weight: bold; }
+    .tree .file { color: #81ecec; }
+    .tree .count { color: #fd79a8; }
+    .agent-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+    .agent-card {
+      border-radius: 16px;
+      padding: 20px;
+      border: 2px solid;
+      transition: transform 0.2s;
+    }
+    .agent-card:hover { transform: translateY(-3px); }
+    .agent-card h4 { font-size: 1rem; margin-bottom: 8px; }
+    .agent-card p { font-size: 0.9rem; color: var(--muted); }
+    .agent-card .emoji { font-size: 2rem; margin-bottom: 8px; }
+    .a1 { background: #fff0f6; border-color: #fd79a8; }
+    .a2 { background: #e8f8f5; border-color: #00b894; }
+    .a3 { background: #ebf5fb; border-color: #0984e3; }
+    .a4 { background: #fef9e7; border-color: #f39c12; }
+    .column-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .column-item {
+      background: #f8f9fa;
+      border-radius: 12px;
+      padding: 14px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border: 1px solid #dee2e6;
+    }
+    .column-item .cnt {
+      background: var(--primary);
+      color: white;
+      border-radius: 20px;
+      padding: 2px 10px;
+      font-size: 0.8rem;
+      font-weight: bold;
+    }
+    .file-types {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .file-tag {
+      background: #e8f4fd;
+      border: 1px solid #74b9ff;
+      border-radius: 20px;
+      padding: 6px 14px;
+      font-size: 0.85rem;
+    }
+    .file-tag strong { color: #0984e3; }
+    .flow {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin: 20px 0;
+      padding: 20px;
+      background: #f0f4ff;
+      border-radius: 16px;
+    }
+    .flow-step {
+      background: white;
+      border: 2px solid #6c5ce7;
+      border-radius: 12px;
+      padding: 10px 16px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-align: center;
+      min-width: 100px;
+    }
+    .flow-arrow { font-size: 1.5rem; color: #6c5ce7; }
+    .tips { list-style: none; }
+    .tips li {
+      padding: 14px 16px 14px 48px;
+      margin-bottom: 10px;
+      background: #f0fff4;
+      border-radius: 12px;
+      border-left: 4px solid #00b894;
+      position: relative;
+    }
+    .tips li::before {
+      content: '💡';
+      position: absolute;
+      left: 14px;
+      top: 14px;
+      font-size: 1.2rem;
+    }
+    .analogy {
+      background: #fff3cd;
+      border-radius: 14px;
+      padding: 18px 22px;
+      border: 2px solid #ffc107;
+      margin: 16px 0;
+    }
+    .analogy strong { color: #e67e22; }
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.85rem;
+      margin-top: 32px;
+    }
+    @media (max-width: 600px) {
+      header h1 { font-size: 1.5rem; }
+      section { padding: 20px 16px; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <header>
+    <h1>📦 아카이브 폴더 탐험 리포트</h1>
+    <p>이 폴더가 뭔지, 뭐가 들어있는지 쉽게 알려줄게!</p>
+    <span class="badge">생성일: 2026년 6월 25일</span>
+  </header>
+
+  <!-- 한 줄 요약 -->
+  <section>
+    <h2>🌟 한 줄로 말하면?</h2>
+    <div class="intro-box">
+      이 폴더는 <strong>「주식 투자를 잘 하려고 모아둔 비밀 도서관 + 로봇 도우미들」</strong>이야!<br><br>
+      마치 학교에서 <strong>교과서(칼럼)</strong>를 읽고,
+      <strong>선생님 4명(에이전트)</strong>이 각자 역할을 맡아서
+      "오늘 뭘 사고 팔까?" 같이 함께 고민해 주는 공간이야. 📚🤖
+    </div>
+    <div class="analogy">
+      <strong>🏠 비유로 설명하면:</strong><br>
+      집에 <strong>책장(칼럼)</strong>이 있고, 옆방에 <strong>4명의 전문가 로봇(에이전트)</strong>이 살고 있어.
+      로봇들은 텔레그램에서 주식 소식을 가져오고, 사진 속 글자를 읽고, 네 지갑(포트폴리오)을 보고, 마지막에 회의해서 결론을 내줘!
+    </div>
+  </section>
+
+  <!-- 숫자 현황 -->
+  <section>
+    <h2>📊 폴더 현황 (숫자로 보기)</h2>
+    <div class="stats">
+      <div class="stat-card">
+        <div class="num">934</div>
+        <div class="label">전체 파일 개수</div>
+      </div>
+      <div class="stat-card">
+        <div class="num">89.5</div>
+        <div class="label">용량 (MB)</div>
+      </div>
+      <div class="stat-card">
+        <div class="num">244</div>
+        <div class="label">글 문서 (.md)</div>
+      </div>
+      <div class="stat-card">
+        <div class="num">650</div>
+        <div class="label">사진 (.jpg)</div>
+      </div>
+    </div>
+    <h3>📁 파일 종류</h3>
+    <div class="file-types">
+      <span class="file-tag"><strong>.md</strong> 244개 — 읽을 수 있는 글</span>
+      <span class="file-tag"><strong>.jpg</strong> 650개 — 텔레그램 사진</span>
+      <span class="file-tag"><strong>.pdf</strong> 14개 — PDF 문서</span>
+      <span class="file-tag"><strong>.py</strong> 3개 — 자동화 프로그램</span>
+      <span class="file-tag"><strong>.csv/.jsonl</strong> 9개 — 표 형태 데이터</span>
+    </div>
+  </section>
+
+  <!-- 폴더 구조 -->
+  <section>
+    <h2>🗂️ 폴더 구조 (집 안 방 배치도)</h2>
+    <div class="tree">
+<span class="folder">📦 아카이브/</span>
+├── <span class="folder">📚 칼럼/</span> <span class="count">← 221개 파일, 27.8MB (투자 글 모음)</span>
+│   ├── <span class="folder">투자 전략/</span> <span class="count">103편</span>
+│   ├── <span class="folder">시나리오/</span> <span class="count">86편</span>
+│   ├── <span class="folder">시장 리포트/</span> <span class="count">22편</span>
+│   ├── <span class="folder">자산네제곱 프로젝트/</span> <span class="count">7편</span>
+│   └── <span class="folder">기술적 분석 프로젝트/</span> <span class="count">2편</span>
+│
+├── <span class="folder">🤖 0_주식_에이전트/</span> <span class="count">← 708개 파일, 61.8MB (로봇 도우미들)</span>
+│   ├── <span class="folder">자산제곱_에이전트/</span> <span class="count">투자 원칙 & 규칙 두뇌</span>
+│   ├── <span class="folder">소수몽키_에이전트/</span> <span class="count">텔레그램 소식 수집 & 분석</span>
+│   ├── <span class="folder">포트폴리오_에이전트/</span> <span class="count">내 주식 지갑 관리</span>
+│   └── <span class="folder">토론_중재_에이전트/</span> <span class="count">4명이 회의해서 결론 내기</span>
+│
+├── <span class="folder">.obsidian/</span> <span class="count">← Obsidian 앱 설정 (메모 앱)</span>
+└── <span class="folder">.vscode/</span> <span class="count">← VS Code 편집기 설정</span>
+    </div>
+  </section>
+
+  <!-- 칼럼 설명 -->
+  <section>
+    <h2>📚 칼럼 — 읽을거리 책장</h2>
+    <p style="color:var(--muted); margin-bottom:12px;">
+      여기는 투자에 관한 <strong>긴 글들</strong>이 모여 있어. 마치 도서관 책장 같아!
+    </p>
+    <div class="column-list">
+      <div class="column-item">
+        <span>📈 투자 전략</span>
+        <span class="cnt">103편</span>
+      </div>
+      <div class="column-item">
+        <span>🎬 시나리오</span>
+        <span class="cnt">86편</span>
+      </div>
+      <div class="column-item">
+        <span>📋 시장 리포트</span>
+        <span class="cnt">22편</span>
+      </div>
+      <div class="column-item">
+        <span>🔢 자산네제곱 프로젝트</span>
+        <span class="cnt">7편</span>
+      </div>
+      <div class="column-item">
+        <span>📉 기술적 분석</span>
+        <span class="cnt">2편</span>
+      </div>
+    </div>
+    <h3>어떤 내용이 있어?</h3>
+    <ul style="padding-left: 20px; margin-top: 8px;">
+      <li><strong>투자 전략</strong> — "2026년 뭘 사야 해?", "AI 버블은 진짜야?" 같은 큰 그림</li>
+      <li><strong>시나리오</strong> — "만약 주식이 떨어지면?", "나스닥 차트는 어때?" 같은 상상 연습</li>
+      <li><strong>시장 리포트</strong> — 은행·증권사가 쓴 시장 보고서 정리</li>
+      <li><strong>자산네제곱</strong> — 1단계~6단계 투자 공부 커리큘럼 (단계별 배우기)</li>
+      <li><strong>기술적 분석</strong> — 차트 읽는 법 강의 (1강, 2강)</li>
+    </ul>
+  </section>
+
+  <!-- 에이전트 설명 -->
+  <section>
+    <h2>🤖 주식 에이전트 — 4명의 로봇 선생님</h2>
+    <p style="color:var(--muted); margin-bottom: 8px;">
+      각 로봇이 다른 일을 맡아. 마지막에 회의장에서 모여서 "오늘 뭘 할까?"를 정해!
+    </p>
+
+    <div class="agent-grid">
+      <div class="agent-card a1">
+        <div class="emoji">🧠</div>
+        <h4>자산제곱 에이전트</h4>
+        <p><strong>역할:</strong> 투자 원칙 & 규칙의 두뇌<br>
+        철학, 시나리오, 매수 조건, 검증 규칙 등 10개 방으로 나뉨<br>
+        "이 주식, 우리 원칙에 맞아?" 판단</p>
+      </div>
+      <div class="agent-card a2">
+        <div class="emoji">🐵</div>
+        <h4>소수몽키 에이전트</h4>
+        <p><strong>역할:</strong> 시장 소식 수집 & 분석<br>
+        ① 텔레그램 메시지 자동 수집<br>
+        ② 사진 속 글자 OCR로 읽기<br>
+        ③ 신호 태그 붙이기<br>
+        ④ 일일 브리핑 만들기</p>
+      </div>
+      <div class="agent-card a3">
+        <div class="emoji">💼</div>
+        <h4>포트폴리오 에이전트</h4>
+        <p><strong>역할:</strong> 내 주식 지갑 관리<br>
+        보유 종목, 비중, 수익 보호, 정리 우선순위<br>
+        "지금 살 여유 있어?" 확인</p>
+      </div>
+      <div class="agent-card a4">
+        <div class="emoji">⚖️</div>
+        <h4>토론 중재 에이전트</h4>
+        <p><strong>역할:</strong> 회의 진행 & 최종 정리<br>
+        3명 로봇 의견을 모아서<br>
+        "오늘 매매할 것은?" 답을 정리</p>
+      </div>
+    </div>
+
+    <h3>🔄 일하는 순서 (컨베이어 벨트)</h3>
+    <div class="flow">
+      <div class="flow-step">📱 텔레그램<br>소식 수집</div>
+      <span class="flow-arrow">→</span>
+      <div class="flow-step">📷 사진<br>글자 읽기</div>
+      <span class="flow-arrow">→</span>
+      <div class="flow-step">🏷️ 신호<br>태그 붙이기</div>
+      <span class="flow-arrow">→</span>
+      <div class="flow-step">🧠 원칙<br>검사</div>
+      <span class="flow-arrow">→</span>
+      <div class="flow-step">💼 지갑<br>확인</div>
+      <span class="flow-arrow">→</span>
+      <div class="flow-step">⚖️ 회의<br>결론!</div>
+    </div>
+
+    <h3>🐵 소수몽키 안에 뭐가 있어?</h3>
+    <ul style="padding-left: 20px;">
+      <li><strong>텔레그램 원천파서</strong> — 텔레그램 채널에서 메시지·사진 650장 자동 수집</li>
+      <li><strong>이미지 OCR</strong> — 사진 속 주식 차트·글자를 컴퓨터가 읽어서 글로 바꿈</li>
+      <li><strong>신호 태그화</strong> — "매수 신호", "관망" 같은 스티커를 붙여서 정리</li>
+      <li><strong>일일 브리핑</strong> — 하루 소식을 한 장 요약</li>
+      <li><strong>Python 프로그램 3개</strong> — telegram_api_collect.py, run_ocr_sample.py 등</li>
+    </ul>
+  </section>
+
+  <!-- 활용 제안 -->
+  <section>
+    <h2>🚀 이렇게 활용해 봐!</h2>
+    <ul class="tips">
+      <li>
+        <strong>매일 아침 루틴 만들기</strong><br>
+        Obsidian 앱으로 이 폴더를 열고 → 소수몽키 신호판(최신 날짜) 확인 → 토론 에이전트에 "오늘 매매할 것은?" 질문하기
+      </li>
+      <li>
+        <strong>칼럼을 교과서처럼 읽기</strong><br>
+        처음이면 <em>자산네제곱 1단계</em>부터 순서대로! 그다음 투자 전략 글을 골라 읽으면 기초가 탄탄해져.
+      </li>
+      <li>
+        <strong>시나리오로 미리 연습하기</strong><br>
+        "주식이 떨어지면 어떡하지?" 걱정되기 전에 시나리오 폴더 글을 읽어두면, 진짜 일이 와도 덜 놀라!
+      </li>
+      <li>
+        <strong>포트폴리오는 한 곳만 업데이트</strong><br>
+        보유 주식이 바뀌면 포트폴리오 에이전트의 현황 문서만 고쳐. 새 날짜 파일을 계속 만들 필요 없어!
+      </li>
+      <li>
+        <strong>텔레그램 수집 자동화 돌리기</strong><br>
+        소수몽키 폴더의 Python 스크립트로 매일 텔레그램 소식을 자동으로 모아. 사진 650장이 이미 쌓여 있어!
+      </li>
+      <li>
+        <strong>Cursor AI에게 질문하기</strong><br>
+        "자산제곱 원칙에 맞는지 봐줘", "최근 신호판 요약해줘" 같이 이 폴더를 열고 AI한테 물어보면 4개 에이전트 역할을 대신 해줘.
+      </li>
+      <li>
+        <strong>시장 리포트로 큰 그림 잡기</strong><br>
+        매월 시장 리포트(1월, 10월, 11월, 2026년 대비 등)를 읽으면 은행들이 보는 시장 그림을 알 수 있어.
+      </li>
+    </ul>
+  </section>
+
+  <!-- 주의사항 -->
+  <section>
+    <h2>⚠️ 알아두면 좋은 것</h2>
+    <ul style="padding-left: 20px;">
+      <li>이 폴더는 <strong>Obsidian</strong> 메모 앱으로 열면 글끼리 링크가 잘 연결돼 (`.obsidian` 설정 있음)</li>
+      <li>텔레그램 API 키는 <code>.env</code> 파일에 들어 있어 — <strong>다른 사람에게 공유하면 안 돼!</strong> 🔒</li>
+      <li>사진(.jpg)이 전체의 70% — 대부분 텔레그램에서 가져온 차트·스크린샷이야</li>
+      <li>글(.md) 244개가 핵심 지식, 나머지는 데이터·사진·프로그램이야</li>
+    </ul>
+  </section>
+
+  <footer>
+    📦 아카이브 폴더 자동 분석 리포트 · 총 934개 파일 · 89.5 MB<br>
+    경로: C:\Users\JEON\Desktop\아카이브
+  </footer>
+
+</div>
+</body>
+</html>

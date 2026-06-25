@@ -1,0 +1,5 @@
+API_수집/session/
+API_수집/*.session
+API_수집/*.session-journal
+.env
+.env.*

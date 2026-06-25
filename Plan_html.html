@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>아카이브 활용 계획 — Plan</title>
+  <style>
+    :root {
+      --bg: #f4f6fb;
+      --card: #ffffff;
+      --primary: #4f46e5;
+      --primary-light: #eef2ff;
+      --accent: #0ea5e9;
+      --success: #059669;
+      --warning: #d97706;
+      --danger: #dc2626;
+      --text: #1e293b;
+      --muted: #64748b;
+      --border: #e2e8f0;
+      --shadow: 0 4px 24px rgba(79,70,229,0.08);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.75;
+      padding: 24px 16px 80px;
+    }
+    .container { max-width: 900px; margin: 0 auto; }
+    header {
+      background: linear-gradient(135deg, #4f46e5, #0ea5e9);
+      color: white;
+      border-radius: 20px;
+      padding: 40px 32px;
+      margin-bottom: 28px;
+      box-shadow: var(--shadow);
+    }
+    header h1 { font-size: 1.8rem; margin-bottom: 8px; }
+    header .subtitle { opacity: 0.92; font-size: 1.05rem; }
+    header .meta {
+      margin-top: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    header .tag {
+      background: rgba(255,255,255,0.2);
+      padding: 4px 14px;
+      border-radius: 20px;
+      font-size: 0.82rem;
+    }
+    section {
+      background: var(--card);
+      border-radius: 16px;
+      padding: 28px 32px;
+      margin-bottom: 20px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+    h2 {
+      font-size: 1.25rem;
+      color: var(--primary);
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--primary-light);
+    }
+    h3 {
+      font-size: 1.05rem;
+      color: #334155;
+      margin: 20px 0 10px;
+    }
+    p { margin-bottom: 12px; }
+    .conclusion-box {
+      background: var(--primary-light);
+      border-left: 4px solid var(--primary);
+      border-radius: 0 12px 12px 0;
+      padding: 18px 22px;
+      margin: 16px 0;
+      font-size: 1.02rem;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 14px 0;
+      font-size: 0.92rem;
+    }
+    th, td {
+      border: 1px solid var(--border);
+      padding: 10px 14px;
+      text-align: left;
+    }
+    th {
+      background: #f8fafc;
+      font-weight: 600;
+      color: #475569;
+    }
+    tr:nth-child(even) td { background: #fafbfc; }
+    .badge {
+      display: inline-block;
+      padding: 2px 10px;
+      border-radius: 12px;
+      font-size: 0.78rem;
+      font-weight: 600;
+    }
+    .badge-ok { background: #d1fae5; color: var(--success); }
+    .badge-no { background: #fee2e2; color: var(--danger); }
+    .badge-phase { background: #dbeafe; color: #1d4ed8; }
+    .flow-diagram {
+      background: #1e293b;
+      color: #e2e8f0;
+      border-radius: 14px;
+      padding: 24px 28px;
+      font-family: 'Consolas', monospace;
+      font-size: 0.85rem;
+      line-height: 2;
+      overflow-x: auto;
+      margin: 16px 0;
+    }
+    .flow-diagram .arrow { color: #38bdf8; }
+    .flow-diagram .box { color: #fbbf24; }
+    .flow-diagram .store { color: #34d399; }
+    .flow-diagram .view { color: #a78bfa; }
+    .phase-card {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px 20px;
+      margin-bottom: 12px;
+      background: #fafbfc;
+    }
+    .phase-card h4 {
+      color: var(--primary);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .phase-card ul {
+      padding-left: 20px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+    .phase-card li { margin-bottom: 4px; }
+    .routine {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 14px;
+      margin-top: 14px;
+    }
+    .routine-item {
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-radius: 12px;
+      padding: 16px 18px;
+    }
+    .routine-item.night { background: #eff6ff; border-color: #bfdbfe; }
+    .routine-item.week { background: #fffbeb; border-color: #fde68a; }
+    .routine-item h4 { font-size: 0.95rem; margin-bottom: 8px; color: #166534; }
+    .routine-item.night h4 { color: #1e40af; }
+    .routine-item.week h4 { color: #92400e; }
+    .routine-item ol { padding-left: 18px; font-size: 0.88rem; color: #475569; }
+    .routine-item li { margin-bottom: 4px; }
+    .tabs-preview {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .tab-card {
+      background: var(--primary-light);
+      border-radius: 10px;
+      padding: 12px 14px;
+      text-align: center;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--primary);
+    }
+    .final-diagram {
+      background: linear-gradient(135deg, #f0f9ff, #eef2ff);
+      border-radius: 14px;
+      padding: 22px 26px;
+      margin: 16px 0;
+      border: 1px solid #c7d2fe;
+      font-family: 'Consolas', monospace;
+      font-size: 0.88rem;
+      line-height: 2;
+      white-space: pre-line;
+    }
+    .note {
+      background: #fff7ed;
+      border: 1px solid #fed7aa;
+      border-radius: 10px;
+      padding: 14px 18px;
+      font-size: 0.9rem;
+      color: #9a3412;
+      margin-top: 12px;
+    }
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.82rem;
+      margin-top: 32px;
+    }
+    @media print {
+      body { background: white; padding: 0; }
+      section { box-shadow: none; break-inside: avoid; }
+    }
+    @media (max-width: 600px) {
+      header { padding: 28px 20px; }
+      section { padding: 20px 18px; }
+      header h1 { font-size: 1.4rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <header>
+    <h1>📋 아카이브 활용 계획 (Plan)</h1>
+    <p class="subtitle">대시보드 · 자동화 · Vercel 배포 — 통합 활용 설계안</p>
+    <div class="meta">
+      <span class="tag">작성: 2026-06-25</span>
+      <span class="tag">대상: C:\Users\JEON\Desktop\아카이브</span>
+      <span class="tag">상태: 계획 저장본</span>
+    </div>
+  </header>
+
+  <!-- 결론 -->
+  <section>
+    <h2>✅ 한 줄 결론</h2>
+    <div class="conclusion-box">
+      <strong>가능하다.</strong> 다만 "대시보드 한 창에서 Python 로봇까지 전부 Vercel 안에서 돌린다"는 방식은 현실적으로 어렵고,
+      <strong>보기용 대시보드(Vercel) + 자동 수집·분석(별도 실행)</strong>으로 나누는 것이 정답에 가깝다.
+    </div>
+    <table>
+      <thead>
+        <tr><th>역할</th><th>어디서 돌릴까</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>매일 아침 볼 화면</td><td><strong>Vercel</strong> (웹 대시보드)</td></tr>
+        <tr><td>텔레그램 수집, OCR, 신호판 생성</td><td><strong>PC 스케줄러</strong> 또는 <strong>GitHub Actions</strong></td></tr>
+        <tr><td>결과물 저장</td><td><strong>JSON / MD</strong> → Git 또는 Supabase</td></tr>
+        <tr><td>AI 회의 (토론 중재)</td><td><strong>Cursor</strong>에서 질문, 또는 API 연동</td></tr>
+      </tbody>
+    </table>
+    <p style="color:var(--muted); font-size:0.92rem;">
+      Vercel은 <strong>"매일 열어보는 창"</strong>에 최적이고, Telethon·OCR 같은 무거운 작업은 밖에서 돌려서 결과만 올리는 구조가 안정적이다.
+    </p>
+  </section>
+
+  <!-- 현재 상태 -->
+  <section>
+    <h2>📦 지금 아카이브가 이미 갖춘 것</h2>
+    <p>이미 <strong>파이프라인 뼈대</strong>는 있다.</p>
+    <div class="flow-diagram">
+<span class="box">텔레그램 API</span> (telegram_api_collect.py)
+  <span class="arrow">→</span> 인덱스 CSV / JSONL
+  <span class="arrow">→</span> OCR (run_ocr_sample.py)
+  <span class="arrow">→</span> 신호판 (신호판_2026-06-01.md 등)
+  <span class="arrow">→</span> (계획) 일일브리핑
+  <span class="arrow">→</span> (계획) <span class="store">1_브리핑/ 현재판</span> — 아직 폴더 없음
+    </div>
+    <h3>에이전트 4명 역할 (문서로 정의됨)</h3>
+    <table>
+      <thead>
+        <tr><th>에이전트</th><th>역할</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>🐵 소수몽키</td><td>시장 신호 수집·분석 (텔레그램 → OCR → 신호판)</td></tr>
+        <tr><td>🧠 자산제곱</td><td>투자 원칙·매수 조건·시나리오 판단</td></tr>
+        <tr><td>💼 포트폴리오</td><td>실제 보유·비중·수익 보호 관리</td></tr>
+        <tr><td>⚖️ 토론 중재</td><td>"오늘 매매할 것은?" 최종 정리</td></tr>
+      </tbody>
+    </table>
+    <p>지금 부족한 것: <strong>한곳에 모아 보여주는 창</strong> + <strong>매일 자동으로 돌리는 스케줄</strong></p>
+  </section>
+
+  <!-- 아침 루틴 -->
+  <section>
+    <h2>☀️ 추천 활용 방식: "아침 5분 루틴"</h2>
+    <div class="routine">
+      <div class="routine-item night">
+        <h4>🌙 자동 (밤새 / 새벽)</h4>
+        <ol>
+          <li>텔레그램 새 메시지 수집</li>
+          <li>새 사진 OCR</li>
+          <li>신호판 MD 생성</li>
+          <li>요약 JSON 생성 → 대시보드 반영</li>
+        </ol>
+      </div>
+      <div class="routine-item">
+        <h4>🌅 당신이 하는 일 (아침 5분)</h4>
+        <ol>
+          <li>Vercel 대시보드 열기</li>
+          <li>오늘 신호판 확인 (SM-S3 위주)</li>
+          <li>포트폴리오 현황 확인</li>
+          <li>오늘 매매 회의 카드 읽기</li>
+          <li>"실행" 또는 "관망"만 결정</li>
+        </ol>
+      </div>
+      <div class="routine-item week">
+        <h4>📅 가끔 (주 1회)</h4>
+        <ol>
+          <li>포트폴리오 보유 현황 MD 업데이트</li>
+          <li>칼럼에서 관련 글 1편 읽기</li>
+          <li>자산네제곱 단계별 학습 진행</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- 대시보드 화면 -->
+  <section>
+    <h2>🖥️ 대시보드에 넣을 화면 (제안)</h2>
+    <p>한 페이지 안에 <strong>탭 5개</strong> 정도면 충분하다.</p>
+    <div class="tabs-preview">
+      <div class="tab-card">오늘 한눈에</div>
+      <div class="tab-card">소수몽키 신호</div>
+      <div class="tab-card">포트폴리오</div>
+      <div class="tab-card">자산제곱</div>
+      <div class="tab-card">오늘 매매 회의</div>
+      <div class="tab-card">칼럼 (보너스)</div>
+    </div>
+    <table style="margin-top:18px;">
+      <thead>
+        <tr><th>탭</th><th>보여줄 내용</th><th>데이터 출처</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>오늘 한눈에</td><td>최종 결론 3줄, 마지막 업데이트 시각</td><td>현재판.json</td></tr>
+        <tr><td>소수몽키 신호</td><td>SM-S3/S2 신호표, 종목 태그</td><td>신호판_날짜.md → JSON</td></tr>
+        <tr><td>포트폴리오</td><td>보유 종목, 비중, 현금, 정리 플래그</td><td>실제_보유현황.md</td></tr>
+        <tr><td>자산제곱</td><td>이번 주 실행판, 매수 게이트 통과 여부</td><td>이번주_실행판.md</td></tr>
+        <tr><td>오늘 매매 회의</td><td>3 에이전트 의견 + 중재 결론</td><td>토론_브리핑</td></tr>
+        <tr><td>칼럼 (보너스)</td><td>최근 읽을 글, 자산네제곱 N단계</td><td>칼럼/ 인덱스</td></tr>
+      </tbody>
+    </table>
+    <p class="note">💡 비유: 로봇 4명이 밤에 일하고, 아침에 <strong>한 장 요약지</strong>를 책상에 올려두는 것.</p>
+  </section>
+
+  <!-- 기술 구조 -->
+  <section>
+    <h2>🏗️ 기술 구조 (Vercel 배포 가능한 형태)</h2>
+    <div class="flow-diagram">
+<span class="box">[자동 실행 — PC 또는 GitHub Actions]</span>
+  telegram_api_collect.py
+    <span class="arrow">→</span> run_ocr_sample.py
+    <span class="arrow">→</span> 신호판/브리핑 생성
+    <span class="arrow">→</span> dashboard.json 빌드
+    <span class="arrow">→</span> <span class="store">[저장소: Git repo / Supabase]</span>
+    <span class="arrow">→</span> <span class="view">[Next.js 대시보드 → Vercel 배포]</span>
+    </div>
+    <h3>Vercel에서 가능 / 불가능</h3>
+    <table>
+      <thead>
+        <tr><th>항목</th><th>Vercel</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Next.js / React UI</td><td><span class="badge badge-ok">✓ 가능</span></td></tr>
+        <tr><td>정적 JSON / API로 데이터 표시</td><td><span class="badge badge-ok">✓ 가능</span></td></tr>
+        <tr><td>비밀번호 보호 페이지</td><td><span class="badge badge-ok">✓ 가능</span></td></tr>
+        <tr><td>모바일에서 매일 열기</td><td><span class="badge badge-ok">✓ 가능</span></td></tr>
+        <tr><td>Telethon 장시간 연결</td><td><span class="badge badge-no">✗ 불가</span></td></tr>
+        <tr><td>650장 JPG OCR (무거움)</td><td><span class="badge badge-no">✗ 불가</span></td></tr>
+        <tr><td>.env 텔레그램 세션 상시 유지</td><td><span class="badge badge-no">✗ 불가</span></td></tr>
+        <tr><td>로컬 폴더 직접 읽기</td><td><span class="badge badge-no">✗ 불가</span></td></tr>
+      </tbody>
+    </table>
+    <p><strong>핵심 원칙: "수집은 밖, 보기는 Vercel"</strong></p>
+  </section>
+
+  <!-- 단계별 구현 -->
+  <section>
+    <h2>🚀 단계별 구현 제안</h2>
+
+    <div class="phase-card">
+      <h4><span class="badge badge-phase">1단계</span> MVP (1~2일, 바로 효과)</h4>
+      <ul>
+        <li><code>dashboard/</code> 폴더에 Next.js 프로젝트 생성</li>
+        <li>기존 <code>신호판_*.md</code>, CSV를 읽어 정적 JSON 생성 스크립트</li>
+        <li>Vercel 배포 + 간단 비밀번호 (middleware 또는 Vercel Password Protection)</li>
+        <li>수동: Python 스크립트 실행 → JSON 커밋 → 대시보드 자동 갱신</li>
+      </ul>
+      <p style="margin-top:8px; color:var(--success); font-size:0.9rem;">→ 지금 당장 "매일 볼 창" 만들 수 있음</p>
+    </div>
+
+    <div class="phase-card">
+      <h4><span class="badge badge-phase">2단계</span> 반자동 (약 1주)</h4>
+      <ul>
+        <li>Windows 작업 스케줄러: 매일 06:00 수집 스크립트 실행</li>
+        <li><code>build_dashboard.py</code>가 MD → JSON 변환</li>
+        <li>GitHub push → Vercel 자동 재배포</li>
+        <li><code>1_브리핑/</code> 폴더 생성 (문서에만 있고 실제 폴더는 아직 없음)</li>
+      </ul>
+    </div>
+
+    <div class="phase-card">
+      <h4><span class="badge badge-phase">3단계</span> 준완전 자동 (2~3주)</h4>
+      <ul>
+        <li>GitHub Actions cron (또는 Railway 소형 worker)</li>
+        <li>OCR·신호 태그화 자동화 확대</li>
+        <li>포트폴리오 입력 폼 (대시보드에서 MD 업데이트)</li>
+        <li>"오늘 매매할 것은?" 버튼 → Cursor/API로 토론 브리핑 생성</li>
+      </ul>
+    </div>
+
+    <div class="phase-card">
+      <h4><span class="badge badge-phase">4단계</span> 풀 자동 (선택)</h4>
+      <ul>
+        <li>Supabase에 일별 스냅샷 저장</li>
+        <li>텔레그램 알림: "오늘 SM-S3 신호 3개"</li>
+        <li>차트·히스토리 비교</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 최종 그림 -->
+  <section>
+    <h2>🎯 추천 최종 그림</h2>
+    <div class="final-diagram">[밤] PC / GitHub Actions
+  수집 → OCR → 신호판 → dashboard/data/today.json
+
+[아침] 당신
+  https://your-archive.vercel.app 열기
+  → 오늘 한눈에 / 신호 / 포트폴리오 / 매매회의 확인
+  → 보유 바뀌었으면 포트폴리오 탭에서 수정
+
+[필요시] Cursor
+  "오늘 매매할 것은?" → 4 에이전트 역할로 브리핑 생성 → JSON 반영</div>
+    <table>
+      <thead>
+        <tr><th>도구</th><th>역할</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>아카이브 폴더</td><td>두뇌 (에이전트 MD + 칼럼) — 그대로 유지</td></tr>
+        <tr><td>Python 스크립트</td><td>손발 (수집·OCR) — PC 또는 GitHub Actions</td></tr>
+        <tr><td>Vercel 대시보드</td><td>눈 — JSON만 읽어서 표시</td></tr>
+        <tr><td>Obsidian</td><td>깊이 읽고 쓰는 작업실</td></tr>
+        <tr><td>당신</td><td>결정 — 아침 5분, 실행/관망만</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 비용·보안 -->
+  <section>
+    <h2>🔒 비용 · 보안 참고</h2>
+    <table>
+      <thead>
+        <tr><th>항목</th><th>내용</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Vercel 무료</td><td>개인 대시보드 충분</td></tr>
+        <tr><td>GitHub Actions 무료</td><td>월 2,000분 (하루 1회 cron이면 여유)</td></tr>
+        <tr><td>텔레그램 .env</td><td>Git에 올리지 말고 Actions Secrets에만 보관</td></tr>
+        <tr><td>대시보드 접근</td><td>본인만 보도록 비밀번호 또는 Vercel 팀 보호 필수</td></tr>
+      </tbody>
+    </table>
+    <p class="note">⚠️ 포트폴리오·매매 정보가 포함되므로 공개 배포 시 반드시 인증을 걸 것.</p>
+  </section>
+
+  <!-- 다음 액션 -->
+  <section>
+    <h2>▶️ 다음 액션 (구현 시)</h2>
+    <ol style="padding-left: 22px;">
+      <li><code>dashboard/</code> Next.js 프로젝트 생성</li>
+      <li>지금 있는 <code>신호판_2026-06-01.md</code> 등을 파싱해서 "오늘" 탭 표시</li>
+      <li>Vercel 배포용 <code>vercel.json</code> + 빌드 스크립트</li>
+      <li>GitHub repo 연결 여부 결정</li>
+      <li>포트폴리오를 대시보드에서 직접 수정할지 여부 결정</li>
+    </ol>
+    <p style="margin-top:14px; color:var(--muted);">
+      "1단계 MVP 만들어줘"라고 요청하면 위 계획대로 구현 시작.
+    </p>
+  </section>
+
+  <footer>
+    아카이브 활용 계획 Plan · 저장일 2026-06-25<br>
+    경로: C:\Users\JEON\Desktop\아카이브\Plan_html.html
+  </footer>
+
+</div>
+</body>
+</html>
