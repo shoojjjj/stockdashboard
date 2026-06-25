@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-25T14:20:25.335955+00:00",
+  "generatedAt": "2026-06-25T14:26:08.335432+00:00",
   "archivePath": "C:\\Users\\JEON\\Desktop\\아카이브",
   "today": {
     "headline": "소수몽키 AI 인프라 신호 강함(S3 3건). NVDA/AVGO/DRAM/MU/MSFT 1차 충원 방향 유지. ARM은 급등으로 2차 조건부.",
@@ -17,6 +17,7 @@
     "content": "# 소수몽키 일일보고 2026-06-01\n\n> 기준 원천: 신호판 2026-06-01\n> 핵심: AI 인프라 주도장 확산, ARM 부상, 메모리 강세, SW 반격 시작\n\n## 오늘 핵심 3줄\n\n1. GTC 이후 AI 인프라가 메모리·ARM·서버·데이터센터로 확산 중 (SM-S3)\n2. ARM이 엔비디아 PC칩 수혜주로 부상 — 단, 급등으로 추격 금지 (SM-S3)\n3. SW(IGV) 200일선 복귀 — MSFT 반격 신호 (SM-S2)\n\n## 반복 테마\n\n- AI 인프라 순환: 메모리 → ARM/CPU → 서버 → DC → SW\n- 데이터센터 중소형 NBIS/CRWV 강세 지속\n\n## 포트폴리오 시사점\n\n1차 충원 NVDA/AVGO/DRAM/MU/MSFT 정합. ARM은 2차 조건부. PLTR 추가 보류.\n\n## 다음 확인\n\n- IGV 200일선 유지 여부\n- ARM 눌림 구간 형성 여부\n- NVDA 2차 지지 확인\n"
   },
   "latestSignalDate": "2026-06-01",
+  "pendingInputs": 21,
   "signals": [
     {
       "date": "2026-05-30",
