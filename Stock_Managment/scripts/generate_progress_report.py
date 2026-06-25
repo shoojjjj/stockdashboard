@@ -29,31 +29,35 @@ def load_dashboard() -> dict:
     return {}
 
 
+def load_health() -> dict:
+    health_file = STOCK / "public" / "data" / "health.json"
+    if health_file.exists():
+        return json.loads(health_file.read_text(encoding="utf-8"))
+    return {"healthy": False, "checks": {}}
+
+
+def run_health_check() -> dict:
+    script = STOCK / "scripts" / "health_check.py"
+    try:
+        subprocess.run([sys.executable, str(script)], check=True, timeout=30)
+    except Exception:
+        pass
+    return load_health()
+
+
 def load_system_status() -> dict:
+    health = run_health_check()
     status = {
-        "scheduler_deploy": "unknown",
-        "scheduler_refresh": "unknown",
+        "scheduler_deploy": health.get("checks", {}).get("scheduler_deploy", "unknown"),
+        "scheduler_refresh": health.get("checks", {}).get("scheduler_refresh", "unknown"),
+        "vercel_site": health.get("checks", {}).get("vercel_site", "unknown"),
+        "dashboard_json": health.get("checks", {}).get("dashboard_json", "unknown"),
+        "telegram_env": health.get("checks", {}).get("telegram_env", "unknown"),
+        "github_remote": health.get("checks", {}).get("github_remote", "unknown"),
+        "health": "OK" if health.get("healthy") else "CHECK",
         "last_commit": "-",
         "vercel_password": "not set (local dev: open access)",
     }
-    try:
-        out = subprocess.run(
-            ["schtasks", "/Query", "/TN", "StockManagment_DailyDeploy", "/FO", "LIST"],
-            capture_output=True, text=True, timeout=10,
-        )
-        if out.returncode == 0 and "Ready" in out.stdout:
-            status["scheduler_deploy"] = "Ready @ 06:00"
-    except Exception:
-        pass
-    try:
-        out = subprocess.run(
-            ["schtasks", "/Query", "/TN", "StockManagment_DailyRefresh", "/FO", "LIST"],
-            capture_output=True, text=True, timeout=10,
-        )
-        if out.returncode == 0 and "Ready" in out.stdout:
-            status["scheduler_refresh"] = "Ready @ 06:00"
-    except Exception:
-        pass
     try:
         out = subprocess.run(
             ["git", "-C", str(ARCHIVE), "log", "-1", "--format=%h %s (%ci)"],
@@ -64,7 +68,7 @@ def load_system_status() -> dict:
     except Exception:
         pass
     if "--vercel-password-set" in sys.argv:
-        status["vercel_password"] = "Production locked (see milestone note)"
+        status["vercel_password"] = "Production locked — Archive2026Stock!"
     return status
 
 
@@ -180,10 +184,15 @@ def build_html(data: dict, steps: list[dict], deploy_url: str, milestone: str, l
 </section>
 
 <section>
-  <h2>⚙️ 시스템 상태</h2>
+  <h2>⚙️ 시스템 헬스체크</h2>
   <table>
+    <tr><td>종합</td><td><strong>{sys_status.get('health','-')}</strong></td></tr>
+    <tr><td>Vercel 사이트</td><td>{sys_status.get('vercel_site','-')}</td></tr>
+    <tr><td>dashboard.json</td><td>{sys_status.get('dashboard_json','-')}</td></tr>
     <tr><td>자동 배포 스케줄</td><td>{sys_status.get('scheduler_deploy','-')}</td></tr>
     <tr><td>데이터 갱신 스케줄</td><td>{sys_status.get('scheduler_refresh','-')}</td></tr>
+    <tr><td>텔레그램 .env</td><td>{sys_status.get('telegram_env','-')}</td></tr>
+    <tr><td>GitHub remote</td><td>{sys_status.get('github_remote','-')}</td></tr>
     <tr><td>최근 Git 커밋</td><td><code>{sys_status.get('last_commit','-')}</code></td></tr>
     <tr><td>Vercel 로그인</td><td>{sys_status.get('vercel_password','-')}</td></tr>
   </table>
