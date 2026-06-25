@@ -68,7 +68,7 @@ def load_system_status() -> dict:
     except Exception:
         pass
     if "--vercel-password-set" in sys.argv:
-        status["vercel_password"] = "Production locked — Archive2026Stock!"
+        status["vercel_password"] = "Production locked (password set)"
     return status
 
 
