@@ -29,6 +29,45 @@ def load_dashboard() -> dict:
     return {}
 
 
+def load_system_status() -> dict:
+    status = {
+        "scheduler_deploy": "unknown",
+        "scheduler_refresh": "unknown",
+        "last_commit": "-",
+        "vercel_password": "not set (local dev: open access)",
+    }
+    try:
+        out = subprocess.run(
+            ["schtasks", "/Query", "/TN", "StockManagment_DailyDeploy", "/FO", "LIST"],
+            capture_output=True, text=True, timeout=10,
+        )
+        if out.returncode == 0 and "Ready" in out.stdout:
+            status["scheduler_deploy"] = "Ready @ 06:00"
+    except Exception:
+        pass
+    try:
+        out = subprocess.run(
+            ["schtasks", "/Query", "/TN", "StockManagment_DailyRefresh", "/FO", "LIST"],
+            capture_output=True, text=True, timeout=10,
+        )
+        if out.returncode == 0 and "Ready" in out.stdout:
+            status["scheduler_refresh"] = "Ready @ 06:00"
+    except Exception:
+        pass
+    try:
+        out = subprocess.run(
+            ["git", "-C", str(ARCHIVE), "log", "-1", "--format=%h %s (%ci)"],
+            capture_output=True, text=True, timeout=10,
+        )
+        if out.returncode == 0:
+            status["last_commit"] = out.stdout.strip()
+    except Exception:
+        pass
+    if "--vercel-password-set" in sys.argv:
+        status["vercel_password"] = "Production locked (see milestone note)"
+    return status
+
+
 def load_latest_log() -> str:
     if not LOG_DIR.exists():
         return "(로그 없음)"
@@ -49,7 +88,7 @@ def parse_args() -> dict:
     return {"phase_done": phase_done, "message": message}
 
 
-def build_html(data: dict, steps: list[dict], deploy_url: str, milestone: str, log_tail: str) -> str:
+def build_html(data: dict, steps: list[dict], deploy_url: str, milestone: str, log_tail: str, sys_status: dict) -> str:
     now = datetime.now(KST).strftime("%Y-%m-%d %H:%M KST")
     agents = data.get("agents", [])
     agent_rows = "".join(
@@ -141,6 +180,16 @@ def build_html(data: dict, steps: list[dict], deploy_url: str, milestone: str, l
 </section>
 
 <section>
+  <h2>⚙️ 시스템 상태</h2>
+  <table>
+    <tr><td>자동 배포 스케줄</td><td>{sys_status.get('scheduler_deploy','-')}</td></tr>
+    <tr><td>데이터 갱신 스케줄</td><td>{sys_status.get('scheduler_refresh','-')}</td></tr>
+    <tr><td>최근 Git 커밋</td><td><code>{sys_status.get('last_commit','-')}</code></td></tr>
+    <tr><td>Vercel 로그인</td><td>{sys_status.get('vercel_password','-')}</td></tr>
+  </table>
+</section>
+
+<section>
   <h2>📋 최근 자동화 로그</h2>
   <div class="log">{log_escaped}</div>
 </section>
@@ -174,7 +223,7 @@ def main() -> None:
     data = load_dashboard()
     steps = default_steps(args["phase_done"], phase_active)
     html = build_html(
-        data, steps, DEPLOY_URL, args["message"], load_latest_log()
+        data, steps, DEPLOY_URL, args["message"], load_latest_log(), load_system_status()
     )
 
     OUTPUT.write_text(html, encoding="utf-8")
