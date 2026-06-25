@@ -31,5 +31,6 @@ next-env.d.ts
 
 # logs
 /logs/
+logs/last_report_open.txt
 
 .vercel

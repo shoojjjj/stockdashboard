@@ -16,6 +16,8 @@ STOCK = ARCHIVE / "Stock_Managment"
 DASHBOARD_JSON = STOCK / "public" / "data" / "dashboard.json"
 LOG_DIR = STOCK / "logs"
 OUTPUT = ARCHIVE / "Progress_Report.html"
+LAST_OPEN_FILE = LOG_DIR / "last_report_open.txt"
+OPEN_INTERVAL_SEC = 3600  # 1 hour
 
 DEPLOY_URL = "https://stock-managment-black.vercel.app"
 GITHUB_REPO = "https://github.com/shoojjjj/stockdashboard"
@@ -207,6 +209,35 @@ def build_html(data: dict, steps: list[dict], deploy_url: str, milestone: str, l
 </div></body></html>"""
 
 
+def should_open_browser() -> bool:
+    if "--no-open" in sys.argv:
+        return False
+    if "--force-open" in sys.argv:
+        return True
+    if "--smart-open" not in sys.argv:
+        return True  # manual run: always open
+
+    LOG_DIR.mkdir(parents=True, exist_ok=True)
+    now = datetime.now(KST)
+    if LAST_OPEN_FILE.exists():
+        try:
+            last = datetime.fromisoformat(LAST_OPEN_FILE.read_text(encoding="utf-8").strip())
+            if last.tzinfo is None:
+                last = last.replace(tzinfo=KST)
+            elapsed = (now - last).total_seconds()
+            if elapsed < OPEN_INTERVAL_SEC and "--meaningful" not in sys.argv:
+                print(f"Report saved (browser skip: {int(elapsed)}s since last open, < 1h)")
+                return False
+        except ValueError:
+            pass
+    return True
+
+
+def record_browser_open() -> None:
+    LOG_DIR.mkdir(parents=True, exist_ok=True)
+    LAST_OPEN_FILE.write_text(datetime.now(KST).isoformat(), encoding="utf-8")
+
+
 def default_steps(phase_done: dict, phase_active: int = 0) -> list[dict]:
     return [
         {"phase": "1단계", "title": "MVP 대시보드", "done": True,
@@ -242,7 +273,8 @@ def main() -> None:
 
     print(f"Report: {OUTPUT}")
     print(f"Copy:   {archive_copy}")
-    if "--no-open" not in sys.argv:
+    if should_open_browser():
+        record_browser_open()
         subprocess.Popen(["cmd", "/c", "start", "", str(OUTPUT)], shell=False)
 
 

@@ -4,8 +4,8 @@
     "dashboard_json": "ok - signals 3, pending 21",
     "vercel_site": "ok (200)",
     "telegram_env": "ok",
-    "scheduler_deploy": "missing",
-    "scheduler_refresh": "missing",
+    "scheduler_deploy": "ok",
+    "scheduler_refresh": "ok",
     "github_remote": "ok"
   }
 }

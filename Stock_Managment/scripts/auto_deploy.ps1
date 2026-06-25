@@ -1,4 +1,5 @@
 # 매일 아카이브 → 대시보드 → GitHub → Vercel 전체 파이프라인
+# Report popup: only on meaningful completion (smart-open, max 1/hour)
 
 param(
     [switch]$SkipTelegram,
@@ -11,6 +12,7 @@ $ArchiveRoot = Split-Path -Parent $Root
 $LogDir = Join-Path $Root "logs"
 $LogFile = Join-Path $LogDir "refresh_$(Get-Date -Format 'yyyy-MM-dd').log"
 $ReportScript = Join-Path $PSScriptRoot "generate_progress_report.py"
+$HadChanges = $false
 
 New-Item -ItemType Directory -Force -Path $LogDir | Out-Null
 
@@ -21,7 +23,17 @@ function Write-Log($msg) {
 }
 
 function Show-Report($message, [string[]]$extraArgs) {
-    $allArgs = @($ReportScript, "--message", $message) + $extraArgs
+    $allArgs = @($ReportScript, "--message", $message, "--no-open") + $extraArgs
+    $out = & python @allArgs 2>&1
+    foreach ($line in $out) { Write-Log $line }
+}
+
+function Show-ReportFinal($message) {
+    $allArgs = @(
+        $ReportScript, "--message", $message,
+        "--step3-done", "--step4-done",
+        "--smart-open", "--meaningful"
+    )
     $out = & python @allArgs 2>&1
     foreach ($line in $out) { Write-Log $line }
 }
@@ -36,7 +48,7 @@ function Invoke-Cmd($label, [scriptblock]$Block) {
 }
 
 try {
-    Show-Report "Phase 4 pipeline start" @("--step3-done", "--step4-active")
+    Show-Report "pipeline start" @("--step3-done", "--step4-active")
     Write-Log "=== pipeline start ==="
 
     if (-not $SkipTelegram) {
@@ -48,12 +60,11 @@ try {
                 python telegram_api_collect.py --limit 200
                 Pop-Location
             }
+            $script:HadChanges = $true
         } else {
             Write-Log "telegram skip - no .env"
         }
     }
-
-    Show-Report "Building dashboard.json" @("--step3-done", "--step4-active")
 
     Invoke-Cmd "build dashboard.json" {
         Push-Location $Root
@@ -65,12 +76,13 @@ try {
         Invoke-Cmd "git commit push" {
             Push-Location $ArchiveRoot
             git add Stock_Managment/public/data/dashboard.json Progress_Report.html 2>&1
-            git add Progress_Report_*.html 2>&1
+            git add Progress_Report_*.html Stock_Managment/public/data/health.json 2>&1
             $diff = git diff --staged --name-only 2>&1
             if ($diff) {
                 git commit -m "chore: auto-refresh dashboard $(Get-Date -Format 'yyyy-MM-dd HH:mm')" 2>&1
                 git push origin main 2>&1
                 Write-Log "git push ok"
+                $script:HadChanges = $true
             } else {
                 Write-Log "git no changes - skip"
             }
@@ -78,21 +90,25 @@ try {
         }
     }
 
-    Show-Report "Git done - deploying Vercel" @("--step3-done", "--step4-active")
-
     if (-not $SkipVercel) {
         Invoke-Cmd "vercel deploy" {
             Push-Location $Root
             npx vercel deploy --prod --yes
             Pop-Location
         }
+        $script:HadChanges = $true
     }
 
     Write-Log "=== pipeline done ==="
-    Show-Report "Pipeline complete!" @("--step3-done", "--step4-done")
+    if ($HadChanges) {
+        Show-ReportFinal "Daily pipeline complete (meaningful update)"
+    } else {
+        Show-Report "No changes - report file only" @("--step3-done", "--step4-done", "--no-open")
+    }
 
 } catch {
     Write-Log "FATAL: $_"
-    Show-Report "Pipeline error - see log" @("--step3-done", "--step4-active")
+    $allArgs = @($ReportScript, "--message", "Pipeline error", "--step3-done", "--step4-active", "--smart-open", "--meaningful")
+    & python @allArgs 2>&1 | ForEach-Object { Write-Log $_ }
     exit 1
 }
