@@ -23,6 +23,7 @@ export function Dashboard({ data }: { data: DashboardData }) {
           latestDate={data.latestSignalDate}
           generatedAt={data.generatedAt}
           meeting={data.meeting}
+          pendingInputs={data.pendingInputs}
         />
       )}
       {tab === "signal" && (

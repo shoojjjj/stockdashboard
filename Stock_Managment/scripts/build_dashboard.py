@@ -268,6 +268,12 @@ def main() -> None:
 
     today = build_today_from_current_pan(current_pan_md) or build_today_summary(latest)
 
+    portfolio_pending = 0
+    if portfolio_md:
+        portfolio_pending += portfolio_md.count("_(입력)_")
+    if rebalance_md:
+        portfolio_pending += rebalance_md.count("_(입력)_")
+
     payload = {
         "generatedAt": datetime.now(timezone.utc).isoformat(),
         "archivePath": str(ARCHIVE),
@@ -281,6 +287,7 @@ def main() -> None:
             "content": sosumonkey_report,
         },
         "latestSignalDate": latest["date"] if latest else None,
+        "pendingInputs": portfolio_pending,
         "signals": signals,
         "telegramStats": load_telegram_stats(),
         "columns": load_columns(),

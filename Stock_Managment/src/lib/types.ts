@@ -56,6 +56,7 @@ export interface DashboardData {
   archivePath: string;
   today: TodaySummary;
   latestSignalDate: string | null;
+  pendingInputs?: number;
   signals: SignalBoard[];
   telegramStats: Record<string, string>[];
   columns: ColumnCategory[];

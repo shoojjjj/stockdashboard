@@ -166,7 +166,7 @@ def build_html(data: dict, steps: list[dict], deploy_url: str, milestone: str, l
     <p>{today.get('headline', '—')}</p>
     <span class="action">{today.get('action', '관망')}</span>
   </div>
-  <p>최신 신호판: <strong>{data.get('latestSignalDate', '—')}</strong> · 신호판 {signal_count}개</p>
+  <p>최신 신호판: <strong>{data.get('latestSignalDate', '—')}</strong> · 신호판 {signal_count}개 · 미입력 <strong>{data.get('pendingInputs', 0)}</strong>곳</p>
 </section>
 
 <section>

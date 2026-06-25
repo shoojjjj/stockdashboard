@@ -7,9 +7,10 @@ interface TodayTabProps {
   latestDate: string | null;
   generatedAt: string;
   meeting?: BriefingSlot;
+  pendingInputs?: number;
 }
 
-export function TodayTab({ today, agents, latestDate, generatedAt, meeting }: TodayTabProps) {
+export function TodayTab({ today, agents, latestDate, generatedAt, meeting, pendingInputs }: TodayTabProps) {
   const updated = new Date(generatedAt).toLocaleString("ko-KR", { timeZone: "Asia/Seoul" });
 
   return (
@@ -34,6 +35,13 @@ export function TodayTab({ today, agents, latestDate, generatedAt, meeting }: To
           ))}
         </ul>
       </div>
+
+      {(pendingInputs ?? 0) > 0 && (
+        <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-4 text-sm text-amber-900">
+          <strong>📝 입력 대기 {pendingInputs}곳</strong> — 포트폴리오 MD에 실제 계좌 숫자를 채운 뒤{" "}
+          <code className="bg-amber-100 px-1 rounded">npm run build:data</code> 실행
+        </div>
+      )}
 
       <div className="grid sm:grid-cols-2 gap-3 text-sm text-slate-500">
         <div className="bg-white rounded-xl border p-4">
