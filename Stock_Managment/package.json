@@ -9,7 +9,9 @@
     "build": "npm run build:data:safe && next build",
     "start": "next start",
     "lint": "next lint",
-    "report": "python scripts/generate_progress_report.py"
+    "report": "python scripts/generate_progress_report.py --step3-done --step4-done",
+    "deploy": "powershell -ExecutionPolicy Bypass -File scripts/auto_deploy.ps1",
+    "deploy:quick": "powershell -ExecutionPolicy Bypass -File scripts/auto_deploy.ps1 -SkipTelegram"
   },
   "dependencies": {
     "next": "^15.3.3",

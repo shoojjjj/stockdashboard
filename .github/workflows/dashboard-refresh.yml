@@ -2,9 +2,11 @@ name: Daily Dashboard Refresh
 
 on:
   schedule:
-    # UTC 21:00 = KST 06:00
-    - cron: "0 21 * * *"
+    - cron: "0 21 * * *"  # KST 06:00
   workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   refresh:
@@ -16,26 +18,17 @@ jobs:
         with:
           python-version: "3.12"
 
-      - uses: actions/setup-node@v4
-        with:
-          node-version: "20"
+      - name: Build dashboard data from archive
+        run: python Stock_Managment/scripts/build_dashboard.py
 
-      - name: Build dashboard data
-        run: |
-          cd Stock_Managment
-          python scripts/build_dashboard.py
+      - name: Generate progress report
+        run: python Stock_Managment/scripts/generate_progress_report.py --step3-done --step4-done --message "GitHub Actions 자동 갱신" --no-open
 
-      - name: Install and build Next.js
+      - name: Commit and push
         run: |
-          cd Stock_Managment
-          npm ci
-          npm run build
-
-      # Vercel 연동 시: dashboard.json 커밋 또는 Vercel CLI 배포
-      - name: Commit updated data
-        run: |
-          git config user.name "github-actions"
-          git config user.email "actions@github.com"
-          git add Stock_Managment/public/data/dashboard.json || true
-          git diff --staged --quiet || git commit -m "chore: auto-refresh dashboard data"
-          git push || true
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add Stock_Managment/public/data/dashboard.json
+          git add Progress_Report.html Progress_Report_*.html 2>/dev/null || true
+          git diff --staged --quiet || git commit -m "chore: auto-refresh dashboard [skip ci]"
+          git push
