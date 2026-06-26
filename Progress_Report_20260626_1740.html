@@ -31,7 +31,7 @@
 </style></head><body><div class="wrap">
 <header>
   <h1>📊 Stock Managment 진행 레포트</h1>
-  <p class="meta">갱신: 2026-06-26 18:36 KST</p>
+  <p class="meta">갱신: 2026-06-26 17:40 KST</p>
 </header>
 
 <section>
@@ -41,7 +41,7 @@
   </div>
 </section>
 
-<section class="milestone"><h2>📌 이번 작업</h2><p>8-9단계 완료</p></section>
+<section class="milestone"><h2>📌 이번 작업</h2><p>GitHub Actions 자동 갱신</p></section>
 
 <section>
   <h2>☀️ 오늘 한눈에</h2>
@@ -49,7 +49,7 @@
     <p>소수몽키 AI 인프라 신호 강함(S3 3건). NVDA/AVGO/DRAM/MU/MSFT 1차 충원 방향 유지. ARM은 급등으로 2차 조건부.</p>
     <span class="action">조건부 실행 검토 — 추격 매수 금지, 눌림/재지지 조건 확인 후 진행</span>
   </div>
-  <p>최신 신호판: <strong>2026-06-03</strong> · 신호판 19개 · 미입력 <strong>21</strong>곳</p>
+  <p>최신 신호판: <strong>2026-06-01</strong> · 신호판 3개 · 미입력 <strong>21</strong>곳</p>
 </section>
 
 <section>
@@ -83,36 +83,6 @@
           <span class="status">✅ 완료</span></div>
           <p>수집→빌드→git push→Vercel 재배포 원클릭/스케줄</p>
           
-          </div><div class="step done">
-          <div class="step-head"><span class="badge">5단계</span>
-          <strong>포트폴리오 입력 + 브리핑 동기화</strong>
-          <span class="status">✅ 완료</span></div>
-          <p>PortfolioEditor, sync_briefing.py, /api/portfolio</p>
-          
-          </div><div class="step done">
-          <div class="step-head"><span class="badge">6단계</span>
-          <strong>텔레그램 자동수집 + 신호판 스텁</strong>
-          <span class="status">✅ 완료</span></div>
-          <p>스케줄러 텔레그램 ON, generate_signal_stubs.py</p>
-          
-          </div><div class="step done">
-          <div class="step-head"><span class="badge">7단계</span>
-          <strong>스텁 자동 태그화</strong>
-          <span class="status">✅ 완료</span></div>
-          <p>auto_tag_stubs.py — 텔레그램 원문→S1~S3 규칙 태그</p>
-          
-          </div><div class="step done">
-          <div class="step-head"><span class="badge">8단계</span>
-          <strong>Vercel 배포 + 포트폴리오 UX</strong>
-          <span class="status">✅ 완료</span></div>
-          <p>저장→자동 rebuild, git push 신호판, Vercel prod</p>
-          
-          </div><div class="step done">
-          <div class="step-head"><span class="badge">9단계</span>
-          <strong>GitHub 원격 동기화</strong>
-          <span class="status">✅ 완료</span></div>
-          <p>pull --rebase + 신호판·코드 전체 push</p>
-          
           </div>
 </section>
 
@@ -121,30 +91,19 @@
   <table>
     <tr><td>종합</td><td><strong>OK</strong></td></tr>
     <tr><td>Vercel 사이트</td><td>ok (200)</td></tr>
-    <tr><td>dashboard.json</td><td>ok - signals 19, pending 21</td></tr>
-    <tr><td>자동 배포 스케줄</td><td>ok</td></tr>
-    <tr><td>데이터 갱신 스케줄</td><td>ok</td></tr>
-    <tr><td>텔레그램 .env</td><td>ok</td></tr>
+    <tr><td>dashboard.json</td><td>ok - signals 3, pending 21</td></tr>
+    <tr><td>자동 배포 스케줄</td><td>missing</td></tr>
+    <tr><td>데이터 갱신 스케줄</td><td>missing</td></tr>
+    <tr><td>텔레그램 .env</td><td>missing</td></tr>
     <tr><td>GitHub remote</td><td>ok</td></tr>
-    <tr><td>최근 Git 커밋</td><td><code>-</code></td></tr>
+    <tr><td>최근 Git 커밋</td><td><code>ff4cc14 feat: throttle progress report popup to 1h or meaningful updates (2026-06-25 23:33:37 +0900)</code></td></tr>
     <tr><td>Vercel 로그인</td><td>not set (local dev: open access)</td></tr>
   </table>
 </section>
 
 <section>
   <h2>📋 최근 자동화 로그</h2>
-  <div class="log">[2026-06-26 17:59:50]     "dashboard_json": "ok - signals 19, pending 21",
-[2026-06-26 17:59:50]     "vercel_site": "ok (200)",
-[2026-06-26 17:59:50]     "telegram_env": "ok",
-[2026-06-26 17:59:50]     "telegram_latest": "ok - 2026-06-03 (19 days)",
-[2026-06-26 17:59:50]     "signal_boards": "ok - 19 files, 16 tagged, 0 stubs",
-[2026-06-26 17:59:50]     "scheduler_deploy": "ok",
-[2026-06-26 17:59:50]     "scheduler_refresh": "ok",
-[2026-06-26 17:59:50]     "github_remote": "ok"
-[2026-06-26 17:59:50]   }
-[2026-06-26 17:59:50] }
-[2026-06-26 17:59:50] Report: C:\Users\JEON\Desktop\아카이브\Progress_Report.html
-[2026-06-26 17:59:50] Copy:   C:\Users\JEON\Desktop\아카이브\Progress_Report_20260626_1759.html</div>
+  <div class="log">(로그 없음)</div>
 </section>
 
 <footer>Progress_Report.html · https://github.com/shoojjjj/stockdashboard</footer>
