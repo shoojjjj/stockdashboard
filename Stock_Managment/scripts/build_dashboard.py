@@ -6,6 +6,8 @@ from __future__ import annotations
 import csv
 import json
 import re
+import subprocess
+import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -156,7 +158,7 @@ def parse_signal_board(path: Path) -> dict:
 def load_telegram_stats() -> list[dict[str, str]]:
     if not CSV_PATH.exists():
         return []
-    with CSV_PATH.open(encoding="utf-8", newline="") as f:
+    with CSV_PATH.open(encoding="utf-8-sig", newline="") as f:
         return list(csv.DictReader(f))
 
 
@@ -245,6 +247,19 @@ def build_today_summary(latest_signal: dict | None) -> dict:
 
 def main() -> None:
     archive_ok = SIGNAL_DIR.exists() or BRIEFING_DIR.exists()
+
+    stubs_script = ROOT / "scripts" / "generate_signal_stubs.py"
+    if stubs_script.exists() and archive_ok:
+        subprocess.run([sys.executable, str(stubs_script)], check=False)
+
+    tag_script = ROOT / "scripts" / "auto_tag_stubs.py"
+    if tag_script.exists() and archive_ok:
+        subprocess.run([sys.executable, str(tag_script)], check=False)
+
+    sync_script = ROOT / "scripts" / "sync_briefing.py"
+    if sync_script.exists() and archive_ok:
+        subprocess.run([sys.executable, str(sync_script)], check=False)
+
     if not archive_ok and OUTPUT.exists():
         print(f"Archive not on this machine — keeping existing {OUTPUT}")
         print(f"  (signals in file: check locally)")

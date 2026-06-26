@@ -1,10 +1,10 @@
 # Windows Task Scheduler
 $Settings = New-ScheduledTaskSettingsSet -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries -StartWhenAvailable
 
-# Daily 06:00 full deploy (meaningful update -> smart-open)
+# Daily 06:00 full deploy with telegram collect
 $Deploy = "C:\Users\JEON\Desktop\아카이브\Stock_Managment\scripts\auto_deploy.ps1"
 Register-ScheduledTask -TaskName "StockManagment_DailyDeploy" `
-    -Action (New-ScheduledTaskAction -Execute "powershell.exe" -Argument "-NoProfile -ExecutionPolicy Bypass -File `"$Deploy`" -SkipTelegram") `
+    -Action (New-ScheduledTaskAction -Execute "powershell.exe" -Argument "-NoProfile -ExecutionPolicy Bypass -File `"$Deploy`"") `
     -Trigger (New-ScheduledTaskTrigger -Daily -At "06:00") `
     -Settings $Settings -Force
 

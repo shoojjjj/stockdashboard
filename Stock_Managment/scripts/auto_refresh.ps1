@@ -33,7 +33,7 @@ try {
     Pop-Location
 
     Write-Log "=== daily refresh done ==="
-    & python $ReportScript --message "Daily refresh done" --step3-done --step4-done --smart-open --meaningful 2>&1 | ForEach-Object { Write-Log $_ }
+    & python $ReportScript --message "Daily refresh done" --step3-done --step4-done --step5-done --step6-done --smart-open --meaningful 2>&1 | ForEach-Object { Write-Log $_ }
 
 } catch {
     Write-Log "ERROR: $_"

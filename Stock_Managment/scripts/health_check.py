@@ -20,6 +20,22 @@ TELEGRAM_ENV = (
     / "01_텔레그램_원천파서"
     / ".env"
 )
+TELEGRAM_CSV = (
+    ARCHIVE
+    / "0_주식_에이전트"
+    / "소수몽키_에이전트"
+    / "01_텔레그램_원천파서"
+    / "API_수집"
+    / "인덱스"
+    / "소수몽키_API_일자별_집계.csv"
+)
+SIGNAL_DIR = (
+    ARCHIVE
+    / "0_주식_에이전트"
+    / "소수몽키_에이전트"
+    / "03_신호_태그화"
+    / "신호판"
+)
 
 
 def check_scheduler(name: str) -> str:
@@ -65,6 +81,19 @@ def main() -> None:
 
     checks["vercel_site"] = check_url(DEPLOY_URL)
     checks["telegram_env"] = "ok" if TELEGRAM_ENV.exists() else "missing"
+
+    if TELEGRAM_CSV.exists():
+        import csv
+        rows = list(csv.DictReader(TELEGRAM_CSV.open(encoding="utf-8-sig")))
+        latest_tg = rows[-1]["date"] if rows else "-"
+        checks["telegram_latest"] = f"ok - {latest_tg} ({len(rows)} days)"
+    else:
+        checks["telegram_latest"] = "missing csv"
+
+    boards = list(SIGNAL_DIR.glob("신호판_*.md")) if SIGNAL_DIR.exists() else []
+    stubs = sum(1 for p in boards if "auto-stub" in p.read_text(encoding="utf-8", errors="replace"))
+    tagged = sum(1 for p in boards if "auto-tagged" in p.read_text(encoding="utf-8", errors="replace"))
+    checks["signal_boards"] = f"ok - {len(boards)} files, {tagged} tagged, {stubs} stubs"
     checks["scheduler_deploy"] = check_scheduler("StockManagment_DailyDeploy")
     checks["scheduler_refresh"] = check_scheduler("StockManagment_DailyRefresh")
 

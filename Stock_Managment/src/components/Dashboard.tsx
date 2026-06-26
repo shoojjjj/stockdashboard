@@ -30,7 +30,11 @@ export function Dashboard({ data }: { data: DashboardData }) {
         <SignalTab signals={data.signals} latestDate={data.latestSignalDate} />
       )}
       {tab === "portfolio" && (
-        <PortfolioTab portfolio={data.portfolio} rebalance={data.rebalance} />
+        <PortfolioTab
+          portfolio={data.portfolio}
+          rebalance={data.rebalance}
+          pendingInputs={data.pendingInputs}
+        />
       )}
       {tab === "asset" && (
         <BriefingTab

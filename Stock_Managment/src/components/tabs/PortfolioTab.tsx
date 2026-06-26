@@ -1,14 +1,17 @@
 import type { BriefingSlot, ContentSlot } from "@/lib/types";
 import { BriefingTab } from "./BriefingTab";
+import { PortfolioEditor } from "./PortfolioEditor";
 
 interface PortfolioTabProps {
   portfolio: BriefingSlot;
   rebalance: ContentSlot;
+  pendingInputs?: number;
 }
 
-export function PortfolioTab({ portfolio, rebalance }: PortfolioTabProps) {
+export function PortfolioTab({ portfolio, rebalance, pendingInputs }: PortfolioTabProps) {
   return (
     <div className="space-y-6">
+      <PortfolioEditor pendingInputs={pendingInputs} />
       <BriefingTab
         slot={portfolio}
         title="실제 보유현황"

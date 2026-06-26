@@ -85,8 +85,13 @@ def load_latest_log() -> str:
 
 
 def parse_args() -> dict:
-    phase_done = {1: True, 2: True, 3: "--step3-done" in sys.argv or "--step4-done" in sys.argv,
-                  4: "--step4-done" in sys.argv}
+    phase_done = {1: True, 2: True, 3: any("--step{n}-done" in " ".join(sys.argv) for n in range(3, 10)),
+                  4: any("--step{n}-done" in " ".join(sys.argv) for n in range(4, 10)),
+                  5: any("--step{n}-done" in " ".join(sys.argv) for n in range(5, 10)),
+                  6: any("--step{n}-done" in " ".join(sys.argv) for n in range(6, 10)),
+                  7: any("--step{n}-done" in " ".join(sys.argv) for n in range(7, 10)),
+                  8: any("--step{n}-done" in " ".join(sys.argv) for n in range(8, 10)),
+                  9: "--step9-done" in sys.argv}
     message = ""
     for i, arg in enumerate(sys.argv):
         if arg == "--message" and i + 1 < len(sys.argv):
@@ -250,15 +255,46 @@ def default_steps(phase_done: dict, phase_active: int = 0) -> list[dict]:
         {"phase": "4단계", "title": "풀 자동 파이프라인", "done": phase_done.get(4, False),
          "active": phase_active == 4 and not phase_done.get(4, False),
          "detail": "수집→빌드→git push→Vercel 재배포 원클릭/스케줄"},
+        {"phase": "5단계", "title": "포트폴리오 입력 + 브리핑 동기화", "done": phase_done.get(5, False),
+         "active": phase_active == 5 and not phase_done.get(5, False),
+         "detail": "PortfolioEditor, sync_briefing.py, /api/portfolio"},
+        {"phase": "6단계", "title": "텔레그램 자동수집 + 신호판 스텁", "done": phase_done.get(6, False),
+         "active": phase_active == 6 and not phase_done.get(6, False),
+         "detail": "스케줄러 텔레그램 ON, generate_signal_stubs.py"},
+        {"phase": "7단계", "title": "스텁 자동 태그화", "done": phase_done.get(7, False),
+         "active": phase_active == 7 and not phase_done.get(7, False),
+         "detail": "auto_tag_stubs.py — 텔레그램 원문→S1~S3 규칙 태그"},
+        {"phase": "8단계", "title": "Vercel 배포 + 포트폴리오 UX", "done": phase_done.get(8, False),
+         "active": phase_active == 8 and not phase_done.get(8, False),
+         "detail": "저장→자동 rebuild, git push 신호판, Vercel prod"},
+        {"phase": "9단계", "title": "GitHub 원격 동기화", "done": phase_done.get(9, False),
+         "active": phase_active == 9 and not phase_done.get(9, False),
+         "detail": "pull --rebase + 신호판·코드 전체 push"},
     ]
 
 
 def main() -> None:
     args = parse_args()
     phase_active = 4 if "--step4-active" in sys.argv else 0
-    if "--step4-done" in sys.argv:
+    if "--step4-done" in sys.argv or "--step5-done" in sys.argv:
         args["phase_done"][4] = True
         args["phase_done"][3] = True
+    if "--step5-done" in sys.argv:
+        args["phase_done"][5] = True
+    if "--step6-done" in sys.argv:
+        args["phase_done"][6] = True
+        args["phase_done"][5] = True
+        args["phase_done"][4] = True
+        args["phase_done"][3] = True
+    if "--step7-done" in sys.argv:
+        for n in (3, 4, 5, 6, 7):
+            args["phase_done"][n] = True
+    if "--step8-done" in sys.argv:
+        for n in (3, 4, 5, 6, 7, 8):
+            args["phase_done"][n] = True
+    if "--step9-done" in sys.argv:
+        for n in (3, 4, 5, 6, 7, 8, 9):
+            args["phase_done"][n] = True
 
     data = load_dashboard()
     steps = default_steps(args["phase_done"], phase_active)

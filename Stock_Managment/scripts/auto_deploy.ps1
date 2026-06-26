@@ -31,7 +31,7 @@ function Show-Report($message, [string[]]$extraArgs) {
 function Show-ReportFinal($message) {
     $allArgs = @(
         $ReportScript, "--message", $message,
-        "--step3-done", "--step4-done",
+        "--step3-done", "--step4-done", "--step5-done", "--step6-done", "--step7-done", "--step8-done",
         "--smart-open", "--meaningful"
     )
     $out = & python @allArgs 2>&1
@@ -66,7 +66,7 @@ try {
         }
     }
 
-    Invoke-Cmd "build dashboard.json" {
+    Invoke-Cmd "signal stubs + build" {
         Push-Location $Root
         python scripts/build_dashboard.py
         Pop-Location
@@ -75,13 +75,21 @@ try {
     if (-not $SkipPush) {
         Invoke-Cmd "git commit push" {
             Push-Location $ArchiveRoot
-            git add Stock_Managment/public/data/dashboard.json Progress_Report.html 2>&1
+            $SignalDir = Join-Path $ArchiveRoot "0_주식_에이전트\소수몽키_에이전트\03_신호_태그화\신호판"
+            git add Stock_Managment/public/data/dashboard.json Progress_Report.html Results_Report.html 2>&1
             git add Progress_Report_*.html Stock_Managment/public/data/health.json 2>&1
+            if (Test-Path $SignalDir) { git add $SignalDir 2>&1 }
+            git add Stock_Managment/src Stock_Managment/scripts 2>&1
             $diff = git diff --staged --name-only 2>&1
             if ($diff) {
                 git commit -m "chore: auto-refresh dashboard $(Get-Date -Format 'yyyy-MM-dd HH:mm')" 2>&1
+                git pull --rebase origin main 2>&1
                 git push origin main 2>&1
-                Write-Log "git push ok"
+                if ($LASTEXITCODE -ne 0) {
+                    Write-Log "WARN git push failed (exit $LASTEXITCODE)"
+                } else {
+                    Write-Log "git push ok"
+                }
                 $script:HadChanges = $true
             } else {
                 Write-Log "git no changes - skip"
