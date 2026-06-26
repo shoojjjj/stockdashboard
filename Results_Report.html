@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stock Managment — 결과 보고서</title>
+<style>
+  body{font-family:'Malgun Gothic',sans-serif;background:#0b1220;color:#e2e8f0;margin:0;padding:24px}
+  .wrap{max-width:960px;margin:0 auto}
+  header{background:linear-gradient(135deg,#059669,#0ea5e9);padding:36px;border-radius:20px;margin-bottom:24px}
+  h1{margin:0 0 8px;font-size:1.8rem}
+  section{background:#1e293b;border-radius:16px;padding:24px;margin-bottom:16px;border:1px solid #334155}
+  h2{color:#34d399;margin:0 0 14px;font-size:1.15rem}
+  table{width:100%;border-collapse:collapse;font-size:.9rem}
+  th,td{border:1px solid #475569;padding:10px;text-align:left}
+  th{background:#334155}
+  .hero{background:#064e3b;border:2px solid #10b981;border-radius:14px;padding:20px;margin-bottom:16px;text-align:center}
+  .hero a{color:#6ee7b7;font-size:1.15rem;font-weight:bold;text-decoration:none}
+  .warn{background:#422006;border-color:#f59e0b;padding:16px;border-radius:12px;margin-top:12px}
+  .cmd{background:#0f172a;padding:12px;border-radius:8px;font-family:Consolas,monospace;font-size:.85rem;margin-top:8px}
+  footer{text-align:center;color:#64748b;font-size:.82rem;margin:24px 0}
+</style></head><body><div class="wrap">
+<header>
+  <h1>📋 Stock Managment — 최종 결과 보고서</h1>
+  <p>생성: 2026-06-26 13:42 KST KST · 1~7단계 완료</p>
+</header>
+
+<div class="hero">
+  <p>🌐 라이브 대시보드</p>
+  <a href="https://stock-managment-black.vercel.app" target="_blank">https://stock-managment-black.vercel.app</a>
+  <p style="margin-top:12px;font-size:.9rem;opacity:.9">로그인 비밀번호: a419128</p>
+</div>
+
+<section>
+  <h2>☀️ 오늘 투자 한눈에</h2>
+  <p><strong>소수몽키 AI 인프라 신호 강함(S3 3건). NVDA/AVGO/DRAM/MU/MSFT 1차 충원 방향 유지. ARM은 급등으로 2차 조건부.</strong></p>
+  <p>권장: 조건부 실행 검토 — 추격 매수 금지, 눌림/재지지 조건 확인 후 진행</p>
+  <p>신호판: 2026-06-03 · 신호 19개 · 미입력 21곳</p>
+</section>
+
+<section>
+  <h2>🚀 완료된 단계 (1~7)</h2>
+  <table><tr><th>단계</th><th>내용</th><th>상태</th><th>비고</th></tr><tr><td>1단계</td><td>MVP 대시보드</td><td>✅</td><td>6탭 UI, 신호판 연동</td></tr><tr><td>2단계</td><td>1_브리핑 + 자동갱신</td><td>✅</td><td>4에이전트 템플릿, 스케줄러</td></tr><tr><td>3단계</td><td>GitHub + Vercel</td><td>✅</td><td>https://stock-managment-black.vercel.app</td></tr><tr><td>4단계</td><td>풀 자동 파이프라인</td><td>✅</td><td>build→push→deploy, 1h 레포트</td></tr><tr><td>5단계</td><td>포트폴리오 입력 + 동기화</td><td>✅</td><td>웹 입력폼, sync_briefing.py</td></tr><tr><td>6단계</td><td>텔레그램 자동수집 + 신호판</td><td>✅</td><td>스케줄러 ON, signal stubs</td></tr><tr><td>7단계</td><td>스텁 자동 태그화</td><td>✅</td><td>auto_tag_stubs.py, S1~S3 규칙</td></tr></table>
+</section>
+
+<section>
+  <h2>🤖 에이전트</h2>
+  <table><tr><th>에이전트</th><th>상태</th><th>역할</th></tr><tr><td>🐵 소수몽키</td><td>✅</td><td>시장 신호·모멘텀</td></tr><tr><td>🧠 자산제곱</td><td>✅</td><td>원칙·매수 게이트</td></tr><tr><td>💼 포트폴리오</td><td>✅</td><td>보유·노출 여력</td></tr><tr><td>⚖️ 토론 중재</td><td>✅</td><td>최종 행동 정리</td></tr></table>
+</section>
+
+<section>
+  <h2>⚙️ 헬스체크</h2>
+  <p>종합: <strong>OK</strong></p>
+  <table><tr><th>항목</th><th>결과</th></tr><tr><td>dashboard_json</td><td>ok - signals 19, pending 21</td></tr><tr><td>vercel_site</td><td>ok (200)</td></tr><tr><td>telegram_env</td><td>ok</td></tr><tr><td>telegram_latest</td><td>ok - 2026-06-03 (19 days)</td></tr><tr><td>signal_boards</td><td>ok - 19 files, 16 tagged, 0 stubs</td></tr><tr><td>scheduler_deploy</td><td>ok</td></tr><tr><td>scheduler_refresh</td><td>ok</td></tr><tr><td>github_remote</td><td>ok</td></tr></table>
+</section>
+
+<section>
+  <h2>🔄 자동화 (매일)</h2>
+  <table>
+    <tr><td>06:00 DailyDeploy</td><td>빌드 → git push → Vercel</td></tr>
+    <tr><td>06:00 DailyRefresh</td><td>텔레그램 수집 + JSON 빌드</td></tr>
+    <tr><td>매 1시간 HourlyCheck</td><td>헬스체크 (레포트 1h throttle)</td></tr>
+  </table>
+  <p style="margin-top:10px;font-size:.85rem;color:#94a3b8">Git: ff4cc14 feat: throttle progress report popup to 1h or meaningful updates (2026-06-25 23:33:37 +0900)</p>
+</section>
+
+<section>
+  <h2>▶️ 지금 하면 되는 것</h2>
+  <ol>
+    <li><strong>포트폴리오 탭</strong> → 숫자 입력 → 저장 (로컬 dev)</li>
+    <li>터미널: <code>npm run build:data</code> → <code>npm run deploy:quick</code></li>
+    <li>매일 아침 Vercel 대시보드 확인</li>
+  </ol>
+  <div class="warn">
+    <strong>⏳ 남은 1가지:</strong> 실제_보유현황.md 계좌 숫자 21곳 — 대시보드 포트폴리오 탭에서 입력 가능
+  </div>
+  <div class="cmd">cd Stock_Managment<br>npm run dev          # 로컬 (포트폴리오 저장 가능)<br>npm run deploy:quick # Vercel 반영</div>
+</section>
+
+<footer>Results_Report.html · https://github.com/shoojjjj/stockdashboard</footer>
+</div></body></html>

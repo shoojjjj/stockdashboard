@@ -1,9 +1,11 @@
 {
   "healthy": true,
   "checks": {
-    "dashboard_json": "ok - signals 3, pending 21",
+    "dashboard_json": "ok - signals 19, pending 21",
     "vercel_site": "ok (200)",
     "telegram_env": "ok",
+    "telegram_latest": "ok - 2026-06-03 (19 days)",
+    "signal_boards": "ok - 19 files, 16 tagged, 0 stubs",
     "scheduler_deploy": "ok",
     "scheduler_refresh": "ok",
     "github_remote": "ok"
