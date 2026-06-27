@@ -30,3 +30,11 @@ body {
 .md-content th, .md-content td { border: 1px solid #e2e8f0; padding: 0.5rem 0.75rem; text-align: left; }
 .md-content th { background: #f8fafc; }
 .md-content blockquote { border-left: 3px solid #c7d2fe; padding-left: 1rem; color: #64748b; margin: 0.5rem 0; }
+
+/* 칼럼 본문 — 줄 간격 축소 */
+.md-content-compact h1 { font-size: 1.2rem; margin: 0.5rem 0 0.35rem; }
+.md-content-compact h2 { font-size: 1.05rem; margin: 0.6rem 0 0.3rem; }
+.md-content-compact h3 { font-size: 0.95rem; margin: 0.45rem 0 0.2rem; }
+.md-content-compact p { margin: 0.15rem 0; line-height: 1.55; }
+.md-content-compact li { margin: 0.1rem 0; line-height: 1.55; }
+.md-content-compact blockquote { margin: 0.35rem 0; }

@@ -48,6 +48,8 @@ export interface ContentSlot {
 export interface ColumnArticle {
   id: string;
   title: string;
+  date?: string;
+  dateLabel?: string;
 }
 
 export interface ColumnCategory {

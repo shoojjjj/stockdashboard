@@ -12,6 +12,8 @@ interface ArticleDetail {
   id: string;
   category: string;
   title: string;
+  date?: string;
+  dateLabel?: string;
   content: string;
 }
 
@@ -23,13 +25,15 @@ export function ColumnsTab({ columns }: ColumnsTabProps) {
   const [error, setError] = useState("");
 
   const category = columns.find((c) => c.name === activeCat) ?? columns[0];
-  const articles = category?.articles ?? [];
 
   const filtered = useMemo(() => {
+    const articles = [...(category?.articles ?? [])].sort((a, b) =>
+      (b.date ?? "").localeCompare(a.date ?? "")
+    );
     const q = query.trim().toLowerCase();
     if (!q) return articles;
     return articles.filter((a) => a.title.toLowerCase().includes(q));
-  }, [articles, query]);
+  }, [category?.articles, query]);
 
   async function openArticle(id: string) {
     setLoading(true);
@@ -60,7 +64,7 @@ export function ColumnsTab({ columns }: ColumnsTabProps) {
   return (
     <div className="space-y-4">
       <p className="text-slate-600 text-sm">
-        제목을 누르면 본문을 바로 읽을 수 있습니다. (아카이브 <code className="bg-slate-100 px-1 rounded">칼럼/</code> 연동)
+        최신순 정렬 · 제목 클릭 시 본문 표시
       </p>
 
       <div className="flex flex-wrap gap-2">
@@ -87,31 +91,38 @@ export function ColumnsTab({ columns }: ColumnsTabProps) {
             placeholder={`${category?.name ?? ""}에서 검색…`}
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            className="w-full border rounded-lg px-3 py-2 text-sm mb-3"
+            className="w-full border rounded-lg px-3 py-2 text-sm mb-2"
           />
-          <ul className="flex-1 overflow-y-auto space-y-1 max-h-[480px] pr-1">
+          <ul className="flex-1 overflow-y-auto divide-y divide-slate-100 max-h-[480px]">
             {filtered.map((a) => (
               <li key={a.id}>
                 <button
                   type="button"
                   onClick={() => openArticle(a.id)}
                   disabled={loading}
-                  className={`w-full text-left text-sm px-3 py-2 rounded-lg hover:bg-indigo-50 transition ${
-                    selected?.id === a.id ? "bg-indigo-100 text-indigo-900 font-medium" : "text-slate-700"
+                  className={`w-full text-left text-sm px-2 py-2 hover:bg-indigo-50 transition flex items-start justify-between gap-3 ${
+                    selected?.id === a.id ? "bg-indigo-50 text-indigo-900" : "text-slate-700"
                   }`}
                 >
-                  {a.title}
+                  <span className={`leading-snug ${selected?.id === a.id ? "font-medium" : ""}`}>
+                    {a.title}
+                  </span>
+                  {a.dateLabel && (
+                    <span className="text-xs text-slate-400 shrink-0 pt-0.5 tabular-nums">
+                      {a.dateLabel}
+                    </span>
+                  )}
                 </button>
               </li>
             ))}
             {filtered.length === 0 && (
-              <li className="text-sm text-slate-400 px-3 py-4">검색 결과 없음</li>
+              <li className="text-sm text-slate-400 px-2 py-4">검색 결과 없음</li>
             )}
           </ul>
           {error && <p className="text-xs text-red-600 mt-2">{error}</p>}
         </div>
 
-        <div className="bg-white rounded-2xl border p-5 overflow-y-auto max-h-[560px]">
+        <div className="bg-white rounded-2xl border p-4 overflow-y-auto max-h-[560px]">
           {loading && <p className="text-sm text-slate-500">불러오는 중…</p>}
           {!loading && !selected && (
             <div className="text-center text-slate-400 py-16 text-sm">
@@ -120,16 +131,21 @@ export function ColumnsTab({ columns }: ColumnsTabProps) {
           )}
           {selected && !loading && (
             <>
-              <p className="text-xs text-indigo-600 mb-1">{selected.category}</p>
-              <h2 className="text-lg font-bold text-slate-900 mb-4">{selected.title}</h2>
-              <MarkdownView content={selected.content} />
+              <div className="flex flex-wrap items-center gap-2 mb-3 pb-2 border-b border-slate-100">
+                <span className="text-xs text-indigo-600">{selected.category}</span>
+                {selected.dateLabel && (
+                  <span className="text-xs text-slate-400">{selected.dateLabel}</span>
+                )}
+              </div>
+              <h2 className="text-lg font-bold text-slate-900 mb-2 leading-snug">{selected.title}</h2>
+              <MarkdownView content={selected.content} compact />
             </>
           )}
         </div>
       </div>
 
       <div className="bg-indigo-50 border border-indigo-100 rounded-xl p-4 text-sm text-indigo-800">
-        💡 추천: <strong>자산네제곱 프로젝트</strong> 1→6단계 순서, 그다음 투자 전략
+        💡 추천: <strong>자산네제곱 프로젝트</strong> 최신 글부터, 1→6단계 순서대로
       </div>
     </div>
   );

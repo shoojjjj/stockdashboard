@@ -77,6 +77,7 @@ try {
             Push-Location $ArchiveRoot
             $SignalDir = Join-Path $ArchiveRoot "0_주식_에이전트\소수몽키_에이전트\03_신호_태그화\신호판"
             git add Stock_Managment/public/data/dashboard.json Progress_Report.html Results_Report.html 2>&1
+            git add Stock_Managment/public/data/columns 2>&1
             git add Progress_Report_*.html Stock_Managment/public/data/health.json 2>&1
             if (Test-Path $SignalDir) { git add $SignalDir 2>&1 }
             git add Stock_Managment/src Stock_Managment/scripts 2>&1

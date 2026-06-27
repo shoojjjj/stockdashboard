@@ -162,12 +162,52 @@ def load_telegram_stats() -> list[dict[str, str]]:
         return list(csv.DictReader(f))
 
 
-def strip_frontmatter(text: str) -> str:
+def strip_frontmatter(text: str) -> tuple[str, dict[str, str]]:
+    meta: dict[str, str] = {}
     if text.startswith("---"):
         end = text.find("\n---", 3)
         if end != -1:
-            return text[end + 4 :].lstrip("\n")
-    return text
+            block = text[3:end]
+            for line in block.splitlines():
+                line = line.strip()
+                if line.startswith("- ") or not line or ":" not in line:
+                    continue
+                key, val = line.split(":", 1)
+                meta[key.strip()] = val.strip()
+            return text[end + 4 :].lstrip("\n"), meta
+    return text, meta
+
+
+def clean_column_body(text: str) -> str:
+    text = text.replace("\u200b", "").replace("\xa0", " ")
+    lines = text.splitlines()
+    out: list[str] = []
+    blank_run = 0
+    for line in lines:
+        if not line.strip():
+            blank_run += 1
+            if blank_run <= 1:
+                out.append("")
+            continue
+        blank_run = 0
+        out.append(line.rstrip())
+    return "\n".join(out).strip()
+
+
+def parse_column_date(meta: dict[str, str], path: Path) -> tuple[str, str]:
+    from datetime import datetime
+
+    raw = meta.get("Date") or meta.get("date") or ""
+    formats = ("%B %d, %Y", "%b %d, %Y", "%Y-%m-%d", "%Y.%m.%d", "%Y/%m/%d")
+    for fmt in formats:
+        try:
+            dt = datetime.strptime(raw.strip(), fmt)
+            return dt.date().isoformat(), dt.strftime("%Y-%m-%d")
+        except ValueError:
+            continue
+    mtime = datetime.fromtimestamp(path.stat().st_mtime)
+    iso = mtime.date().isoformat()
+    return iso, mtime.strftime("%Y-%m-%d")
 
 
 def column_id(category: str, stem: str) -> str:
@@ -186,18 +226,29 @@ def load_columns() -> list[dict[str, str | int | list]]:
         if not folder.is_dir():
             continue
         articles: list[dict[str, str]] = []
-        for f in sorted(folder.glob("*.md")):
+        for f in folder.glob("*.md"):
+            raw = f.read_text(encoding="utf-8")
+            body, meta = strip_frontmatter(raw)
+            body = clean_column_body(body)
             cid = column_id(folder.name, f.stem)
-            body = strip_frontmatter(f.read_text(encoding="utf-8"))
+            date_iso, date_label = parse_column_date(meta, f)
             article_path = columns_out / f"{cid}.json"
             article_path.write_text(
                 json.dumps(
-                    {"id": cid, "category": folder.name, "title": f.stem, "content": body},
+                    {
+                        "id": cid,
+                        "category": folder.name,
+                        "title": f.stem,
+                        "date": date_iso,
+                        "dateLabel": date_label,
+                        "content": body,
+                    },
                     ensure_ascii=False,
                 ),
                 encoding="utf-8",
             )
-            articles.append({"id": cid, "title": f.stem})
+            articles.append({"id": cid, "title": f.stem, "date": date_iso, "dateLabel": date_label})
+        articles.sort(key=lambda a: a.get("date", ""), reverse=True)
         categories.append({"name": folder.name, "count": len(articles), "articles": articles})
     return categories
 
