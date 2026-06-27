@@ -27,7 +27,7 @@ export default async function Home() {
   });
 
   return (
-    <main className="max-w-4xl mx-auto px-4 py-6 sm:py-10">
+    <main className="max-w-4xl lg:max-w-6xl xl:max-w-7xl mx-auto px-4 py-6 sm:py-10">
       <header className="mb-8">
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div>

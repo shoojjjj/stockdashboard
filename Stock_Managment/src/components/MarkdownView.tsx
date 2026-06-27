@@ -18,10 +18,27 @@ function compactLines(content: string): string[] {
   return out;
 }
 
-export function MarkdownView({ content, compact = true }: { content: string; compact?: boolean }) {
+export function MarkdownView({
+  content,
+  compact = true,
+  reader = false,
+}: {
+  content: string;
+  compact?: boolean;
+  /** 칼럼 PC 읽기 — 글씨 약간 축소 */
+  reader?: boolean;
+}) {
   const lines = compact ? compactLines(content) : content.split("\n");
+  const className = [
+    "md-content",
+    compact ? "md-content-compact" : "",
+    reader ? "md-content-reader" : "",
+    reader ? "" : "text-sm",
+  ]
+    .filter(Boolean)
+    .join(" ");
   return (
-    <div className={`md-content text-sm${compact ? " md-content-compact" : ""}`}>
+    <div className={className}>
       {lines.map((line, i) => {
         if (line.startsWith("# "))
           return <h1 key={i}>{line.slice(2)}</h1>;
