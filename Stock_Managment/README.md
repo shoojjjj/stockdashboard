@@ -14,6 +14,8 @@ npm run dev          # http://localhost:3000
 
 ```bash
 npm run build:data                    # 수동
+npm run collect:columns               # 자산제곱 칼럼만 (네이버)
+npm run collect                       # 텔레그램 + 칼럼 + 빌드
 scripts/auto_refresh.bat              # Windows 더블클릭
 powershell scripts/register_scheduler.ps1  # 매일 06:00 자동 등록
 ```
@@ -57,9 +59,24 @@ Stock_Managment/
 | 포트폴리오 | `1_브리핑/포트폴리오_브리핑/` |
 | 자산제곱 | `1_브리핑/자산제곱_브리핑/` |
 | 매매 회의 | `1_브리핑/토론_브리핑/` |
-| 칼럼 | `칼럼/` |
+| 칼럼 | `칼럼/` (네이버 프리미엄 자동 수집 → MD) |
 
-## 단계 현황
+## 칼럼 자동 수집 (자산제곱 / 네이버 프리미엄)
+
+1. `column_collect.env.example` → `column_collect.env` 복사
+2. Chrome에서 네이버 로그인 + 자산제곱 구독 확인
+3. DevTools → Network → 글 열기 → Request Headers → **Cookie** 전체 복사 → `NAVER_COOKIE=` 뒤에 붙여넣기
+4. 실행:
+
+```bash
+npm run collect:columns    # 칼럼만
+npm run build:data       # 대시보드 JSON 갱신
+# 또는
+npm run collect          # 텔레그램 + 칼럼 + 빌드 한번에
+```
+
+신규 글은 `아카이브/칼럼/{카테고리}/` 아래 MD로 저장되고, 📡 데이터 수집 버튼(`collect_pipeline`)에도 포함됩니다.
+
 
 - [x] 1단계 MVP — 대시보드 6탭
 - [x] 2단계 — `1_브리핑` 템플릿, 자동 갱신 스크립트, 비밀번호 보호

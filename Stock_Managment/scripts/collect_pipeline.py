@@ -86,6 +86,8 @@ def main() -> int:
     else:
         safe_print("telegram skip: script or .env missing")
 
+    run("column collect", [sys.executable, str(ROOT / "scripts" / "column_collect.py")])
+
     ok = run("build dashboard", [sys.executable, str(ROOT / "scripts" / "build_dashboard.py")]) and ok
     run("health check", [sys.executable, str(ROOT / "scripts" / "health_check.py")])
     safe_print("collect_pipeline done" if ok else "collect_pipeline finished with warnings")

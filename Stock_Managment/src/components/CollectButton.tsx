@@ -5,6 +5,8 @@ import { useEffect, useState } from "react";
 interface CollectStatus {
   available: boolean;
   telegramLatest?: string;
+  columnLatest?: string;
+  columnCookie?: string;
   hint?: string;
 }
 
@@ -49,7 +51,7 @@ export function CollectButton() {
         disabled={loading || status?.available === false}
         title={
           status?.available
-            ? "PC에서 텔레그램 수집 → 신호판 → 대시보드 갱신"
+            ? "PC: 텔레그램 + 자산제곱 칼럼 수집 → 대시보드 갱신"
             : "로컬 dev 전용 (Vercel에서는 비활성)"
         }
         className="inline-flex items-center gap-2 bg-emerald-600 text-white px-4 py-2 rounded-xl text-sm font-semibold hover:bg-emerald-700 disabled:opacity-40 disabled:cursor-not-allowed shadow-sm"
@@ -57,7 +59,13 @@ export function CollectButton() {
         {loading ? "수집 중…" : "📡 데이터 수집"}
       </button>
       <p className="text-xs text-slate-400 mt-1.5">
-        텔레그램 최신: {latest}
+        텔레그램: {latest}
+        {status?.columnLatest && (
+          <span className="block">칼럼: {status.columnLatest.replace("ok - ", "")}</span>
+        )}
+        {status?.columnCookie === "missing env" && status?.available && (
+          <span className="block text-amber-600">칼럼 쿠키 미설정 — column_collect.env 필요</span>
+        )}
         {!status?.available && status !== null && (
           <span className="block text-amber-600">로컬 PC에서만 수집 가능</span>
         )}

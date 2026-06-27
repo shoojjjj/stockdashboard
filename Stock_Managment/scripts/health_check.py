@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import json
+import os
 import subprocess
 import urllib.error
 import urllib.request
@@ -36,6 +37,9 @@ SIGNAL_DIR = (
     / "03_신호_태그화"
     / "신호판"
 )
+COLUMN_DIR = ARCHIVE / "칼럼"
+COLUMN_INDEX = STOCK / "data" / "column_index.json"
+COLUMN_ENV = STOCK / "column_collect.env"
 
 
 def check_scheduler(name: str) -> str:
@@ -94,6 +98,20 @@ def main() -> None:
     stubs = sum(1 for p in boards if "auto-stub" in p.read_text(encoding="utf-8", errors="replace"))
     tagged = sum(1 for p in boards if "auto-tagged" in p.read_text(encoding="utf-8", errors="replace"))
     checks["signal_boards"] = f"ok - {len(boards)} files, {tagged} tagged, {stubs} stubs"
+
+    md_count = len(list(COLUMN_DIR.rglob("*.md"))) if COLUMN_DIR.exists() else 0
+    checks["column_md"] = f"ok - {md_count} files"
+    if COLUMN_INDEX.exists():
+        try:
+            cidx = json.loads(COLUMN_INDEX.read_text(encoding="utf-8"))
+            latest = cidx.get("latest_title") or cidx.get("latest_id") or "-"
+            checks["column_latest"] = f"ok - {latest}"
+        except json.JSONDecodeError:
+            checks["column_latest"] = "parse error"
+    else:
+        checks["column_latest"] = "no index yet"
+    checks["column_cookie"] = "ok" if COLUMN_ENV.exists() or os.environ.get("NAVER_COOKIE") else "missing env"
+
     checks["scheduler_deploy"] = check_scheduler("StockManagment_DailyDeploy")
     checks["scheduler_refresh"] = check_scheduler("StockManagment_DailyRefresh")
 

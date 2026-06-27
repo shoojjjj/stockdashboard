@@ -2,10 +2,13 @@
   "healthy": true,
   "checks": {
     "dashboard_json": "ok - signals 25, pending 21",
-    "vercel_site": "ok (200)",
+    "vercel_site": "error (404)",
     "telegram_env": "ok",
     "telegram_latest": "ok - 2026-06-27 (6 days)",
     "signal_boards": "ok - 25 files, 22 tagged, 0 stubs",
+    "column_md": "ok - 210 files",
+    "column_latest": "ok - -",
+    "column_cookie": "missing env",
     "scheduler_deploy": "ok",
     "scheduler_refresh": "ok",
     "github_remote": "ok"

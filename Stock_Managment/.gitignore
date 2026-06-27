@@ -20,6 +20,7 @@
 *.pem
 .env
 .env*.local
+column_collect.env
 
 # debug
 npm-debug.log*

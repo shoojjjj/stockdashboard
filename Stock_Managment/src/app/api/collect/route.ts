@@ -33,6 +33,8 @@ export async function GET() {
     available: localEnabled(),
     telegramEnv: checks.telegram_env ?? "unknown",
     telegramLatest: checks.telegram_latest ?? "unknown",
+    columnLatest: checks.column_latest ?? "unknown",
+    columnCookie: checks.column_cookie ?? "unknown",
     signalBoards: checks.signal_boards ?? "unknown",
     hint: localEnabled()
       ? "PC 로컬 — 수집 버튼 사용 가능"
@@ -72,7 +74,7 @@ export async function POST() {
 
   return NextResponse.json({
     ok: true,
-    message: "텔레그램 수집 + 대시보드 갱신 완료",
+    message: "텔레그램 + 칼럼 수집 + 대시보드 갱신 완료",
     output: result.output.trim().split("\n").slice(-8).join("\n"),
   });
 }
