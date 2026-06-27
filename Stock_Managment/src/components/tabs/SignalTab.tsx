@@ -28,7 +28,9 @@ export function SignalTab({ signals, latestDate, telegramPhotos = [], telegramPh
   }
 
   const isAuto = Object.values(selected.meta).some((v) => v.includes("auto-tagged"));
-  const dayPhotos = telegramPhotos.filter((p) => p.date === selected.date);
+  const dayPhotos = telegramPhotos
+    .filter((p) => p.date === selected.date)
+    .sort((a, b) => a.time.localeCompare(b.time));
 
   return (
     <div className="space-y-6">
@@ -53,6 +55,12 @@ export function SignalTab({ signals, latestDate, telegramPhotos = [], telegramPh
           </span>
         )}
       </div>
+
+      <TelegramPhotoGallery
+        date={selected.date}
+        photos={dayPhotos}
+        stats={telegramPhotoStats}
+      />
 
       <div className="bg-white rounded-2xl border p-5">
         <div className="flex flex-wrap items-center gap-2 mb-3">
@@ -123,12 +131,6 @@ export function SignalTab({ signals, latestDate, telegramPhotos = [], telegramPh
           </table>
         </div>
       )}
-
-      <TelegramPhotoGallery
-        date={selected.date}
-        photos={dayPhotos}
-        stats={telegramPhotoStats}
-      />
     </div>
   );
 }
@@ -142,13 +144,11 @@ function TelegramPhotoGallery({
   photos: TelegramPhoto[];
   stats?: TelegramPhotoStats;
 }) {
-  const [expanded, setExpanded] = useState<string | null>(null);
-
   if (!photos.length && !stats?.pending) return null;
 
   return (
     <div className="bg-white rounded-2xl border p-5">
-      <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
+      <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
         <h3 className="font-bold text-slate-800">📷 텔레그램 차트·스크린샷 ({date})</h3>
         {stats?.cutoff && (
           <span className="text-xs text-slate-400">
@@ -164,50 +164,37 @@ function TelegramPhotoGallery({
 
       {photos.length === 0 ? (
         <p className="text-sm text-slate-500">
-          이 날짜에 저장된 사진이 없습니다. 수집 시 <code className="bg-slate-100 px-1 rounded">--download-media</code>가
-          켜져 있어야 합니다.
+          이 날짜에 저장된 사진이 없습니다. 수집 시{" "}
+          <code className="bg-slate-100 px-1 rounded">--download-media</code>가 켜져 있어야 합니다.
         </p>
       ) : (
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+        <div className="space-y-8">
           {photos.map((p) => (
-            <button
+            <figure
               key={p.url}
-              type="button"
-              onClick={() => setExpanded(expanded === p.url ? null : p.url)}
-              className="text-left group rounded-xl border border-slate-200 overflow-hidden hover:border-indigo-300 hover:shadow-sm transition"
+              className="rounded-xl border border-slate-200 overflow-hidden bg-slate-50"
             >
+              {(p.time || p.caption) && (
+                <figcaption className="px-4 py-3 text-sm border-b border-slate-100 bg-white">
+                  {p.time && (
+                    <time className="text-xs text-slate-400 tabular-nums">{p.time}</time>
+                  )}
+                  {p.caption && (
+                    <p className="text-slate-600 whitespace-pre-wrap mt-1 leading-relaxed">
+                      {p.caption}
+                    </p>
+                  )}
+                </figcaption>
+              )}
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={p.url}
                 alt={p.caption || p.messageId}
-                className="w-full aspect-[4/3] object-cover bg-slate-100"
+                className="w-full h-auto block"
                 loading="lazy"
               />
-              <div className="p-2">
-                <p className="text-xs text-slate-400">{p.time}</p>
-                {p.caption && (
-                  <p className="text-xs text-slate-600 line-clamp-2 mt-0.5">{p.caption}</p>
-                )}
-              </div>
-            </button>
+            </figure>
           ))}
-        </div>
-      )}
-
-      {expanded && (
-        <div
-          className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4"
-          onClick={() => setExpanded(null)}
-          onKeyDown={(e) => e.key === "Escape" && setExpanded(null)}
-          role="dialog"
-        >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={expanded}
-            alt="확대"
-            className="max-w-full max-h-[90vh] object-contain rounded-lg"
-            onClick={(e) => e.stopPropagation()}
-          />
         </div>
       )}
     </div>
