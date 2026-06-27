@@ -1,0 +1,32 @@
+{
+  "date": "2026-05-29",
+  "savedAt": "2026-06-26T09:42:45.175655+00:00",
+  "headline": "AI·반도체·메모리 — 🟢나스닥, 에센피 일제히 신고가 마감  메모리 - 샌디스크 CPU ARM/AMD/퀄컴 서버 - 델 외에도  SW - 마소/오라클/팔란티어 헬스케…",
+  "action": "조건부 실행 검토 — 추격 매수 금지, 눌림/재지지 조건 확인 후 진행",
+  "bullets": [
+    "AI·반도체·메모리 — 🟢나스닥, 에센피 일제히 신고가 마감  메모리 - 샌디스크 CPU ARM/AMD/퀄컴 서버 - 델 외에도  SW - 마소/오라클/팔란티어 헬스케…",
+    "우주·스페이스X — 🔥 주요 신고가 현황, 5/29 *52주 신고가 포함  ⚙️ 반도체·장비 AMD (CPU·GPU) ARM (반도체 IP)  📦 스토리지·서버 D…"
+  ],
+  "latestSignalDate": "2026-05-29",
+  "signalSource": "Telegram API `소수의견(26년 2분기)` (auto-tagged)",
+  "isAutoTagged": true,
+  "gradeCounts": {
+    "SM-S3": 2
+  },
+  "signalSummary": [
+    {
+      "grade": "SM-S3",
+      "signal": "AI·반도체·메모리 — 🟢나스닥, 에센피 일제히 신고가 마감  메모리 - 샌디스크 CPU ARM/AMD/퀄컴 서버 - 델 외에도  SW - 마소/오라클/팔란티어 헬스케…",
+      "tags": "종목, 섹터, ETF",
+      "evidence": "message3327, message3326, message3325, message3324"
+    },
+    {
+      "grade": "SM-S3",
+      "signal": "우주·스페이스X — 🔥 주요 신고가 현황, 5/29 *52주 신고가 포함  ⚙️ 반도체·장비 AMD (CPU·GPU) ARM (반도체 IP)  📦 스토리지·서버 D…",
+      "tags": "종목, ETF, 이벤트",
+      "evidence": "message3327, message3326, message3325, message3324"
+    }
+  ],
+  "telegramMessages": "83",
+  "pendingInputs": 21
+}

@@ -1,0 +1,54 @@
+{
+  "date": "2026-05-21",
+  "savedAt": "2026-06-26T09:42:45.146650+00:00",
+  "headline": "AI·반도체·메모리 — 다행히 ARM도 본격 상승랠리를 이어나갑니다",
+  "action": "조건부 실행 검토 — 추격 매수 금지, 눌림/재지지 조건 확인 후 진행",
+  "bullets": [
+    "AI·반도체·메모리 — 다행히 ARM도 본격 상승랠리를 이어나갑니다",
+    "SW·클라우드·AI에이전트 — <AI에이전트 수혜주 주도 지속>  CPU : $INTC $AMD $ARM 등 메모리 : 삼전닉스 $MU $SNDK 등  ETF : $DRAM,…",
+    "데이터센터·인프라 — <🐵주요 ETF DAILY> 유가 하락과 함께 항공주 강세,  기존 주도주인 반도체/데이터센터/한국 등 강세 마감",
+    "우주·스페이스X — <🚀스페이스X 첫 재무 공개>  상장을 앞두고 스페이스X의 재무제표가 첫 공개되었습니다  놀라운건 머스크의 의결권입니다 차등의결권(클래스A,B)…",
+    "정책·트럼프·IBM — 🔔트럼프 행정부, 이번엔 양자 투자 발표"
+  ],
+  "latestSignalDate": "2026-05-21",
+  "signalSource": "Telegram API `소수의견(26년 2분기)` (auto-tagged)",
+  "isAutoTagged": true,
+  "gradeCounts": {
+    "SM-S3": 4,
+    "SM-S2": 1
+  },
+  "signalSummary": [
+    {
+      "grade": "SM-S3",
+      "signal": "AI·반도체·메모리 — 다행히 ARM도 본격 상승랠리를 이어나갑니다",
+      "tags": "종목, 섹터, ETF",
+      "evidence": "message2843, message2844, message2848, message2847"
+    },
+    {
+      "grade": "SM-S3",
+      "signal": "SW·클라우드·AI에이전트 — <AI에이전트 수혜주 주도 지속>  CPU : $INTC $AMD $ARM 등 메모리 : 삼전닉스 $MU $SNDK 등  ETF : $DRAM,…",
+      "tags": "종목, 섹터",
+      "evidence": "message2843, message2844, message2848, message2847"
+    },
+    {
+      "grade": "SM-S3",
+      "signal": "데이터센터·인프라 — <🐵주요 ETF DAILY> 유가 하락과 함께 항공주 강세,  기존 주도주인 반도체/데이터센터/한국 등 강세 마감",
+      "tags": "종목, 섹터",
+      "evidence": "message2843, message2844, message2848, message2847"
+    },
+    {
+      "grade": "SM-S3",
+      "signal": "우주·스페이스X — <🚀스페이스X 첫 재무 공개>  상장을 앞두고 스페이스X의 재무제표가 첫 공개되었습니다  놀라운건 머스크의 의결권입니다 차등의결권(클래스A,B)…",
+      "tags": "종목, ETF, 이벤트",
+      "evidence": "message2843, message2844, message2848, message2847"
+    },
+    {
+      "grade": "SM-S2",
+      "signal": "정책·트럼프·IBM — 🔔트럼프 행정부, 이번엔 양자 투자 발표",
+      "tags": "정책, 종목",
+      "evidence": "message2843, message2844, message2848, message2847"
+    }
+  ],
+  "telegramMessages": "83",
+  "pendingInputs": 21
+}

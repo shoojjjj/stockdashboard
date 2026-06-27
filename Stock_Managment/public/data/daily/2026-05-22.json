@@ -1,0 +1,54 @@
+{
+  "date": "2026-05-22",
+  "savedAt": "2026-06-26T09:42:45.150652+00:00",
+  "headline": "AI·반도체·메모리 — ↗️증시 AI인프라 주도주 강세보이며 상승 마감했습니다",
+  "action": "조건부 실행 검토 — 추격 매수 금지, 눌림/재지지 조건 확인 후 진행",
+  "bullets": [
+    "AI·반도체·메모리 — ↗️증시 AI인프라 주도주 강세보이며 상승 마감했습니다",
+    "정책·트럼프·IBM — ↗️트럼프 행정부가 투자한 양자컴 관련주 초강세 마감",
+    "데이터센터·인프라 — 엔비디아발 AI수요 강세 기대에 네비우스/코어위브/아이렌 등 데이터센터주 초강세 마감",
+    "우주·스페이스X — 🚀스페이스X 상장 앞두고 우주도 초강세입니다  주도주들 돌아가며 다 오릅니다  우주 대장은 개인적으로 RKLB, PL로 보고 있어서 보유 중입니…",
+    "매크로·금리·물가 — *소수의 AI인프라 주도주들이 돌아가며 신고가 뚫는 장세입니다 (웬만한 매크로 악재 무시, AI 쩐의 전쟁 기대감 지속)"
+  ],
+  "latestSignalDate": "2026-05-22",
+  "signalSource": "Telegram API `소수의견(26년 2분기)` (auto-tagged)",
+  "isAutoTagged": true,
+  "gradeCounts": {
+    "SM-S3": 4,
+    "SM-S2": 1
+  },
+  "signalSummary": [
+    {
+      "grade": "SM-S3",
+      "signal": "AI·반도체·메모리 — ↗️증시 AI인프라 주도주 강세보이며 상승 마감했습니다",
+      "tags": "종목, 섹터, ETF",
+      "evidence": "message2929, message2928, message2927, message2926"
+    },
+    {
+      "grade": "SM-S3",
+      "signal": "정책·트럼프·IBM — ↗️트럼프 행정부가 투자한 양자컴 관련주 초강세 마감",
+      "tags": "정책, 종목",
+      "evidence": "message2929, message2928, message2927, message2926"
+    },
+    {
+      "grade": "SM-S3",
+      "signal": "데이터센터·인프라 — 엔비디아발 AI수요 강세 기대에 네비우스/코어위브/아이렌 등 데이터센터주 초강세 마감",
+      "tags": "종목, 섹터",
+      "evidence": "message2929, message2928, message2927, message2926"
+    },
+    {
+      "grade": "SM-S3",
+      "signal": "우주·스페이스X — 🚀스페이스X 상장 앞두고 우주도 초강세입니다  주도주들 돌아가며 다 오릅니다  우주 대장은 개인적으로 RKLB, PL로 보고 있어서 보유 중입니…",
+      "tags": "종목, ETF, 이벤트",
+      "evidence": "message2929, message2928, message2927, message2926"
+    },
+    {
+      "grade": "SM-S2",
+      "signal": "매크로·금리·물가 — *소수의 AI인프라 주도주들이 돌아가며 신고가 뚫는 장세입니다 (웬만한 매크로 악재 무시, AI 쩐의 전쟁 기대감 지속)",
+      "tags": "매크로, 정책",
+      "evidence": "message2929, message2928, message2927, message2926"
+    }
+  ],
+  "telegramMessages": "94",
+  "pendingInputs": 21
+}

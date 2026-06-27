@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-26T09:36:40.280639+00:00",
+  "generatedAt": "2026-06-27T01:20:52.352547+00:00",
   "archivePath": "C:\\Users\\JEON\\Desktop\\아카이브",
   "today": {
     "headline": "소수몽키 AI 인프라 신호 강함(S3 3건). NVDA/AVGO/DRAM/MU/MSFT 1차 충원 방향 유지. ARM은 급등으로 2차 조건부.",
@@ -10,13 +10,13 @@
   },
   "currentPan": {
     "ready": true,
-    "content": "# 현재판\n\n> 사용자가 먼저 보는 합산 현재판\n> 갱신: 2026-06-03\n\n## 오늘 한 줄\n\n소수몽키 AI 인프라 신호 강함(S3 3건). NVDA/AVGO/DRAM/MU/MSFT 1차 충원 방향 유지. ARM은 급등으로 2차 조건부.\n\n## 권장 행동\n\n**조건부 실행 검토** — 추격 매수 금지, 눌림/재지지 조건 확인 후 진행\n\n## 에이전트 상태\n\n| 에이전트 | 상태 | 최신 입력 |\n|----------|------|-----------|\n| 소수몽키 | ✅ | 신호판 2026-06-01 |\n| 자산제곱 | ✅ | 이번주 실행판 |\n| 포트폴리오 | ✅ | 실제 보유현황 |\n| 토론 중재 | ✅ | 오늘 매매 회의 |\n\n## 바로 볼 문서\n\n- [실제 보유현황](포트폴리오_브리핑/00_현황/실제_보유현황.md)\n- [이번주 실행판](자산제곱_브리핑/00_운용판단/이번주_실행판.md)\n- [오늘 매매 회의](토론_브리핑/00_오늘매매/오늘_매매_회의.md)\n- [소수몽키 신호판](../0_주식_에이전트/소수몽키_에이전트/03_신호_태그화/신호판/신호판_2026-06-01.md)\n"
+    "content": "# 현재판\n\n> 사용자가 먼저 보는 합산 현재판\n> 갱신: 2026-06-27\n\n## 오늘 한 줄\n\n소수몽키 AI 인프라 신호 강함(S3 3건). NVDA/AVGO/DRAM/MU/MSFT 1차 충원 방향 유지. ARM은 급등으로 2차 조건부.\n\n## 권장 행동\n\n**조건부 실행 검토** — 추격 매수 금지, 눌림/재지지 조건 확인 후 진행\n\n## 에이전트 상태\n\n| 에이전트 | 상태 | 최신 입력 |\n|----------|------|-----------|\n| 소수몽키 | ✅ | 신호판 2026-06-01 |\n| 자산제곱 | ✅ | 이번주 실행판 |\n| 포트폴리오 | ✅ | 실제 보유현황 |\n| 토론 중재 | ✅ | 오늘 매매 회의 |\n\n## 바로 볼 문서\n\n- [실제 보유현황](포트폴리오_브리핑/00_현황/실제_보유현황.md)\n- [이번주 실행판](자산제곱_브리핑/00_운용판단/이번주_실행판.md)\n- [오늘 매매 회의](토론_브리핑/00_오늘매매/오늘_매매_회의.md)\n- [소수몽키 신호판](../0_주식_에이전트/소수몽키_에이전트/03_신호_태그화/신호판/신호판_2026-06-01.md)\n"
   },
   "sosumonkeyReport": {
     "ready": true,
     "content": "# 소수몽키 일일보고 2026-06-01\n\n> 기준 원천: 신호판 2026-06-01\n> 핵심: AI 인프라 주도장 확산, ARM 부상, 메모리 강세, SW 반격 시작\n\n## 오늘 핵심 3줄\n\n1. GTC 이후 AI 인프라가 메모리·ARM·서버·데이터센터로 확산 중 (SM-S3)\n2. ARM이 엔비디아 PC칩 수혜주로 부상 — 단, 급등으로 추격 금지 (SM-S3)\n3. SW(IGV) 200일선 복귀 — MSFT 반격 신호 (SM-S2)\n\n## 반복 테마\n\n- AI 인프라 순환: 메모리 → ARM/CPU → 서버 → DC → SW\n- 데이터센터 중소형 NBIS/CRWV 강세 지속\n\n## 포트폴리오 시사점\n\n1차 충원 NVDA/AVGO/DRAM/MU/MSFT 정합. ARM은 2차 조건부. PLTR 추가 보류.\n\n## 다음 확인\n\n- IGV 200일선 유지 여부\n- ARM 눌림 구간 형성 여부\n- NVDA 2차 지지 확인\n"
   },
-  "latestSignalDate": "2026-06-03",
+  "latestSignalDate": "2026-06-27",
   "pendingInputs": 21,
   "signals": [
     {
@@ -32,12 +32,6 @@
           "grade": "SM-S2",
           "signal": "매크로·금리·물가 — 🙋Q. 다음주는 뭐볼까요? 🐵A.  1) 다음주는 역시 엔비디아 실적이 가장 핵심이 되겠습니다  다시 엔비디아 랠리가 이어질지,  박스권으로 회…",
           "tags": "매크로, 정책",
-          "evidence": "message2683, message2684, message2685, message2686"
-        },
-        {
-          "grade": "SM-S2",
-          "signal": "AI·반도체·메모리 — 🙋Q. 다음주는 뭐볼까요? 🐵A.  1) 다음주는 역시 엔비디아 실적이 가장 핵심이 되겠습니다  다시 엔비디아 랠리가 이어질지,  박스권으로 회…",
-          "tags": "종목, 섹터, ETF",
           "evidence": "message2683, message2684, message2685, message2686"
         }
       ],
@@ -200,12 +194,6 @@
           "evidence": "message2750, message2749, message2748, message2747"
         },
         {
-          "grade": "SM-S3",
-          "signal": "SW·클라우드·AI에이전트 — 🔔증시 혼조세 마감, AI인프라 및 주도주 약세, SW 등 소외주 상대적 강세로 마감했습니다",
-          "tags": "종목, 섹터",
-          "evidence": "message2750, message2749, message2748, message2747"
-        },
-        {
           "grade": "SM-S2",
           "signal": "매크로·금리·물가 — 🔔프리) 미 증시, 여전히 금리 경계지점 위치하며 약보합 흐름입니다  개인적으로는 당분간 미 10년 금리가 가장 중요한 지표로 보고 있습니다  …",
           "tags": "매크로, 정책",
@@ -216,12 +204,6 @@
           "signal": "우주·스페이스X — 🐵주도주인 메모리/반도체/데이터센터 등이 전반적으로 약세보인 하루였습니다  스페이스X 상장 기대감에 우주 관련주 강세, 그외에는 전쟁 우려로 에…",
           "tags": "종목, ETF, 이벤트",
           "evidence": "message2750, message2749, message2748, message2747"
-        },
-        {
-          "grade": "SM-S2",
-          "signal": "데이터센터·인프라 — 🐵주도주인 메모리/반도체/데이터센터 등이 전반적으로 약세보인 하루였습니다  스페이스X 상장 기대감에 우주 관련주 강세, 그외에는 전쟁 우려로 에…",
-          "tags": "종목, 섹터",
-          "evidence": "message2750, message2749, message2748, message2747"
         }
       ],
       "details": [],
@@ -229,14 +211,6 @@
         {
           "target": "LLY",
           "impact": "SM-S3 신호 — 1차 검토"
-        },
-        {
-          "target": "LLY",
-          "impact": "SM-S3 신호 — 1차 검토"
-        },
-        {
-          "target": "LLY",
-          "impact": "SM-S2 신호 — 관찰"
         },
         {
           "target": "LLY",
@@ -268,12 +242,6 @@
           "grade": "SM-S2",
           "signal": "매크로·금리·물가 — ↘️금리부담 이어지며 증시 전반 약세 마감했습니다",
           "tags": "매크로, 정책",
-          "evidence": "message2795, message2794, message2793, message2792"
-        },
-        {
-          "grade": "SM-S3",
-          "signal": "SW·클라우드·AI에이전트 — 🤖그나마 AI에이전트 기대감 이어지며(구글 행사 등)  마이크론/인텔/샌디스크는 반등 마감하였으나 대체로 약세 보였습니다",
-          "tags": "종목, 섹터",
           "evidence": "message2795, message2794, message2793, message2792"
         },
         {
@@ -322,10 +290,6 @@
         {
           "target": "MU",
           "impact": "SM-S2 신호 — 관찰"
-        },
-        {
-          "target": "ARM",
-          "impact": "SM-S3 신호 — 1차 검토"
         },
         {
           "target": "AMD",
@@ -593,20 +557,8 @@
         },
         {
           "grade": "SM-S3",
-          "signal": "우주·스페이스X — ↗️증시 전반 상승 마감,  AI인프라(CPU), 양자, 우주 등 특히 강세보인 하루였습니다",
-          "tags": "종목, ETF, 이벤트",
-          "evidence": "message3022, message3021, message3020, message3023"
-        },
-        {
-          "grade": "SM-S3",
           "signal": "데이터센터·인프라 — 🔥 주요 신고가 현황, 5/23 *52주 신고가 포함  👑 빅테크 AAPL (아이폰)  ⚙️ 반도체·장비 AMD (CPU) ARM (CPU/설계…",
           "tags": "종목, 섹터",
-          "evidence": "message3022, message3021, message3020, message3023"
-        },
-        {
-          "grade": "SM-S3",
-          "signal": "정책·트럼프·IBM — ↗️증시 전반 상승 마감,  AI인프라(CPU), 양자, 우주 등 특히 강세보인 하루였습니다",
-          "tags": "정책, 종목",
           "evidence": "message3022, message3021, message3020, message3023"
         },
         {
@@ -624,22 +576,6 @@
         },
         {
           "target": "ARM",
-          "impact": "SM-S3 신호 — 1차 검토"
-        },
-        {
-          "target": "ARM",
-          "impact": "SM-S3 신호 — 1차 검토"
-        },
-        {
-          "target": "ARM",
-          "impact": "SM-S3 신호 — 1차 검토"
-        },
-        {
-          "target": "NASA",
-          "impact": "SM-S3 신호 — 1차 검토"
-        },
-        {
-          "target": "SNPS",
           "impact": "SM-S3 신호 — 1차 검토"
         },
         {
@@ -993,24 +929,6 @@
         },
         {
           "grade": "SM-S3",
-          "signal": "데이터센터·인프라 — 🟢나스닥, 에센피 일제히 신고가 마감  메모리 - 샌디스크 CPU ARM/AMD/퀄컴 서버 - 델 외에도  SW - 마소/오라클/팔란티어 헬스케…",
-          "tags": "종목, 섹터",
-          "evidence": "message3327, message3326, message3325, message3324"
-        },
-        {
-          "grade": "SM-S3",
-          "signal": "SW·클라우드·AI에이전트 — 🟢나스닥, 에센피 일제히 신고가 마감  메모리 - 샌디스크 CPU ARM/AMD/퀄컴 서버 - 델 외에도  SW - 마소/오라클/팔란티어 헬스케…",
-          "tags": "종목, 섹터",
-          "evidence": "message3327, message3326, message3325, message3324"
-        },
-        {
-          "grade": "SM-S3",
-          "signal": "정책·트럼프·IBM — 🟢나스닥, 에센피 일제히 신고가 마감  메모리 - 샌디스크 CPU ARM/AMD/퀄컴 서버 - 델 외에도  SW - 마소/오라클/팔란티어 헬스케…",
-          "tags": "정책, 종목",
-          "evidence": "message3327, message3326, message3325, message3324"
-        },
-        {
-          "grade": "SM-S3",
           "signal": "우주·스페이스X — 🔥 주요 신고가 현황, 5/29 *52주 신고가 포함  ⚙️ 반도체·장비 AMD (CPU·GPU) ARM (반도체 IP)  📦 스토리지·서버 D…",
           "tags": "종목, ETF, 이벤트",
           "evidence": "message3327, message3326, message3325, message3324"
@@ -1018,18 +936,6 @@
       ],
       "details": [],
       "rebalancing": [
-        {
-          "target": "ARM",
-          "impact": "SM-S3 신호 — 1차 검토"
-        },
-        {
-          "target": "ARM",
-          "impact": "SM-S3 신호 — 1차 검토"
-        },
-        {
-          "target": "ARM",
-          "impact": "SM-S3 신호 — 1차 검토"
-        },
         {
           "target": "ARM",
           "impact": "SM-S3 신호 — 1차 검토"
@@ -1253,20 +1159,8 @@
         },
         {
           "grade": "SM-S2",
-          "signal": "SW·클라우드·AI에이전트 — 🔔증시 강보합 마감, 엔비디아 발표 관련주로 쏠린 하루  [AI 하드웨어] 엔비디아+6.3% ARM+15.7% 마이크론+6.6% 샌디스크+3.9…",
-          "tags": "종목, 섹터",
-          "evidence": "message3586, message3585, message3584, message3583"
-        },
-        {
-          "grade": "SM-S2",
           "signal": "우주·스페이스X — <🐵주요 ETF 데일리>  메모리/한국/데이터센터(AI HW) SW, 사이버보안(AI SW)  모두 강했던 하루였습니다  우주 관련주는 지난주 …",
           "tags": "종목, ETF, 이벤트",
-          "evidence": "message3586, message3585, message3584, message3583"
-        },
-        {
-          "grade": "SM-S1",
-          "signal": "정책·트럼프·IBM — 🔔증시 강보합 마감, 엔비디아 발표 관련주로 쏠린 하루  [AI 하드웨어] 엔비디아+6.3% ARM+15.7% 마이크론+6.6% 샌디스크+3.9…",
-          "tags": "정책, 종목",
           "evidence": "message3586, message3585, message3584, message3583"
         }
       ],
@@ -1281,16 +1175,8 @@
           "impact": "SM-S3 신호 — 1차 검토"
         },
         {
-          "target": "ARM",
-          "impact": "SM-S2 신호 — 관찰"
-        },
-        {
           "target": "AVGO",
           "impact": "SM-S2 신호 — 관찰"
-        },
-        {
-          "target": "ARM",
-          "impact": "SM-S1 신호 — 관찰"
         }
       ],
       "gradeDistribution": []
@@ -1317,18 +1203,6 @@
           "evidence": "message3654, message3653, message3652, message3651"
         },
         {
-          "grade": "SM-S3",
-          "signal": "데이터센터·인프라 — 🔥 주요 신고가 현황, 6/3 *52주 신고가 포함  👑 빅테크 AAPL (아이폰·서비스)  📡 AI인프라·광통신 AVGO (커스텀 ASIC·네…",
-          "tags": "종목, 섹터",
-          "evidence": "message3654, message3653, message3652, message3651"
-        },
-        {
-          "grade": "SM-S2",
-          "signal": "SW·클라우드·AI에이전트 — 🔥 주요 신고가 현황, 6/3 *52주 신고가 포함  👑 빅테크 AAPL (아이폰·서비스)  📡 AI인프라·광통신 AVGO (커스텀 ASIC·네…",
-          "tags": "종목, 섹터",
-          "evidence": "message3654, message3653, message3652, message3651"
-        },
-        {
           "grade": "SM-S1",
           "signal": "우주·스페이스X — 👴트럼프의 전략자산 LIST  1. 반도체 '제조'(공급망) 2. 희토류/리튬 '제조'(공급망) 3. 원전/우라늄 '제조' (공급망) 4. 양자…",
           "tags": "종목, ETF, 이벤트",
@@ -1344,14 +1218,6 @@
         {
           "target": "AVGO",
           "impact": "SM-S3 신호 — 1차 검토"
-        },
-        {
-          "target": "AVGO",
-          "impact": "SM-S3 신호 — 1차 검토"
-        },
-        {
-          "target": "AVGO",
-          "impact": "SM-S2 신호 — 관찰"
         },
         {
           "target": "ARM",
@@ -1371,177 +1237,428 @@
         }
       ],
       "gradeDistribution": []
+    },
+    {
+      "date": "2026-06-22",
+      "file": "신호판_2026-06-22.md",
+      "meta": {
+        "기준 원천": "Telegram API `소수의견(26년 2분기)` (auto-tagged)",
+        "사용 산출물": "API 원천 인덱스, 규칙 태그화",
+        "판독 범위": "2026-06-22"
+      },
+      "summary": [
+        {
+          "grade": "SM-S3",
+          "signal": "AI·반도체·메모리 — ↗️메모리 마이크론, 앤트로픽과 협업 계약 발표하면서 신고가 뚫습니다  메모리 전성시대입니다",
+          "tags": "종목, 섹터, ETF",
+          "evidence": "message4775, message4776, message4777, message4778"
+        },
+        {
+          "grade": "SM-S3",
+          "signal": "데이터센터·인프라 — ↗️데이터센터 모음집 WGMI 신고가",
+          "tags": "종목, 섹터",
+          "evidence": "message4775, message4776, message4777, message4778"
+        },
+        {
+          "grade": "SM-S2",
+          "signal": "우주·스페이스X — 🔔구글,아마존은 특별한 악재로 보이는 이슈는 없는데 하락세입니다 (스페이스X도 하락세)  빅테크 투자 확대 우려로 주가 흐름 부진 지속됩니다",
+          "tags": "종목, ETF, 이벤트",
+          "evidence": "message4775, message4776, message4777, message4778"
+        },
+        {
+          "grade": "SM-S2",
+          "signal": "SW·클라우드·AI에이전트 — 🔥 주요 신고가 현황, 6/22 (장초반) *52주 신고가 포함  ⚙️ 반도체·장비 TSM (파운드리 1위) INTC (CPU·파운드리) AMD…",
+          "tags": "종목, 섹터",
+          "evidence": "message4775, message4776, message4777, message4778"
+        }
+      ],
+      "details": [],
+      "rebalancing": [
+        {
+          "target": "MU",
+          "impact": "SM-S3 신호 — 1차 검토"
+        },
+        {
+          "target": "NBIS",
+          "impact": "SM-S3 신호 — 1차 검토"
+        },
+        {
+          "target": "MU",
+          "impact": "SM-S3 신호 — 1차 검토"
+        },
+        {
+          "target": "NBIS",
+          "impact": "SM-S3 신호 — 1차 검토"
+        },
+        {
+          "target": "MU",
+          "impact": "SM-S2 신호 — 관찰"
+        },
+        {
+          "target": "NBIS",
+          "impact": "SM-S2 신호 — 관찰"
+        },
+        {
+          "target": "MU",
+          "impact": "SM-S2 신호 — 관찰"
+        },
+        {
+          "target": "NBIS",
+          "impact": "SM-S2 신호 — 관찰"
+        }
+      ],
+      "gradeDistribution": []
+    },
+    {
+      "date": "2026-06-23",
+      "file": "신호판_2026-06-23.md",
+      "meta": {
+        "기준 원천": "Telegram API `소수의견(26년 2분기)` (auto-tagged)",
+        "사용 산출물": "API 원천 인덱스, 규칙 태그화",
+        "판독 범위": "2026-06-23"
+      },
+      "summary": [
+        {
+          "grade": "SM-S3",
+          "signal": "AI·반도체·메모리 — 🔔미 증시, 빅테크 약세 vs AI인프라 상승 마감",
+          "tags": "종목, 섹터, ETF",
+          "evidence": "message4793, message4792, message4791, message4794"
+        },
+        {
+          "grade": "SM-S3",
+          "signal": "정책·트럼프·IBM — 🔔시간외) 트럼프 대통령이 양자컴 신속추진 행정명령에 서명하자 시간외로 양자컴 관련주 일제히 강세입니다",
+          "tags": "정책, 종목",
+          "evidence": "message4793, message4792, message4791, message4794"
+        },
+        {
+          "grade": "SM-S3",
+          "signal": "데이터센터·인프라 — 🔥 주요 신고가 현황, 6/22 *52주 신고가 포함  📡 광통신 GLW (광섬유)  ⚙️ 반도체·장비 TSM (파운드리 1위) INTC (CP…",
+          "tags": "종목, 섹터",
+          "evidence": "message4793, message4792, message4791, message4794"
+        },
+        {
+          "grade": "SM-S3",
+          "signal": "우주·스페이스X — ↘️빅테크 전반 부진, 특히 스페이스X는 채권 발행 확대 우려로 -16.4% 급락하는 등 약세보였습니다",
+          "tags": "종목, ETF, 이벤트",
+          "evidence": "message4793, message4792, message4791, message4794"
+        },
+        {
+          "grade": "SM-S2",
+          "signal": "SW·클라우드·AI에이전트 — <🔔주요 ETF Daily>  메모리/반도체/전력 강세, 반대로 스페이스X발 우주 관련주 약세, 빅7과 SW는 소외주로 부각되며 약세보였습니다",
+          "tags": "종목, 섹터",
+          "evidence": "message4793, message4792, message4791, message4794"
+        }
+      ],
+      "details": [],
+      "rebalancing": [
+        {
+          "target": "IBM",
+          "impact": "SM-S3 신호 — 1차 검토"
+        },
+        {
+          "target": "MU",
+          "impact": "SM-S3 신호 — 1차 검토"
+        },
+        {
+          "target": "NBIS",
+          "impact": "SM-S3 신호 — 1차 검토"
+        },
+        {
+          "target": "IBM",
+          "impact": "SM-S3 신호 — 1차 검토"
+        },
+        {
+          "target": "IBM",
+          "impact": "SM-S3 신호 — 1차 검토"
+        },
+        {
+          "target": "MU",
+          "impact": "SM-S3 신호 — 1차 검토"
+        },
+        {
+          "target": "NBIS",
+          "impact": "SM-S3 신호 — 1차 검토"
+        },
+        {
+          "target": "IBM",
+          "impact": "SM-S3 신호 — 1차 검토"
+        },
+        {
+          "target": "MU",
+          "impact": "SM-S3 신호 — 1차 검토"
+        },
+        {
+          "target": "NBIS",
+          "impact": "SM-S3 신호 — 1차 검토"
+        },
+        {
+          "target": "IBM",
+          "impact": "SM-S2 신호 — 관찰"
+        },
+        {
+          "target": "MU",
+          "impact": "SM-S2 신호 — 관찰"
+        },
+        {
+          "target": "NBIS",
+          "impact": "SM-S2 신호 — 관찰"
+        }
+      ],
+      "gradeDistribution": []
+    },
+    {
+      "date": "2026-06-24",
+      "file": "신호판_2026-06-24.md",
+      "meta": {
+        "기준 원천": "Telegram API `소수의견(26년 2분기)` (auto-tagged)",
+        "사용 산출물": "API 원천 인덱스, 규칙 태그화",
+        "판독 범위": "2026-06-24"
+      },
+      "summary": [
+        {
+          "grade": "SM-S2",
+          "signal": "AI·반도체·메모리 — ↘️증시, AI인프라주 위주 하락 마감 (개별 이슈보다는 차익실현/순환매)",
+          "tags": "종목, 섹터, ETF",
+          "evidence": "message4857, message4856, message4855, message4858"
+        },
+        {
+          "grade": "SM-S1",
+          "signal": "SW·클라우드·AI에이전트 — *알파벳이 버라이즌 대신 다우지수에 편입됩니다  이제 다우지수에 빅테크는 엔비디아, 애플, 아마존, 마소 다음으로 구글까지 들어가네요",
+          "tags": "종목, 섹터",
+          "evidence": "message4857, message4856, message4855, message4858"
+        },
+        {
+          "grade": "SM-S1",
+          "signal": "우주·스페이스X — 🚀스페이스X, 채권 발행 대흥행 (200억 달러 모집에 약 900억 달러 모였습니다)  초흥행에 발행액 $250억으로 상향했습니다",
+          "tags": "종목, ETF, 이벤트",
+          "evidence": "message4857, message4856, message4855, message4858"
+        },
+        {
+          "grade": "SM-S1",
+          "signal": "데이터센터·인프라 — 🔔오늘 퀄컴 투자자의날에서 AI에이전트/데이터센터용CPU/새로운 HW등 발표될 가능성이 있습니다  장 분위기만 좋다면 퀄컴도 꽤 오를 수 있겠습…",
+          "tags": "종목, 섹터",
+          "evidence": "message4857, message4856, message4855, message4858"
+        }
+      ],
+      "details": [],
+      "rebalancing": [
+        {
+          "target": "*(해당 없음)*",
+          "impact": "관찰 유지"
+        }
+      ],
+      "gradeDistribution": []
+    },
+    {
+      "date": "2026-06-25",
+      "file": "신호판_2026-06-25.md",
+      "meta": {
+        "기준 원천": "Telegram API `소수의견(26년 2분기)` (auto-tagged)",
+        "사용 산출물": "API 원천 인덱스, 규칙 태그화",
+        "판독 범위": "2026-06-25"
+      },
+      "summary": [
+        {
+          "grade": "SM-S3",
+          "signal": "AI·반도체·메모리 — ↗️장마감후) 마이크론 실적 슈퍼 서프라이즈",
+          "tags": "종목, 섹터, ETF",
+          "evidence": "message4899, message4900, message4901, message4902"
+        },
+        {
+          "grade": "SM-S3",
+          "signal": "데이터센터·인프라 — 🔔퀄컴, 메타의 데이터센터 칩 공개, CPU 공급부족 강조(AI에이전트 시대), 시간외로 급등세",
+          "tags": "종목, 섹터",
+          "evidence": "message4899, message4900, message4901, message4902"
+        },
+        {
+          "grade": "SM-S2",
+          "signal": "우주·스페이스X — 🔥 주요 신고가 현황, 6/25 *52주 신고가 포함  📡 AI인프라·광통신 GLW (광섬유)  💾 메모리 MU (DRAM·HBM)  🚀 우주·…",
+          "tags": "종목, ETF, 이벤트",
+          "evidence": "message4899, message4900, message4901, message4902"
+        },
+        {
+          "grade": "SM-S1",
+          "signal": "정책·트럼프·IBM — 🐵실적과 전망, 주주친화적 정책까지 완벽합니다  2023~엔비디아 실적을 보는 것 같습니다",
+          "tags": "정책, 종목",
+          "evidence": "message4899, message4900, message4901, message4902"
+        }
+      ],
+      "details": [],
+      "rebalancing": [
+        {
+          "target": "ARM",
+          "impact": "SM-S3 신호 — 1차 검토"
+        },
+        {
+          "target": "INTC",
+          "impact": "SM-S3 신호 — 1차 검토"
+        },
+        {
+          "target": "MU",
+          "impact": "SM-S3 신호 — 1차 검토"
+        },
+        {
+          "target": "MU",
+          "impact": "SM-S3 신호 — 1차 검토"
+        },
+        {
+          "target": "MU",
+          "impact": "SM-S2 신호 — 관찰"
+        },
+        {
+          "target": "ARM",
+          "impact": "SM-S1 신호 — 관찰"
+        },
+        {
+          "target": "INTC",
+          "impact": "SM-S1 신호 — 관찰"
+        },
+        {
+          "target": "MU",
+          "impact": "SM-S1 신호 — 관찰"
+        }
+      ],
+      "gradeDistribution": []
+    },
+    {
+      "date": "2026-06-26",
+      "file": "신호판_2026-06-26.md",
+      "meta": {
+        "기준 원천": "Telegram API `소수의견(26년 2분기)` (auto-tagged)",
+        "사용 산출물": "API 원천 인덱스, 규칙 태그화",
+        "판독 범위": "2026-06-26"
+      },
+      "summary": [
+        {
+          "grade": "SM-S3",
+          "signal": "AI·반도체·메모리 — 🔔미 증시, AI인프라주 상승 vs 빅테크 약세 양극화 마감 (지수는 혼조세)",
+          "tags": "종목, 섹터, ETF",
+          "evidence": "message4989, message4988, message4987, message4986"
+        },
+        {
+          "grade": "SM-S3",
+          "signal": "SW·클라우드·AI에이전트 — ↘️SW 대장주 중 하나인 팔란티어 역시 최근 저점을 계속 하회하고 있습니다",
+          "tags": "종목, 섹터",
+          "evidence": "message4989, message4988, message4987, message4986"
+        },
+        {
+          "grade": "SM-S3",
+          "signal": "우주·스페이스X — 🔥 주요 신고가 현황, 6/26 *52주 신고가 포함  📡 AI인프라·광통신 GLW (광섬유·)  ⚙️ 반도체·장비 AMAT (반도체 장비) T…",
+          "tags": "종목, ETF, 이벤트",
+          "evidence": "message4989, message4988, message4987, message4986"
+        },
+        {
+          "grade": "SM-S3",
+          "signal": "매크로·금리·물가 — -> 금리인하 사이클에선 둘다 오를 수 있겠지만  현재 긴축사이클로 접어들면서 모두 같이 오르는 장은 어렵다고 봐야겠습니다  주도주 쏠림 심화 …",
+          "tags": "매크로, 정책",
+          "evidence": "message4989, message4988, message4987, message4986"
+        }
+      ],
+      "details": [],
+      "rebalancing": [
+        {
+          "target": "MU",
+          "impact": "SM-S3 신호 — 1차 검토"
+        },
+        {
+          "target": "MU",
+          "impact": "SM-S3 신호 — 1차 검토"
+        },
+        {
+          "target": "MU",
+          "impact": "SM-S3 신호 — 1차 검토"
+        },
+        {
+          "target": "MU",
+          "impact": "SM-S3 신호 — 1차 검토"
+        }
+      ],
+      "gradeDistribution": []
+    },
+    {
+      "date": "2026-06-27",
+      "file": "신호판_2026-06-27.md",
+      "meta": {
+        "기준 원천": "Telegram API `소수의견(26년 2분기)` (auto-tagged)",
+        "사용 산출물": "API 원천 인덱스, 규칙 태그화",
+        "판독 범위": "2026-06-27"
+      },
+      "summary": [
+        {
+          "grade": "SM-S3",
+          "signal": "AI·반도체·메모리 — 🔔증시, AI인프라주 약세 vs 빅테크 강세 등 순환매 보였던 하루였습니다",
+          "tags": "종목, 섹터, ETF",
+          "evidence": "message5051, message5050, message5049, message5048"
+        },
+        {
+          "grade": "SM-S2",
+          "signal": "SW·클라우드·AI에이전트 — 🎙마이클버리 \"마이크로소프트에 대한 신규 매수와, 팔란티어 숏포지션 절반을 청산했다\" 발언과 함께  SW 주식 저평가 부각되며 마이크로소프트 및…",
+          "tags": "종목, 섹터",
+          "evidence": "message5051, message5050, message5049, message5048"
+        }
+      ],
+      "details": [],
+      "rebalancing": [
+        {
+          "target": "*(해당 없음)*",
+          "impact": "관찰 유지"
+        }
+      ],
+      "gradeDistribution": []
     }
   ],
   "telegramStats": [
     {
-      "date": "2026-05-16",
-      "messages": "11",
-      "text_messages": "7",
-      "photo_messages": "4",
-      "photo_links": "4",
+      "date": "2026-06-22",
+      "messages": "16",
+      "text_messages": "8",
+      "photo_messages": "8",
+      "photo_links": "8",
       "file_messages": "0",
       "file_links": "0"
     },
     {
-      "date": "2026-05-17",
-      "messages": "26",
-      "text_messages": "12",
-      "photo_messages": "14",
-      "photo_links": "14",
+      "date": "2026-06-23",
+      "messages": "64",
+      "text_messages": "34",
+      "photo_messages": "32",
+      "photo_links": "32",
       "file_messages": "0",
       "file_links": "0"
     },
     {
-      "date": "2026-05-18",
-      "messages": "27",
-      "text_messages": "16",
-      "photo_messages": "13",
-      "photo_links": "13",
+      "date": "2026-06-24",
+      "messages": "44",
+      "text_messages": "26",
+      "photo_messages": "18",
+      "photo_links": "18",
       "file_messages": "0",
       "file_links": "0"
     },
     {
-      "date": "2026-05-19",
-      "messages": "45",
-      "text_messages": "19",
-      "photo_messages": "28",
-      "photo_links": "28",
+      "date": "2026-06-25",
+      "messages": "87",
+      "text_messages": "55",
+      "photo_messages": "36",
+      "photo_links": "36",
       "file_messages": "0",
       "file_links": "0"
     },
     {
-      "date": "2026-05-20",
-      "messages": "51",
-      "text_messages": "22",
+      "date": "2026-06-26",
+      "messages": "62",
+      "text_messages": "33",
       "photo_messages": "29",
       "photo_links": "29",
       "file_messages": "0",
       "file_links": "0"
     },
     {
-      "date": "2026-05-21",
-      "messages": "83",
-      "text_messages": "39",
-      "photo_messages": "46",
-      "photo_links": "46",
-      "file_messages": "1",
-      "file_links": "1"
-    },
-    {
-      "date": "2026-05-22",
-      "messages": "94",
-      "text_messages": "47",
-      "photo_messages": "51",
-      "photo_links": "51",
-      "file_messages": "0",
-      "file_links": "0"
-    },
-    {
-      "date": "2026-05-23",
-      "messages": "78",
-      "text_messages": "36",
-      "photo_messages": "41",
-      "photo_links": "41",
-      "file_messages": "1",
-      "file_links": "1"
-    },
-    {
-      "date": "2026-05-24",
-      "messages": "12",
-      "text_messages": "5",
-      "photo_messages": "7",
-      "photo_links": "7",
-      "file_messages": "0",
-      "file_links": "0"
-    },
-    {
-      "date": "2026-05-25",
-      "messages": "6",
-      "text_messages": "4",
-      "photo_messages": "2",
-      "photo_links": "2",
-      "file_messages": "0",
-      "file_links": "0"
-    },
-    {
-      "date": "2026-05-26",
-      "messages": "35",
-      "text_messages": "17",
-      "photo_messages": "19",
-      "photo_links": "19",
-      "file_messages": "0",
-      "file_links": "0"
-    },
-    {
-      "date": "2026-05-27",
-      "messages": "83",
-      "text_messages": "42",
-      "photo_messages": "44",
-      "photo_links": "44",
-      "file_messages": "0",
-      "file_links": "0"
-    },
-    {
-      "date": "2026-05-28",
-      "messages": "88",
-      "text_messages": "42",
-      "photo_messages": "47",
-      "photo_links": "47",
-      "file_messages": "0",
-      "file_links": "0"
-    },
-    {
-      "date": "2026-05-29",
-      "messages": "83",
-      "text_messages": "42",
-      "photo_messages": "43",
-      "photo_links": "43",
-      "file_messages": "0",
-      "file_links": "0"
-    },
-    {
-      "date": "2026-05-30",
-      "messages": "92",
-      "text_messages": "46",
-      "photo_messages": "47",
-      "photo_links": "47",
-      "file_messages": "1",
-      "file_links": "1"
-    },
-    {
-      "date": "2026-05-31",
-      "messages": "28",
-      "text_messages": "15",
-      "photo_messages": "14",
-      "photo_links": "14",
-      "file_messages": "0",
-      "file_links": "0"
-    },
-    {
-      "date": "2026-06-01",
-      "messages": "54",
-      "text_messages": "27",
-      "photo_messages": "28",
-      "photo_links": "28",
-      "file_messages": "0",
-      "file_links": "0"
-    },
-    {
-      "date": "2026-06-02",
-      "messages": "67",
-      "text_messages": "37",
-      "photo_messages": "33",
-      "photo_links": "33",
-      "file_messages": "0",
-      "file_links": "0"
-    },
-    {
-      "date": "2026-06-03",
-      "messages": "37",
-      "text_messages": "18",
-      "photo_messages": "19",
-      "photo_links": "19",
+      "date": "2026-06-27",
+      "messages": "27",
+      "text_messages": "11",
+      "photo_messages": "16",
+      "photo_links": "16",
       "file_messages": "0",
       "file_links": "0"
     }
@@ -1550,69 +1667,887 @@
     {
       "name": "기술적 분석 프로젝트",
       "count": 2,
-      "samples": [
-        "기술적 분석 1강. 기술적 분석의 오해와 한계",
-        "기술적 분석 2강. 분석의 4대 축 가격, 시간, 구조, 유동성"
+      "articles": [
+        {
+          "id": "d9fe891e8548",
+          "title": "기술적 분석 1강. 기술적 분석의 오해와 한계"
+        },
+        {
+          "id": "30823c54ca82",
+          "title": "기술적 분석 2강. 분석의 4대 축 가격, 시간, 구조, 유동성"
+        }
       ]
     },
     {
       "name": "시나리오",
       "count": 86,
-      "samples": [
-        "10월 조정 시나리오 현실화!",
-        "2025.08.01 나스닥 차트 분석",
-        "2025년 하반기 대비 실전 포트폴리오! 트럼프의 강력한 주식 부양책과 진짜 투자 기회",
-        "2025년, 나는 시장이 쉽게 느껴졌다.",
-        "2027년 중국 대만 침공 시나리오와 투자 전략"
+      "articles": [
+        {
+          "id": "df58acfe70b0",
+          "title": "10월 조정 시나리오 현실화!"
+        },
+        {
+          "id": "638c291048be",
+          "title": "2025.08.01 나스닥 차트 분석"
+        },
+        {
+          "id": "0503cbbdf16c",
+          "title": "2025년 하반기 대비 실전 포트폴리오! 트럼프의 강력한 주식 부양책과 진짜 투자 기회"
+        },
+        {
+          "id": "b1f1be530f17",
+          "title": "2025년, 나는 시장이 쉽게 느껴졌다."
+        },
+        {
+          "id": "df6bfd5a5435",
+          "title": "2027년 중국 대만 침공 시나리오와 투자 전략"
+        },
+        {
+          "id": "1d97fbbd2b73",
+          "title": "2차 단기 트레이딩 매매일지"
+        },
+        {
+          "id": "bd32410813d3",
+          "title": "_옵션 시장_을 통해 현재 상황을 바라보자"
+        },
+        {
+          "id": "594f5f07b9e6",
+          "title": "_코스피 + 환율 분석_"
+        },
+        {
+          "id": "2bcb0bf8303f",
+          "title": "AI 버블의 !해부학!"
+        },
+        {
+          "id": "be0826de922c",
+          "title": "각 자산별 분석 + 주목 포인트 3가지"
+        },
+        {
+          "id": "27f19a1c7f80",
+          "title": "각 자산별 지지 구간 체크"
+        },
+        {
+          "id": "7b096ff1ced2",
+          "title": "각 자산별 차트 점검과 시나리오 + 투자 협상론"
+        },
+        {
+          "id": "2d8734403dd4",
+          "title": "강력한 잠재력을 품고 있는 !단 1개의 숨겨진 보석!"
+        },
+        {
+          "id": "d4c153f95a46",
+          "title": "결국 모두가 궁금한 건 !코인, 언제 사야할까!"
+        },
+        {
+          "id": "f8398026cfd2",
+          "title": "결국 모두가 궁금한 건, 더 오를까! VS 떨어질까!"
+        },
+        {
+          "id": "692c0e8a78ae",
+          "title": "구체적인 대응 매뉴얼"
+        },
+        {
+          "id": "35e9e235391a",
+          "title": "그럼 이더리움은!"
+        },
+        {
+          "id": "6159483cf1ed",
+          "title": "금과 은, 미국 주식의 리스크 대비 리턴 극대화 전략"
+        },
+        {
+          "id": "d2d17458d799",
+          "title": "금리 인하 사이클 시작과 나스닥"
+        },
+        {
+          "id": "e1c655ff21a5",
+          "title": "긴 말 안하겠습니다"
+        },
+        {
+          "id": "b2619aaa61fd",
+          "title": "긴 여정 한 템포 끊어가겠습니다"
+        },
+        {
+          "id": "2e041f983df5",
+          "title": "나스닥, 상위 프레임이 보내는 경고와 상승의 조건"
+        },
+        {
+          "id": "5c3bed0885fe",
+          "title": "넥스트 엔비디아, 팔란티어, 테슬라 후보 10개 기업"
+        },
+        {
+          "id": "c756ea45a16d",
+          "title": "누구나 예측하는 자리는 저점이 아니다"
+        },
+        {
+          "id": "34062dee451d",
+          "title": "다음 혁신 기업은 누구 손에서 나올까! 텐배거 정답지 유출"
+        },
+        {
+          "id": "47e65b63bf31",
+          "title": "다음 흐름을 함께 분석해보자"
+        },
+        {
+          "id": "ee90a588660e",
+          "title": "뒤에서 돈을 버는 !4개 기업!"
+        },
+        {
+          "id": "c5fc37e7700d",
+          "title": "리스크 관리"
+        },
+        {
+          "id": "f23a062a6306",
+          "title": "마지막 고비"
+        },
+        {
+          "id": "2f44192cce64",
+          "title": "만약 이 흐름이 정말 나온다면!"
+        },
+        {
+          "id": "33cf63f185d2",
+          "title": "머리를 차게 식히고, 지금 상황을 객관적으로 보자"
+        },
+        {
+          "id": "301fd348b1b7",
+          "title": "모두가 기다리는 진짜 상승장은 언제 올까!"
+        },
+        {
+          "id": "7b6c9ebf1272",
+          "title": "모든 방향은 예고했던 대로"
+        },
+        {
+          "id": "abe0fbbfac94",
+          "title": "미국 대형주 실적 시즌, 조정 vs 추가 상승"
+        },
+        {
+          "id": "604b1fca7950",
+          "title": "미국 주식 매수 계획 1"
+        },
+        {
+          "id": "47bcbc2ffe6f",
+          "title": "미국 주식 매수 계획"
+        },
+        {
+          "id": "47b281509afc",
+          "title": "미국 주식 점검 및 앞으로의 대응"
+        },
+        {
+          "id": "3bf87088e95a",
+          "title": "미국 주식 추가 매수 계획 + 주린이도 쉽게 할 수 있는 저점 분할 매수 방법"
+        },
+        {
+          "id": "b25ff6af6f9e",
+          "title": "미국 주식과 비트코인 (차트 + 정책 + 심리)"
+        },
+        {
+          "id": "19b111193127",
+          "title": "미국과 중국이 모두 탐내는 !미래의 석유!"
+        },
+        {
+          "id": "aa278afc7d8f",
+          "title": "불가능에 베팅하는 사람들의 공통점"
+        },
+        {
+          "id": "3882ea254f38",
+          "title": "비트는!"
+        },
+        {
+          "id": "ad230407fcd5",
+          "title": "비트코인 !긴급 중간 점검!"
+        },
+        {
+          "id": "32f1e0d1924a",
+          "title": "비트코인 + 이더리움의 !매력적인 구간!"
+        },
+        {
+          "id": "317620477769",
+          "title": "비트코인 3주 + 장기 시나리오"
+        },
+        {
+          "id": "fd13611e7b57",
+          "title": "비트코인 단기 시나리오"
+        },
+        {
+          "id": "3bc15616f1c8",
+          "title": "비트코인 무한 횡보중"
+        },
+        {
+          "id": "f066088cab5b",
+          "title": "비트코인 세부 시나리오"
+        },
+        {
+          "id": "9714b03be8fb",
+          "title": "비트코인 세부 시나리오와 계획"
+        },
+        {
+          "id": "6eb73d14c23c",
+          "title": "비트코인 시나리오 !중간 점검!"
+        },
+        {
+          "id": "847156858c2e",
+          "title": "비트코인 시나리오 분석중"
+        },
+        {
+          "id": "0347250c707f",
+          "title": "비트코인 시나리오 수정과 대응"
+        },
+        {
+          "id": "19ee30664fcd",
+          "title": "비트코인 익절, 매수 ! 주식 추가 매수 계획"
+        },
+        {
+          "id": "60528d606c4b",
+          "title": "비트코인 중요한 지점"
+        },
+        {
+          "id": "f004066fb0cb",
+          "title": "비트코인 추가 시나리오"
+        },
+        {
+          "id": "f99c5d5c615e",
+          "title": "비트코인, 나스닥 !다음주 흐름!"
+        },
+        {
+          "id": "9c1adb87d670",
+          "title": "비트코인, 미국 주식 !전략 변경!"
+        },
+        {
+          "id": "00dec4483a92",
+          "title": "비트코인과 미국 주식의 다음 흐름"
+        },
+        {
+          "id": "f063f9bb7b4c",
+          "title": "비트코인과 미국 주식의 상승세 어디까지 이어질까!"
+        },
+        {
+          "id": "9a151019cc15",
+          "title": "비트코인의 반등이 의미하는 것"
+        },
+        {
+          "id": "bdc40f24c432",
+          "title": "상위 1%만 아는 2025년 하반기 !기회와 대응 전략!"
+        },
+        {
+          "id": "a6c3e21e1388",
+          "title": "세력들의 움직임으로 보는 미래"
+        },
+        {
+          "id": "f9e99e1bc220",
+          "title": "시나리오 분석 방법론 + 현재 상황 해석"
+        },
+        {
+          "id": "2db6c1d29f88",
+          "title": "안전하게"
+        },
+        {
+          "id": "cb6915b6e6c8",
+          "title": "암호화폐 !1차 매수 계획!"
+        },
+        {
+          "id": "4b76f79903a3",
+          "title": "암호화폐 매수 계획 공유"
+        },
+        {
+          "id": "f8939e689d6e",
+          "title": "암호화폐 흐름"
+        },
+        {
+          "id": "05adb2db705f",
+          "title": "암호화폐, 나스닥 !스윙 물량! 매도 & 매수 계획"
+        },
+        {
+          "id": "a6aef15d01f5",
+          "title": "연두색 시나리오"
+        },
+        {
+          "id": "17e09b917273",
+          "title": "영화 속 이야기가 현실이 된다"
+        },
+        {
+          "id": "6877a919206c",
+          "title": "오늘의 매매일지"
+        },
+        {
+          "id": "49b63d6a0877",
+          "title": "왜 돌아가며 오를까_ 앞으로는_"
+        },
+        {
+          "id": "4d212361a09a",
+          "title": "유일무이한 완벽한 예측의 연속, 그리고 다음 기회"
+        },
+        {
+          "id": "c455ffd7135b",
+          "title": "익절은 항상 옳다"
+        },
+        {
+          "id": "6c883ceeb532",
+          "title": "제 2의 골드 러쉬, !두번째 보석!"
+        },
+        {
+          "id": "30c5e28c9746",
+          "title": "주식 시장 시나리오 구체화"
+        },
+        {
+          "id": "5580a9e5b405",
+          "title": "최악의 시나리오와 언젠가 내려올 저점"
+        },
+        {
+          "id": "41b5ffa815d7",
+          "title": "추가 시나리오"
+        },
+        {
+          "id": "2677d8332fa1",
+          "title": "축하는 이제 과거고, 우린 또 미래로 갑니다"
+        },
+        {
+          "id": "c13b4e90dad6",
+          "title": "코인 대불장 시나리오와 매수 계획"
+        },
+        {
+          "id": "7b95a68367a0",
+          "title": "코인 투자자 !필독 시나리오!"
+        },
+        {
+          "id": "d1760676e28d",
+          "title": "코인, 주식 매수 계획"
+        },
+        {
+          "id": "4de3e9318035",
+          "title": "트럼프 경제 향후 시나리오 2가지!"
+        },
+        {
+          "id": "cb8d67c90cad",
+          "title": "트럼프와 푸틴, 미러 정상회담 !미리보기!"
+        },
+        {
+          "id": "b89fdf7bbf3b",
+          "title": "현재 가격에 대한 생각."
+        },
+        {
+          "id": "e6be235d58a5",
+          "title": "현재 보는 중단기 시나리오"
+        }
       ]
     },
     {
       "name": "시장 리포트",
       "count": 12,
-      "samples": [
-        "10월 주요 금융 기관 리포트",
-        "11월 주요 금융 기관 리포트",
-        "1월 주요 금융 기관 리포트",
-        "2026년 대비 주요 금융 기관 리포트",
-        "7월 주요 금융 기관 리포트"
+      "articles": [
+        {
+          "id": "0c0a07e09670",
+          "title": "10월 주요 금융 기관 리포트"
+        },
+        {
+          "id": "864d125cc2c6",
+          "title": "11월 주요 금융 기관 리포트"
+        },
+        {
+          "id": "5c2ba4d5b4b1",
+          "title": "1월 주요 금융 기관 리포트"
+        },
+        {
+          "id": "556ac1a5b3d6",
+          "title": "2026년 대비 주요 금융 기관 리포트"
+        },
+        {
+          "id": "5e7328103bc9",
+          "title": "7월 주요 금융 기관 리포트"
+        },
+        {
+          "id": "4b3899e1f5b1",
+          "title": "8월 주요 금융 기관 리포트"
+        },
+        {
+          "id": "6552927b753b",
+          "title": "9월 주요 금융 기관 리포트"
+        },
+        {
+          "id": "c69fa9d6c528",
+          "title": "_객관적인 데이터_로 보는 판단 기준과 전략"
+        },
+        {
+          "id": "fcf81ed6f18f",
+          "title": "개별 기업 선별과 비트코인 (+ 4월 주요 금융 기관 리포트)"
+        },
+        {
+          "id": "3dec28217790",
+          "title": "대중을 위한 상식으로는 _차이를 만들 수 없다_"
+        },
+        {
+          "id": "8864c09fbe57",
+          "title": "판단을 위해 핵심만 꾹꾹 눌러담은 요약 리포트"
+        },
+        {
+          "id": "1ae17a8ebedb",
+          "title": "현재 상황을 객관적으로 보는 _눈_"
+        }
       ]
     },
     {
       "name": "자산네제곱 프로젝트",
       "count": 7,
-      "samples": [
-        "당신에게 제 뇌를 드립니다",
-        "자산네제곱 1단계! 물고기 잡는 방법을 배웠다고 !끝이 아니다!",
-        "자산네제곱 2단계! 정보는 축적이 아니라 연결이다",
-        "자산네제곱 3단계! 대부분은 !지금 어떤가!를 보지만, 우리는 !어디로 가는가!를 본다",
-        "자산네제곱 4단계! 틀려도 이기는 저점 매수 설계도"
+      "articles": [
+        {
+          "id": "67f457199f0d",
+          "title": "당신에게 제 뇌를 드립니다"
+        },
+        {
+          "id": "5195c4d866c6",
+          "title": "자산네제곱 1단계! 물고기 잡는 방법을 배웠다고 !끝이 아니다!"
+        },
+        {
+          "id": "2fa8b8788ccf",
+          "title": "자산네제곱 2단계! 정보는 축적이 아니라 연결이다"
+        },
+        {
+          "id": "9ad225dc8a04",
+          "title": "자산네제곱 3단계! 대부분은 !지금 어떤가!를 보지만, 우리는 !어디로 가는가!를 본다"
+        },
+        {
+          "id": "fbdcf436b458",
+          "title": "자산네제곱 4단계! 틀려도 이기는 저점 매수 설계도"
+        },
+        {
+          "id": "b51620e56852",
+          "title": "자산네제곱 5단계 포트폴리오 전략 지도 + 현재 시장 적용"
+        },
+        {
+          "id": "e5f7acaa6587",
+          "title": "자산네제곱 6단계 _정보 해석력_이 수익률을 결정한다"
+        }
       ]
     },
     {
       "name": "투자 전략",
       "count": 103,
-      "samples": [
-        "0 to 1! 페이팔 마피아, 피터 틸의 !9단계 투자 체크리스트!",
-        "2025년 8월 글로벌 자산 시장 !현황 파악!",
-        "2025년 글로벌 대격변... 올드머니 vs 뉴머니, 미중전쟁, 관세폭탄까지 총정리",
-        "2025년 암호화폐 시장의 불편한 진실",
-        "2025년 우주 경쟁의 진실 !50년만의 기회!"
+      "articles": [
+        {
+          "id": "cd2897218fda",
+          "title": "0 to 1! 페이팔 마피아, 피터 틸의 !9단계 투자 체크리스트!"
+        },
+        {
+          "id": "679170fc9bfe",
+          "title": "2025년 8월 글로벌 자산 시장 !현황 파악!"
+        },
+        {
+          "id": "352bcb89b086",
+          "title": "2025년 글로벌 대격변... 올드머니 vs 뉴머니, 미중전쟁, 관세폭탄까지 총정리"
+        },
+        {
+          "id": "64e070177678",
+          "title": "2025년 암호화폐 시장의 불편한 진실"
+        },
+        {
+          "id": "186255fa93e9",
+          "title": "2025년 우주 경쟁의 진실 !50년만의 기회!"
+        },
+        {
+          "id": "641e5f4a2eab",
+          "title": "2026년 미국 주식 올인원 대비서 !소비 시대는 끝났다, 이제 설비가 경제를 이끈다!"
+        },
+        {
+          "id": "a49ac8cfcb34",
+          "title": "2026년 초를 대비하는 !4가지 변수와 대응책!"
+        },
+        {
+          "id": "56e0ef7b84c0",
+          "title": "2026년 투자 지도, 6개 섹터에 숨겨진 1조 달러 시장의 비밀"
+        },
+        {
+          "id": "3bb0f9d02e0a",
+          "title": "2026년을 바꿀 !23개 종목 완전 분석!"
+        },
+        {
+          "id": "b7db4711e785",
+          "title": "30년 뒤의 기술에 돈이 몰리는 이유"
+        },
+        {
+          "id": "34917d2bd7ff",
+          "title": "8, 9월 핵심 이벤트와 시나리오 분석"
+        },
+        {
+          "id": "a09c026bff2f",
+          "title": "99%는 모르는 저점 집중 투자의 비밀 + 꿀팁"
+        },
+        {
+          "id": "194174ae33c4",
+          "title": "_AI 버블_을 진단해보자"
+        },
+        {
+          "id": "e1a48aad3c86",
+          "title": "_공급 사슬_이 부서지고 있다"
+        },
+        {
+          "id": "c884d86e012f",
+          "title": "_공장이 돌아온다_는 말에 속지 말자"
+        },
+        {
+          "id": "646c65838619",
+          "title": "_문명 전환의 물리학_ 장기 테마 + 단기 차트"
+        },
+        {
+          "id": "f51ba1e7efd3",
+          "title": "_보이지 않는 손_이 만들 2026년 주식 시장의 흐름"
+        },
+        {
+          "id": "4ccc9445fb69",
+          "title": "_스태그플레이션 투자 전략_"
+        },
+        {
+          "id": "195df6dba7f9",
+          "title": "_자본의 다음 회전_"
+        },
+        {
+          "id": "26d0eb6045ed",
+          "title": "_트럼프의 설계도_에서 돈이 흐르는 방향"
+        },
+        {
+          "id": "cbe2feb62943",
+          "title": "AI 밸류 체인의 진짜 지도, 그리고 그 안에서 향후 5년 +알파의 기회"
+        },
+        {
+          "id": "d716ab344c1a",
+          "title": "ETF 투자 !완전정복 가이드북!"
+        },
+        {
+          "id": "552ababc617d",
+          "title": "“누구도 책임져주지 않는다. 그래서 구조를 만들었다”"
+        },
+        {
+          "id": "38ab0996d278",
+          "title": "감정적으로 판단하지 말자"
+        },
+        {
+          "id": "e86a03c5f629",
+          "title": "같이 공부해보면 좋을 기업 리스트 선공개"
+        },
+        {
+          "id": "18bc38866fea",
+          "title": "구조적 전환의 시작점에서 주목할 6개 기업"
+        },
+        {
+          "id": "eba8d4b64837",
+          "title": "국가도, 자본도, 언론도 거짓말로 이루어져 있다"
+        },
+        {
+          "id": "d2ed429f8f78",
+          "title": "금리 인하 수혜주 한방에 총정리"
+        },
+        {
+          "id": "1d136f7d289d",
+          "title": "김정은, 시진핑, 푸틴의 대화에서 발견한 !그 힌트!"
+        },
+        {
+          "id": "fa4a37415215",
+          "title": "독자분들에게 전하는 편지"
+        },
+        {
+          "id": "c2296c6e6d02",
+          "title": "돈의 흐름 !구조 해부!"
+        },
+        {
+          "id": "fc12c82a89b4",
+          "title": "돈의 흐름이 완전히 바뀌었다 1부"
+        },
+        {
+          "id": "d03aaa1ae263",
+          "title": "돈의 흐름이 완전히 바뀌었다 2부"
+        },
+        {
+          "id": "7ca832981900",
+          "title": "레짐 체인지 시대의 투자 _FCF가 왕인 이유_"
+        },
+        {
+          "id": "e076b8ffb0a7",
+          "title": "매수보다 더 어려운 매도의 타이밍"
+        },
+        {
+          "id": "412cd7a92749",
+          "title": "모두가 놓친 월가 컨센서스를 뒤집는 2026년 투자 전략"
+        },
+        {
+          "id": "87c60de7d9db",
+          "title": "모두가 비만약을 볼 때 나는 이 !3가지!를 보고있다"
+        },
+        {
+          "id": "ecfbea696617",
+          "title": "모르면 뺏긴다! 미국 주식 투자자를 위한 !절세 전략! 총정리"
+        },
+        {
+          "id": "fa1b14909a43",
+          "title": "미국 주식, 금, 은, 환율 한번에 보자"
+        },
+        {
+          "id": "e48b28219cbc",
+          "title": "미래를 예측하는 '시나리오 기반 추론 방법'"
+        },
+        {
+          "id": "6845336252cf",
+          "title": "미리 공부해보면 좋은 기업들"
+        },
+        {
+          "id": "5dea48bd2ab4",
+          "title": "미리 보는 다음주 _미중 정상회담_"
+        },
+        {
+          "id": "488d19cff204",
+          "title": "미리보는 트럼프와 시진핑의 미중 정상회담과 그 속에서의 투자 기회"
+        },
+        {
+          "id": "60b98b51478a",
+          "title": "미중 정상회담 이후, 진짜 수혜주를 찾아서"
+        },
+        {
+          "id": "163ec89400c8",
+          "title": "버블의 !끝과 준비!"
+        },
+        {
+          "id": "a2938ec3a3a1",
+          "title": "버블장에서 가장 효과적인 !캐시우드의 투자 전략! 낱낱이 파헤치기"
+        },
+        {
+          "id": "224980b19d60",
+          "title": "북극! 트럼프, 푸틴 회담에서 발견한 투자 기회"
+        },
+        {
+          "id": "0f2797a476f9",
+          "title": "불장 알트코인 선별 매뉴얼(2025년 Ver.)"
+        },
+        {
+          "id": "43e14ef1f77c",
+          "title": "빅테크 실적 발표, 숫자 뒤에 숨은 이야기"
+        },
+        {
+          "id": "709e45b632c2",
+          "title": "사이클 전환 + 산업 회복!이 만드는 새로운 판"
+        },
+        {
+          "id": "a008f2930c2a",
+          "title": "산업의 지도를 다시 그릴 _거대한 흐름과 자본의 길목_"
+        },
+        {
+          "id": "447ba1efc865",
+          "title": "상위 0.1%만 아는 !X50 알트 코인! 선점 전략 2편"
+        },
+        {
+          "id": "08d0355e3c7d",
+          "title": "세 번째 보석, 반도체 업계의 숨겨진 혁명"
+        },
+        {
+          "id": "265ddd63b45a",
+          "title": "세계가 흔들릴수록, 방향은 더 선명해진다"
+        },
+        {
+          "id": "e9a34ef1cb57",
+          "title": "세계는 이미 전쟁 중이다! 트럼프의 신제국주의와 글로벌 파워게임의 실체"
+        },
+        {
+          "id": "58e5758f0f55",
+          "title": "세상은 이미 '빛'으로 달린다"
+        },
+        {
+          "id": "b9d743361345",
+          "title": "수 많은 시뮬레이션을 통해 발견한 !기회!"
+        },
+        {
+          "id": "e2752d6243fc",
+          "title": "시장을 이기는 심리분석 방법론 1편"
+        },
+        {
+          "id": "d505d8ed7204",
+          "title": "시장을 이기는 심리분석 방법론 2편"
+        },
+        {
+          "id": "52d815851f3f",
+          "title": "시장의 파도를 타는 _비중 조절 전략_"
+        },
+        {
+          "id": "c213360564a6",
+          "title": "실물자산 토큰화 혁명! 세상이 바뀌는 방식과 수혜주 분석"
+        },
+        {
+          "id": "ef3c84ad3077",
+          "title": "아이를 위한, 노후 대비를 위한 !필수 포트폴리오!"
+        },
+        {
+          "id": "2efaf157e625",
+          "title": "엔비디아 뒤에 숨은 인프라 제국 1편"
+        },
+        {
+          "id": "9d0cff443587",
+          "title": "엔비디아 뒤에 숨은 인프라 제국 2편"
+        },
+        {
+          "id": "4f0f63d91d5b",
+          "title": "옆집 초등학생 철수도 아는 AI 다음 !미래 산업! 속의 기회"
+        },
+        {
+          "id": "8740bced6ee8",
+          "title": "오일 머니, 보이지 않는 거인이 만드는 흐름"
+        },
+        {
+          "id": "02d65d4c1486",
+          "title": "왜 부동산, 건설 테마인가!"
+        },
+        {
+          "id": "87ffba5b3cfc",
+          "title": "워싱턴이 월스트리트를 집어삼키는 순간"
+        },
+        {
+          "id": "d4627241e129",
+          "title": "월가 애널리스트들이 주목하는 9개 미국 주식"
+        },
+        {
+          "id": "ab1a89efcb60",
+          "title": "월가가 말하는 _HALO_"
+        },
+        {
+          "id": "dffb7712ec26",
+          "title": "월가가 이미 조용히 쓸어담고 있는 '이것'"
+        },
+        {
+          "id": "c9e5180da459",
+          "title": "월스트리트가 절대 공개하지 않는 !차세대 부의 지도!"
+        },
+        {
+          "id": "58b465883830",
+          "title": "유망 소형주 14개 정리"
+        },
+        {
+          "id": "74b67b020064",
+          "title": "유명 투자 대가들의 25년 2분기 !13F 보고서 완전 분석!"
+        },
+        {
+          "id": "39cf7ed2855c",
+          "title": "이제 다음 차례다"
+        },
+        {
+          "id": "dd46e42712ed",
+          "title": "자산 성장 !시스템 설계!"
+        },
+        {
+          "id": "846d2c79ba48",
+          "title": "장기 투자에 대한 오해, 계속 그렇게 하면 100% 망합니다."
+        },
+        {
+          "id": "96ee934bfab2",
+          "title": "전력 대란의 해답은 이미 땅 속에 있다"
+        },
+        {
+          "id": "ed723e66b27b",
+          "title": "전쟁 이후 내러티브는 정책에서 나온다"
+        },
+        {
+          "id": "28b76eeabdfc",
+          "title": "종목 선정 과정 2단계 ! !섹터 분석! 1편"
+        },
+        {
+          "id": "af3b87a5ad63",
+          "title": "종목 선정 과정 2단계 ! !섹터 분석! 2편"
+        },
+        {
+          "id": "9e8d5814422a",
+          "title": "종목 선정 과정 3단계! 2025년 주목할 만한 AI 섹터 2가지 + 리스크 관리"
+        },
+        {
+          "id": "9a8a98170703",
+          "title": "종목 선정 과정 마지막 단계! !워렌 버핏처럼 종목 선택하기! 1편"
+        },
+        {
+          "id": "1028252a8aa2",
+          "title": "종목 선정 과정 마지막 단계! !워렌 버핏처럼 종목 선택하기! 2편"
+        },
+        {
+          "id": "27f52f145bd8",
+          "title": "주식 투자관련 용어 정리"
+        },
+        {
+          "id": "90526cdbbb3e",
+          "title": "주식 투자는 어렵고 위험하다며, 원화에 몰빵 투자!"
+        },
+        {
+          "id": "eb77e741e018",
+          "title": "지금 우리는 뭘 놓치고 있나"
+        },
+        {
+          "id": "c19bc14cac7b",
+          "title": "진짜 보석을 찾는 방법! 미국 주식 종목 스크리닝 완벽 가이드"
+        },
+        {
+          "id": "9a0ad75ab22e",
+          "title": "진짜 큰 손들이 보는 !9개의 데이터!"
+        },
+        {
+          "id": "3894c1c48766",
+          "title": "차트 분석은 !사기다!"
+        },
+        {
+          "id": "67b72cc2314b",
+          "title": "최악의 경우의 수와 사전 포착 방법"
+        },
+        {
+          "id": "cc617b0fd6d8",
+          "title": "케빈 워시가 그리고 있는 다음 돈의 지도"
+        },
+        {
+          "id": "7533792f66fd",
+          "title": "투자는 삶의 방식이다"
+        },
+        {
+          "id": "bd3827300e50",
+          "title": "투자의 !본질!"
+        },
+        {
+          "id": "1efc64597b34",
+          "title": "트럼프, !7개의 퍼즐 조각!"
+        },
+        {
+          "id": "ea0d8b3c0a2d",
+          "title": "트럼프가 준비하고 있는 _유권자 심리_를 파고드는 전략"
+        },
+        {
+          "id": "dd810ecfbae3",
+          "title": "트럼프의 중간선거 각본과 기회 선점 전략"
+        },
+        {
+          "id": "d1e8c1e72f1f",
+          "title": "트럼프의 지정학적 전략과 기회"
+        },
+        {
+          "id": "707abd588f2f",
+          "title": "포트폴리오 이론 종결판"
+        },
+        {
+          "id": "39e6198c6c03",
+          "title": "피지컬 AI 시대, 완벽 대비서"
+        },
+        {
+          "id": "a1a0e6a3d633",
+          "title": "한 세대에 한 번 오는 순간"
+        },
+        {
+          "id": "31a8fdaaa9bd",
+          "title": "현재 상황 점검과 미래를 보는 '눈'"
+        },
+        {
+          "id": "3c4f3608493c",
+          "title": "혼란스러운 상황을 대비하기 위한 _포트폴리오 전략_"
+        }
       ]
     }
   ],
   "portfolio": {
     "ready": true,
-    "content": "# 실제 보유현황\n\n> 기준일: 2026-06-26\n> 출처: 사용자 계좌 스냅샷 (아래 숫자를 실제 계좌에 맞게 수정하세요)\n\n## 계좌 요약\n\n| 항목 | 값 |\n|------|-----|\n| 총 평가금 | _(입력)_ |\n| 현금/예수금 | _(입력)_ |\n| 투자 비중 | _(입력)_ |\n\n## 보유 종목\n\n| 티커 | 수량 | 평가금 | 손익률 | 계좌 역할 | 비고 |\n|------|------|--------|--------|-----------|------|\n| MU | 1 | _(입력)_ | _(입력)_ | 장기/코어 | 메모리 축 — 신호 정합 |\n| DRAM ETF | _(입력)_ | _(입력)_ | _(입력)_ | 장기/코어 | 1층 메모리 |\n| PLTR | _(입력)_ | _(입력)_ | _(입력)_ | 스윙/전술 | 앞당겨 진입 — 추가 보류 |\n| CRWV | _(입력)_ | _(입력)_ | _(입력)_ | 옵션/고위험 | 손실 보유 — 물타기 금지 |\n| _(추가)_ | | | | | |\n\n## 현금·여력\n\n- 조건부 정찰병 여력: _(있음/부족)_\n- 동일 테마 중복 노출: _(확인 필요)_\n\n## 수익 보호·정리 플래그\n\n| 티커 | 플래그 | 사유 |\n|------|--------|------|\n| SLV/GDX | 정리 후보 | 소수몽키 신호와 직접 관련 낮음 |\n| _(추가)_ | | |\n\n## 점검 메모\n\n- 보유 이유가 아직 유효한가?\n- 급등 추격 여력이 있는가?\n- 수익 보호가 먼저인 종목이 있는가?\n",
+    "content": "# 실제 보유현황\n\n> 기준일: 2026-06-27\n> 출처: 사용자 계좌 스냅샷 (아래 숫자를 실제 계좌에 맞게 수정하세요)\n\n## 계좌 요약\n\n| 항목 | 값 |\n|------|-----|\n| 총 평가금 | _(입력)_ |\n| 현금/예수금 | _(입력)_ |\n| 투자 비중 | _(입력)_ |\n\n## 보유 종목\n\n| 티커 | 수량 | 평가금 | 손익률 | 계좌 역할 | 비고 |\n|------|------|--------|--------|-----------|------|\n| MU | 1 | _(입력)_ | _(입력)_ | 장기/코어 | 메모리 축 — 신호 정합 |\n| DRAM ETF | _(입력)_ | _(입력)_ | _(입력)_ | 장기/코어 | 1층 메모리 |\n| PLTR | _(입력)_ | _(입력)_ | _(입력)_ | 스윙/전술 | 앞당겨 진입 — 추가 보류 |\n| CRWV | _(입력)_ | _(입력)_ | _(입력)_ | 옵션/고위험 | 손실 보유 — 물타기 금지 |\n| _(추가)_ | | | | | |\n\n## 현금·여력\n\n- 조건부 정찰병 여력: _(있음/부족)_\n- 동일 테마 중복 노출: _(확인 필요)_\n\n## 수익 보호·정리 플래그\n\n| 티커 | 플래그 | 사유 |\n|------|--------|------|\n| SLV/GDX | 정리 후보 | 소수몽키 신호와 직접 관련 낮음 |\n| _(추가)_ | | |\n\n## 점검 메모\n\n- 보유 이유가 아직 유효한가?\n- 급등 추격 여력이 있는가?\n- 수익 보호가 먼저인 종목이 있는가?\n",
     "placeholder": "1_브리핑/포트폴리오_브리핑/00_현황/실제_보유현황.md 를 만들면 여기에 표시됩니다."
   },
   "asset": {
     "ready": true,
-    "content": "# 이번주 실행판\n\n> 기준일: 2026-06-26\n> 출처: 자산제곱 에이전트 + 소수몽키 신호판 2026-06-01\n\n## 이번 주 매수 후보\n\n| 티커 | 게이트 | 조건 | 무효화 |\n|------|--------|------|--------|\n| NVDA | G2 | 2차 눌림/재지지 확인 후 | AI 인프라 주도장 붕괴 |\n| AVGO | G2 | 목표 4% 유지, 분할 | 맞춤형 칩 수요 둔화 |\n| MU / DRAM ETF | G2 | 첫 눌림/재지지 | 메모리 사이클 급락 |\n| MSFT | G2 | 1차 신규 — SW 반격 확인 | IGV 200일선 이탈 |\n\n## 조건부 대기\n\n| 티커 | 사유 | 진입 조건 |\n|------|------|-----------|\n| ARM | 당일 급등 | 눌림/재지지 후 2차 |\n| NBIS / CRWV | 고위험 옵션 | 1% 이내, 추격 금지 |\n\n## 홀딩·관망\n\n- PLTR: 추가 매수 보류 (이미 진입)\n- IBM: 관찰만 — 정책 테마\n\n## 매도·감축·정리 검토\n\n- SLV / GDX / 원자재 옵션: 소수몽키 신호 약함 — 정리 후보 유지\n\n## 이번 주 하지 말 것\n\n- 급등 추격 매수 (ARM, DRAM ETF 당일)\n- 포트폴리오 여력 없이 신규 진입\n- PLTR 추가 매수\n\n## 핵심 원칙\n\nAI 인프라 주도장은 확장 중이나, 진입은 **눌림/재지지** 우선. 언급만으로 매수하지 않는다.\n",
+    "content": "# 이번주 실행판\n\n> 기준일: 2026-06-27\n> 출처: 자산제곱 에이전트 + 소수몽키 신호판 2026-06-01\n\n## 이번 주 매수 후보\n\n| 티커 | 게이트 | 조건 | 무효화 |\n|------|--------|------|--------|\n| NVDA | G2 | 2차 눌림/재지지 확인 후 | AI 인프라 주도장 붕괴 |\n| AVGO | G2 | 목표 4% 유지, 분할 | 맞춤형 칩 수요 둔화 |\n| MU / DRAM ETF | G2 | 첫 눌림/재지지 | 메모리 사이클 급락 |\n| MSFT | G2 | 1차 신규 — SW 반격 확인 | IGV 200일선 이탈 |\n\n## 조건부 대기\n\n| 티커 | 사유 | 진입 조건 |\n|------|------|-----------|\n| ARM | 당일 급등 | 눌림/재지지 후 2차 |\n| NBIS / CRWV | 고위험 옵션 | 1% 이내, 추격 금지 |\n\n## 홀딩·관망\n\n- PLTR: 추가 매수 보류 (이미 진입)\n- IBM: 관찰만 — 정책 테마\n\n## 매도·감축·정리 검토\n\n- SLV / GDX / 원자재 옵션: 소수몽키 신호 약함 — 정리 후보 유지\n\n## 이번 주 하지 말 것\n\n- 급등 추격 매수 (ARM, DRAM ETF 당일)\n- 포트폴리오 여력 없이 신규 진입\n- PLTR 추가 매수\n\n## 핵심 원칙\n\nAI 인프라 주도장은 확장 중이나, 진입은 **눌림/재지지** 우선. 언급만으로 매수하지 않는다.\n",
     "placeholder": "1_브리핑/자산제곱_브리핑/00_운용판단/이번주_실행판.md 를 만들면 여기에 표시됩니다."
   },
   "meeting": {
     "ready": true,
-    "content": "# 오늘 매매 회의\n\n> 기준시각: 2026-06-01\n> 입력 최신성: 신호판 2026-06-01 ✅ / 실행판 2026-06-01 ✅ / 보유현황 2026-06-01 ✅\n> 기준일: 2026-06-26\n\n## 오늘 바로 할 것\n\n- _(없음 — 조건부 대기 우세)_\n- 보유 MU / DRAM ETF: 방향 유지, 추가는 눌림 시\n\n## 오늘 하지 말 것\n\n- ARM / DRAM ETF 급등 추격\n- PLTR 추가 매수\n- CRWV / NBIS 비중 확대\n\n## 조건부 대기\n\n| 후보 | 자산제곱 | 소수몽키 | 포트폴리오 | 중재 결론 |\n|------|----------|----------|------------|-----------|\n| NVDA | G2 충원 | SM-S3 | 여력 확인 필요 | 눌림 시 1차 |\n| AVGO | G2 유지 | SM-S3 | — | 눌림 시 분할 |\n| MSFT | G2 신규 | SM-S2 | — | 눌림 시 1차 |\n| ARM | 조건부 | SM-S3 | 급등 주의 | 2차 대기 |\n| MU/DRAM | G2 | SM-S3 | 이미 보유 | 눌림 시 추가 |\n\n## 보유·수익 보호\n\n- PLTR: 홀딩, 추가 금지\n- CRWV: 홀딩, 물타기 금지\n\n## 정리·감축 검토\n\n- SLV / GDX: 정리 후보 유지 (신호 약함)\n\n## 핵심 합의\n\nAI 인프라 1차 충원 방향(NVDA/AVGO/MU/MSFT)은 자산제곱·소수몽키 일치. 타이밍은 전원 **눌림/재지지** 합의.\n\n## 핵심 불합의\n\n- ARM: 소수몽키 S3 강함 vs 가격 과열 → 2차 대기로 조정\n\n## 사용자 확인 필요\n\n1. 실제 계좌 현금 여력 확인 후 NVDA/MSFT 1차 진입 여부 결정\n2. SLV/GDX 정리 실행 여부\n3. 보유현황 숫자를 실제 계좌에 맞게 업데이트\n",
+    "content": "# 오늘 매매 회의\n\n> 기준시각: 2026-06-01\n> 입력 최신성: 신호판 2026-06-01 ✅ / 실행판 2026-06-01 ✅ / 보유현황 2026-06-01 ✅\n> 기준일: 2026-06-27\n\n## 오늘 바로 할 것\n\n- _(없음 — 조건부 대기 우세)_\n- 보유 MU / DRAM ETF: 방향 유지, 추가는 눌림 시\n\n## 오늘 하지 말 것\n\n- ARM / DRAM ETF 급등 추격\n- PLTR 추가 매수\n- CRWV / NBIS 비중 확대\n\n## 조건부 대기\n\n| 후보 | 자산제곱 | 소수몽키 | 포트폴리오 | 중재 결론 |\n|------|----------|----------|------------|-----------|\n| NVDA | G2 충원 | SM-S3 | 여력 확인 필요 | 눌림 시 1차 |\n| AVGO | G2 유지 | SM-S3 | — | 눌림 시 분할 |\n| MSFT | G2 신규 | SM-S2 | — | 눌림 시 1차 |\n| ARM | 조건부 | SM-S3 | 급등 주의 | 2차 대기 |\n| MU/DRAM | G2 | SM-S3 | 이미 보유 | 눌림 시 추가 |\n\n## 보유·수익 보호\n\n- PLTR: 홀딩, 추가 금지\n- CRWV: 홀딩, 물타기 금지\n\n## 정리·감축 검토\n\n- SLV / GDX: 정리 후보 유지 (신호 약함)\n\n## 핵심 합의\n\nAI 인프라 1차 충원 방향(NVDA/AVGO/MU/MSFT)은 자산제곱·소수몽키 일치. 타이밍은 전원 **눌림/재지지** 합의.\n\n## 핵심 불합의\n\n- ARM: 소수몽키 S3 강함 vs 가격 과열 → 2차 대기로 조정\n\n## 사용자 확인 필요\n\n1. 실제 계좌 현금 여력 확인 후 NVDA/MSFT 1차 진입 여부 결정\n2. SLV/GDX 정리 실행 여부\n3. 보유현황 숫자를 실제 계좌에 맞게 업데이트\n",
     "placeholder": "토론 중재 에이전트 브리핑이 생성되면 여기에 표시됩니다. Cursor에서 '오늘 매매할 것은?'을 실행하세요."
   },
   "rebalance": {
@@ -1647,6 +2582,260 @@
       "emoji": "⚖️",
       "role": "최종 행동 정리",
       "status": "active"
+    }
+  ],
+  "dailyHistory": [
+    {
+      "date": "2026-05-16",
+      "headline": "매크로·금리·물가 — 🙋Q. 다음주는 뭐볼까요? 🐵A.  1) 다음주는 역시 엔비디아 실적이 가장 핵심이 되겠습니다  다시 엔비디아 랠리가 이어",
+      "gradeCounts": {
+        "SM-S2": 1
+      },
+      "telegramMessages": "11",
+      "savedAt": "2026-06-26T09:42:45.127644+00:00"
+    },
+    {
+      "date": "2026-05-17",
+      "headline": "매크로·금리·물가 — 🙋Q. 물가가 4% 넘으면 위험하다던데요?",
+      "gradeCounts": {
+        "SM-S2": 2,
+        "SM-S3": 2,
+        "SM-S1": 1
+      },
+      "telegramMessages": "26",
+      "savedAt": "2026-06-26T09:42:45.130645+00:00"
+    },
+    {
+      "date": "2026-05-18",
+      "headline": "우주·스페이스X — 🔔프리)  키옥시아 상한가에 마이크론, 램리서치(장비) 강세 + 스페이스X 상장일정 확정에 우주 관련주 대부분 강세 + UN",
+      "gradeCounts": {
+        "SM-S3": 2,
+        "SM-S2": 1
+      },
+      "telegramMessages": "27",
+      "savedAt": "2026-06-26T09:42:45.134647+00:00"
+    },
+    {
+      "date": "2026-05-19",
+      "headline": "AI·반도체·메모리 — 🔔증시 혼조세 마감, AI인프라 및 주도주 약세, SW 등 소외주 상대적 강세로 마감했습니다",
+      "gradeCounts": {
+        "SM-S3": 1,
+        "SM-S2": 2
+      },
+      "telegramMessages": "45",
+      "savedAt": "2026-06-26T09:42:45.138646+00:00"
+    },
+    {
+      "date": "2026-05-20",
+      "headline": "AI·반도체·메모리 — 🤖그나마 AI에이전트 기대감 이어지며(구글 행사 등)  마이크론/인텔/샌디스크는 반등 마감하였으나 대체로 약세 보였습니다",
+      "gradeCounts": {
+        "SM-S3": 1,
+        "SM-S2": 2,
+        "SM-S1": 1
+      },
+      "telegramMessages": "51",
+      "savedAt": "2026-06-26T09:42:45.142650+00:00"
+    },
+    {
+      "date": "2026-05-21",
+      "headline": "AI·반도체·메모리 — 다행히 ARM도 본격 상승랠리를 이어나갑니다",
+      "gradeCounts": {
+        "SM-S3": 4,
+        "SM-S2": 1
+      },
+      "telegramMessages": "83",
+      "savedAt": "2026-06-26T09:42:45.146650+00:00"
+    },
+    {
+      "date": "2026-05-22",
+      "headline": "AI·반도체·메모리 — ↗️증시 AI인프라 주도주 강세보이며 상승 마감했습니다",
+      "gradeCounts": {
+        "SM-S3": 4,
+        "SM-S2": 1
+      },
+      "telegramMessages": "94",
+      "savedAt": "2026-06-26T09:42:45.150652+00:00"
+    },
+    {
+      "date": "2026-05-23",
+      "headline": "AI·반도체·메모리 — ↗️증시 전반 상승 마감,  AI인프라(CPU), 양자, 우주 등 특히 강세보인 하루였습니다",
+      "gradeCounts": {
+        "SM-S3": 2,
+        "SM-S2": 1
+      },
+      "telegramMessages": "78",
+      "savedAt": "2026-06-26T09:42:45.154652+00:00"
+    },
+    {
+      "date": "2026-05-24",
+      "headline": "AI·반도체·메모리 — 🎙반도체 업계 리더들, 한마음 한뜻으로 CPU 중요성 강조 중 (목소리 더 커지는 중)  $INTC $AMD $ARM",
+      "gradeCounts": {
+        "SM-S2": 1,
+        "SM-S1": 1
+      },
+      "telegramMessages": "12",
+      "savedAt": "2026-06-26T09:42:45.157651+00:00"
+    },
+    {
+      "date": "2026-05-25",
+      "headline": "AI·반도체·메모리 — 참고) 일본 메모리 키옥시아, 시총3위 등극",
+      "gradeCounts": {
+        "SM-S2": 1
+      },
+      "telegramMessages": "6",
+      "savedAt": "2026-06-26T09:42:45.161653+00:00"
+    },
+    {
+      "date": "2026-05-26",
+      "headline": "AI·반도체·메모리 — 🔔미 증시 프리마켓입니다  AI인프라 주도주 위주 강세 지속됩니다  메모리 : 마이크론 샌디스크 CPU : 인텔 AMD ",
+      "gradeCounts": {
+        "SM-S3": 2,
+        "SM-S2": 2
+      },
+      "telegramMessages": "35",
+      "savedAt": "2026-06-26T09:42:45.165656+00:00"
+    },
+    {
+      "date": "2026-05-27",
+      "headline": "AI·반도체·메모리 — 🔔퀄컴, 틱톡(바이트댄스) 맞춤형 반도체 계약 소식에 신고가 경신 중",
+      "gradeCounts": {
+        "SM-S3": 3,
+        "SM-S2": 1
+      },
+      "telegramMessages": "83",
+      "savedAt": "2026-06-26T09:42:45.168654+00:00"
+    },
+    {
+      "date": "2026-05-28",
+      "headline": "AI·반도체·메모리 — ↗️마이크론, 기관 목표주가 추가상향에 또 신고가 마감",
+      "gradeCounts": {
+        "SM-S3": 3,
+        "SM-S2": 2
+      },
+      "telegramMessages": "88",
+      "savedAt": "2026-06-26T09:42:45.171655+00:00"
+    },
+    {
+      "date": "2026-05-29",
+      "headline": "AI·반도체·메모리 — 🟢나스닥, 에센피 일제히 신고가 마감  메모리 - 샌디스크 CPU ARM/AMD/퀄컴 서버 - 델 외에도  SW - 마소",
+      "gradeCounts": {
+        "SM-S3": 2
+      },
+      "telegramMessages": "83",
+      "savedAt": "2026-06-26T09:42:45.175655+00:00"
+    },
+    {
+      "date": "2026-05-30",
+      "headline": "AI 인프라가 서버, 메모리, CPU, 맞춤형 반도체, 데이터센터로 확산",
+      "gradeCounts": {
+        "SM-S3": 1,
+        "SM-S2": 4,
+        "SM-S1": 1
+      },
+      "telegramMessages": "92",
+      "savedAt": "2026-06-26T09:42:45.178656+00:00"
+    },
+    {
+      "date": "2026-05-31",
+      "headline": "AI 인프라 주도장이 메모리, CPU, 서버, 온디바이스 AI로 확장 지속",
+      "gradeCounts": {
+        "SM-S3": 1,
+        "SM-S2": 4,
+        "SM-S1": 1
+      },
+      "telegramMessages": "28",
+      "savedAt": "2026-06-26T09:42:45.183656+00:00"
+    },
+    {
+      "date": "2026-06-01",
+      "headline": "GTC 이후 AI 인프라 주도장이 더 넓어짐. 메모리, ARM, 서버, 데이터센터, 맞춤형 반도체가 동시 신고가/강세",
+      "gradeCounts": {
+        "SM-S3": 2,
+        "SM-S2": 4,
+        "SM-S1": 1
+      },
+      "telegramMessages": "54",
+      "savedAt": "2026-06-26T09:42:45.187658+00:00"
+    },
+    {
+      "date": "2026-06-02",
+      "headline": "AI·반도체·메모리 — 🔔증시 강보합 마감, 엔비디아 발표 관련주로 쏠린 하루  [AI 하드웨어] 엔비디아+6.3% ARM+15.7% 마이크론+",
+      "gradeCounts": {
+        "SM-S3": 2,
+        "SM-S2": 1
+      },
+      "telegramMessages": "67",
+      "savedAt": "2026-06-26T09:42:45.190659+00:00"
+    },
+    {
+      "date": "2026-06-03",
+      "headline": "AI·반도체·메모리 — ↗️증시는 강보합, 반도체와 AI인프라주에 집중된 하루였습니다 (광통신, 번도체 장비 등)",
+      "gradeCounts": {
+        "SM-S3": 2,
+        "SM-S1": 1
+      },
+      "telegramMessages": "37",
+      "savedAt": "2026-06-27T01:20:13.061527+00:00"
+    },
+    {
+      "date": "2026-06-22",
+      "headline": "AI·반도체·메모리 — ↗️메모리 마이크론, 앤트로픽과 협업 계약 발표하면서 신고가 뚫습니다  메모리 전성시대입니다",
+      "gradeCounts": {
+        "SM-S3": 2,
+        "SM-S2": 2
+      },
+      "telegramMessages": "16",
+      "savedAt": "2026-06-27T01:20:52.823654+00:00"
+    },
+    {
+      "date": "2026-06-23",
+      "headline": "AI·반도체·메모리 — 🔔미 증시, 빅테크 약세 vs AI인프라 상승 마감",
+      "gradeCounts": {
+        "SM-S3": 4,
+        "SM-S2": 1
+      },
+      "telegramMessages": "64",
+      "savedAt": "2026-06-27T01:20:52.826653+00:00"
+    },
+    {
+      "date": "2026-06-24",
+      "headline": "AI·반도체·메모리 — ↘️증시, AI인프라주 위주 하락 마감 (개별 이슈보다는 차익실현/순환매)",
+      "gradeCounts": {
+        "SM-S2": 1,
+        "SM-S1": 3
+      },
+      "telegramMessages": "44",
+      "savedAt": "2026-06-27T01:20:52.830655+00:00"
+    },
+    {
+      "date": "2026-06-25",
+      "headline": "AI·반도체·메모리 — ↗️장마감후) 마이크론 실적 슈퍼 서프라이즈",
+      "gradeCounts": {
+        "SM-S3": 2,
+        "SM-S2": 1,
+        "SM-S1": 1
+      },
+      "telegramMessages": "87",
+      "savedAt": "2026-06-27T01:20:52.835656+00:00"
+    },
+    {
+      "date": "2026-06-26",
+      "headline": "AI·반도체·메모리 — 🔔미 증시, AI인프라주 상승 vs 빅테크 약세 양극화 마감 (지수는 혼조세)",
+      "gradeCounts": {
+        "SM-S3": 4
+      },
+      "telegramMessages": "62",
+      "savedAt": "2026-06-27T01:20:52.839657+00:00"
+    },
+    {
+      "date": "2026-06-27",
+      "headline": "AI·반도체·메모리 — 🔔증시, AI인프라주 약세 vs 빅테크 강세 등 순환매 보였던 하루였습니다",
+      "gradeCounts": {
+        "SM-S3": 1,
+        "SM-S2": 1
+      },
+      "telegramMessages": "27",
+      "savedAt": "2026-06-27T01:20:52.845658+00:00"
     }
   ]
 }

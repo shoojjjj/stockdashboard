@@ -1,38 +1,5 @@
 import type { BriefingSlot } from "@/lib/types";
-
-function SimpleMarkdown({ content }: { content: string }) {
-  const lines = content.split("\n");
-  return (
-    <div className="md-content text-sm">
-      {lines.map((line, i) => {
-        if (line.startsWith("# "))
-          return (
-            <h1 key={i}>{line.slice(2)}</h1>
-          );
-        if (line.startsWith("## "))
-          return (
-            <h2 key={i}>{line.slice(3)}</h2>
-          );
-        if (line.startsWith("### "))
-          return (
-            <h3 key={i}>{line.slice(4)}</h3>
-          );
-        if (line.startsWith("- "))
-          return (
-            <li key={i}>{line.slice(2)}</li>
-          );
-        if (line.startsWith("> "))
-          return (
-            <blockquote key={i}>{line.slice(2)}</blockquote>
-          );
-        if (line.trim() === "") return <br key={i} />;
-        return (
-          <p key={i}>{line}</p>
-        );
-      })}
-    </div>
-  );
-}
+import { MarkdownView } from "../MarkdownView";
 
 interface BriefingTabProps {
   slot: BriefingSlot;
@@ -61,7 +28,7 @@ export function BriefingTab({ slot, title, emoji, setupHint }: BriefingTabProps)
       <h2 className="text-lg font-bold mb-4">
         {emoji} {title}
       </h2>
-      <SimpleMarkdown content={slot.content} />
+      <MarkdownView content={slot.content} />
     </div>
   );
 }

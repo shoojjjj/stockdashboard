@@ -1,0 +1,40 @@
+{
+  "date": "2026-06-03",
+  "savedAt": "2026-06-27T01:20:13.061527+00:00",
+  "headline": "AI·반도체·메모리 — ↗️증시는 강보합, 반도체와 AI인프라주에 집중된 하루였습니다 (광통신, 번도체 장비 등)",
+  "action": "조건부 실행 검토 — 추격 매수 금지, 눌림/재지지 조건 확인 후 진행",
+  "bullets": [
+    "AI·반도체·메모리 — ↗️증시는 강보합, 반도체와 AI인프라주에 집중된 하루였습니다 (광통신, 번도체 장비 등)",
+    "정책·트럼프·IBM — 🔥 주요 신고가 현황, 6/3 *52주 신고가 포함  👑 빅테크 AAPL (아이폰·서비스)  📡 AI인프라·광통신 AVGO (커스텀 ASIC·네…",
+    "우주·스페이스X — 👴트럼프의 전략자산 LIST  1. 반도체 '제조'(공급망) 2. 희토류/리튬 '제조'(공급망) 3. 원전/우라늄 '제조' (공급망) 4. 양자…"
+  ],
+  "latestSignalDate": "2026-06-03",
+  "signalSource": "Telegram API `소수의견(26년 2분기)` (auto-tagged)",
+  "isAutoTagged": true,
+  "gradeCounts": {
+    "SM-S3": 2,
+    "SM-S1": 1
+  },
+  "signalSummary": [
+    {
+      "grade": "SM-S3",
+      "signal": "AI·반도체·메모리 — ↗️증시는 강보합, 반도체와 AI인프라주에 집중된 하루였습니다 (광통신, 번도체 장비 등)",
+      "tags": "종목, 섹터, ETF",
+      "evidence": "message3654, message3653, message3652, message3651"
+    },
+    {
+      "grade": "SM-S3",
+      "signal": "정책·트럼프·IBM — 🔥 주요 신고가 현황, 6/3 *52주 신고가 포함  👑 빅테크 AAPL (아이폰·서비스)  📡 AI인프라·광통신 AVGO (커스텀 ASIC·네…",
+      "tags": "정책, 종목",
+      "evidence": "message3654, message3653, message3652, message3651"
+    },
+    {
+      "grade": "SM-S1",
+      "signal": "우주·스페이스X — 👴트럼프의 전략자산 LIST  1. 반도체 '제조'(공급망) 2. 희토류/리튬 '제조'(공급망) 3. 원전/우라늄 '제조' (공급망) 4. 양자…",
+      "tags": "종목, ETF, 이벤트",
+      "evidence": "message3654, message3653, message3652, message3651"
+    }
+  ],
+  "telegramMessages": "37",
+  "pendingInputs": 21
+}

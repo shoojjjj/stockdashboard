@@ -24,6 +24,7 @@ export function Dashboard({ data }: { data: DashboardData }) {
           generatedAt={data.generatedAt}
           meeting={data.meeting}
           pendingInputs={data.pendingInputs}
+          dailyHistory={data.dailyHistory}
         />
       )}
       {tab === "signal" && (

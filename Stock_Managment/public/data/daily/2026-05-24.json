@@ -1,0 +1,33 @@
+{
+  "date": "2026-05-24",
+  "savedAt": "2026-06-26T09:42:45.157651+00:00",
+  "headline": "AI·반도체·메모리 — 🎙반도체 업계 리더들, 한마음 한뜻으로 CPU 중요성 강조 중 (목소리 더 커지는 중)  $INTC $AMD $ARM",
+  "action": "조건부 실행 검토 — 추격 매수 금지, 눌림/재지지 조건 확인 후 진행",
+  "bullets": [
+    "AI·반도체·메모리 — 🎙반도체 업계 리더들, 한마음 한뜻으로 CPU 중요성 강조 중 (목소리 더 커지는 중)  $INTC $AMD $ARM",
+    "정책·트럼프·IBM — 🎙인텔 \"트럼프에게 정기 보고 중\" = 미국 전략자산 (파운드리)"
+  ],
+  "latestSignalDate": "2026-05-24",
+  "signalSource": "Telegram API `소수의견(26년 2분기)` (auto-tagged)",
+  "isAutoTagged": true,
+  "gradeCounts": {
+    "SM-S2": 1,
+    "SM-S1": 1
+  },
+  "signalSummary": [
+    {
+      "grade": "SM-S2",
+      "signal": "AI·반도체·메모리 — 🎙반도체 업계 리더들, 한마음 한뜻으로 CPU 중요성 강조 중 (목소리 더 커지는 중)  $INTC $AMD $ARM",
+      "tags": "종목, 섹터, ETF",
+      "evidence": "message3100, message3101, message3102, message3103"
+    },
+    {
+      "grade": "SM-S1",
+      "signal": "정책·트럼프·IBM — 🎙인텔 \"트럼프에게 정기 보고 중\" = 미국 전략자산 (파운드리)",
+      "tags": "정책, 종목",
+      "evidence": "message3100, message3101, message3102, message3103"
+    }
+  ],
+  "telegramMessages": "12",
+  "pendingInputs": 21
+}

@@ -162,21 +162,43 @@ def load_telegram_stats() -> list[dict[str, str]]:
         return list(csv.DictReader(f))
 
 
-def load_columns() -> list[dict[str, str | int]]:
-    categories: list[dict[str, str | int]] = []
+def strip_frontmatter(text: str) -> str:
+    if text.startswith("---"):
+        end = text.find("\n---", 3)
+        if end != -1:
+            return text[end + 4 :].lstrip("\n")
+    return text
+
+
+def column_id(category: str, stem: str) -> str:
+    import hashlib
+    return hashlib.sha256(f"{category}/{stem}".encode()).hexdigest()[:12]
+
+
+def load_columns() -> list[dict[str, str | int | list]]:
+    categories: list[dict[str, str | int | list]] = []
+    columns_out = ROOT / "public" / "data" / "columns"
     if not COLUMN_DIR.exists():
         return categories
+
+    columns_out.mkdir(parents=True, exist_ok=True)
     for folder in sorted(COLUMN_DIR.iterdir()):
         if not folder.is_dir():
             continue
-        files = sorted(folder.glob("*.md"))
-        categories.append(
-            {
-                "name": folder.name,
-                "count": len(files),
-                "samples": [f.stem for f in files[:5]],
-            }
-        )
+        articles: list[dict[str, str]] = []
+        for f in sorted(folder.glob("*.md")):
+            cid = column_id(folder.name, f.stem)
+            body = strip_frontmatter(f.read_text(encoding="utf-8"))
+            article_path = columns_out / f"{cid}.json"
+            article_path.write_text(
+                json.dumps(
+                    {"id": cid, "category": folder.name, "title": f.stem, "content": body},
+                    ensure_ascii=False,
+                ),
+                encoding="utf-8",
+            )
+            articles.append({"id": cid, "title": f.stem})
+        categories.append({"name": folder.name, "count": len(articles), "articles": articles})
     return categories
 
 
@@ -359,6 +381,18 @@ def main() -> None:
 
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     OUTPUT.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+
+    archive_script = ROOT / "scripts" / "archive_daily.py"
+    if archive_script.exists():
+        import importlib.util
+        spec = importlib.util.spec_from_file_location("archive_daily", archive_script)
+        if spec and spec.loader:
+            mod = importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(mod)
+            mod.archive(payload)
+            payload["dailyHistory"] = mod.load_index()
+            OUTPUT.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+
     print(f"dashboard.json written -> {OUTPUT}")
     print(f"  signals: {len(signals)}, latest: {payload['latestSignalDate']}")
 

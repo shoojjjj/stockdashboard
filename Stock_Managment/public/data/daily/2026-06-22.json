@@ -1,0 +1,47 @@
+{
+  "date": "2026-06-22",
+  "savedAt": "2026-06-27T01:20:52.823654+00:00",
+  "headline": "AI·반도체·메모리 — ↗️메모리 마이크론, 앤트로픽과 협업 계약 발표하면서 신고가 뚫습니다  메모리 전성시대입니다",
+  "action": "조건부 실행 검토 — 추격 매수 금지, 눌림/재지지 조건 확인 후 진행",
+  "bullets": [
+    "AI·반도체·메모리 — ↗️메모리 마이크론, 앤트로픽과 협업 계약 발표하면서 신고가 뚫습니다  메모리 전성시대입니다",
+    "데이터센터·인프라 — ↗️데이터센터 모음집 WGMI 신고가",
+    "우주·스페이스X — 🔔구글,아마존은 특별한 악재로 보이는 이슈는 없는데 하락세입니다 (스페이스X도 하락세)  빅테크 투자 확대 우려로 주가 흐름 부진 지속됩니다",
+    "SW·클라우드·AI에이전트 — 🔥 주요 신고가 현황, 6/22 (장초반) *52주 신고가 포함  ⚙️ 반도체·장비 TSM (파운드리 1위) INTC (CPU·파운드리) AMD…"
+  ],
+  "latestSignalDate": "2026-06-22",
+  "signalSource": "Telegram API `소수의견(26년 2분기)` (auto-tagged)",
+  "isAutoTagged": true,
+  "gradeCounts": {
+    "SM-S3": 2,
+    "SM-S2": 2
+  },
+  "signalSummary": [
+    {
+      "grade": "SM-S3",
+      "signal": "AI·반도체·메모리 — ↗️메모리 마이크론, 앤트로픽과 협업 계약 발표하면서 신고가 뚫습니다  메모리 전성시대입니다",
+      "tags": "종목, 섹터, ETF",
+      "evidence": "message4775, message4776, message4777, message4778"
+    },
+    {
+      "grade": "SM-S3",
+      "signal": "데이터센터·인프라 — ↗️데이터센터 모음집 WGMI 신고가",
+      "tags": "종목, 섹터",
+      "evidence": "message4775, message4776, message4777, message4778"
+    },
+    {
+      "grade": "SM-S2",
+      "signal": "우주·스페이스X — 🔔구글,아마존은 특별한 악재로 보이는 이슈는 없는데 하락세입니다 (스페이스X도 하락세)  빅테크 투자 확대 우려로 주가 흐름 부진 지속됩니다",
+      "tags": "종목, ETF, 이벤트",
+      "evidence": "message4775, message4776, message4777, message4778"
+    },
+    {
+      "grade": "SM-S2",
+      "signal": "SW·클라우드·AI에이전트 — 🔥 주요 신고가 현황, 6/22 (장초반) *52주 신고가 포함  ⚙️ 반도체·장비 TSM (파운드리 1위) INTC (CPU·파운드리) AMD…",
+      "tags": "종목, 섹터",
+      "evidence": "message4775, message4776, message4777, message4778"
+    }
+  ],
+  "telegramMessages": "16",
+  "pendingInputs": 21
+}

@@ -1,0 +1,61 @@
+{
+  "date": "2026-05-31",
+  "savedAt": "2026-06-26T09:42:45.183656+00:00",
+  "headline": "AI 인프라 주도장이 메모리, CPU, 서버, 온디바이스 AI로 확장 지속",
+  "action": "조건부 실행 검토 — 추격 매수 금지, 눌림/재지지 조건 확인 후 진행",
+  "bullets": [
+    "AI 인프라 주도장이 메모리, CPU, 서버, 온디바이스 AI로 확장 지속",
+    "소외주 SW 반격 가능성은 다음 주 MSFT/NVDA 행사에 연결",
+    "트럼프 전략자산 테마가 IBM 양자와 드론으로 재점화",
+    "드론/우주/방산은 ETF 중심 관찰이 유지되나 이벤트 변동성이 큼",
+    "6월 중순 이후 조정 재료가 별도 리스크 축으로 등장"
+  ],
+  "latestSignalDate": "2026-05-31",
+  "signalSource": "Telegram API `소수의견(26년 2분기)`",
+  "isAutoTagged": false,
+  "gradeCounts": {
+    "SM-S3": 1,
+    "SM-S2": 4,
+    "SM-S1": 1
+  },
+  "signalSummary": [
+    {
+      "grade": "SM-S3",
+      "signal": "AI 인프라 주도장이 메모리, CPU, 서버, 온디바이스 AI로 확장 지속",
+      "tags": "종목, ETF, 섹터, 이벤트",
+      "evidence": "`message3364`, `message3370`, `message3406`, `message3434`, `message3453`, `message3476`, `message3477`, `message3507`, `message3508`"
+    },
+    {
+      "grade": "SM-S2",
+      "signal": "소외주 SW 반격 가능성은 다음 주 MSFT/NVDA 행사에 연결",
+      "tags": "종목, 섹터, 이벤트",
+      "evidence": "`message3417`, `message3424`, `message3473`, `message3507`"
+    },
+    {
+      "grade": "SM-S2",
+      "signal": "트럼프 전략자산 테마가 IBM 양자와 드론으로 재점화",
+      "tags": "정책, 종목, ETF",
+      "evidence": "`message3381`, `message3419`, `message3502`, `message3504`, OCR `message3501`, OCR `message3503`"
+    },
+    {
+      "grade": "SM-S2",
+      "signal": "드론/우주/방산은 ETF 중심 관찰이 유지되나 이벤트 변동성이 큼",
+      "tags": "ETF, 섹터, 리스크",
+      "evidence": "`message3387`, `message3390`, `message3425`, `message3436`, `message3504`"
+    },
+    {
+      "grade": "SM-S2",
+      "signal": "6월 중순 이후 조정 재료가 별도 리스크 축으로 등장",
+      "tags": "매크로, 이벤트, 리스크",
+      "evidence": "`message3492`, `message3496`, `message3497`"
+    },
+    {
+      "grade": "SM-S1",
+      "signal": "소비 둔화와 정책 부양 명분은 배경 신호로 유지",
+      "tags": "매크로, 정책",
+      "evidence": "`message3439`"
+    }
+  ],
+  "telegramMessages": "28",
+  "pendingInputs": 21
+}

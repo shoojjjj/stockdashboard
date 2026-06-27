@@ -1,0 +1,25 @@
+{
+  "date": "2026-05-25",
+  "savedAt": "2026-06-26T09:42:45.161653+00:00",
+  "headline": "AI·반도체·메모리 — 참고) 일본 메모리 키옥시아, 시총3위 등극",
+  "action": "조건부 실행 검토 — 추격 매수 금지, 눌림/재지지 조건 확인 후 진행",
+  "bullets": [
+    "AI·반도체·메모리 — 참고) 일본 메모리 키옥시아, 시총3위 등극"
+  ],
+  "latestSignalDate": "2026-05-25",
+  "signalSource": "Telegram API `소수의견(26년 2분기)` (auto-tagged)",
+  "isAutoTagged": true,
+  "gradeCounts": {
+    "SM-S2": 1
+  },
+  "signalSummary": [
+    {
+      "grade": "SM-S2",
+      "signal": "AI·반도체·메모리 — 참고) 일본 메모리 키옥시아, 시총3위 등극",
+      "tags": "종목, 섹터, ETF",
+      "evidence": "message3112, message3113, message3114, message3115"
+    }
+  ],
+  "telegramMessages": "6",
+  "pendingInputs": 21
+}

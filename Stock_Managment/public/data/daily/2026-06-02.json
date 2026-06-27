@@ -1,0 +1,40 @@
+{
+  "date": "2026-06-02",
+  "savedAt": "2026-06-26T09:42:45.190659+00:00",
+  "headline": "AI·반도체·메모리 — 🔔증시 강보합 마감, 엔비디아 발표 관련주로 쏠린 하루  [AI 하드웨어] 엔비디아+6.3% ARM+15.7% 마이크론+6.6% 샌디스크+3.9…",
+  "action": "조건부 실행 검토 — 추격 매수 금지, 눌림/재지지 조건 확인 후 진행",
+  "bullets": [
+    "AI·반도체·메모리 — 🔔증시 강보합 마감, 엔비디아 발표 관련주로 쏠린 하루  [AI 하드웨어] 엔비디아+6.3% ARM+15.7% 마이크론+6.6% 샌디스크+3.9…",
+    "데이터센터·인프라 — ↗️시간외) AI서버 만드는 HEP, 실적 서프라이즈 시간외로 +30%대 초강세",
+    "우주·스페이스X — <🐵주요 ETF 데일리>  메모리/한국/데이터센터(AI HW) SW, 사이버보안(AI SW)  모두 강했던 하루였습니다  우주 관련주는 지난주 …"
+  ],
+  "latestSignalDate": "2026-06-02",
+  "signalSource": "Telegram API `소수의견(26년 2분기)` (auto-tagged)",
+  "isAutoTagged": true,
+  "gradeCounts": {
+    "SM-S3": 2,
+    "SM-S2": 1
+  },
+  "signalSummary": [
+    {
+      "grade": "SM-S3",
+      "signal": "AI·반도체·메모리 — 🔔증시 강보합 마감, 엔비디아 발표 관련주로 쏠린 하루  [AI 하드웨어] 엔비디아+6.3% ARM+15.7% 마이크론+6.6% 샌디스크+3.9…",
+      "tags": "종목, 섹터, ETF",
+      "evidence": "message3586, message3585, message3584, message3583"
+    },
+    {
+      "grade": "SM-S3",
+      "signal": "데이터센터·인프라 — ↗️시간외) AI서버 만드는 HEP, 실적 서프라이즈 시간외로 +30%대 초강세",
+      "tags": "종목, 섹터",
+      "evidence": "message3586, message3585, message3584, message3583"
+    },
+    {
+      "grade": "SM-S2",
+      "signal": "우주·스페이스X — <🐵주요 ETF 데일리>  메모리/한국/데이터센터(AI HW) SW, 사이버보안(AI SW)  모두 강했던 하루였습니다  우주 관련주는 지난주 …",
+      "tags": "종목, ETF, 이벤트",
+      "evidence": "message3586, message3585, message3584, message3583"
+    }
+  ],
+  "telegramMessages": "67",
+  "pendingInputs": 21
+}

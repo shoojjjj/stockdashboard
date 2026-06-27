@@ -1,4 +1,5 @@
 import { getDashboardDataFromFile } from "@/lib/data";
+import { CollectButton } from "@/components/CollectButton";
 import { Dashboard } from "@/components/Dashboard";
 
 export const dynamic = "force-dynamic";
@@ -32,12 +33,13 @@ export default async function Home() {
           <div>
             <p className="text-indigo-600 text-sm font-semibold mb-1">Stock Managment</p>
             <h1 className="text-2xl sm:text-3xl font-bold text-slate-900">투자 관제탑</h1>
-            <p className="text-slate-500 text-sm mt-1">아카이브 기반 · 2단계 (브리핑 + 자동갱신)</p>
+            <p className="text-slate-500 text-sm mt-1">아카이브 기반 · 에이전트 4종 연동</p>
           </div>
-          <div className="text-right text-xs text-slate-400">
-            <p>갱신: {updated}</p>
-            <p>신호판: {data.latestSignalDate ?? "—"}</p>
-          </div>
+          <CollectButton />
+        </div>
+        <div className="text-xs text-slate-400 mt-2">
+          갱신: {updated} · 신호판: {data.latestSignalDate ?? "—"}
+          {data.dailyHistory?.length ? ` · 누적 ${data.dailyHistory.length}일` : ""}
         </div>
       </header>
 

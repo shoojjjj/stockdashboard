@@ -1,0 +1,61 @@
+{
+  "date": "2026-05-30",
+  "savedAt": "2026-06-26T09:42:45.178656+00:00",
+  "headline": "AI 인프라가 서버, 메모리, CPU, 맞춤형 반도체, 데이터센터로 확산",
+  "action": "조건부 실행 검토 — 추격 매수 금지, 눌림/재지지 조건 확인 후 진행",
+  "bullets": [
+    "AI 인프라가 서버, 메모리, CPU, 맞춤형 반도체, 데이터센터로 확산",
+    "소외주 SW의 반등 시도",
+    "드론, 우주, 방산은 정책 기대와 고변동 리스크가 함께 존재",
+    "트럼프식 미국 전략자산 테마가 델, IBM, 드론, 로빈후드로 번짐",
+    "반도체 독주가 국가/ETF 단위로 확장"
+  ],
+  "latestSignalDate": "2026-05-30",
+  "signalSource": "`소수몽키/Telegram Desktop/ChatExport_2026-05-30`",
+  "isAutoTagged": false,
+  "gradeCounts": {
+    "SM-S3": 1,
+    "SM-S2": 4,
+    "SM-S1": 1
+  },
+  "signalSummary": [
+    {
+      "grade": "SM-S3",
+      "signal": "AI 인프라가 서버, 메모리, CPU, 맞춤형 반도체, 데이터센터로 확산",
+      "tags": "종목, ETF, 섹터, 실적",
+      "evidence": "`message3364`, `message3366`, `message3370`, `message3403`, `message3406`, `message3412`, `message3415`, `message3434`"
+    },
+    {
+      "grade": "SM-S2",
+      "signal": "소외주 SW의 반등 시도",
+      "tags": "종목, 섹터, 실적",
+      "evidence": "`message3392`, `message3394`, `message3417`, `message3424`, `message3428`"
+    },
+    {
+      "grade": "SM-S2",
+      "signal": "드론, 우주, 방산은 정책 기대와 고변동 리스크가 함께 존재",
+      "tags": "ETF, 섹터, 정책, 리스크",
+      "evidence": "`message3284`, `message3288`, `message3291`, `message3292`, `message3335`, `message3387`, `message3390`, `message3425`, `message3436`"
+    },
+    {
+      "grade": "SM-S2",
+      "signal": "트럼프식 미국 전략자산 테마가 델, IBM, 드론, 로빈후드로 번짐",
+      "tags": "정책, 이벤트, 종목",
+      "evidence": "`message3275`, `message3284`, `message3381`, `message3383`, `message3419`, `message3420`"
+    },
+    {
+      "grade": "SM-S2",
+      "signal": "반도체 독주가 국가/ETF 단위로 확장",
+      "tags": "ETF, 섹터, 매크로",
+      "evidence": "`message3335`, `message3436`, `message3444`, OCR `photo_1778@30-05-2026_15-21-57.jpg`"
+    },
+    {
+      "grade": "SM-S1",
+      "signal": "소비 둔화와 부양 명분",
+      "tags": "매크로, 이벤트, 리스크",
+      "evidence": "`message3439`"
+    }
+  ],
+  "telegramMessages": "92",
+  "pendingInputs": 21
+}

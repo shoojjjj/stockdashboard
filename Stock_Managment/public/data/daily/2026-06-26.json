@@ -1,0 +1,46 @@
+{
+  "date": "2026-06-26",
+  "savedAt": "2026-06-27T01:20:52.839657+00:00",
+  "headline": "AI·반도체·메모리 — 🔔미 증시, AI인프라주 상승 vs 빅테크 약세 양극화 마감 (지수는 혼조세)",
+  "action": "조건부 실행 검토 — 추격 매수 금지, 눌림/재지지 조건 확인 후 진행",
+  "bullets": [
+    "AI·반도체·메모리 — 🔔미 증시, AI인프라주 상승 vs 빅테크 약세 양극화 마감 (지수는 혼조세)",
+    "SW·클라우드·AI에이전트 — ↘️SW 대장주 중 하나인 팔란티어 역시 최근 저점을 계속 하회하고 있습니다",
+    "우주·스페이스X — 🔥 주요 신고가 현황, 6/26 *52주 신고가 포함  📡 AI인프라·광통신 GLW (광섬유·)  ⚙️ 반도체·장비 AMAT (반도체 장비) T…",
+    "매크로·금리·물가 — -> 금리인하 사이클에선 둘다 오를 수 있겠지만  현재 긴축사이클로 접어들면서 모두 같이 오르는 장은 어렵다고 봐야겠습니다  주도주 쏠림 심화 …"
+  ],
+  "latestSignalDate": "2026-06-26",
+  "signalSource": "Telegram API `소수의견(26년 2분기)` (auto-tagged)",
+  "isAutoTagged": true,
+  "gradeCounts": {
+    "SM-S3": 4
+  },
+  "signalSummary": [
+    {
+      "grade": "SM-S3",
+      "signal": "AI·반도체·메모리 — 🔔미 증시, AI인프라주 상승 vs 빅테크 약세 양극화 마감 (지수는 혼조세)",
+      "tags": "종목, 섹터, ETF",
+      "evidence": "message4989, message4988, message4987, message4986"
+    },
+    {
+      "grade": "SM-S3",
+      "signal": "SW·클라우드·AI에이전트 — ↘️SW 대장주 중 하나인 팔란티어 역시 최근 저점을 계속 하회하고 있습니다",
+      "tags": "종목, 섹터",
+      "evidence": "message4989, message4988, message4987, message4986"
+    },
+    {
+      "grade": "SM-S3",
+      "signal": "우주·스페이스X — 🔥 주요 신고가 현황, 6/26 *52주 신고가 포함  📡 AI인프라·광통신 GLW (광섬유·)  ⚙️ 반도체·장비 AMAT (반도체 장비) T…",
+      "tags": "종목, ETF, 이벤트",
+      "evidence": "message4989, message4988, message4987, message4986"
+    },
+    {
+      "grade": "SM-S3",
+      "signal": "매크로·금리·물가 — -> 금리인하 사이클에선 둘다 오를 수 있겠지만  현재 긴축사이클로 접어들면서 모두 같이 오르는 장은 어렵다고 봐야겠습니다  주도주 쏠림 심화 …",
+      "tags": "매크로, 정책",
+      "evidence": "message4989, message4988, message4987, message4986"
+    }
+  ],
+  "telegramMessages": "62",
+  "pendingInputs": 21
+}

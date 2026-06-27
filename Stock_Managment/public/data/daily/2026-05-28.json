@@ -1,0 +1,54 @@
+{
+  "date": "2026-05-28",
+  "savedAt": "2026-06-26T09:42:45.171655+00:00",
+  "headline": "AI·반도체·메모리 — ↗️마이크론, 기관 목표주가 추가상향에 또 신고가 마감",
+  "action": "조건부 실행 검토 — 추격 매수 금지, 눌림/재지지 조건 확인 후 진행",
+  "bullets": [
+    "AI·반도체·메모리 — ↗️마이크론, 기관 목표주가 추가상향에 또 신고가 마감",
+    "정책·트럼프·IBM — <🐵델, 트럼프의 노골적 밀어주기>",
+    "SW·클라우드·AI에이전트 — ↗️로빈후드, AI에이전트가 주식거래 가능한 서비스 발표하며 강세",
+    "우주·스페이스X — 🚀우주 관련주 조용히 강세 지속, 다들 메모리에 관심이 팔려있을때(?) 엄청 강하게 올라가는 중입니다  대장주는 로켓랩, 플래닛랩스로 보고 있고…",
+    "데이터센터·인프라 — 🔔시간외) 데이터센터 네비우스, 천재 투자자 레오폴드의 깜짝 지분 공시에 시간외로 급등세"
+  ],
+  "latestSignalDate": "2026-05-28",
+  "signalSource": "Telegram API `소수의견(26년 2분기)` (auto-tagged)",
+  "isAutoTagged": true,
+  "gradeCounts": {
+    "SM-S3": 3,
+    "SM-S2": 2
+  },
+  "signalSummary": [
+    {
+      "grade": "SM-S3",
+      "signal": "AI·반도체·메모리 — ↗️마이크론, 기관 목표주가 추가상향에 또 신고가 마감",
+      "tags": "종목, 섹터, ETF",
+      "evidence": "message3239, message3238, message3237, message3236"
+    },
+    {
+      "grade": "SM-S3",
+      "signal": "정책·트럼프·IBM — <🐵델, 트럼프의 노골적 밀어주기>",
+      "tags": "정책, 종목",
+      "evidence": "message3239, message3238, message3237, message3236"
+    },
+    {
+      "grade": "SM-S3",
+      "signal": "SW·클라우드·AI에이전트 — ↗️로빈후드, AI에이전트가 주식거래 가능한 서비스 발표하며 강세",
+      "tags": "종목, 섹터",
+      "evidence": "message3239, message3238, message3237, message3236"
+    },
+    {
+      "grade": "SM-S2",
+      "signal": "우주·스페이스X — 🚀우주 관련주 조용히 강세 지속, 다들 메모리에 관심이 팔려있을때(?) 엄청 강하게 올라가는 중입니다  대장주는 로켓랩, 플래닛랩스로 보고 있고…",
+      "tags": "종목, ETF, 이벤트",
+      "evidence": "message3239, message3238, message3237, message3236"
+    },
+    {
+      "grade": "SM-S2",
+      "signal": "데이터센터·인프라 — 🔔시간외) 데이터센터 네비우스, 천재 투자자 레오폴드의 깜짝 지분 공시에 시간외로 급등세",
+      "tags": "종목, 섹터",
+      "evidence": "message3239, message3238, message3237, message3236"
+    }
+  ],
+  "telegramMessages": "88",
+  "pendingInputs": 21
+}

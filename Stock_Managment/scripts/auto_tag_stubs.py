@@ -111,10 +111,17 @@ def build_board(day: str, msgs: list[dict]) -> str:
     summary_rows: list[str] = []
     details: list[str] = []
     rebalance: list[str] = []
+    used_snippets: set[str] = set()
+    detail_idx = 0
 
-    for i, (sc, net, theme, snippets) in enumerate(scored[:5], 1):
-        grade = grade_for(sc, net)
+    for _sc, net, theme, snippets in scored[:5]:
+        grade = grade_for(_sc, net)
         snippet = snippets[0] if snippets else f"텔레그램 {len(msgs)}건"
+        # 동일 문장이 여러 테마에 반복되지 않도록 처리
+        sig_key = snippet[:40]
+        if sig_key in used_snippets:
+            continue
+        used_snippets.add(sig_key)
         signal = f"{theme['label']} — {snippet[:80]}{'…' if len(snippet) > 80 else ''}"
         evidence = ", ".join(msg_ids[:4]) if msg_ids else "API 원천"
         summary_rows.append(
@@ -122,8 +129,9 @@ def build_board(day: str, msgs: list[dict]) -> str:
         )
         theme_tickers = extract_tickers(" ".join(snippets))
         ticker_str = ", ".join(f"`{t}`" for t in (theme_tickers or tickers)[:6]) or "-"
+        detail_idx += 1
         details.append(
-            f"""### {i}. {theme['label']}
+            f"""### {detail_idx}. {theme['label']}
 
 - 등급: `{grade}`
 - 핵심 테마: {theme['label']}
@@ -172,7 +180,8 @@ def main() -> int:
     tagged = 0
     for path in sorted(SIGNAL_DIR.glob("신호판_*.md")):
         text = path.read_text(encoding="utf-8")
-        if "auto-stub" not in text:
+        # 수동 작성 신호판은 건드리지 않음
+        if "auto-stub" not in text and "auto-tagged" not in text:
             continue
         m = re.search(r"(\d{4}-\d{2}-\d{2})", path.stem)
         if not m:

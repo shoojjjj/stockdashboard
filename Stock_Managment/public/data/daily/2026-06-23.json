@@ -1,0 +1,54 @@
+{
+  "date": "2026-06-23",
+  "savedAt": "2026-06-27T01:20:52.826653+00:00",
+  "headline": "AI·반도체·메모리 — 🔔미 증시, 빅테크 약세 vs AI인프라 상승 마감",
+  "action": "조건부 실행 검토 — 추격 매수 금지, 눌림/재지지 조건 확인 후 진행",
+  "bullets": [
+    "AI·반도체·메모리 — 🔔미 증시, 빅테크 약세 vs AI인프라 상승 마감",
+    "정책·트럼프·IBM — 🔔시간외) 트럼프 대통령이 양자컴 신속추진 행정명령에 서명하자 시간외로 양자컴 관련주 일제히 강세입니다",
+    "데이터센터·인프라 — 🔥 주요 신고가 현황, 6/22 *52주 신고가 포함  📡 광통신 GLW (광섬유)  ⚙️ 반도체·장비 TSM (파운드리 1위) INTC (CP…",
+    "우주·스페이스X — ↘️빅테크 전반 부진, 특히 스페이스X는 채권 발행 확대 우려로 -16.4% 급락하는 등 약세보였습니다",
+    "SW·클라우드·AI에이전트 — <🔔주요 ETF Daily>  메모리/반도체/전력 강세, 반대로 스페이스X발 우주 관련주 약세, 빅7과 SW는 소외주로 부각되며 약세보였습니다"
+  ],
+  "latestSignalDate": "2026-06-23",
+  "signalSource": "Telegram API `소수의견(26년 2분기)` (auto-tagged)",
+  "isAutoTagged": true,
+  "gradeCounts": {
+    "SM-S3": 4,
+    "SM-S2": 1
+  },
+  "signalSummary": [
+    {
+      "grade": "SM-S3",
+      "signal": "AI·반도체·메모리 — 🔔미 증시, 빅테크 약세 vs AI인프라 상승 마감",
+      "tags": "종목, 섹터, ETF",
+      "evidence": "message4793, message4792, message4791, message4794"
+    },
+    {
+      "grade": "SM-S3",
+      "signal": "정책·트럼프·IBM — 🔔시간외) 트럼프 대통령이 양자컴 신속추진 행정명령에 서명하자 시간외로 양자컴 관련주 일제히 강세입니다",
+      "tags": "정책, 종목",
+      "evidence": "message4793, message4792, message4791, message4794"
+    },
+    {
+      "grade": "SM-S3",
+      "signal": "데이터센터·인프라 — 🔥 주요 신고가 현황, 6/22 *52주 신고가 포함  📡 광통신 GLW (광섬유)  ⚙️ 반도체·장비 TSM (파운드리 1위) INTC (CP…",
+      "tags": "종목, 섹터",
+      "evidence": "message4793, message4792, message4791, message4794"
+    },
+    {
+      "grade": "SM-S3",
+      "signal": "우주·스페이스X — ↘️빅테크 전반 부진, 특히 스페이스X는 채권 발행 확대 우려로 -16.4% 급락하는 등 약세보였습니다",
+      "tags": "종목, ETF, 이벤트",
+      "evidence": "message4793, message4792, message4791, message4794"
+    },
+    {
+      "grade": "SM-S2",
+      "signal": "SW·클라우드·AI에이전트 — <🔔주요 ETF Daily>  메모리/반도체/전력 강세, 반대로 스페이스X발 우주 관련주 약세, 빅7과 SW는 소외주로 부각되며 약세보였습니다",
+      "tags": "종목, 섹터",
+      "evidence": "message4793, message4792, message4791, message4794"
+    }
+  ],
+  "telegramMessages": "64",
+  "pendingInputs": 21
+}

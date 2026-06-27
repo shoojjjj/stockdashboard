@@ -1,0 +1,48 @@
+{
+  "date": "2026-06-25",
+  "savedAt": "2026-06-27T01:20:52.835656+00:00",
+  "headline": "AI·반도체·메모리 — ↗️장마감후) 마이크론 실적 슈퍼 서프라이즈",
+  "action": "조건부 실행 검토 — 추격 매수 금지, 눌림/재지지 조건 확인 후 진행",
+  "bullets": [
+    "AI·반도체·메모리 — ↗️장마감후) 마이크론 실적 슈퍼 서프라이즈",
+    "데이터센터·인프라 — 🔔퀄컴, 메타의 데이터센터 칩 공개, CPU 공급부족 강조(AI에이전트 시대), 시간외로 급등세",
+    "우주·스페이스X — 🔥 주요 신고가 현황, 6/25 *52주 신고가 포함  📡 AI인프라·광통신 GLW (광섬유)  💾 메모리 MU (DRAM·HBM)  🚀 우주·…",
+    "정책·트럼프·IBM — 🐵실적과 전망, 주주친화적 정책까지 완벽합니다  2023~엔비디아 실적을 보는 것 같습니다"
+  ],
+  "latestSignalDate": "2026-06-25",
+  "signalSource": "Telegram API `소수의견(26년 2분기)` (auto-tagged)",
+  "isAutoTagged": true,
+  "gradeCounts": {
+    "SM-S3": 2,
+    "SM-S2": 1,
+    "SM-S1": 1
+  },
+  "signalSummary": [
+    {
+      "grade": "SM-S3",
+      "signal": "AI·반도체·메모리 — ↗️장마감후) 마이크론 실적 슈퍼 서프라이즈",
+      "tags": "종목, 섹터, ETF",
+      "evidence": "message4899, message4900, message4901, message4902"
+    },
+    {
+      "grade": "SM-S3",
+      "signal": "데이터센터·인프라 — 🔔퀄컴, 메타의 데이터센터 칩 공개, CPU 공급부족 강조(AI에이전트 시대), 시간외로 급등세",
+      "tags": "종목, 섹터",
+      "evidence": "message4899, message4900, message4901, message4902"
+    },
+    {
+      "grade": "SM-S2",
+      "signal": "우주·스페이스X — 🔥 주요 신고가 현황, 6/25 *52주 신고가 포함  📡 AI인프라·광통신 GLW (광섬유)  💾 메모리 MU (DRAM·HBM)  🚀 우주·…",
+      "tags": "종목, ETF, 이벤트",
+      "evidence": "message4899, message4900, message4901, message4902"
+    },
+    {
+      "grade": "SM-S1",
+      "signal": "정책·트럼프·IBM — 🐵실적과 전망, 주주친화적 정책까지 완벽합니다  2023~엔비디아 실적을 보는 것 같습니다",
+      "tags": "정책, 종목",
+      "evidence": "message4899, message4900, message4901, message4902"
+    }
+  ],
+  "telegramMessages": "87",
+  "pendingInputs": 21
+}

@@ -11,6 +11,7 @@
     "lint": "next lint",
     "health": "python scripts/health_check.py",
     "report": "python scripts/generate_progress_report.py --step3-done --step4-done --vercel-password-set --force-open",
+    "collect": "python scripts/collect_pipeline.py",
     "results": "python scripts/generate_results_report.py",
     "deploy": "powershell -ExecutionPolicy Bypass -File scripts/auto_deploy.ps1",
     "deploy:quick": "powershell -ExecutionPolicy Bypass -File scripts/auto_deploy.ps1 -SkipTelegram"

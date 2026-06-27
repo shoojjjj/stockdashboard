@@ -1,0 +1,40 @@
+{
+  "date": "2026-05-23",
+  "savedAt": "2026-06-26T09:42:45.154652+00:00",
+  "headline": "AI·반도체·메모리 — ↗️증시 전반 상승 마감,  AI인프라(CPU), 양자, 우주 등 특히 강세보인 하루였습니다",
+  "action": "조건부 실행 검토 — 추격 매수 금지, 눌림/재지지 조건 확인 후 진행",
+  "bullets": [
+    "AI·반도체·메모리 — ↗️증시 전반 상승 마감,  AI인프라(CPU), 양자, 우주 등 특히 강세보인 하루였습니다",
+    "데이터센터·인프라 — 🔥 주요 신고가 현황, 5/23 *52주 신고가 포함  👑 빅테크 AAPL (아이폰)  ⚙️ 반도체·장비 AMD (CPU) ARM (CPU/설계…",
+    "매크로·금리·물가 — ⭐️중요) 새 연준의장 취임  *전세계 경제 대통령이라 불리는 연준의장 취임식이 있었습니다  주요 발언을 요약했는데요 꼭 보시기 바라겠습니다  …"
+  ],
+  "latestSignalDate": "2026-05-23",
+  "signalSource": "Telegram API `소수의견(26년 2분기)` (auto-tagged)",
+  "isAutoTagged": true,
+  "gradeCounts": {
+    "SM-S3": 2,
+    "SM-S2": 1
+  },
+  "signalSummary": [
+    {
+      "grade": "SM-S3",
+      "signal": "AI·반도체·메모리 — ↗️증시 전반 상승 마감,  AI인프라(CPU), 양자, 우주 등 특히 강세보인 하루였습니다",
+      "tags": "종목, 섹터, ETF",
+      "evidence": "message3022, message3021, message3020, message3023"
+    },
+    {
+      "grade": "SM-S3",
+      "signal": "데이터센터·인프라 — 🔥 주요 신고가 현황, 5/23 *52주 신고가 포함  👑 빅테크 AAPL (아이폰)  ⚙️ 반도체·장비 AMD (CPU) ARM (CPU/설계…",
+      "tags": "종목, 섹터",
+      "evidence": "message3022, message3021, message3020, message3023"
+    },
+    {
+      "grade": "SM-S2",
+      "signal": "매크로·금리·물가 — ⭐️중요) 새 연준의장 취임  *전세계 경제 대통령이라 불리는 연준의장 취임식이 있었습니다  주요 발언을 요약했는데요 꼭 보시기 바라겠습니다  …",
+      "tags": "매크로, 정책",
+      "evidence": "message3022, message3021, message3020, message3023"
+    }
+  ],
+  "telegramMessages": "78",
+  "pendingInputs": 21
+}

@@ -1,0 +1,67 @@
+{
+  "date": "2026-06-01",
+  "savedAt": "2026-06-26T09:42:45.187658+00:00",
+  "headline": "GTC 이후 AI 인프라 주도장이 더 넓어짐. 메모리, ARM, 서버, 데이터센터, 맞춤형 반도체가 동시 신고가/강세",
+  "action": "조건부 실행 검토 — 추격 매수 금지, 눌림/재지지 조건 확인 후 진행",
+  "bullets": [
+    "GTC 이후 AI 인프라 주도장이 더 넓어짐. 메모리, ARM, 서버, 데이터센터, 맞춤형 반도체가 동시 신고가/강세",
+    "ARM이 엔비디아 신형 PC/노트북 칩의 직접 수혜주로 부상",
+    "MSFT가 엔비디아 PC/AI 에이전트 흐름의 동반 수혜로 재부각",
+    "소외주 SW 반격이 IGV 200일선 복귀와 PLTR/MSFT/ORCL/NOW 강세로 확인",
+    "데이터센터 중소형 `NBIS/CRWV` 강세 지속"
+  ],
+  "latestSignalDate": "2026-06-01",
+  "signalSource": "Telegram API `소수의견(26년 2분기)`",
+  "isAutoTagged": false,
+  "gradeCounts": {
+    "SM-S3": 2,
+    "SM-S2": 4,
+    "SM-S1": 1
+  },
+  "signalSummary": [
+    {
+      "grade": "SM-S3",
+      "signal": "GTC 이후 AI 인프라 주도장이 더 넓어짐. 메모리, ARM, 서버, 데이터센터, 맞춤형 반도체가 동시 신고가/강세",
+      "tags": "종목, ETF, 섹터, 이벤트",
+      "evidence": "`message3530`, `message3535`, `message3541`, `message3551`, `message3558`, `message3559`, `message3560`, `message3575`, `message3577`, `message3582`, OCR `message3550`, OCR `message3581`"
+    },
+    {
+      "grade": "SM-S3",
+      "signal": "ARM이 엔비디아 신형 PC/노트북 칩의 직접 수혜주로 부상",
+      "tags": "종목, 이벤트",
+      "evidence": "`message3530`, `message3535`, `message3541`, `message3577`, OCR `message3543`"
+    },
+    {
+      "grade": "SM-S2",
+      "signal": "MSFT가 엔비디아 PC/AI 에이전트 흐름의 동반 수혜로 재부각",
+      "tags": "종목, 섹터, 이벤트",
+      "evidence": "`message3537`, `message3538`, `message3547`, `message3555`, `message3569`, `message3575`, OCR `message3546`"
+    },
+    {
+      "grade": "SM-S2",
+      "signal": "소외주 SW 반격이 IGV 200일선 복귀와 PLTR/MSFT/ORCL/NOW 강세로 확인",
+      "tags": "ETF, 종목, 기술적 흐름",
+      "evidence": "`message3555`, `message3569`, `message3571`, `message3573`, `message3575`, OCR `message3555`, OCR `message3568`, OCR `message3572`"
+    },
+    {
+      "grade": "SM-S2",
+      "signal": "데이터센터 중소형 `NBIS/CRWV` 강세 지속",
+      "tags": "종목, 섹터",
+      "evidence": "`message3558`, `message3580`, OCR `message3557`, OCR `message3578`"
+    },
+    {
+      "grade": "SM-S2",
+      "signal": "IBM 양자 제조/트럼프 테마가 신고가 돌파로 재점화",
+      "tags": "정책, 종목",
+      "evidence": "`message3549`, `message3565`, `message3571`, `message3575`, OCR `message3564`"
+    },
+    {
+      "grade": "SM-S1",
+      "signal": "한국·대만 반도체 주도국 ETF 신고가와 소프트뱅크 시총 1위는 글로벌 AI 자금 이동의 배경 신호",
+      "tags": "국가 ETF, 매크로, 섹터",
+      "evidence": "`message3533`, `message3554`, `message3562`, `message3563`, OCR `message3552`"
+    }
+  ],
+  "telegramMessages": "54",
+  "pendingInputs": 21
+}

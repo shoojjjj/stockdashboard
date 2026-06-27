@@ -45,10 +45,25 @@ export interface ContentSlot {
   content: string | null;
 }
 
+export interface ColumnArticle {
+  id: string;
+  title: string;
+}
+
 export interface ColumnCategory {
   name: string;
   count: number;
-  samples: string[];
+  articles: ColumnArticle[];
+  /** @deprecated use articles */
+  samples?: string[];
+}
+
+export interface DailySnapshot {
+  date: string;
+  headline: string;
+  gradeCounts: Record<string, number>;
+  telegramMessages?: string;
+  savedAt?: string;
 }
 
 export interface DashboardData {
@@ -57,6 +72,7 @@ export interface DashboardData {
   today: TodaySummary;
   latestSignalDate: string | null;
   pendingInputs?: number;
+  dailyHistory?: DailySnapshot[];
   signals: SignalBoard[];
   telegramStats: Record<string, string>[];
   columns: ColumnCategory[];

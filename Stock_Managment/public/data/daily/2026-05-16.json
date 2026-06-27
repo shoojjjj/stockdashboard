@@ -1,0 +1,25 @@
+{
+  "date": "2026-05-16",
+  "savedAt": "2026-06-26T09:42:45.127644+00:00",
+  "headline": "매크로·금리·물가 — 🙋Q. 다음주는 뭐볼까요? 🐵A.  1) 다음주는 역시 엔비디아 실적이 가장 핵심이 되겠습니다  다시 엔비디아 랠리가 이어질지,  박스권으로 회…",
+  "action": "조건부 실행 검토 — 추격 매수 금지, 눌림/재지지 조건 확인 후 진행",
+  "bullets": [
+    "매크로·금리·물가 — 🙋Q. 다음주는 뭐볼까요? 🐵A.  1) 다음주는 역시 엔비디아 실적이 가장 핵심이 되겠습니다  다시 엔비디아 랠리가 이어질지,  박스권으로 회…"
+  ],
+  "latestSignalDate": "2026-05-16",
+  "signalSource": "Telegram API `소수의견(26년 2분기)` (auto-tagged)",
+  "isAutoTagged": true,
+  "gradeCounts": {
+    "SM-S2": 1
+  },
+  "signalSummary": [
+    {
+      "grade": "SM-S2",
+      "signal": "매크로·금리·물가 — 🙋Q. 다음주는 뭐볼까요? 🐵A.  1) 다음주는 역시 엔비디아 실적이 가장 핵심이 되겠습니다  다시 엔비디아 랠리가 이어질지,  박스권으로 회…",
+      "tags": "매크로, 정책",
+      "evidence": "message2683, message2684, message2685, message2686"
+    }
+  ],
+  "telegramMessages": "11",
+  "pendingInputs": 21
+}

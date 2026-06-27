@@ -1,4 +1,4 @@
-import type { TodaySummary, Agent, BriefingSlot } from "@/lib/types";
+import type { TodaySummary, Agent, BriefingSlot, DailySnapshot } from "@/lib/types";
 import { AgentStatus } from "../AgentStatus";
 
 interface TodayTabProps {
@@ -8,9 +8,10 @@ interface TodayTabProps {
   generatedAt: string;
   meeting?: BriefingSlot;
   pendingInputs?: number;
+  dailyHistory?: DailySnapshot[];
 }
 
-export function TodayTab({ today, agents, latestDate, generatedAt, meeting, pendingInputs }: TodayTabProps) {
+export function TodayTab({ today, agents, latestDate, generatedAt, meeting, pendingInputs, dailyHistory }: TodayTabProps) {
   const updated = new Date(generatedAt).toLocaleString("ko-KR", { timeZone: "Asia/Seoul" });
 
   return (
@@ -53,6 +54,29 @@ export function TodayTab({ today, agents, latestDate, generatedAt, meeting, pend
           <p className="mt-1">{updated}</p>
         </div>
       </div>
+
+      {(dailyHistory?.length ?? 0) > 0 && (
+        <div className="bg-white rounded-2xl border p-5 mt-4">
+          <h3 className="font-bold text-slate-700 mb-3">📅 일별 누적 기록 ({dailyHistory!.length}일)</h3>
+          <div className="space-y-2 max-h-64 overflow-y-auto">
+            {[...dailyHistory!].reverse().map((d) => (
+              <div key={d.date} className="text-sm border-b border-slate-100 pb-2 last:border-0">
+                <div className="flex justify-between gap-2">
+                  <span className="font-semibold text-indigo-700">{d.date}</span>
+                  <span className="text-xs text-slate-400">
+                    TG {d.telegramMessages ?? "—"}건
+                    {d.gradeCounts?.["SM-S3"] ? ` · S3 ${d.gradeCounts["SM-S3"]}` : ""}
+                  </span>
+                </div>
+                <p className="text-slate-600 mt-0.5 line-clamp-2">{d.headline}</p>
+              </div>
+            ))}
+          </div>
+          <p className="text-xs text-slate-400 mt-2">
+            저장 위치: 1_브리핑/일일_스냅샷/ · 수집할 때마다 누적
+          </p>
+        </div>
+      )}
 
       {meeting?.ready && meeting.content && (
         <div className="bg-white rounded-2xl border border-indigo-100 p-5 mt-4">
