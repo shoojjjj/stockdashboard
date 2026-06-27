@@ -79,6 +79,7 @@ def main() -> int:
                 str(TELEGRAM_OUTPUT),
                 "--limit",
                 "300",
+                "--download-media",
             ],
             ARCHIVE,
             interactive=False,

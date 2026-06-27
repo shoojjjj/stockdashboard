@@ -28,7 +28,12 @@ export function Dashboard({ data }: { data: DashboardData }) {
         />
       )}
       {tab === "signal" && (
-        <SignalTab signals={data.signals} latestDate={data.latestSignalDate} />
+        <SignalTab
+          signals={data.signals}
+          latestDate={data.latestSignalDate}
+          telegramPhotos={data.telegramPhotos}
+          telegramPhotoStats={data.telegramPhotoStats}
+        />
       )}
       {tab === "portfolio" && (
         <PortfolioTab

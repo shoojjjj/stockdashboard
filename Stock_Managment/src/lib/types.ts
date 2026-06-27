@@ -68,6 +68,21 @@ export interface DailySnapshot {
   savedAt?: string;
 }
 
+export interface TelegramPhoto {
+  date: string;
+  time: string;
+  messageId: string;
+  caption: string;
+  url: string;
+}
+
+export interface TelegramPhotoStats {
+  downloaded: number;
+  pending: number;
+  cutoff?: string;
+  months?: number;
+}
+
 export interface DashboardData {
   generatedAt: string;
   archivePath: string;
@@ -77,6 +92,8 @@ export interface DashboardData {
   dailyHistory?: DailySnapshot[];
   signals: SignalBoard[];
   telegramStats: Record<string, string>[];
+  telegramPhotos?: TelegramPhoto[];
+  telegramPhotoStats?: TelegramPhotoStats;
   columns: ColumnCategory[];
   portfolio: BriefingSlot;
   asset: BriefingSlot;

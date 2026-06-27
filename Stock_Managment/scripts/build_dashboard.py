@@ -6,9 +6,10 @@ from __future__ import annotations
 import csv
 import json
 import re
+import shutil
 import subprocess
 import sys
-from datetime import datetime, timezone
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 
 
@@ -26,6 +27,23 @@ CSV_PATH = (
     / "인덱스"
     / "소수몽키_API_일자별_집계.csv"
 )
+JSONL_PATH = (
+    ARCHIVE
+    / "0_주식_에이전트"
+    / "소수몽키_에이전트"
+    / "01_텔레그램_원천파서"
+    / "API_수집"
+    / "인덱스"
+    / "소수몽키_API_원천인덱스.jsonl"
+)
+TELEGRAM_MEDIA_ROOT = (
+    ARCHIVE
+    / "0_주식_에이전트"
+    / "소수몽키_에이전트"
+    / "01_텔레그램_원천파서"
+    / "API_수집"
+)
+TELEGRAM_PHOTOS_OUT = ROOT / "public" / "data" / "telegram" / "photos"
 COLUMN_DIR = ARCHIVE / "칼럼"
 BRIEFING_DIR = ARCHIVE / "1_브리핑"
 
@@ -160,6 +178,92 @@ def load_telegram_stats() -> list[dict[str, str]]:
         return []
     with CSV_PATH.open(encoding="utf-8-sig", newline="") as f:
         return list(csv.DictReader(f))
+
+
+def photo_cutoff_date(months: int = 3) -> date:
+    """최근 N개월(달력 기준) 시작일."""
+    import calendar
+
+    today = datetime.now().date()
+    year, month = today.year, today.month - months
+    while month <= 0:
+        month += 12
+        year -= 1
+    day = min(today.day, calendar.monthrange(year, month)[1])
+    return date(year, month, day)
+
+
+def load_telegram_photos(months: int = 3) -> tuple[list[dict], dict[str, int | str]]:
+    """JSONL + photos/ → public/data/telegram/photos (최근 N개월만)."""
+    if not JSONL_PATH.exists():
+        return [], {"downloaded": 0, "pending": 0, "cutoff": ""}
+
+    cutoff = photo_cutoff_date(months)
+    cutoff_iso = cutoff.isoformat()
+
+    records: list[dict] = []
+    for line in JSONL_PATH.read_text(encoding="utf-8").splitlines():
+        line = line.strip()
+        if not line:
+            continue
+        rec = json.loads(line)
+        rec_date = str(rec.get("date") or "")
+        if rec_date and rec_date < cutoff_iso:
+            continue
+        records.append(rec)
+
+    TELEGRAM_PHOTOS_OUT.mkdir(parents=True, exist_ok=True)
+    gallery: list[dict] = []
+    pending = 0
+    last_text = ""
+    kept_files: set[str] = set()
+
+    for rec in records:
+        text = (rec.get("text") or "").strip()
+        if text:
+            last_text = text
+        rel_paths = rec.get("photos") or []
+        if rel_paths:
+            for rel in rel_paths:
+                src = TELEGRAM_MEDIA_ROOT / str(rel)
+                if not src.is_file():
+                    continue
+                ext = src.suffix or ".jpg"
+                dest_name = f"{rec.get('api_message_id', 'msg')}{ext}"
+                dest = TELEGRAM_PHOTOS_OUT / dest_name
+                try:
+                    if not dest.exists() or src.stat().st_mtime > dest.stat().st_mtime:
+                        shutil.copy2(src, dest)
+                except OSError:
+                    continue
+                kept_files.add(dest_name)
+                gallery.append(
+                    {
+                        "date": rec.get("date", ""),
+                        "time": rec.get("time", ""),
+                        "messageId": rec.get("message_id", ""),
+                        "caption": text or last_text,
+                        "url": f"/data/telegram/photos/{dest_name}",
+                    }
+                )
+        elif int(rec.get("photo_count") or 0) > 0:
+            pending += 1
+
+    for old in TELEGRAM_PHOTOS_OUT.iterdir():
+        if old.is_file() and old.name not in kept_files:
+            try:
+                old.unlink()
+            except OSError:
+                pass
+
+    gallery.sort(key=lambda p: f"{p.get('date', '')} {p.get('time', '')}", reverse=True)
+    stats: dict[str, int | str] = {
+        "downloaded": len(gallery),
+        "pending": pending,
+        "cutoff": cutoff_iso,
+        "months": months,
+    }
+    return gallery, stats
 
 
 def strip_frontmatter(text: str) -> tuple[str, dict[str, str]]:
@@ -362,6 +466,8 @@ def main() -> None:
     if rebalance_md:
         portfolio_pending += rebalance_md.count("_(입력)_")
 
+    telegram_photos, telegram_photo_stats = load_telegram_photos()
+
     payload = {
         "generatedAt": datetime.now(timezone.utc).isoformat(),
         "archivePath": str(ARCHIVE),
@@ -378,6 +484,8 @@ def main() -> None:
         "pendingInputs": portfolio_pending,
         "signals": signals,
         "telegramStats": load_telegram_stats(),
+        "telegramPhotos": telegram_photos,
+        "telegramPhotoStats": telegram_photo_stats,
         "columns": load_columns(),
         "portfolio": {
             "ready": portfolio_md is not None,
