@@ -1,15 +1,15 @@
 {
   "healthy": true,
   "checks": {
-    "dashboard_json": "ok - signals 25, pending 21",
+    "dashboard_json": "ok - signals 27, pending 21",
     "vercel_site": "error (404)",
     "telegram_env": "ok",
-    "telegram_latest": "ok - 2026-06-27 (6 days)",
-    "signal_boards": "ok - 25 files, 22 tagged, 0 stubs",
+    "telegram_latest": "ok - 2026-06-29 (6 days)",
+    "signal_boards": "ok - 27 files, 24 tagged, 0 stubs",
     "column_md": "ok - 230 files",
-    "column_latest": "ok - 미리 보는 다음주 \"미중 정상회담\"",
+    "column_latest": "ok - -",
     "column_cookie": "ok",
-    "scheduler_deploy": "ok",
+    "scheduler_deploy": "missing",
     "scheduler_refresh": "ok",
     "github_remote": "ok"
   }

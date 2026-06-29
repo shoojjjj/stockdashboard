@@ -135,6 +135,23 @@ export function SignalTab({ signals, latestDate, telegramPhotos = [], telegramPh
   );
 }
 
+function groupPhotosByPost(photos: TelegramPhoto[]) {
+  const order: string[] = [];
+  const map = new Map<
+    string,
+    { time: string; caption: string; images: { url: string; messageId: string }[] }
+  >();
+  for (const p of photos) {
+    const key = `${p.time}|||${p.caption}`;
+    if (!map.has(key)) {
+      map.set(key, { time: p.time, caption: p.caption, images: [] });
+      order.push(key);
+    }
+    map.get(key)!.images.push({ url: p.url, messageId: p.messageId });
+  }
+  return order.map((k) => map.get(k)!);
+}
+
 function TelegramPhotoGallery({
   date,
   photos,
@@ -169,30 +186,35 @@ function TelegramPhotoGallery({
         </p>
       ) : (
         <div className="space-y-8">
-          {photos.map((p) => (
+          {groupPhotosByPost(photos).map((group) => (
             <figure
-              key={p.url}
+              key={`${group.time}-${group.images[0]?.messageId}`}
               className="rounded-xl border border-slate-200 overflow-hidden bg-slate-50"
             >
-              {(p.time || p.caption) && (
+              {(group.time || group.caption) && (
                 <figcaption className="px-4 py-3 text-sm border-b border-slate-100 bg-white">
-                  {p.time && (
-                    <time className="text-xs text-slate-400 tabular-nums">{p.time}</time>
+                  {group.time && (
+                    <time className="text-xs text-slate-400 tabular-nums">{group.time}</time>
                   )}
-                  {p.caption && (
+                  {group.caption && (
                     <p className="text-slate-600 whitespace-pre-wrap mt-1 leading-relaxed">
-                      {p.caption}
+                      {group.caption}
                     </p>
                   )}
                 </figcaption>
               )}
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={p.url}
-                alt={p.caption || p.messageId}
-                className="w-full h-auto block"
-                loading="lazy"
-              />
+              <div className={group.images.length > 1 ? "space-y-1" : ""}>
+                {group.images.map((img) => (
+                  /* eslint-disable-next-line @next/next/no-img-element */
+                  <img
+                    key={img.url}
+                    src={img.url}
+                    alt={group.caption || img.messageId}
+                    className="w-full h-auto block"
+                    loading="lazy"
+                  />
+                ))}
+              </div>
             </figure>
           ))}
         </div>

@@ -1,0 +1,25 @@
+{
+  "date": "2026-06-28",
+  "savedAt": "2026-06-29T10:23:53.387905+00:00",
+  "headline": "AI·반도체·메모리 — 💥보충자료)  이번주 증시 조정의 3가지 재료 보충자료입니다  1) 오픈AI 상장연기 - 현재 AI투자 사이클의 최대 쩐주(고객사) 중 하나인 …",
+  "action": "조건부 실행 검토 — 추격 매수 금지, 눌림/재지지 조건 확인 후 진행",
+  "bullets": [
+    "AI·반도체·메모리 — 💥보충자료)  이번주 증시 조정의 3가지 재료 보충자료입니다  1) 오픈AI 상장연기 - 현재 AI투자 사이클의 최대 쩐주(고객사) 중 하나인 …"
+  ],
+  "latestSignalDate": "2026-06-28",
+  "signalSource": "Telegram API `소수의견(26년 2분기)` (auto-tagged)",
+  "isAutoTagged": true,
+  "gradeCounts": {
+    "SM-S2": 1
+  },
+  "signalSummary": [
+    {
+      "grade": "SM-S2",
+      "signal": "AI·반도체·메모리 — 💥보충자료)  이번주 증시 조정의 3가지 재료 보충자료입니다  1) 오픈AI 상장연기 - 현재 AI투자 사이클의 최대 쩐주(고객사) 중 하나인 …",
+      "tags": "종목, 섹터, ETF",
+      "evidence": "message5144, message5143, message5142, message5146"
+    }
+  ],
+  "telegramMessages": "21",
+  "pendingInputs": 21
+}
