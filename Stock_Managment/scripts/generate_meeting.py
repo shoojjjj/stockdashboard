@@ -277,7 +277,11 @@ def build_meeting(
         do_today.append("_(없음 — 조건부 대기 우세)_")
 
     protect: list[str] = []
+    seen_tickers: set[str] = set()
     for h in holdings:
+        if h["ticker"] in seen_tickers:
+            continue
+        seen_tickers.add(h["ticker"])
         label = f"{h['name']} ({h['ticker']})" if h.get("name") else h["ticker"]
         protect.append(f"{label}: {mediate_holding(h['ticker'], h.get('note', ''))}")
     for h in hold:

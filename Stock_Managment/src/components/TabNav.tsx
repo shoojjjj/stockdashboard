@@ -4,9 +4,9 @@ const TABS = [
   { id: "today", label: "오늘 한눈에", icon: "☀️" },
   { id: "signal", label: "소수몽키 신호", icon: "🐵" },
   { id: "asset", label: "자산제곱", icon: "🧠" },
-  { id: "meeting", label: "매매 회의", icon: "⚖️" },
   { id: "columns", label: "칼럼", icon: "📚" },
   { id: "portfolio", label: "포트폴리오", icon: "💼" },
+  { id: "meeting", label: "매매 회의", icon: "⚖️" },
 ] as const;
 
 export type TabId = (typeof TABS)[number]["id"];
