@@ -434,6 +434,9 @@ def main() -> None:
         subprocess.run([sys.executable, str(tag_script)], check=False)
 
     sync_script = ROOT / "scripts" / "sync_briefing.py"
+    meeting_script = ROOT / "scripts" / "generate_meeting.py"
+    if meeting_script.exists() and archive_ok:
+        subprocess.run([sys.executable, str(meeting_script)], check=False)
     if sync_script.exists() and archive_ok:
         subprocess.run([sys.executable, str(sync_script)], check=False)
 

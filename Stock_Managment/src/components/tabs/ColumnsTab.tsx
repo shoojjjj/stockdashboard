@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import type { ColumnCategory } from "@/lib/types";
 import { MarkdownView } from "../MarkdownView";
 
@@ -83,6 +83,7 @@ export function ColumnsTab({ columns }: ColumnsTabProps) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [fullscreen, setFullscreen] = useState(false);
+  const readerHistoryPushed = useRef(false);
 
   const category = columns.find((c) => c.name === activeCat) ?? columns[0];
 
@@ -97,10 +98,26 @@ export function ColumnsTab({ columns }: ColumnsTabProps) {
 
   const showReaderOverlay = fullscreen && selected;
 
+  function pushReaderHistory() {
+    if (!readerHistoryPushed.current) {
+      window.history.pushState({ columnReader: true }, "");
+      readerHistoryPushed.current = true;
+    }
+  }
+
+  function closeReader() {
+    if (readerHistoryPushed.current) {
+      readerHistoryPushed.current = false;
+      window.history.back();
+      return;
+    }
+    setFullscreen(false);
+  }
+
   useEffect(() => {
     if (!showReaderOverlay) return;
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setFullscreen(false);
+      if (e.key === "Escape") closeReader();
     };
     document.body.style.overflow = "hidden";
     window.addEventListener("keydown", onKey);
@@ -109,6 +126,17 @@ export function ColumnsTab({ columns }: ColumnsTabProps) {
       window.removeEventListener("keydown", onKey);
     };
   }, [showReaderOverlay]);
+
+  useEffect(() => {
+    const onPopState = () => {
+      if (readerHistoryPushed.current || fullscreen) {
+        readerHistoryPushed.current = false;
+        setFullscreen(false);
+      }
+    };
+    window.addEventListener("popstate", onPopState);
+    return () => window.removeEventListener("popstate", onPopState);
+  }, [fullscreen]);
 
   async function openArticle(id: string) {
     setLoading(true);
@@ -123,6 +151,7 @@ export function ColumnsTab({ columns }: ColumnsTabProps) {
       setSelected(data as ArticleDetail);
       if (isMobileViewport()) {
         setFullscreen(true);
+        pushReaderHistory();
       }
     } catch {
       setError("네트워크 오류");
@@ -156,7 +185,12 @@ export function ColumnsTab({ columns }: ColumnsTabProps) {
               setActiveCat(cat.name);
               setQuery("");
               setSelected(null);
-              setFullscreen(false);
+              if (readerHistoryPushed.current) {
+                readerHistoryPushed.current = false;
+                window.history.back();
+              } else {
+                setFullscreen(false);
+              }
             }}
             className={`px-3 py-1.5 rounded-full text-sm font-medium transition ${
               activeCat === cat.name
@@ -218,7 +252,10 @@ export function ColumnsTab({ columns }: ColumnsTabProps) {
           {selected && (
             <ArticleReader
               article={selected}
-              onClose={() => setFullscreen(true)}
+              onClose={() => {
+                setFullscreen(true);
+                pushReaderHistory();
+              }}
             />
           )}
         </div>
@@ -238,7 +275,7 @@ export function ColumnsTab({ columns }: ColumnsTabProps) {
                 article={selected}
                 fullscreen
                 closeLabel="← 목록"
-                onClose={() => setFullscreen(false)}
+                onClose={closeReader}
               />
             </div>
           </div>
