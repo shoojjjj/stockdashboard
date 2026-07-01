@@ -1,15 +1,15 @@
 {
   "healthy": true,
   "checks": {
-    "dashboard_json": "ok - signals 27, pending 21",
+    "dashboard_json": "ok - signals 28, pending 7",
     "vercel_site": "error (404)",
     "telegram_env": "ok",
-    "telegram_latest": "ok - 2026-06-29 (6 days)",
-    "signal_boards": "ok - 27 files, 24 tagged, 0 stubs",
+    "telegram_latest": "ok - 2026-06-30 (5 days)",
+    "signal_boards": "ok - 28 files, 25 tagged, 0 stubs",
     "column_md": "ok - 230 files",
     "column_latest": "ok - -",
     "column_cookie": "ok",
-    "scheduler_deploy": "missing",
+    "scheduler_deploy": "ok",
     "scheduler_refresh": "ok",
     "github_remote": "ok"
   }

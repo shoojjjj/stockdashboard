@@ -1,5 +1,4 @@
-# 매일 아카이브 → 대시보드 → GitHub → Vercel 전체 파이프라인
-# Report popup: only on meaningful completion (smart-open, max 1/hour)
+﻿# Archive -> collect -> git push -> Vercel (ASCII-safe for Windows PowerShell 5.1)
 
 param(
     [switch]$SkipTelegram,
@@ -51,42 +50,43 @@ try {
     Show-Report "pipeline start" @("--step3-done", "--step4-active")
     Write-Log "=== pipeline start ==="
 
-    if (-not $SkipTelegram) {
-        $TelegramScript = Join-Path $ArchiveRoot "0_주식_에이전트\소수몽키_에이전트\01_텔레그램_원천파서\telegram_api_collect.py"
-        $TelegramEnv = Join-Path $ArchiveRoot "0_주식_에이전트\소수몽키_에이전트\01_텔레그램_원천파서\.env"
-        if ((Test-Path $TelegramScript) -and (Test-Path $TelegramEnv)) {
-            Invoke-Cmd "telegram collect" {
-                Push-Location (Split-Path $TelegramScript)
-                python telegram_api_collect.py --limit 200
-                Pop-Location
-            }
-            $script:HadChanges = $true
-        } else {
-            Write-Log "telegram skip - no .env"
+    if ($SkipTelegram) {
+        Invoke-Cmd "build only" {
+            Push-Location $Root
+            python scripts/build_dashboard.py
+            Pop-Location
         }
-    }
-
-    Invoke-Cmd "signal stubs + build" {
-        Push-Location $Root
-        python scripts/build_dashboard.py
-        Pop-Location
+    } else {
+        Invoke-Cmd "collect pipeline" {
+            Push-Location $Root
+            python scripts/collect_pipeline.py
+            Pop-Location
+        }
+        $script:HadChanges = $true
     }
 
     if (-not $SkipPush) {
         Invoke-Cmd "git commit push" {
             Push-Location $ArchiveRoot
-            $SignalDir = Join-Path $ArchiveRoot "0_주식_에이전트\소수몽키_에이전트\03_신호_태그화\신호판"
-            git add Stock_Managment/public/data/dashboard.json Progress_Report.html Results_Report.html 2>&1
-            git add Stock_Managment/public/data/columns 2>&1
-            git add Stock_Managment/public/data/telegram 2>&1
-            git add 칼럼 2>&1
+            git add Stock_Managment/public/data 2>&1
             git add Stock_Managment/data/column_index.json 2>&1
-            git add Progress_Report_*.html Stock_Managment/public/data/health.json 2>&1
-            if (Test-Path $SignalDir) { git add $SignalDir 2>&1 }
             git add Stock_Managment/src Stock_Managment/scripts 2>&1
+            git add Progress_Report.html Results_Report.html 2>&1
+            git add Progress_Report_*.html 2>&1
+            Get-ChildItem -LiteralPath $ArchiveRoot -Directory | ForEach-Object {
+                if ($_.Name -match "칼럼|브리핑") {
+                    git add $_.FullName 2>&1
+                }
+            }
+            $agentRoot = Join-Path $ArchiveRoot "0_주식_에이전트"
+            if (Test-Path $agentRoot) {
+                $signalDir = Join-Path $agentRoot "소수몽키_에이전트\03_신호_태그화\신호판"
+                if (Test-Path $signalDir) { git add $signalDir 2>&1 }
+            }
             $diff = git diff --staged --name-only 2>&1
             if ($diff) {
-                git commit -m "chore: auto-refresh dashboard $(Get-Date -Format 'yyyy-MM-dd HH:mm')" 2>&1
+                $ts = Get-Date -Format "yyyy-MM-dd HH:mm"
+                git commit -m "chore: auto-refresh dashboard $ts" 2>&1
                 git pull --rebase origin main 2>&1
                 git push origin main 2>&1
                 if ($LASTEXITCODE -ne 0) {
@@ -113,14 +113,17 @@ try {
 
     Write-Log "=== pipeline done ==="
     if ($HadChanges) {
-        Show-ReportFinal "Daily pipeline complete (meaningful update)"
+        Show-ReportFinal "Daily pipeline complete"
     } else {
-        Show-Report "No changes - report file only" @("--step3-done", "--step4-done", "--no-open")
+        Show-Report "No changes" @("--step3-done", "--step4-done", "--no-open")
     }
 
 } catch {
     Write-Log "FATAL: $_"
-    $allArgs = @($ReportScript, "--message", "Pipeline error", "--step3-done", "--step4-active", "--smart-open", "--meaningful")
-    & python @allArgs 2>&1 | ForEach-Object { Write-Log $_ }
+    $errArgs = @(
+        $ReportScript, "--message", "Pipeline error",
+        "--step3-done", "--step4-active", "--smart-open", "--meaningful"
+    )
+    & python @errArgs 2>&1 | ForEach-Object { Write-Log $_ }
     exit 1
 }
