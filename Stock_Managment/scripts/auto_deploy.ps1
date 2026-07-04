@@ -105,7 +105,7 @@ try {
     if (-not $SkipVercel) {
         Invoke-Cmd "vercel deploy" {
             Push-Location $Root
-            npx vercel deploy --prod --yes
+            npx --yes vercel deploy --prod --yes
             Pop-Location
         }
         $script:HadChanges = $true
