@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-08-01T03:20:06.361583+00:00",
-  "archivePath": "C:\\Users\\JEON\\Desktop\\아카이브",
+  "generatedAt": "2026-08-01T21:41:57.043185+00:00",
+  "archivePath": "/home/runner/work/stockdashboard/stockdashboard",
   "today": {
     "headline": "보유 1.4억(14종×1천만) — AI·메모리 코어 정합. **현금 0**이라 신규 매수 보류, 레버리지 3종(CRCA/CRDU/RAM) 감축 검토.",
     "bullets": [
@@ -1417,27 +1417,21 @@
       "summary": [
         {
           "grade": "SM-S2",
-          "signal": "AI·반도체·메모리 — ↘️증시, AI인프라주 위주 하락 마감 (개별 이슈보다는 차익실현/순환매)",
+          "signal": "AI·반도체·메모리 — <🔔주요 ETF DAILY>  오늘은 주도주 위주로 빠진 하루였습니다  메모리/한국/반도체/전력 등",
           "tags": "종목, 섹터, ETF",
-          "evidence": "message4857, message4856, message4855, message4858"
+          "evidence": "message4872, message4873, message4874, message4875"
         },
         {
           "grade": "SM-S1",
-          "signal": "SW·클라우드·AI에이전트 — *알파벳이 버라이즌 대신 다우지수에 편입됩니다  이제 다우지수에 빅테크는 엔비디아, 애플, 아마존, 마소 다음으로 구글까지 들어가네요",
+          "signal": "SW·클라우드·AI에이전트 — 🔔오늘 퀄컴 투자자의날에서 AI에이전트/데이터센터용CPU/새로운 HW등 발표될 가능성이 있습니다  장 분위기만 좋다면 퀄컴도 꽤 오를 수 있겠습…",
           "tags": "종목, 섹터",
-          "evidence": "message4857, message4856, message4855, message4858"
+          "evidence": "message4872, message4873, message4874, message4875"
         },
         {
           "grade": "SM-S1",
-          "signal": "우주·스페이스X — 🚀스페이스X, 채권 발행 대흥행 (200억 달러 모집에 약 900억 달러 모였습니다)  초흥행에 발행액 $250억으로 상향했습니다",
+          "signal": "우주·스페이스X — <⚠️피날레가 다가오는 중>  분위기를 망치고자 함은 아닙니다만  리스크 관리 차원에서 '미리' 말씀드립니다  사상 초유의 역대급 신규상장 러시…",
           "tags": "종목, ETF, 이벤트",
-          "evidence": "message4857, message4856, message4855, message4858"
-        },
-        {
-          "grade": "SM-S1",
-          "signal": "데이터센터·인프라 — 🔔오늘 퀄컴 투자자의날에서 AI에이전트/데이터센터용CPU/새로운 HW등 발표될 가능성이 있습니다  장 분위기만 좋다면 퀄컴도 꽤 오를 수 있겠습…",
-          "tags": "종목, 섹터",
-          "evidence": "message4857, message4856, message4855, message4858"
+          "evidence": "message4872, message4873, message4874, message4875"
         }
       ],
       "details": [],
@@ -1591,9 +1585,27 @@
           "evidence": "message5051, message5050, message5049, message5048"
         },
         {
-          "grade": "SM-S2",
+          "grade": "SM-S3",
+          "signal": "데이터센터·인프라 — 마이크론-메모리 인텔-CPU/파운드리 타워세미컨덕터-광통신 네비우스-데이터센터 카펜터-특수소재(AI인프라/우주/방산) 블룸에너지-전력 스트럭처테…",
+          "tags": "종목, 섹터",
+          "evidence": "message5051, message5050, message5049, message5048"
+        },
+        {
+          "grade": "SM-S3",
           "signal": "SW·클라우드·AI에이전트 — 🎙마이클버리 \"마이크로소프트에 대한 신규 매수와, 팔란티어 숏포지션 절반을 청산했다\" 발언과 함께  SW 주식 저평가 부각되며 마이크로소프트 및…",
           "tags": "종목, 섹터",
+          "evidence": "message5051, message5050, message5049, message5048"
+        },
+        {
+          "grade": "SM-S2",
+          "signal": "정책·트럼프·IBM — 🎙FT \"애플이 트럼프 행정부에 로비를해서 중국 창신메모리로부터 메모리 구매할 수 있도록 요청했다\"",
+          "tags": "정책, 종목",
+          "evidence": "message5051, message5050, message5049, message5048"
+        },
+        {
+          "grade": "SM-S2",
+          "signal": "매크로·금리·물가 — 🐵소설/망상)  애플 팀쿡 : 메모리가 너무 비싸요 트럼프 : 나보고 어떡하라고 애플 팀쿡 : 중국꺼 사게 해줘요 트럼프 : 미쳤어? 애플 팀쿡…",
+          "tags": "매크로, 정책",
           "evidence": "message5051, message5050, message5049, message5048"
         }
       ],
@@ -1754,7 +1766,16 @@
     },
     {
       "date": "2026-06-27",
-      "messages": "27",
+      "messages": "92",
+      "text_messages": "45",
+      "photo_messages": "46",
+      "photo_links": "46",
+      "file_messages": "1",
+      "file_links": "1"
+    },
+    {
+      "date": "2026-06-28",
+      "messages": "21",
       "text_messages": "11",
       "photo_messages": "11",
       "photo_links": "11",
@@ -1780,1032 +1801,9 @@
       "file_links": "0"
     }
   ],
-  "telegramPhotos": [
-    {
-      "date": "2026-06-30",
-      "time": "23:55:10",
-      "messageId": "message5301",
-      "caption": "⚡️블룸에너지, 캐터필러 ,버티브 등\n전력주까지도 상승 가세합니다\n\nAI인프라주에 또다시 불이 붙는 모습입니다\n(며칠 쉬지도 않은 것 같은데)",
-      "url": "/data/telegram/photos/5301.jpg"
-    },
-    {
-      "date": "2026-06-30",
-      "time": "23:55:04",
-      "messageId": "message5300",
-      "caption": "⚡️블룸에너지, 캐터필러 ,버티브 등\n전력주까지도 상승 가세합니다\n\nAI인프라주에 또다시 불이 붙는 모습입니다\n(며칠 쉬지도 않은 것 같은데)",
-      "url": "/data/telegram/photos/5300.jpg"
-    },
-    {
-      "date": "2026-06-30",
-      "time": "23:05:56",
-      "messageId": "message5298",
-      "caption": "참고용) 드론주 들썩일때마다\n주목받는 UMAC(트럼프 테마주)\n\n*추천 X, 동향 파악용입니다",
-      "url": "/data/telegram/photos/5298.jpg"
-    },
-    {
-      "date": "2026-06-30",
-      "time": "23:05:50",
-      "messageId": "message5297",
-      "caption": "참고용) 드론주 들썩일때마다\n주목받는 UMAC(트럼프 테마주)\n\n*추천 X, 동향 파악용입니다",
-      "url": "/data/telegram/photos/5297.jpg"
-    },
-    {
-      "date": "2026-06-30",
-      "time": "22:58:39",
-      "messageId": "message5295",
-      "caption": "🔔참고)오늘 중소형에서는\n드론주들이 일제히 강세입니다\n\nAVAV라고 하는 드론 대장주 중 하나가\n실적 서프라이즈 나왔습니다\n\n드론주에서는\nUMAC라는 주식이\n트럼프 테마주로 가장\n변동성이 큰 편입니다\n(오를때 많이 떨어질때 많이)",
-      "url": "/data/telegram/photos/5295.jpg"
-    },
-    {
-      "date": "2026-06-30",
-      "time": "22:57:10",
-      "messageId": "message5293",
-      "caption": "↗️미국 경찰용품/드론주 AXON,\n오늘은 드론주로 함께 묶이며 강세입니다",
-      "url": "/data/telegram/photos/5293.jpg"
-    },
-    {
-      "date": "2026-06-30",
-      "time": "22:53:04",
-      "messageId": "message5291",
-      "caption": "↗️나스닥에 새로 편입된 아리스타랩스,\n메모리 병목을 해결해주는 제품 주목받으며\n강세입니다",
-      "url": "/data/telegram/photos/5291.jpg"
-    },
-    {
-      "date": "2026-06-30",
-      "time": "22:52:23",
-      "messageId": "message5289",
-      "caption": "↗️나스닥에 새로 편입된 네비우스\n(데이터센터) 강세 흐름입니다",
-      "url": "/data/telegram/photos/5289.jpg"
-    },
-    {
-      "date": "2026-06-30",
-      "time": "22:52:07",
-      "messageId": "message5287",
-      "caption": "어제 말씀드린 AXON이라는 기업은\n오늘도 흐름이 좋습니다\n\n보니까 오늘은\n드론주로도 같이 묶여서 움직이네요\n\n추천아닙니다, 동향 참고용",
-      "url": "/data/telegram/photos/5287.jpg"
-    },
-    {
-      "date": "2026-06-30",
-      "time": "22:48:34",
-      "messageId": "message5285",
-      "caption": "요 장표들 한번 꼭 유심히\n보시면 도움이 될 것 같습니다\n\n반도체 장비주들\n비중확대가 유효해보입니다",
-      "url": "/data/telegram/photos/5285.jpg"
-    },
-    {
-      "date": "2026-06-30",
-      "time": "22:48:17",
-      "messageId": "message5284",
-      "caption": "요 장표들 한번 꼭 유심히\n보시면 도움이 될 것 같습니다\n\n반도체 장비주들\n비중확대가 유효해보입니다",
-      "url": "/data/telegram/photos/5284.jpg"
-    },
-    {
-      "date": "2026-06-30",
-      "time": "22:40:33",
-      "messageId": "message5283",
-      "caption": "요 장표들 한번 꼭 유심히\n보시면 도움이 될 것 같습니다\n\n반도체 장비주들\n비중확대가 유효해보입니다",
-      "url": "/data/telegram/photos/5283.jpg"
-    },
-    {
-      "date": "2026-06-30",
-      "time": "22:40:33",
-      "messageId": "message5282",
-      "caption": "요 장표들 한번 꼭 유심히\n보시면 도움이 될 것 같습니다\n\n반도체 장비주들\n비중확대가 유효해보입니다",
-      "url": "/data/telegram/photos/5282.jpg"
-    },
-    {
-      "date": "2026-06-30",
-      "time": "22:39:49",
-      "messageId": "message5280",
-      "caption": "↗️반도체 장비주 일제히 신고가입니다\n미 증시 최대주로 올라서는 흐름입니다\n(메모리 투자->장비 수혜로 자금 이동)",
-      "url": "/data/telegram/photos/5280.jpg"
-    },
-    {
-      "date": "2026-06-30",
-      "time": "22:39:44",
-      "messageId": "message5279",
-      "caption": "↗️반도체 장비주 일제히 신고가입니다\n미 증시 최대주로 올라서는 흐름입니다\n(메모리 투자->장비 수혜로 자금 이동)",
-      "url": "/data/telegram/photos/5279.jpg"
-    },
-    {
-      "date": "2026-06-30",
-      "time": "22:39:38",
-      "messageId": "message5278",
-      "caption": "↗️반도체 장비주 일제히 신고가입니다\n미 증시 최대주로 올라서는 흐름입니다\n(메모리 투자->장비 수혜로 자금 이동)",
-      "url": "/data/telegram/photos/5278.jpg"
-    },
-    {
-      "date": "2026-06-30",
-      "time": "22:36:50",
-      "messageId": "message5276",
-      "caption": "*중소형에서는\n드론주 AVAV가 실적서프라이즈 나오면서\n드론주 전반 강세입니다",
-      "url": "/data/telegram/photos/5276.jpg"
-    },
-    {
-      "date": "2026-06-30",
-      "time": "22:33:55",
-      "messageId": "message5273",
-      "caption": "🔔장초반 증시는 혼조세 출발입니다",
-      "url": "/data/telegram/photos/5273.jpg"
-    },
-    {
-      "date": "2026-06-30",
-      "time": "22:33:42",
-      "messageId": "message5271",
-      "caption": "요즘 계속 이 자료가\n도는 것보니까\n\n빅테크 저평가+긍정론이\n슬슬 또 부각되는 것 같습니다\n\n(26-27년 현금 최악구간 통과)\n28년부터 엄청난 돈 회수시작",
-      "url": "/data/telegram/photos/5271.jpg"
-    },
-    {
-      "date": "2026-06-30",
-      "time": "21:13:12",
-      "messageId": "message5270",
-      "caption": "요즘 계속 이 자료가\n도는 것보니까\n\n빅테크 저평가+긍정론이\n슬슬 또 부각되는 것 같습니다\n\n(26-27년 현금 최악구간 통과)\n28년부터 엄청난 돈 회수시작",
-      "url": "/data/telegram/photos/5270.jpg"
-    },
-    {
-      "date": "2026-06-30",
-      "time": "21:12:15",
-      "messageId": "message5268",
-      "caption": "단기 : 부진(씨앗뿌리기)\n중장기 : 더 큰 수익(열매수확)",
-      "url": "/data/telegram/photos/5268.jpg"
-    },
-    {
-      "date": "2026-06-30",
-      "time": "21:10:53",
-      "messageId": "message5264",
-      "caption": "🚀프리)오늘도 어제에 이어\n우주 관련주들이 상대적 강세입니다\n\n로켓랩의 이리듐(위성통신사) 인수를\n호재로 인식하며 다시 우주관련주로\n관심이 몰리는 모습입니다",
-      "url": "/data/telegram/photos/5264.jpg"
-    },
-    {
-      "date": "2026-06-30",
-      "time": "18:23:36",
-      "messageId": "message5262",
-      "caption": "⭐️안내)\n본 채널(소수의견)은\n오늘 자정까지 운영되며\n\n7/1(수)부터는\n3분기 채널에서\n자료 공유/코멘트 이어지겠습니다!☺️",
-      "url": "/data/telegram/photos/5262.jpg"
-    },
-    {
-      "date": "2026-06-30",
-      "time": "17:40:50",
-      "messageId": "message5259",
-      "caption": "🐵오늘은 큰 이슈는 없습니다",
-      "url": "/data/telegram/photos/5259.jpg"
-    },
-    {
-      "date": "2026-06-30",
-      "time": "17:40:28",
-      "messageId": "message5257",
-      "caption": "1) IPO광풍 : 신호+1(올3-4분기 예상)\n2) CAPEX 증가율 정점 : 신호+1(올3-4분기 예상)\n3) 빚투 정점 : 신호+1(올3-4분기 예상)",
-      "url": "/data/telegram/photos/5257.jpg"
-    },
-    {
-      "date": "2026-06-30",
-      "time": "16:56:24",
-      "messageId": "message5253",
-      "caption": "*개인적으로 주식시장의 과열 신호 중\n하나로 가장 많이 참고하는 지표가\n\n바로 '빚투'입니다\n\n주식시장의 디테일은 매번 다르지만\n인간의 탐욕은 늘 반복되기 때문입니다\n\n현금으로 주식을 사다가,\n더 탐욕이 생기면\n빚을 내서 투자를 하게 되고\n\n더 이상 빚을 내서라도\n주식을 더 비싸게 사줄 사람이\n없어지면\n\n주식시장은 정점에 도달하는 경우가\n많았습니다\n\n그런 관점에서\n현재 빚투 증가율은\n제가 보는 기준으로\n닷컴버블, 금융위기, 코로나 이후\n역대 4번째 증가세로 올라가고 있으며\n이 추세면 올 3-4분기에\n정점 신호가 나올 가능성도\n있습니다\n\n계속 모니터링하며\n공유드리겠습니다\n\n*이 지표 활용법은\n마스터클래스 챕터4 꼭 보시기 바랍니다\n평생 써먹으실 수 있는 지표입니다",
-      "url": "/data/telegram/photos/5253.jpg"
-    },
-    {
-      "date": "2026-06-30",
-      "time": "16:52:28",
-      "messageId": "message5250",
-      "caption": "공교롭게도 올 3~4분기\n메모리 자금조달+앤트로픽 상장 등\n굵직한 이벤트가 몰려있어\n\n투심의 정점 신호도\n함께 나오고 있습니다\n\nIPO광풍 : 신호+1\n투자 정점 : 신호+1",
-      "url": "/data/telegram/photos/5250.jpg"
-    },
-    {
-      "date": "2026-06-30",
-      "time": "16:32:00",
-      "messageId": "message5247",
-      "caption": "*투자를 줄이는게 아니라\n투자 '증가율'이 줄어들면 피크아웃입니다",
-      "url": "/data/telegram/photos/5247.jpg"
-    },
-    {
-      "date": "2026-06-30",
-      "time": "16:31:12",
-      "messageId": "message5245",
-      "caption": "⭐️중요)올해 빅테크 투자 사이클 정점 가능성\n\n저는 이번 사이클은\n빅테크 투자가 만든 사이클이라고\n생각합니다\n\n그러므로 이번 사이클의 정점,\n증시의 고점은\n빅테크의 투자가 꺾이는 시점\n가능성을 가장 높게 보고 있습니다\n(돌발 변수 제외)\n\n월가에서도 이 부분을 예의주시\n중인데요,\n\n현재 추정치로는\n\n올 3분기가 투자 성장률 '정점'이므로\n이때가 이번 사이클의 고점이\n될 가능성도\n염두에 둬야합니다\n\n이 지표 하나만으로\n고점을 정확히 맞힐 수는 없습니다만,\n하나의 유력한 신호로\n참고하시는게 좋습니다",
-      "url": "/data/telegram/photos/5245.jpg"
-    },
-    {
-      "date": "2026-06-30",
-      "time": "16:31:03",
-      "messageId": "message5244",
-      "caption": "⭐️중요)올해 빅테크 투자 사이클 정점 가능성\n\n저는 이번 사이클은\n빅테크 투자가 만든 사이클이라고\n생각합니다\n\n그러므로 이번 사이클의 정점,\n증시의 고점은\n빅테크의 투자가 꺾이는 시점\n가능성을 가장 높게 보고 있습니다\n(돌발 변수 제외)\n\n월가에서도 이 부분을 예의주시\n중인데요,\n\n현재 추정치로는\n\n올 3분기가 투자 성장률 '정점'이므로\n이때가 이번 사이클의 고점이\n될 가능성도\n염두에 둬야합니다\n\n이 지표 하나만으로\n고점을 정확히 맞힐 수는 없습니다만,\n하나의 유력한 신호로\n참고하시는게 좋습니다",
-      "url": "/data/telegram/photos/5244.jpg"
-    },
-    {
-      "date": "2026-06-30",
-      "time": "16:28:27",
-      "messageId": "message5242",
-      "caption": "한/중/일 메모리 상장 러시(자금조달)",
-      "url": "/data/telegram/photos/5242.jpg"
-    },
-    {
-      "date": "2026-06-30",
-      "time": "10:54:16",
-      "messageId": "message5240",
-      "caption": "🔔중국 1위 메모리 창신메모리(CXMT),\n상장 앞두고 호재 부각시킵니다\n\n- 미국 테크 공룡 텐센트에\n대규모 메모리칩 공급 발표했습니다\n\n- 메모리 증설 = 장비주 호재이기도 합니다",
-      "url": "/data/telegram/photos/5240.jpg"
-    },
-    {
-      "date": "2026-06-30",
-      "time": "10:52:39",
-      "messageId": "message5238",
-      "caption": "머스크는 사실상 트럼프 덕에\n스페이스X 를 순조롭게 상장시켰고\n그덕에 사상최대 부자가 되었으니\n\n이제 또다시 선거를 앞두고\n트럼프를 도울 가능성이 높겠습니다",
-      "url": "/data/telegram/photos/5238.jpg"
-    },
-    {
-      "date": "2026-06-30",
-      "time": "10:49:38",
-      "messageId": "message5234",
-      "caption": "🔔스페이스X,\n트럼프 계좌 프로젝트에\n주식 기부 검토\n\n-> 사실상 미국 행정부에\n기업 지분 제공하는 형태로\n윈윈 전략 가능성\n\n(머스트-크럼프 선거 앞두고\n재결합)",
-      "url": "/data/telegram/photos/5234.jpg"
-    },
-    {
-      "date": "2026-06-30",
-      "time": "10:49:33",
-      "messageId": "message5233",
-      "caption": "🔔스페이스X,\n트럼프 계좌 프로젝트에\n주식 기부 검토\n\n-> 사실상 미국 행정부에\n기업 지분 제공하는 형태로\n윈윈 전략 가능성\n\n(머스트-크럼프 선거 앞두고\n재결합)",
-      "url": "/data/telegram/photos/5233.jpg"
-    },
-    {
-      "date": "2026-06-30",
-      "time": "10:43:50",
-      "messageId": "message5230",
-      "caption": "<🔔주요 ETF DAILY>\n\n우주가 간만에 강하게 반등,\n빅테크도 저가매수세 유입,\n그외 주도주 반도체 지속 강세 등\n특징보였습니다",
-      "url": "/data/telegram/photos/5230.jpg"
-    },
-    {
-      "date": "2026-06-30",
-      "time": "08:12:11",
-      "messageId": "message5228",
-      "caption": "🤖오늘은 반도체장비가\n나란히 신고가,\n\n그외 헬스케어(제약/바이오)\n쪽과 사이어보안 일부 주식들이\n강하게 신고가를 뚫었습니다",
-      "url": "/data/telegram/photos/5228.jpg"
-    },
-    {
-      "date": "2026-06-30",
-      "time": "08:05:45",
-      "messageId": "message5225",
-      "caption": "👑주요 시총 상위주 전반적 상승,\n다우지수 편입된 알파벳 강세,\n우주 관련주로 묶인\n스페이스x/테슬라가 동반 강세보였습니다",
-      "url": "/data/telegram/photos/5225.jpg"
-    },
-    {
-      "date": "2026-06-30",
-      "time": "08:05:45",
-      "messageId": "message5224",
-      "caption": "👑주요 시총 상위주 전반적 상승,\n다우지수 편입된 알파벳 강세,\n우주 관련주로 묶인\n스페이스x/테슬라가 동반 강세보였습니다",
-      "url": "/data/telegram/photos/5224.jpg"
-    },
-    {
-      "date": "2026-06-30",
-      "time": "08:04:21",
-      "messageId": "message5223",
-      "caption": "👑주요 시총 상위주 전반적 상승,\n다우지수 편입된 알파벳 강세,\n우주 관련주로 묶인\n스페이스x/테슬라가 동반 강세보였습니다",
-      "url": "/data/telegram/photos/5223.jpg"
-    },
-    {
-      "date": "2026-06-30",
-      "time": "08:04:21",
-      "messageId": "message5222",
-      "caption": "👑주요 시총 상위주 전반적 상승,\n다우지수 편입된 알파벳 강세,\n우주 관련주로 묶인\n스페이스x/테슬라가 동반 강세보였습니다",
-      "url": "/data/telegram/photos/5222.jpg"
-    },
-    {
-      "date": "2026-06-30",
-      "time": "08:00:29",
-      "messageId": "message5220",
-      "caption": "장비주들이 특히 강했습니다",
-      "url": "/data/telegram/photos/5220.jpg"
-    },
-    {
-      "date": "2026-06-30",
-      "time": "07:58:33",
-      "messageId": "message5217",
-      "caption": "🚀최근 부진했던 우주 관련주\n전종목 상승했습니다",
-      "url": "/data/telegram/photos/5217.jpg"
-    },
-    {
-      "date": "2026-06-30",
-      "time": "07:57:25",
-      "messageId": "message5216",
-      "caption": "🚀최근 부진했던 우주 관련주\n전종목 상승했습니다",
-      "url": "/data/telegram/photos/5216.jpg"
-    },
-    {
-      "date": "2026-06-30",
-      "time": "07:56:15",
-      "messageId": "message5214",
-      "caption": "🔔미 증시 장후반부로 갈수록\n상승폭 키우며 마감했습니다\n\n빅테크/나스닥 강했고\n로켓랩의 이리듐 인수 소식에 힘입어\n우주 관련주들이 가장 강한 하루였습니다",
-      "url": "/data/telegram/photos/5214.jpg"
-    },
-    {
-      "date": "2026-06-30",
-      "time": "07:55:17",
-      "messageId": "message5212",
-      "caption": "*AI인프라 전체가 꺾였다기보다는\n메모리주 좀 쉬었다간다고\n보는게 맞지 않을까 싶습니다\n(순환매)",
-      "url": "/data/telegram/photos/5212.jpg"
-    },
-    {
-      "date": "2026-06-30",
-      "time": "07:55:17",
-      "messageId": "message5211",
-      "caption": "*AI인프라 전체가 꺾였다기보다는\n메모리주 좀 쉬었다간다고\n보는게 맞지 않을까 싶습니다\n(순환매)",
-      "url": "/data/telegram/photos/5211.jpg"
-    },
-    {
-      "date": "2026-06-30",
-      "time": "07:55:17",
-      "messageId": "message5210",
-      "caption": "*AI인프라 전체가 꺾였다기보다는\n메모리주 좀 쉬었다간다고\n보는게 맞지 않을까 싶습니다\n(순환매)",
-      "url": "/data/telegram/photos/5210.jpg"
-    },
-    {
-      "date": "2026-06-30",
-      "time": "07:55:16",
-      "messageId": "message5209",
-      "caption": "*AI인프라 전체가 꺾였다기보다는\n메모리주 좀 쉬었다간다고\n보는게 맞지 않을까 싶습니다\n(순환매)",
-      "url": "/data/telegram/photos/5209.jpg"
-    },
-    {
-      "date": "2026-06-29",
-      "time": "23:45:23",
-      "messageId": "message5206",
-      "caption": "저는 헬스케어에서는\nLLY를 가장 많이 보유 중입니다",
-      "url": "/data/telegram/photos/5206.jpg"
-    },
-    {
-      "date": "2026-06-29",
-      "time": "23:42:25",
-      "messageId": "message5204",
-      "caption": "💊헬스케어 JNJ 신고가",
-      "url": "/data/telegram/photos/5204.jpg"
-    },
-    {
-      "date": "2026-06-29",
-      "time": "23:42:19",
-      "messageId": "message5203",
-      "caption": "💊헬스케어 JNJ 신고가",
-      "url": "/data/telegram/photos/5203.jpg"
-    },
-    {
-      "date": "2026-06-29",
-      "time": "23:40:13",
-      "messageId": "message5201",
-      "caption": "💊비만약 LLY 신고가",
-      "url": "/data/telegram/photos/5201.jpg"
-    },
-    {
-      "date": "2026-06-29",
-      "time": "23:40:01",
-      "messageId": "message5199",
-      "caption": "*저는 분할매수를\n시작했고\n상황을 봐서 언제든\n투자 기준에 부합하지 않으면\n매도를 할 수 있기 때문에\n참고만 해주시기 바라겠습니다!",
-      "url": "/data/telegram/photos/5199.jpg"
-    },
-    {
-      "date": "2026-06-29",
-      "time": "23:34:00",
-      "messageId": "message5195",
-      "caption": "*메모리, AI인프라주는\n낙폭 확대합니다\n\n빅테크와 AI인프라주가\n반대로 움직이는 경향이\n강해지고 있습니다",
-      "url": "/data/telegram/photos/5195.jpg"
-    },
-    {
-      "date": "2026-06-29",
-      "time": "23:20:03",
-      "messageId": "message5192",
-      "caption": "🔔메모리 악재 위주 부각\n\n1. 담합 소송\n2. 메모리 공급 증가 우려\n\n-> 쉬어갈때 되니\n악재 위주로 부각시키는 모습입니다",
-      "url": "/data/telegram/photos/5192.jpg"
-    },
-    {
-      "date": "2026-06-29",
-      "time": "23:06:22",
-      "messageId": "message5190",
-      "caption": "🔔ETF도 최근에 부진했던\n우주, 사이버보안, SW, 빅테크 등\n소외주들이 반등하는 순환매\n장이라고 보시면 되겠습니다",
-      "url": "/data/telegram/photos/5190.jpg"
-    },
-    {
-      "date": "2026-06-29",
-      "time": "23:06:11",
-      "messageId": "message5189",
-      "caption": "🔔ETF도 최근에 부진했던\n우주, 사이버보안, SW, 빅테크 등\n소외주들이 반등하는 순환매\n장이라고 보시면 되겠습니다",
-      "url": "/data/telegram/photos/5189.jpg"
-    },
-    {
-      "date": "2026-06-29",
-      "time": "22:53:46",
-      "messageId": "message5187",
-      "caption": "🔔오늘은 메모리\n마이크론/샌디스크+인텔 부진하고\n반대로 나머지 주식들이 강세 출발합니다\n(순환매 진행 중)",
-      "url": "/data/telegram/photos/5187.jpg"
-    },
-    {
-      "date": "2026-06-29",
-      "time": "22:51:40",
-      "messageId": "message5185",
-      "caption": "🐵오늘은 뭔가\n그동안 안나오던\n다양한 분야 주식들 호재/이슈가\n나오는 중입니다\n\n순환매 염두에 둘 필요있겠습니다",
-      "url": "/data/telegram/photos/5185.jpg"
-    },
-    {
-      "date": "2026-06-29",
-      "time": "21:29:27",
-      "messageId": "message5183",
-      "caption": "'",
-      "url": "/data/telegram/photos/5183.jpg"
-    },
-    {
-      "date": "2026-06-29",
-      "time": "21:28:44",
-      "messageId": "message5182",
-      "caption": "'",
-      "url": "/data/telegram/photos/5182.jpg"
-    },
-    {
-      "date": "2026-06-29",
-      "time": "21:28:39",
-      "messageId": "message5181",
-      "caption": "🔔방송사 컴캐스트,\n두개 회사로 분할 발표에 주가 급등",
-      "url": "/data/telegram/photos/5181.jpg"
-    },
-    {
-      "date": "2026-06-29",
-      "time": "21:28:11",
-      "messageId": "message5179",
-      "caption": "🚀로켓랩, 위성통신 기업 이리듐\n인수발표하며 강세",
-      "url": "/data/telegram/photos/5179.jpg"
-    },
-    {
-      "date": "2026-06-29",
-      "time": "21:27:44",
-      "messageId": "message5177",
-      "caption": "🔔프리)팔란티어, 엔비디아와 협업\n발표하며 주가 상승세",
-      "url": "/data/telegram/photos/5177.jpg"
-    },
-    {
-      "date": "2026-06-29",
-      "time": "21:26:47",
-      "messageId": "message5175",
-      "caption": "🛢유가, 여전히 70불 아래로 긍정적\n\n->요즘 패턴이 이렇습니다\n주말되면 치고박고 싸우다가\n주말 끝나고 장 열리기 전에\n급하게 (?) 회의합니다\n\n예전에 중동전쟁도 그랬는데\n대놓고 노골적으로\n증시를 신경쓰는 모습입니다\n\n그래서 저는\n지정학 이슈는 노이즈라고\n말씀드리고 있고,\n\n뉴스도 좋지만\n유가 흐름 보시는게 더 정확하다고\n말씀드리고 싶습니다",
-      "url": "/data/telegram/photos/5175.jpg"
-    },
-    {
-      "date": "2026-06-29",
-      "time": "17:13:58",
-      "messageId": "message5173",
-      "caption": "🇰🇷오늘 삼전닉스가\n메가프로젝트를 발표한 영상과\n내용을 쭉 봤는데,\n\n사실 엄청 특별한 것은 없었습니다\n구체적인 방법보다는 큰 틀의\n상징적인 발표에 가까웠습니다\n\n어쨌든 증시에서는\n반도체 공장/설비 투자 확대\n-> 반도체 장비 주식 수혜 기대감은\n더 커지겠습니다",
-      "url": "/data/telegram/photos/5173.jpg"
-    },
-    {
-      "date": "2026-06-29",
-      "time": "17:12:31",
-      "messageId": "message5171",
-      "caption": "https://www.mt.co.kr/industry/2026/06/29/2026062915242175637",
-      "url": "/data/telegram/photos/5171.jpg"
-    },
-    {
-      "date": "2026-06-29",
-      "time": "17:05:41",
-      "messageId": "message5169",
-      "caption": "예) 새로 발행해서 조달한 돈으로\n첨단 메모리 장비 구매",
-      "url": "/data/telegram/photos/5169.jpg"
-    },
-    {
-      "date": "2026-06-29",
-      "time": "17:04:03",
-      "messageId": "message5165",
-      "caption": "추정치 자료 좀더 잘보이게\n업데이트했습니다\n\n(빅테크 현금 26-27 최악 통과)",
-      "url": "/data/telegram/photos/5165.jpg"
-    },
-    {
-      "date": "2026-06-29",
-      "time": "17:03:56",
-      "messageId": "message5164",
-      "caption": "추정치 자료 좀더 잘보이게\n업데이트했습니다\n\n(빅테크 현금 26-27 최악 통과)",
-      "url": "/data/telegram/photos/5164.jpg"
-    },
-    {
-      "date": "2026-06-28",
-      "time": "18:32:36",
-      "messageId": "message5163",
-      "caption": "추정치 자료 좀더 잘보이게\n업데이트했습니다\n\n(빅테크 현금 26-27 최악 통과)",
-      "url": "/data/telegram/photos/5163.jpg"
-    },
-    {
-      "date": "2026-06-28",
-      "time": "18:06:00",
-      "messageId": "message5161",
-      "caption": "<🗓7월 실적 캘린더>\n\n2분기(7월)부터 실적시즌이 시작됩니다\n아직 미정인 일정이 많아서\n추후 업데이트 공유드리겠습니다\n(7월 중순부터 시작)",
-      "url": "/data/telegram/photos/5161.jpg"
-    },
-    {
-      "date": "2026-06-28",
-      "time": "18:04:56",
-      "messageId": "message5159",
-      "caption": "😳이거 진짜인지는 확인해봐야겠지만\n입시에서 반도체 학과가\n의대를 넘어설 수도 있다고 하네요(?)\n\n이런 일도 일어나는군요 😳",
-      "url": "/data/telegram/photos/5159.jpg"
-    },
-    {
-      "date": "2026-06-28",
-      "time": "17:47:43",
-      "messageId": "message5157",
-      "caption": "🐵뒤바뀐 갑을 관계\n\n과거 : 빅테크 갑\n현재 : (사실상)메모리가 갑",
-      "url": "/data/telegram/photos/5157.jpg"
-    },
-    {
-      "date": "2026-06-28",
-      "time": "17:32:40",
-      "messageId": "message5155",
-      "caption": "(추정치는 계속 바뀌니\n모니터링 공유하겠습니다)",
-      "url": "/data/telegram/photos/5155.jpg"
-    },
-    {
-      "date": "2026-06-28",
-      "time": "15:23:12",
-      "messageId": "message5151",
-      "caption": "💥보충자료)\n\n메모리 열풍에\n자금조달을 위한\nIPO 광풍이 이어집니다\n\n한,중,일 메모리 기업\n모두 추가 자금조달\n(IPO)을 할 계획으로\n\nIPO 광풍은\n과열의 신호 중 하나이니\n참고는 필요하겠습니다\n(당장은 아니겠지만)",
-      "url": "/data/telegram/photos/5151.jpg"
-    },
-    {
-      "date": "2026-06-28",
-      "time": "15:14:14",
-      "messageId": "message5149",
-      "caption": "💥보충자료)\n\n빅테크 주가가 더 빠지면\n주주들이 본격 압박을 할 수도 있다는\n의견도 커지고 있습니다\n\nAI투자 속도 조절론은\n앞으로 계속해서 쓰일\n조정 재료가 되겠습니다",
-      "url": "/data/telegram/photos/5149.jpg"
-    },
-    {
-      "date": "2026-06-28",
-      "time": "15:12:37",
-      "messageId": "message5147",
-      "caption": "💥보충자료)\n\n이번주 증시 조정의 3가지 재료\n보충자료입니다\n\n1) 오픈AI 상장연기\n- 현재 AI투자 사이클의 최대\n쩐주(고객사) 중 하나인 오픈AI가\n상장을 연기한다는 것 자체가\n투심 악화로 해석되었습니다\n\n2) 애플 메모리 가격 견제\n- 메모리 가격 급등에 수익성\n악화가 걱정되자\n이를 명분으로 가격을 올렸습니다\n\n3) 마소의 AI 투자전쟁 비판(견제)\n- 선두인 앤트로픽, 오픈AI를\n견제하며 AI투자 속도조절을\n암시하는 듯한 발언을 했습니다",
-      "url": "/data/telegram/photos/5147.jpg"
-    },
-    {
-      "date": "2026-06-28",
-      "time": "15:09:58",
-      "messageId": "message5144",
-      "caption": "☺️주간 브리핑 여기서 마치고\n주말 주요 이슈+보충 자료\n추가로 공유드리겠습니다",
-      "url": "/data/telegram/photos/5144.jpg"
-    },
-    {
-      "date": "2026-06-28",
-      "time": "15:09:58",
-      "messageId": "message5143",
-      "caption": "☺️주간 브리핑 여기서 마치고\n주말 주요 이슈+보충 자료\n추가로 공유드리겠습니다",
-      "url": "/data/telegram/photos/5143.jpg"
-    },
-    {
-      "date": "2026-06-28",
-      "time": "15:09:58",
-      "messageId": "message5142",
-      "caption": "☺️주간 브리핑 여기서 마치고\n주말 주요 이슈+보충 자료\n추가로 공유드리겠습니다",
-      "url": "/data/telegram/photos/5142.jpg"
-    },
-    {
-      "date": "2026-06-27",
-      "time": "18:42:39",
-      "messageId": "message5134",
-      "caption": "<🐎올해 주도주 ETF 현황>\n\n이번주는 주도주 거의다\n빠졌다고 보시면 되겠습니다\n(개별 이슈X)",
-      "url": "/data/telegram/photos/5134.jpg"
-    },
-    {
-      "date": "2026-06-27",
-      "time": "18:42:37",
-      "messageId": "message5133",
-      "caption": "<🐎올해 주도주 ETF 현황>\n\n이번주는 주도주 거의다\n빠졌다고 보시면 되겠습니다\n(개별 이슈X)",
-      "url": "/data/telegram/photos/5133.jpg"
-    },
-    {
-      "date": "2026-06-27",
-      "time": "18:42:35",
-      "messageId": "message5132",
-      "caption": "<🐎올해 주도주 ETF 현황>\n\n이번주는 주도주 거의다\n빠졌다고 보시면 되겠습니다\n(개별 이슈X)",
-      "url": "/data/telegram/photos/5132.jpg"
-    },
-    {
-      "date": "2026-06-27",
-      "time": "18:41:46",
-      "messageId": "message5130",
-      "caption": "🐎참고용)올해 나스닥 주도주 현황\n\n*거의 동일합니다\n메모리/CPU/데이터센터/장비/전력 등",
-      "url": "/data/telegram/photos/5130.jpg"
-    },
-    {
-      "date": "2026-06-27",
-      "time": "18:40:34",
-      "messageId": "message5128",
-      "caption": "🐎주도주 점검(올해 수익률 Top10)\n\n메모리/CPU/서버 등\n주도주 이상은 없으나\n\n과열 해소하는 구간\n염두에 두시는게 좋겠습니다",
-      "url": "/data/telegram/photos/5128.jpg"
-    },
-    {
-      "date": "2026-06-27",
-      "time": "18:40:27",
-      "messageId": "message5127",
-      "caption": "🐎주도주 점검(올해 수익률 Top10)\n\n메모리/CPU/서버 등\n주도주 이상은 없으나\n\n과열 해소하는 구간\n염두에 두시는게 좋겠습니다",
-      "url": "/data/telegram/photos/5127.jpg"
-    },
-    {
-      "date": "2026-06-27",
-      "time": "18:39:14",
-      "messageId": "message5125",
-      "caption": "⚠️실질 금리가 계속 올라가면서\n시장 유동성은 좋지 못한 상태입니다\n\n빅테크가 돈 뿌리는 힘으로\n올라가는 장세입니다\n\n그러므로 빅테크가 투자를 꺾는다,\n속도를 늦춘다 라는 소식에\n매우 민감할 수밖에 없습니다",
-      "url": "/data/telegram/photos/5125.jpg"
-    },
-    {
-      "date": "2026-06-27",
-      "time": "18:39:09",
-      "messageId": "message5124",
-      "caption": "⚠️실질 금리가 계속 올라가면서\n시장 유동성은 좋지 못한 상태입니다\n\n빅테크가 돈 뿌리는 힘으로\n올라가는 장세입니다\n\n그러므로 빅테크가 투자를 꺾는다,\n속도를 늦춘다 라는 소식에\n매우 민감할 수밖에 없습니다",
-      "url": "/data/telegram/photos/5124.jpg"
-    },
-    {
-      "date": "2026-06-27",
-      "time": "18:36:49",
-      "messageId": "message5122",
-      "caption": "💸긴축우려, 유동성 부족에\n암호화폐 대부분 부진 (저점 경신)",
-      "url": "/data/telegram/photos/5122.jpg"
-    },
-    {
-      "date": "2026-06-27",
-      "time": "18:35:57",
-      "messageId": "message5120",
-      "caption": "🥇달러 강세 보이면서\n금,은을 포함한 주요 원자재는 약세 지속 중",
-      "url": "/data/telegram/photos/5120.jpg"
-    },
-    {
-      "date": "2026-06-27",
-      "time": "18:35:27",
-      "messageId": "message5118",
-      "caption": "⚠️물론, 달러가 오르는 것이\n단기 부정적 요인이나\n\n이것만으로 강세장이 꺾이기엔\n역부족으로 보입니다",
-      "url": "/data/telegram/photos/5118.jpg"
-    },
-    {
-      "date": "2026-06-27",
-      "time": "18:34:36",
-      "messageId": "message5116",
-      "caption": "🟢공포지수는 25, 심지어 극단적 공포상태로\n소수의 AI인프라 주식을 제외하면\n대다수 주식이 부진, 공포에 가까운 상태\n\n🟢약한고리가 끊어질 수 있다는\n선행경고신호도 없는 상태",
-      "url": "/data/telegram/photos/5116.jpg"
-    },
-    {
-      "date": "2026-06-27",
-      "time": "18:33:45",
-      "messageId": "message5114",
-      "caption": "🟢증시, 채권(금리) 변동성 베팅도\n크게 높지 않은 상황",
-      "url": "/data/telegram/photos/5114.jpg"
-    },
-    {
-      "date": "2026-06-27",
-      "time": "18:33:33",
-      "messageId": "message5112",
-      "caption": "🟢유가 하향 안정화\n🟢금리 나쁘지 않은 상황",
-      "url": "/data/telegram/photos/5112.jpg"
-    },
-    {
-      "date": "2026-06-27",
-      "time": "18:33:11",
-      "messageId": "message5110",
-      "caption": "🙋‍♀️Q. 리스크는 없을까요?\n🐵A. 네 단기 조정/과열 식히기가\n끝나면 다시 우상향 모드\n가능해보입니다",
-      "url": "/data/telegram/photos/5110.jpg"
-    },
-    {
-      "date": "2026-06-27",
-      "time": "18:32:30",
-      "messageId": "message5108",
-      "caption": "🙋Q. 다음주엔 뭐볼까요?\n🐵A.\n\n좋든싫든 현재\n전세계 증시를 움직이는건\n메모리(AI인프라)회사들이고,\n\n그래서 다음주 삼성,SK하이닉스\n대규모 투자 발표가 주목받겠습니다\n(한국주식투자를 하지 않더라도 영향 다수)\n\n6/29 월요일에\n삼성에서 1,000조원대 투자 계획\n발표가 예정되어 있고\n\n그외 SK의 반도체 클러스터 조성 계획\n발표도 6/30 화요일로 예정되어 있습니다\n\n그외\n제조업, 고용보고서 등이 있으나\n현재 매크로 지표 영향은 매우\n미미할 것으로 보입니다",
-      "url": "/data/telegram/photos/5108.jpg"
-    },
-    {
-      "date": "2026-06-27",
-      "time": "18:29:34",
-      "messageId": "message5106",
-      "caption": "🐵개인적으로 증시 하락/조정이\n좀더 이어질 수 있으나\n(과열 해소, 레버리지 털고가기)\n\nAI인프라 사이클 종료는\n아직이라고 생각하고 있습니다\n(후반부인건 명확하므로\n조심할 건 해야하겠지만요)\n\n그러므로 추가 조정시\n주도주 분할매수는 유효하다고\n보고 있습니다",
-      "url": "/data/telegram/photos/5106.jpg"
-    },
-    {
-      "date": "2026-06-27",
-      "time": "18:24:26",
-      "messageId": "message5102",
-      "caption": "*주요 주도 ETF(AI인프라) 역시\n고점대비 10% 이상 빠지며\n조정 구간 진입했습니다\n\n<고점대비 하락률>\n메모리 -11.6%\n반도체 -10.1%\n데이터센터-14.6%\n전력 -8.2%",
-      "url": "/data/telegram/photos/5102.jpg"
-    },
-    {
-      "date": "2026-06-27",
-      "time": "18:24:13",
-      "messageId": "message5101",
-      "caption": "*주요 주도 ETF(AI인프라) 역시\n고점대비 10% 이상 빠지며\n조정 구간 진입했습니다\n\n<고점대비 하락률>\n메모리 -11.6%\n반도체 -10.1%\n데이터센터-14.6%\n전력 -8.2%",
-      "url": "/data/telegram/photos/5101.jpg"
-    },
-    {
-      "date": "2026-06-27",
-      "time": "18:22:34",
-      "messageId": "message5099",
-      "caption": "*빅테크, 반도체는 -10% 이상 빠지며\n조정장 진입했습니다",
-      "url": "/data/telegram/photos/5099.jpg"
-    },
-    {
-      "date": "2026-06-27",
-      "time": "18:20:29",
-      "messageId": "message5097",
-      "caption": "<🐵주간 ETF 현황>\n\n⬇️주도주 AI인프라가 약세,\n⬆️반대로 바이오/헬스케어 등이\n강했습니다\n\n최근 바이오쪽이 강한데\n개인적으로 바이오 투자는\n지식/능력의 한계로 잘 건들지는 않습니다\n\n헬스케어쪽 (XLV)은\n투자하고 있습니다\n\n건설주는\n트럼프의 하반기 대규모 주택 부양 정책\n통과 앞두고 기대감에 상승했습니다\n(최종 서명 앞둔 상황)",
-      "url": "/data/telegram/photos/5097.jpg"
-    },
-    {
-      "date": "2026-06-27",
-      "time": "18:20:28",
-      "messageId": "message5096",
-      "caption": "<🐵주간 ETF 현황>\n\n⬇️주도주 AI인프라가 약세,\n⬆️반대로 바이오/헬스케어 등이\n강했습니다\n\n최근 바이오쪽이 강한데\n개인적으로 바이오 투자는\n지식/능력의 한계로 잘 건들지는 않습니다\n\n헬스케어쪽 (XLV)은\n투자하고 있습니다\n\n건설주는\n트럼프의 하반기 대규모 주택 부양 정책\n통과 앞두고 기대감에 상승했습니다\n(최종 서명 앞둔 상황)",
-      "url": "/data/telegram/photos/5096.jpg"
-    },
-    {
-      "date": "2026-06-27",
-      "time": "18:18:19",
-      "messageId": "message5094",
-      "caption": "<🐵주간 증시 히트맵>\n\n하락장이라고 보기 어렵고\n많이 오른 주식 쉬고\n덜 오른 주식 오르는\n순환매, 쉬어가기 장세로 보입니다",
-      "url": "/data/telegram/photos/5094.jpg"
-    },
-    {
-      "date": "2026-06-27",
-      "time": "18:17:45",
-      "messageId": "message5091",
-      "caption": "<🔔주간 특징주 요약>\n\n1) 주도주인 AI인프라 관련주\n전반적으로 약세보였습니다\n\n메모리/CPU/광통신/장비/전력/데이터센터\n+ 오픈AI 상장 관련주인 GS,MS도\n약세보였습니다\n\n2) 빅테크도 주 후반부 반등하긴했지만\n주간 기준으로는 계속되는 투자 확대 우려로\n약세보였습니다\n\n3) SW주 역시 주 후반부 반등하긴 했으나\n주간 기준으로 저점을 깨고 내려갈 정도로\n부진했습니다\n\n4) 반대로 저평가 소외주인\n헬스케어쪽으로 돈이 몰렸는데요,\n만약 조정 이어진다면 당분간\n헬스케어쪽이 좋을 것 같습니다(피난처)\n\n5)그외 유가 하향 안정되면서\n여행주들이 대부분 좋았습니다",
-      "url": "/data/telegram/photos/5091.jpg"
-    },
-    {
-      "date": "2026-06-27",
-      "time": "18:15:51",
-      "messageId": "message5089",
-      "caption": "그외)\n분기말 리밸런싱\n(많이 오른거 팔고 떨어진거 사고)\n\n긴축전망 지속 등도\n단기 악재로 작용했습니다",
-      "url": "/data/telegram/photos/5089.jpg"
-    },
-    {
-      "date": "2026-06-27",
-      "time": "18:12:38",
-      "messageId": "message5086",
-      "caption": "<🐵주간 소수의견>\n한주간 중요한 이슈를 정리하고\n다음주를 대비하는\n주간 소수의견 브리핑 시간입니다!",
-      "url": "/data/telegram/photos/5086.jpg"
-    },
-    {
-      "date": "2026-06-27",
-      "time": "18:12:35",
-      "messageId": "message5085",
-      "caption": "<🐵주간 소수의견>\n한주간 중요한 이슈를 정리하고\n다음주를 대비하는\n주간 소수의견 브리핑 시간입니다!",
-      "url": "/data/telegram/photos/5085.jpg"
-    },
-    {
-      "date": "2026-06-27",
-      "time": "11:42:11",
-      "messageId": "message5080",
-      "caption": "[🖥소몽 추천 리포트]\n\n신한에서 매월 10개 Top pick\n선정해서 종목 분석 리포트를 내주는데요,\n\n7월것도 참고하시라고 공유드립니다",
-      "url": "/data/telegram/photos/5080.jpg"
-    },
-    {
-      "date": "2026-06-27",
-      "time": "11:42:11",
-      "messageId": "message5079",
-      "caption": "[🖥소몽 추천 리포트]\n\n신한에서 매월 10개 Top pick\n선정해서 종목 분석 리포트를 내주는데요,\n\n7월것도 참고하시라고 공유드립니다",
-      "url": "/data/telegram/photos/5079.jpg"
-    },
-    {
-      "date": "2026-06-27",
-      "time": "11:40:28",
-      "messageId": "message5076",
-      "caption": "☺️이외 더 자세한 내용들은\n주간 브리핑에서 공유드리겠습니다!",
-      "url": "/data/telegram/photos/5076.jpg"
-    },
-    {
-      "date": "2026-06-27",
-      "time": "09:56:02",
-      "messageId": "message5073",
-      "caption": "🎙마이클버리, 마이크로소프트 350불은\n매우 싸보인다 -> 발언에\n마소 반등 시도했습니다",
-      "url": "/data/telegram/photos/5073.jpg"
-    },
-    {
-      "date": "2026-06-27",
-      "time": "09:54:10",
-      "messageId": "message5070",
-      "caption": "🎙마이클버리 \"마이크로소프트에 대한\n신규 매수와, 팔란티어 숏포지션 절반을 청산했다\"\n발언과 함께\n\nSW 주식 저평가 부각되며\n마이크로소프트 및 팔란티어 등\n반등을 시도했습니다",
-      "url": "/data/telegram/photos/5070.jpg"
-    },
-    {
-      "date": "2026-06-27",
-      "time": "09:51:17",
-      "messageId": "message5068",
-      "caption": "💊헬스케어 ETF XLV도 마찬가지로\n흐름이 매우 좋습니다\n(LLY, UNH 모두 포함)",
-      "url": "/data/telegram/photos/5068.jpg"
-    },
-    {
-      "date": "2026-06-27",
-      "time": "09:44:47",
-      "messageId": "message5067",
-      "caption": "💊헬스케어 ETF XLV도 마찬가지로\n흐름이 매우 좋습니다\n(LLY, UNH 모두 포함)",
-      "url": "/data/telegram/photos/5067.jpg"
-    },
-    {
-      "date": "2026-06-27",
-      "time": "09:44:30",
-      "messageId": "message5066",
-      "caption": "💊헬스케어 ETF XLV도 마찬가지로\n흐름이 매우 좋습니다\n(LLY, UNH 모두 포함)",
-      "url": "/data/telegram/photos/5066.jpg"
-    },
-    {
-      "date": "2026-06-27",
-      "time": "09:44:05",
-      "messageId": "message5064",
-      "caption": "💊미국 1위 보험사 UNH도\n조용히 야금야금 고점을 높혀가고 있습니다\n(도파민은 안터지나 포트에서\n방어주 역할을 해주는 역할입니다)",
-      "url": "/data/telegram/photos/5064.jpg"
-    },
-    {
-      "date": "2026-06-27",
-      "time": "09:43:11",
-      "messageId": "message5062",
-      "caption": "💊비만약 일라이릴리,\n흐름이 매우 좋습니다\n\n개인적으로 보유 중인 주식인데\n도파민은 안터지지만\n꾸준히 우상향 가능한\n헬스케어 대장주로 보고 있습니다",
-      "url": "/data/telegram/photos/5062.jpg"
-    },
-    {
-      "date": "2026-06-27",
-      "time": "09:42:05",
-      "messageId": "message5060",
-      "caption": "🔔AI인프라주 약세,\n헬스케어 등 나머지 주식 강세 보이는\n전형적 순환매 보였습니다",
-      "url": "/data/telegram/photos/5060.jpg"
-    },
-    {
-      "date": "2026-06-27",
-      "time": "09:40:33",
-      "messageId": "message5058",
-      "caption": "↗️비만약 일라이릴리,\n신약 승인 기대 등 호재 부각되며\n초강세 (신고가 경신)",
-      "url": "/data/telegram/photos/5058.jpg"
-    },
-    {
-      "date": "2026-06-27",
-      "time": "09:40:26",
-      "messageId": "message5057",
-      "caption": "↗️비만약 일라이릴리,\n신약 승인 기대 등 호재 부각되며\n초강세 (신고가 경신)",
-      "url": "/data/telegram/photos/5057.jpg"
-    },
-    {
-      "date": "2026-06-27",
-      "time": "09:39:04",
-      "messageId": "message5055",
-      "caption": "↗️마이크로소프트, 마이클버리의\n매수 소식에 힘입어 강세,\n덩달아 sw주식들도 반등세",
-      "url": "/data/telegram/photos/5055.jpg"
-    },
-    {
-      "date": "2026-06-27",
-      "time": "09:38:12",
-      "messageId": "message5053",
-      "caption": "🔔증시, AI인프라주 약세 vs 빅테크 강세 등\n순환매 보였던 하루였습니다",
-      "url": "/data/telegram/photos/5053.jpg"
-    },
-    {
-      "date": "2026-06-27",
-      "time": "09:37:35",
-      "messageId": "message5051",
-      "caption": "🔔오늘은 큰 지표 발표는 없습니다\n1. 오픈AI 상장 연기 검토\n2. 애플 가격 인상\n\n2개가 가장 큰 이슈입니다\n\n1. '검토'일뿐이고\n2. 가격인상도\n그냥 메모리 핑계 명분이라고\n생각합니다\n(어차피 올렸을 것)",
-      "url": "/data/telegram/photos/5051.jpg"
-    },
-    {
-      "date": "2026-06-27",
-      "time": "09:37:35",
-      "messageId": "message5050",
-      "caption": "🔔오늘은 큰 지표 발표는 없습니다\n1. 오픈AI 상장 연기 검토\n2. 애플 가격 인상\n\n2개가 가장 큰 이슈입니다\n\n1. '검토'일뿐이고\n2. 가격인상도\n그냥 메모리 핑계 명분이라고\n생각합니다\n(어차피 올렸을 것)",
-      "url": "/data/telegram/photos/5050.jpg"
-    },
-    {
-      "date": "2026-06-27",
-      "time": "09:37:35",
-      "messageId": "message5049",
-      "caption": "🔔오늘은 큰 지표 발표는 없습니다\n1. 오픈AI 상장 연기 검토\n2. 애플 가격 인상\n\n2개가 가장 큰 이슈입니다\n\n1. '검토'일뿐이고\n2. 가격인상도\n그냥 메모리 핑계 명분이라고\n생각합니다\n(어차피 올렸을 것)",
-      "url": "/data/telegram/photos/5049.jpg"
-    },
-    {
-      "date": "2026-06-27",
-      "time": "09:37:35",
-      "messageId": "message5048",
-      "caption": "🔔오늘은 큰 지표 발표는 없습니다\n1. 오픈AI 상장 연기 검토\n2. 애플 가격 인상\n\n2개가 가장 큰 이슈입니다\n\n1. '검토'일뿐이고\n2. 가격인상도\n그냥 메모리 핑계 명분이라고\n생각합니다\n(어차피 올렸을 것)",
-      "url": "/data/telegram/photos/5048.jpg"
-    },
-    {
-      "date": "2026-06-26",
-      "time": "22:17:54",
-      "messageId": "message5046",
-      "caption": "유가 하향 안정은\n증시에 매우 긍정적입니다\n(현재 조정은 과열 식히기로 해석 가능)",
-      "url": "/data/telegram/photos/5046.jpg"
-    },
-    {
-      "date": "2026-06-26",
-      "time": "19:14:14",
-      "messageId": "message5043",
-      "caption": "🔔프리) AI인프라주 약세 흐름입니다\n\n하루 급등 하루 급락 등\n변동성 커지고 있습니다\n\n1. 오픈AI가 상장을 연기해서라든지\n2. 애플발 메모리 가격 부담떄문이라든지\n\n뭐 여러가지 분석과 이유들이\n따라 붙습니다만\n\n그냥 워낙 많이 오른 주식들\n과열 식히고, 레버리지 털고\n가는 움직임으로 보시는게\n맞지 않나 싶습니다\n\n개인적으로\n사이클 고점으로 보지는 않으나,\n과열은 좀 식히고 가도\n이상할게 없을 것 같습니다",
-      "url": "/data/telegram/photos/5043.jpg"
-    },
-    {
-      "date": "2026-06-26",
-      "time": "18:26:43",
-      "messageId": "message5041",
-      "caption": "🔔오픈AI가 상장을 연기할 수도 있다고\n발표했는데요,\n\n스페이스X 상장 이후 흐름이 좋지 않아서\n(현재 긴축장세)\n상황을 봐서 유동성 기대가 붙을때\n상장을 추진할 것 같습니다",
-      "url": "/data/telegram/photos/5041.jpg"
-    },
-    {
-      "date": "2026-06-26",
-      "time": "10:39:07",
-      "messageId": "message5039",
-      "caption": "요약 : 오르는 것만 오른다",
-      "url": "/data/telegram/photos/5039.jpg"
-    },
-    {
-      "date": "2026-06-26",
-      "time": "09:38:42",
-      "messageId": "message5036",
-      "caption": "-> 금리인하 사이클에선\n둘다 오를 수 있겠지만\n\n현재 긴축사이클로 접어들면서\n모두 같이 오르는 장은 어렵다고\n봐야겠습니다\n\n주도주 쏠림 심화 예상합니다",
-      "url": "/data/telegram/photos/5036.jpg"
-    },
-    {
-      "date": "2026-06-26",
-      "time": "08:07:48",
-      "messageId": "message5030",
-      "caption": "CPU도 곧 엄청 오를텐데\n개인용 PC 사실분들은\n지금이라도(?) 사두는게 낫겠습니다\n\n저도 업무용 PC\n한대 추가로 쟁여놀까 싶어서\n오늘 견적좀 보려고합니다",
-      "url": "/data/telegram/photos/5030.jpg"
-    },
-    {
-      "date": "2026-06-26",
-      "time": "08:07:13",
-      "messageId": "message5029",
-      "caption": "CPU도 곧 엄청 오를텐데\n개인용 PC 사실분들은\n지금이라도(?) 사두는게 낫겠습니다\n\n저도 업무용 PC\n한대 추가로 쟁여놀까 싶어서\n오늘 견적좀 보려고합니다",
-      "url": "/data/telegram/photos/5029.jpg"
-    },
-    {
-      "date": "2026-06-26",
-      "time": "08:07:05",
-      "messageId": "message5028",
-      "caption": "CPU도 곧 엄청 오를텐데\n개인용 PC 사실분들은\n지금이라도(?) 사두는게 낫겠습니다\n\n저도 업무용 PC\n한대 추가로 쟁여놀까 싶어서\n오늘 견적좀 보려고합니다",
-      "url": "/data/telegram/photos/5028.jpg"
-    },
-    {
-      "date": "2026-06-26",
-      "time": "08:03:29",
-      "messageId": "message5027",
-      "caption": "CPU도 곧 엄청 오를텐데\n개인용 PC 사실분들은\n지금이라도(?) 사두는게 낫겠습니다\n\n저도 업무용 PC\n한대 추가로 쟁여놀까 싶어서\n오늘 견적좀 보려고합니다",
-      "url": "/data/telegram/photos/5027.jpg"
-    },
-    {
-      "date": "2026-06-26",
-      "time": "08:03:29",
-      "messageId": "message5026",
-      "caption": "CPU도 곧 엄청 오를텐데\n개인용 PC 사실분들은\n지금이라도(?) 사두는게 낫겠습니다\n\n저도 업무용 PC\n한대 추가로 쟁여놀까 싶어서\n오늘 견적좀 보려고합니다",
-      "url": "/data/telegram/photos/5026.jpg"
-    },
-    {
-      "date": "2026-06-26",
-      "time": "07:59:27",
-      "messageId": "message5023",
-      "caption": "🔔팔란티어, 7거래일 연속 하락 중\n(SW주 소외 지속)",
-      "url": "/data/telegram/photos/5023.jpg"
-    },
-    {
-      "date": "2026-06-26",
-      "time": "07:55:00",
-      "messageId": "message5021",
-      "caption": "🔔마소, 메모리 가격 2.5배 올라서\n전세계 게임기 가격 인상",
-      "url": "/data/telegram/photos/5021.jpg"
-    },
-    {
-      "date": "2026-06-26",
-      "time": "07:54:22",
-      "messageId": "message5019",
-      "caption": "🎙월가 \"투자자들 빅테크팔고\nAI인프라주로 격렬하게 이동 중\"",
-      "url": "/data/telegram/photos/5019.jpg"
-    },
-    {
-      "date": "2026-06-26",
-      "time": "07:53:59",
-      "messageId": "message5017",
-      "caption": "PC, 노트북, 게임기, 스마트폰 등\nHW가 엄청나게 비싸지는 시대가 도래하겠습니다",
-      "url": "/data/telegram/photos/5017.jpg"
-    },
-    {
-      "date": "2026-06-26",
-      "time": "07:48:56",
-      "messageId": "message5013",
-      "caption": "👷미국 중장비 렌탈 1위 URI도 신고가인데요,\n캐터필러도 동반 신고가입니다\n\nAI인프라 건설 등의\n수혜 기대감 이어지고 있습니다\n\n이런 주식이 오를때\n하락장/침체장이 온 적은 없다고\n봐도 무방합니다",
-      "url": "/data/telegram/photos/5013.jpg"
-    },
-    {
-      "date": "2026-06-26",
-      "time": "07:45:51",
-      "messageId": "message5011",
-      "caption": "💊미국 의료보험사 UNH\n52주 신고가 돌파 중\n\n*최악 구간 통과 후\n아주 천천히(?) 스멀스멀\n오르는 중입니다",
-      "url": "/data/telegram/photos/5011.jpg"
-    },
-    {
-      "date": "2026-06-26",
-      "time": "07:44:14",
-      "messageId": "message5009",
-      "caption": "메모리/장비/광통신/전력주\n주도하고 있고\n\n유가하락으로\n여행주 지속 상승세입니다",
-      "url": "/data/telegram/photos/5009.jpg"
-    },
-    {
-      "date": "2026-06-26",
-      "time": "07:39:46",
-      "messageId": "message5003",
-      "caption": "↘️비트코인 대장주 MSTR은\n계속해서 저점을 깨고 내려가고 있습니다\n(암호화폐 가격 부진)",
-      "url": "/data/telegram/photos/5003.jpg"
-    }
-  ],
+  "telegramPhotos": [],
   "telegramPhotoStats": {
-    "downloaded": 146,
+    "downloaded": 0,
     "pending": 0,
     "cutoff": "2026-05-01",
     "months": 3
@@ -2818,8 +1816,8 @@
         {
           "id": "30823c54ca82",
           "title": "기술적 분석 2강. 분석의 4대 축 가격, 시간, 구조, 유동성",
-          "date": "2026-07-31",
-          "dateLabel": "2026-07-31"
+          "date": "2026-08-01",
+          "dateLabel": "2026-08-01"
         },
         {
           "id": "d9fe891e8548",
@@ -3520,14 +2518,14 @@
         {
           "id": "e1a48aad3c86",
           "title": "_공급 사슬_이 부서지고 있다",
-          "date": "2026-07-31",
-          "dateLabel": "2026-07-31"
+          "date": "2026-08-01",
+          "dateLabel": "2026-08-01"
         },
         {
           "id": "f51ba1e7efd3",
           "title": "_보이지 않는 손_이 만들 2026년 주식 시장의 흐름",
-          "date": "2026-07-31",
-          "dateLabel": "2026-07-31"
+          "date": "2026-08-01",
+          "dateLabel": "2026-08-01"
         },
         {
           "id": "91f37930628a",
@@ -4234,7 +3232,7 @@
   },
   "meeting": {
     "ready": true,
-    "content": "# 오늘 매매 회의\n\n> 기준시각: 2026-08-01\n> 입력 최신성: 신호판 2026-06-30 ✅ / 실행판 2026-07-04 ✅ / 보유현황 2026-07-04 ✅\n> 기준일: 2026-08-01\n> 생성: 자동 (generate_meeting.py) — 규칙 기반 중재\n\n## 오늘 바로 할 것\n\n- **홀딩 우선** — 현금 0원, 신규 매수 없음\n- 코어(하이닉스·삼성·퀄컴·마벨·루멘텀): 방향 유지, 추격 금지\n\n## 오늘 하지 말 것\n\n- **신규 매수 전면 금지** (현금 0, 14종목 풀투자)\n- 레버리지 ETF(CRCA/CRDU/RAM) 추가 매수\n- 고위험 종목(IONQ/SATL/RDW) 물타기\n- 급등 추격 (메모리·AI 인프라 당일)\n\n## 조건부 대기\n\n| 후보 | 자산제곱 | 소수몽키 | 포트폴리오 | 중재 결론 |\n|------|----------|----------|------------|-----------|\n| NVDA | G2 2차 눌림/재지지 — | SM-S3 | 현금 0 · 신규 불가 | 현금 확보 전 보류 |\n| AVGO | G2 분할 매수 — 여력 확 | SM-S3 | 현금 0 · 신규 불가 | 현금 확보 전 보류 |\n| MSFT | G2 SW 반격 확인 + 눌 | SM-S2 | 현금 0 · 신규 불가 | 현금 확보 전 보류 |\n| ARM | 조건부 | SM-S3 | 현금 0 · 신규 불가 | 현금 확보 전 보류 |\n\n## 보유·수익 보호\n\n- SK하이닉스 (000660): 코어 홀딩 · 추격 금지\n- 삼성전자 (005930): 코어 홀딩 · 추격 금지\n- 두산에너빌리티 (034020): 전력·원전 홀딩\n- 헥토파이낸셜 (234340): 홀딩 유지\n- 세틀로직 (SATL): 홀딩 · 물타기 금지\n- 레드와이어 (RDW): 홀딩 · 물타기 금지\n- 아이온큐 (IONQ): 홀딩 · 물타기 금지\n- 아이렌 (IREN): 홀딩 · 물타기 금지\n- 퀄컴 (QCOM): 코어 홀딩 · 추격 금지\n- CRCA (2x CRWD) (CRCA): 감축 검토 · 추가 금지\n- CRDU (2x CRDO) (CRDU): 감축 검토 · 추가 금지\n- 마벨테크놀리지 (MRVL): 코어 홀딩 · 추격 금지\n- 루멘텀홀딩스 (LITE): 코어 홀딩 · 추격 금지\n- RAM (2x DRAM) (RAM): 감축 검토 · 추가 금지\n\n## 정리·감축 검토\n\n- CRCA / CRDU / RAM: 감축·교체 검토\n- IONQ / SATL: 감축·교체 검토\n- IREN: 정리 후보\n\n## 핵심 합의\n\n- 소수몽키 강신호(AI·반도체·메모리, 우주·스페이스X) — AI 인프라 충원 방향과 정합\n- 타이밍은 전원 **눌림/재지지** 우선 (자산제곱 원칙)\n- 보유 14종목(각 1,000만원·총 1.4억) — AI·메모리 테마 **정합**, 레버리지 3종 리스크 주의\n\n## 핵심 불합의\n\n- ARM: 미보유 — 여력 확보 후에만 1차 검토\n- CRCA/CRDU/RAM: 레버리지 ETF 보유 — 신규 충원보다 감축 우선 검토\n\n## 사용자 확인 필요\n\n1. 현금 0원 — NVDA/MSFT 매수 전 CRCA·CRDU·RAM 등 감축으로 여력 확보할지 결정\n2. 레버리지 ETF 3종 비중 축소 여부\n3. 고위험 4종(IONQ/SATL/RDW/IREN) 손절·익절 기준 확인\n",
+    "content": "# 오늘 매매 회의\n\n> 기준시각: 2026-08-01\n> 입력 최신성: 신호판 2026-06-30 ✅ / 실행판 2026-08-01 ✅ / 보유현황 2026-08-01 ✅\n> 기준일: 2026-08-01\n> 생성: 자동 (generate_meeting.py) — 규칙 기반 중재\n\n## 오늘 바로 할 것\n\n- **홀딩 우선** — 현금 0원, 신규 매수 없음\n- 코어(하이닉스·삼성·퀄컴·마벨·루멘텀): 방향 유지, 추격 금지\n\n## 오늘 하지 말 것\n\n- **신규 매수 전면 금지** (현금 0, 14종목 풀투자)\n- 레버리지 ETF(CRCA/CRDU/RAM) 추가 매수\n- 고위험 종목(IONQ/SATL/RDW) 물타기\n- 급등 추격 (메모리·AI 인프라 당일)\n\n## 조건부 대기\n\n| 후보 | 자산제곱 | 소수몽키 | 포트폴리오 | 중재 결론 |\n|------|----------|----------|------------|-----------|\n| NVDA | G2 2차 눌림/재지지 — | SM-S3 | 현금 0 · 신규 불가 | 현금 확보 전 보류 |\n| AVGO | G2 분할 매수 — 여력 확 | SM-S3 | 현금 0 · 신규 불가 | 현금 확보 전 보류 |\n| MSFT | G2 SW 반격 확인 + 눌 | SM-S2 | 현금 0 · 신규 불가 | 현금 확보 전 보류 |\n| ARM | 조건부 | SM-S3 | 현금 0 · 신규 불가 | 현금 확보 전 보류 |\n\n## 보유·수익 보호\n\n- SK하이닉스 (000660): 코어 홀딩 · 추격 금지\n- 삼성전자 (005930): 코어 홀딩 · 추격 금지\n- 두산에너빌리티 (034020): 전력·원전 홀딩\n- 헥토파이낸셜 (234340): 홀딩 유지\n- 세틀로직 (SATL): 홀딩 · 물타기 금지\n- 레드와이어 (RDW): 홀딩 · 물타기 금지\n- 아이온큐 (IONQ): 홀딩 · 물타기 금지\n- 아이렌 (IREN): 홀딩 · 물타기 금지\n- 퀄컴 (QCOM): 코어 홀딩 · 추격 금지\n- CRCA (2x CRWD) (CRCA): 감축 검토 · 추가 금지\n- CRDU (2x CRDO) (CRDU): 감축 검토 · 추가 금지\n- 마벨테크놀리지 (MRVL): 코어 홀딩 · 추격 금지\n- 루멘텀홀딩스 (LITE): 코어 홀딩 · 추격 금지\n- RAM (2x DRAM) (RAM): 감축 검토 · 추가 금지\n\n## 정리·감축 검토\n\n- CRCA / CRDU / RAM: 감축·교체 검토\n- IONQ / SATL: 감축·교체 검토\n- IREN: 정리 후보\n\n## 핵심 합의\n\n- 소수몽키 강신호(AI·반도체·메모리, 우주·스페이스X) — AI 인프라 충원 방향과 정합\n- 타이밍은 전원 **눌림/재지지** 우선 (자산제곱 원칙)\n- 보유 14종목(각 1,000만원·총 1.4억) — AI·메모리 테마 **정합**, 레버리지 3종 리스크 주의\n\n## 핵심 불합의\n\n- ARM: 미보유 — 여력 확보 후에만 1차 검토\n- CRCA/CRDU/RAM: 레버리지 ETF 보유 — 신규 충원보다 감축 우선 검토\n\n## 사용자 확인 필요\n\n1. 현금 0원 — NVDA/MSFT 매수 전 CRCA·CRDU·RAM 등 감축으로 여력 확보할지 결정\n2. 레버리지 ETF 3종 비중 축소 여부\n3. 고위험 4종(IONQ/SATL/RDW/IREN) 손절·익절 기준 확인\n",
     "placeholder": "토론 중재 에이전트 브리핑이 생성되면 여기에 표시됩니다. Cursor에서 '오늘 매매할 것은?'을 실행하세요."
   },
   "rebalance": {
@@ -4551,7 +3549,7 @@
         "SM-S2": 3
       },
       "telegramMessages": "96",
-      "savedAt": "2026-08-01T03:20:07.769141+00:00"
+      "savedAt": "2026-08-01T21:41:57.254137+00:00"
     }
   ]
 }
