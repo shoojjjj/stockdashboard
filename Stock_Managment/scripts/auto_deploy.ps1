@@ -1,4 +1,4 @@
-﻿# Archive -> collect -> git push -> Vercel (ASCII-safe for Windows PowerShell 5.1)
+# Archive -> collect -> git push -> Vercel (ASCII-safe for Windows PowerShell 5.1)
 
 param(
     [switch]$SkipTelegram,
@@ -82,12 +82,16 @@ try {
             if (Test-Path $agentRoot) {
                 $signalDir = Join-Path $agentRoot "소수몽키_에이전트\03_신호_태그화\신호판"
                 if (Test-Path $signalDir) { git add $signalDir 2>&1 }
+                $telegramApiDir = Join-Path $agentRoot "소수몽키_에이전트\01_텔레그램_원천파서\API_수집"
+                if (Test-Path $telegramApiDir) { git add $telegramApiDir 2>&1 }
             }
             $diff = git diff --staged --name-only 2>&1
             if ($diff) {
                 $ts = Get-Date -Format "yyyy-MM-dd HH:mm"
                 git commit -m "chore: auto-refresh dashboard $ts" 2>&1
+                git stash push -u --keep-index -m "auto-deploy-stash" 2>&1 | Out-Null
                 git pull --rebase origin main 2>&1
+                git stash pop 2>&1 | Out-Null
                 git push origin main 2>&1
                 if ($LASTEXITCODE -ne 0) {
                     Write-Log "WARN git push failed (exit $LASTEXITCODE)"
